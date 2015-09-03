@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = '';
+$config['base_url'] = 'localhost/ifamil';
 
 /*
 |--------------------------------------------------------------------------
@@ -502,3 +502,12 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+
+define("__TITLE__", "IFAMIL Viajes y Turismo");
+define("__VERSION__", "V.1.0");
+define("__CSS__", $config['base_url'] . "/system/css/");
+define("__IMG__", $config['base_url'] . "/system/img/");
+define("__JSVIEW__", $config['base_url'] . "/system/js/");
+define("__PANEL__", $config['base_url'] . "/system/assets/");
+define("__LOCALWWW__", $config['base_url']);
