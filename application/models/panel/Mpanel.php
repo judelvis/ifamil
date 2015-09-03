@@ -243,7 +243,7 @@ join(Select * from portafolio
 	 * Funciones para Categoria
 	 */
 	function registrarTipo($arr = null) {
-		$ban = $this->db->insert ( 'categoria', $arr );
+		$ban = $this->db->insert ( 't_categoria', $arr );
 		if ($ban) {
 			return "Se Registro con Exito";
 		}
@@ -253,13 +253,13 @@ join(Select * from portafolio
 		$cabe = array ();
 		$cabe [1] = array ("titulo" => "","oculto" => 1);
 		$cabe [2] = array ("titulo" => "Nombre","buscar" => 0);
+        $cabe [3] = array ("titulo" => "Descripcion","buscar" => 0);
 
-		
 		return $cabe;
 	}
 
 	function listaTipo() {
-		$query = 'SELECT * FROM categoria';
+		$query = 'SELECT * FROM t_categoria';
 		$tipo = $this->db->query ( $query );
 		$obj = array ();
 		$cant = $tipo->num_rows ();
@@ -268,7 +268,7 @@ join(Select * from portafolio
 			$i = 0;
 			foreach ( $rsTip as $fila ) {
 				$i ++;
-				$cuep [$i] = array ("1" => $fila->oid,"2" => $fila->categoria);
+				$cuep [$i] = array ("1" => $fila->oid,"2" => $fila->categoria,"2" => $fila->descrip);
 			}
 			$obj = array ("Cabezera" => $this->cabTipo (),"Cuerpo" => $cuep,"Paginador" => 5,"Origen" => "json","msj" => 1);
 		} else {
@@ -278,7 +278,7 @@ join(Select * from portafolio
 		return json_encode ( $obj );
 	}
 	function cmbTipo() {
-		$zona = $this->db->query ( 'Select * from categoria' );
+		$zona = $this->db->query ( 'Select * from t_categoria' );
 		$rs = $zona->result ();
 		$lista = array ();
 		
@@ -290,7 +290,7 @@ join(Select * from portafolio
 	}
 
     function mostrarTipo($oid){
-        $consulta = $this -> db ->query("SELECT * from categoria where oid=".$oid);
+        $consulta = $this -> db ->query("SELECT * from t_categoria where oid=".$oid);
         $resultado = $consulta -> result();
         $cate = "";
         foreach($resultado as $resp){

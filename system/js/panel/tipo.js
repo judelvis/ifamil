@@ -8,13 +8,16 @@ $(function() {
 
 function limpiar(){
 	$("#categoria").val('');
+    $("#descrip").val('');
 }
 
 function Registrar() {
 	var nombre = $("#categoria").val();
+    var descrip = $("#descrip").val();
 
 	var cadena = new FormData();
 	cadena.append('categoria', nombre);
+    cadena.append('descrip', descrip);
 
 	if(nombre == ''){
 		alert("Debe ingresar una categoria");
@@ -22,7 +25,7 @@ function Registrar() {
 	}
 	
 	$.ajax({
-		url : sUrlP + "registrarTipo",
+		url : sUrlPanel + "registrarTipo",
 		type : 'POST',
 		data : cadena,
 		contentType : false,
@@ -38,11 +41,12 @@ function Registrar() {
 }
 
 function listarTipo(){
+    alert(1);
 	$.ajax({
-		url : sUrlP + "listarTipo",
+		url : sUrlPanel + "listarTipo",
 		type : "POST",
 		dataType : "json",
-		success : function(json) {//alert(json['msj']);
+		success : function(json) {
 			if(json['msj']==1){
 				var Grid1 = new TGrid(json, 'reporte','');
 				//Grid1.SetNumeracion(true);

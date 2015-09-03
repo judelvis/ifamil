@@ -30,7 +30,7 @@ class Panel extends CI_Controller {
      */
 
     function tipo(){
-        if (!isset($_SESSION['usuario_ifa'])) {
+        if (!isset($_SESSION['usuario_ifamil'])) {
             session_destroy();
             redirect(base_url() . 'index.php/Panel');
         }
@@ -49,7 +49,7 @@ class Panel extends CI_Controller {
     }
 
     function listarTipo(){
-        $this -> load -> model('panel/mpanel', 'MPanel');
+        $this -> load -> model('panel/Mpanel', 'MPanel');
         echo $this -> MPanel -> listaTipo();
     }
 

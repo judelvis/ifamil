@@ -17,10 +17,14 @@
 			<div id="div-1" class="accordion-body collapse in body">
 				<form class="form-horizontal">
 					<div class="form-group">
-						<label for="autosize" class="control-label col-lg-2">Español</label>
+						<label for="autosize" class="control-label col-lg-2">Titulo</label>
 						<div class="col-lg-3">
 							<input type="text" placeholder="INGRESE CATEGORIA"class="form-control" name="categoria" id="categoria" />
 						</div>
+                        <label for="autosize" class="control-label col-lg-2">Descripcion</label>
+                        <div class="col-lg-3">
+                            <input type="text" placeholder="Descripcion"class="form-control" name="descrip" id="descrip" />
+                        </div>
 						<div class="col-lg-2"><a href="#" class="btn btn-primary btn-lg" onclick="Registrar();">Registrar</a></div>
 					</div>
 
