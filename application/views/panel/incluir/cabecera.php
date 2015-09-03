@@ -95,7 +95,7 @@
 				<header class="navbar-header">
 
 					<a href="#" class="navbar-brand"> <img height="40px;"
-						src="<?php echo __MAQ__;?>images/Escudo2.png" alt="" />ALCALDIA CAMPO ELIAS</a>
+						src="" alt="" />Panel de CONTROL IFAMIL</a>
 				</header>
 				<!-- END LOGO SECTION -->
 				

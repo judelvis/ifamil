@@ -1,4 +1,5 @@
 <?php $this -> load -> view("incluir/cabezera"); ?>
+<script type="text/javascript" src="<?php echo __JSVIEW__ ?>panel/login.js"></script>
 <body>
 	<div class="container">
 		<header>
@@ -13,7 +14,7 @@
 		</header>
 
 		<section class="main">
-			<form class="form-1" action='<?php echo base_url()?>index.php/panel/validarUsuario'  method='POST'>
+			<form class="form-1" action='#'  method='POST' onsubmit="return verificar();">
 				<p class="field">
 					<input type="text" name="txtUsuario" id="txtUsuario" placeholder="USUARIO"> <i
 						class="icon-user icon-large"></i>

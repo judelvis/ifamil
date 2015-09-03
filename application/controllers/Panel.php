@@ -11,6 +11,7 @@ session_start ();
 class Panel extends CI_Controller {
     function __construct(){
         parent::__construct();
+        $this->load->helper('url');
     }
 
     function index() {
@@ -18,8 +19,9 @@ class Panel extends CI_Controller {
     }
 
     function validarUsuario(){
-        $this->load->model('usuario/iniciar', 'Iniciar');
-        $this->Iniciar->validarCuenta($_POST);
+        $this->load->model('usuario/Iniciar', 'Iniciar');
+        //print_R($_POST);
+        echo $this->Iniciar->validarCuenta($_POST);
     }
 
 
