@@ -10,6 +10,7 @@ function verificar(){
         type : 'POST',
         data : datos,
         success : function(msj) {
+            //alert(msj);
             if(msj == 0){
                 alert("Usuario o clave invalido");
             }else{

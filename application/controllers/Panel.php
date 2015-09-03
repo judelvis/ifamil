@@ -30,9 +30,9 @@ class Panel extends CI_Controller {
      */
 
     function tipo(){
-        if (!isset($_SESSION['usuario_inmo'])) {
+        if (!isset($_SESSION['usuario_ifa'])) {
             session_destroy();
-            redirect(base_url() . 'index.php/principal');
+            redirect(base_url() . 'index.php/Panel');
         }
         $data['js'] = 'tipo';
         $data['formulario'] = 'tipo';
@@ -106,17 +106,17 @@ class Panel extends CI_Controller {
      */
 
     function principal(){
-        if (!isset($_SESSION['usuario_inmo'])) {
+        if (!isset($_SESSION['usuario_ifamil'])) {
             session_destroy();
-            redirect(base_url() . 'index.php/principal');
+            redirect(base_url() . 'index.php/Panel');
         }
-        $this -> load -> model('panel/mpanel', 'MPanel');
+        $this -> load -> model('panel/Mpanel', 'MPanel');
         $data['js'] = 'servicio';
-        $data['titulo'] = 'Servicio';
-        $data['formulario'] = 'servicio';
-        //$data['servicios'] = $this -> MPanel -> lista_servicios();
+        $data['titulo'] = 'Portafolio';
+        $data['formulario'] = 'portafolio';
         $this->load->view('panel/incluir/cabecera',$data);
         $this->load->view('panel/incluir/menu');
+        //print_R($_SESSION);
         $this->load->view('panel/principal',$data);
     }
 
@@ -234,7 +234,7 @@ class Panel extends CI_Controller {
      */
     function cerrar() {
         session_destroy ();
-        redirect ( base_url ().'index.php/principal2' );
+        redirect ( base_url ().'index.php/Panel' );
     }
     function __destruct() {
     }
