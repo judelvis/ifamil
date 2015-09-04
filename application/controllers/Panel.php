@@ -90,17 +90,18 @@ class Panel extends CI_Controller {
         $valor = $this -> MImagen -> cargar($_FILES, BASEPATH . 'img/noticia') -> salvar(400,200,2);
         $nombreImagen = $_FILES['imagen']['name'];
         $arr = array("imagen"=>$nombreImagen,"titulo"=>$_POST['titulo'],"descrip"=>$_POST['descrip'],"fecha"=>$_POST['fecha'],"enlace"=>$_POST['enlace'],"resumen"=>$_POST['resumen']);
+
         if($valor)echo $this -> MPanel -> registrarNoticia($arr);
         else echo "No se pudo guardar la imagen".$valor['mensaje'];
     }
 
     function listarNoticia(){
-        $this -> load -> model('panel/mpanel', 'MPanel');
+        $this -> load -> model('panel/Mpanel', 'MPanel');
         echo $this -> MPanel -> consultarNoticia();
     }
 
     function eliminarNoticia(){
-        $this -> load -> model('panel/mpanel', 'MPanel');
+        $this -> load -> model('panel/Mpanel', 'MPanel');
         $json = json_decode($_POST['objeto'], true);
         echo $this -> MPanel -> eliminarNoticia($json);
     }

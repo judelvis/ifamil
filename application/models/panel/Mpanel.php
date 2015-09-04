@@ -160,7 +160,7 @@ join(Select * from portafolio
      * Funciones para noticia
      */
     function registrarNoticia($arr) {
-        $this->db->insert ( "noticias", $arr );
+        $this->db->insert ( "t_noticias", $arr );
         return "La imagen se registro correctamente";
     }
     function consultarNoticia() {
