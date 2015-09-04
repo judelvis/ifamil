@@ -20,6 +20,9 @@ class Principal extends CI_Controller {
      */
     public function index()
     {
-        $this->load->view('welcome_message');
+        $this->load->view('principal/incluir/cabecera');
+        $this->load->view('principal/incluir/slider');
+        $this->load->view('principal/index');
+        $this->load->view('principal/incluir/pie');
     }
 }
