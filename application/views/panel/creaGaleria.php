@@ -15,12 +15,12 @@
 				</div>
 			</header>
 			<div id="div-1" class="accordion-body collapse in body">
-				<form class="form-horizontal">
+				<form class="form-horizontal" action="#">
 					<div class="form-group">
-						<label for="autosize" class="control-label col-lg-2">Servicio</label>
+						<label for="autosize" class="control-label col-lg-2">Producto</label>
 						<div class="col-lg-2">
 							<?php if(isset($id)){?>
-							<input type="text" placeholder="Servicio" class="form-control"
+							<input type="text" placeholder="Producto" class="form-control"
 								name="serie" id="serie" value='<?php echo $id;?>' />
 							<?php }else{?>
 							<select data-placeholder="Seleccione Sevicio"
@@ -30,7 +30,7 @@
                         </div>
                         <label for="autosize" class="control-label col-lg-2">Fecha</label>
                         <div class="col-lg-2">
-                            <input type="text" placeholder="Fecha" class="form-control"
+                            <input type="text" placeholder="Fecha" class="datepicker form-control"
                                    name="fecha" id="fecha"  />
                         </div>
 					</div>
@@ -50,22 +50,10 @@
 					<div class="form-group">
 						<label class="control-label col-lg-2">Seleccione Imagen</label>
 						<div class="col-lg-2">
-							<div class="fileupload fileupload-new" data-provides="fileupload">
-								<div class="fileupload-new thumbnail"
-									style="width: 200px; height: 150px;">
-									<img src="<?php echo __PANEL__;?>img/demoUpload.jpg" alt="" />
-								</div>
-								<div class="fileupload-preview fileupload-exists thumbnail"
-									style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
-								<div>
-									<span class="btn btn-file btn-primary"><span
-										class="fileupload-new">Buscar Imagen</span><span
-										class="fileupload-exists">Cambiar</span> <input type="file"
-										id='imagen' /> </span> <a href="#"
-										class="btn btn-danger fileupload-exists"
-										data-dismiss="fileupload">Remover</a>
-								</div>
-							</div>
+                            <div class="file-field input-field">
+                                <input class="file-path validate" type="text"/>
+                                    <a class="waves-effect waves-light btn"><input type="file" id="imagen"/>Archivo</a>
+                            </div>
 						</div>
 
                         <label for="autosize" class="control-label col-lg-2">Enlace</label>
@@ -125,7 +113,9 @@
 					</ul>
 				</div>
 			</header>
-			<div id="reporte" class="accordion-body collapse in body"></div>
+			<div  class="accordion-body collapse in body">
+                <div id="reporte"></div>
+            </div>
 		</div>
 	</div>
 </div>

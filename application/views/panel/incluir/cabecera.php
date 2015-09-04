@@ -20,13 +20,18 @@
 
     <!-- PAGE LEVEL STYLES -->
     <link href="<?php echo __PANEL__;?>css/jquery-ui.css" rel="stylesheet" />
+    <!--
     <link rel="stylesheet" href="<?php echo __PANEL__;?>plugins/uniform/themes/default/css/uniform.default.css" />
     <link rel="stylesheet" href="<?php echo __PANEL__;?>plugins/inputlimiter/jquery.inputlimiter.1.0.css" />
     <link rel="stylesheet" href="<?php echo __PANEL__;?>plugins/chosen/chosen.min.css" />
-    <link rel="stylesheet" href="<?php echo __PANEL__;?>plugins/colorpicker/css/colorpicker.css" />
+    <link rel="stylesheet" href="<?php echo __PANEL__;?>plugins/daterangepicker/daterangepicker-bs3.css" />
+    <link rel="stylesheet" href="<?php echo __PANEL__;?>plugins/datepicker/css/datepicker.css" />
     <link rel="stylesheet" href="<?php echo __PANEL__;?>plugins/tagsinput/jquery.tagsinput.css" />
     <link rel="stylesheet" href="<?php echo __PANEL__;?>plugins/switch/static/stylesheets/bootstrap-switch.css" />
     <link rel="stylesheet" href="<?php echo __PANEL__;?>css/bootstrap-fileupload.min.css" />
+    !-->
+
+
 
     <script type="text/javascript" src="<?php echo __DTGRID__ ?>js/include/jquery-2.1.3.min.js"></script>
     <script src="<?php echo __DTGRID__ ?>js/html5shiv.js"></script>

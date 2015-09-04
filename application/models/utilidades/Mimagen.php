@@ -28,24 +28,20 @@ class MImagen extends CI_Model {
 	}
 	function salvar($tam1,$tam2,$metodo) {
         $this->ruta = $this->directorio . '/' . $this->nombre;
-        /*if($id==null)$this->ruta = $this->directorio . '/' . $this->nombre;
-		else $this->ruta = $this->directorio . '/' . $id.$this->nombre;*/
 		if (! move_uploaded_file ( $this->temporal, $this->ruta )) {
 			$arr = FALSE;
 		} else {
+            switch($metodo){
+                case 1: $t  = $this -> crearThumbnailRecortado($this->ruta, $this->directorio . '/medio/' . $this->nombre, $tam1, $tam2);
+                    break;
+                case 2: $t = $this -> crearThumbnail2($this->ruta, $this->directorio . '/medio/' . $this->nombre,  $tam1, $tam2);
+                    break;
+                default: $t  = $this -> crearThumbnailRecortado($this->ruta, $this->directorio . '/medio/' . $this->nombre, $tam1, $tam2);
+                    break;
+            }
 			$arr = TRUE;
 		}
-        switch($metodo){
-            case 1: $t  = $this -> crearThumbnailRecortado($this->ruta, $this->directorio . '/medio/' . $this->nombre, $tam1, $tam2);
-                    break;
-            case 2: $t = $this -> crearThumbnail2($this->ruta, $this->directorio . '/medio/' . $this->nombre,  $tam1, $tam2);
-                break;
-            default: $t  = $this -> crearThumbnailRecortado($this->ruta, $this->directorio . '/medio/' . $this->nombre, $tam1, $tam2);
-                break;
-        }
-		$res['respuesta'] = $arr;
-		$res['mensaje'] = $t;
-		return $res;
+		return $arr;
 	}
 	
 	

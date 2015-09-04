@@ -21,25 +21,30 @@
 					<div class="form-group">
                         <label for="autosize" class="control-label col-lg-2">Nombre</label>
                         <div class="col-lg-2">
-                            <input type="text" placeholder="Titulo De la Serie"
-                                   class="form-control" name="nombre" id="nombre" />
+                            <input type="text" placeholder="Titulo Del Producto"
+                                   class="form-control" name="titulo" id="titulo" />
                         </div>
-						<label for="autosize" class="control-label col-lg-2">Descripcion</label>
-
-						<div class="col-lg-6">
-							<textarea class="form-control" name="descrip" id="descrip"></textarea>
+                    </div>
+                    <div class="form-group">
+						<label for="autosize" class="control-label col-lg-2">Resumen</label>
+						<div class="col-lg-4">
+							<textarea class="form-control" name="resumen" id="resumen"></textarea>
 						</div>
+                        <label for="autosize" class="control-label col-lg-2">Descripcion</label>
+                        <div class="col-lg-4">
+                            <textarea class="form-control" name="descrip" id="descrip"></textarea>
+                        </div>
 
 					</div>
 
                     <div class="form-group">
                         <label for="autosize" class="control-label col-lg-2">Fecha</label>
-                        <div class="col-lg-2">
+                        <div class="col-lg-4">
                             <input type="text" placeholder=""
-                                   class="form-control" name="fecha" id="fecha" />
+                                   class="datepicker form-control" name="fecha" id="fecha" />
                         </div>
                         <label for="autosize" class="control-label col-lg-2">Categoria</label>
-                        <div class="col-lg-2">
+                        <div class="col-lg-4">
                             <select data-placeholder="Seleccione categoria"
                                     class="form-control " id='categoria' name='categoria'></select>
                         </div>
@@ -66,7 +71,9 @@
 					</ul>
 				</div>
 			</header>
-			<div id="reporte" class="accordion-body collapse in body"></div>
+			<div class="accordion-body collapse in body">
+                <div id="reporte"></div>
+            </div>
 		</div>
 	</div>
 </div>
