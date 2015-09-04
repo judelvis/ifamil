@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = 'http://localhost/ifamil/';
+$config['base_url'] = 'http://localhost/ifamil';
 
 /*
 |--------------------------------------------------------------------------
@@ -510,4 +510,6 @@ define("__CSS__", $config['base_url'] . "/system/css/");
 define("__IMG__", $config['base_url'] . "/system/img/");
 define("__JSVIEW__", $config['base_url'] . "/system/js/");
 define("__PANEL__", $config['base_url'] . "/system/assets/");
+define("__DTGRID__", $config['base_url'] . "/system/dtgrid/");
+define("__MAQ__", $config['base_url'] . "/system/maqueta/");
 define("__LOCALWWW__", $config['base_url']);
