@@ -47,10 +47,12 @@
     <![endif]-->
     <script type="text/javascript" src="<?php echo __JSVIEW__ ?>jquery/jquery-1.10.2.js"></script>
     <script type="text/javascript" src="<?php echo __JSVIEW__ ?>general/Global.js"></script>
-    <script type="text/javascript" src="<?php echo __JSVIEW__ ?>tgrid/tgrid.js"></script>
+    <!--<script type="text/javascript" src="<?php echo __JSVIEW__ ?>tgrid/tgrid.js"></script>
     <script type="text/javascript" src="<?php echo __JSVIEW__ ?>tgrid/func.js"></script>
     <script type="text/javascript" src="<?php echo __JSVIEW__ ?>tgrid/xls.js"></script>
-    <script type="text/javascript" src="<?php echo __JSVIEW__ ?>tgrid/paginador.js"></script>
+    <script type="text/javascript" src="<?php echo __JSVIEW__ ?>tgrid/paginador.js"></script>!-->
+
+
     <script type="text/javascript" src="<?php echo __JSVIEW__ ?>panel/<?php echo $js; ?>.js"></script>
 </head>
 <!-- END HEAD -->

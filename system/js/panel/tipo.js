@@ -41,7 +41,7 @@ function Registrar() {
 }
 
 function listarTipo(){
-    alert(1);
+    //alert(1);
 	$.ajax({
 		url : sUrlPanel + "listarTipo",
 		type : "POST",
