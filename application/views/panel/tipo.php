@@ -48,8 +48,8 @@
 					</ul>
 				</div>
 			</header>
-			<div id="reporte" class="accordion-body collapse in body">
-				
+			<div  class="accordion-body collapse in body">
+				<div id="reporte"></div>
 			</div>
 		</div>
 	</div>

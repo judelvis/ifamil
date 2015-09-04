@@ -41,8 +41,24 @@ function Registrar() {
 }
 
 function listarTipo(){
-    //alert(1);
-	$.ajax({
+    alert(1);
+    var origen={'tipoOrigen': 'php', 'rutaObjeto': sUrlPanel+'listarTipo','parametro':'para=1'};
+    $("#reporte").dtgrid(origen,[{
+            'titulo': 'Categorias',
+            "filtro":[2],
+            'clase' : "brown darken-4  light-green-text lighten-4-text",
+            'editable': {'c2': 'texto', 'c3': 'texto'},
+            "accion": [{
+                "ejecuta": "primera_funcion",
+                "tipo": "script",
+                "clase": "mdi-action-store",
+                "parametro": [],
+                "ocultar":true
+            }]
+        }]
+    );
+    alert(sUrlPanel);
+	/*$.ajax({
 		url : sUrlPanel + "listarTipo",
 		type : "POST",
 		dataType : "json",
@@ -55,5 +71,5 @@ function listarTipo(){
 				Grid1.Generar();
 			}else $("#reporte").html("No posee tipos creados");
 		}
-	});
+	});*/
 }

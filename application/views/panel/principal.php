@@ -20,13 +20,13 @@
 	<!-- FOOTER -->
 	<div id="footer">
 		
-		<p>&copy; empresa &nbsp;2014 &nbsp;</p>
+		<p>&copy; MAMONSOFT &nbsp;2015 &nbsp;</p>
 	</div>
 	<!--END FOOTER -->
 
 
 	<!-- GLOBAL SCRIPTS -->
-	<script src="<?php echo __PANEL__;?>plugins/jquery-2.0.3.min.js"></script>
+
 	<script
 		src="<?php echo __PANEL__;?>plugins/bootstrap/js/bootstrap.min.js"></script>
 	<script

@@ -249,30 +249,21 @@ join(Select * from portafolio
 		}
 		return "No se pudo registrar";
 	}
-	function cabTipo() {
-		$cabe = array ();
-		$cabe [1] = array ("titulo" => "","oculto" => 1);
-		$cabe [2] = array ("titulo" => "Nombre","buscar" => 0);
-        $cabe [3] = array ("titulo" => "Descripcion","buscar" => 0);
-
-		return $cabe;
-	}
 
 	function listaTipo() {
 		$query = 'SELECT * FROM t_categoria';
+        $cabe  = array ("id","Nombre","Descripcion");
 		$tipo = $this->db->query ( $query );
 		$obj = array ();
 		$cant = $tipo->num_rows ();
 		if ($cant > 0) {
 			$rsTip = $tipo->result ();
-			$i = 0;
 			foreach ( $rsTip as $fila ) {
-				$i ++;
-				$cuep [$i] = array ("1" => $fila->oid,"2" => $fila->categoria,"2" => $fila->descrip);
+				$cuep [] = array ($fila->oid,$fila->categoria,$fila->descrip);
 			}
-			$obj = array ("Cabezera" => $this->cabTipo (),"Cuerpo" => $cuep,"Paginador" => 5,"Origen" => "json","msj" => 1);
+			$obj = array ("cabecera" => $cabe,"cuerpo" => $cuep);
 		} else {
-			$obj = array ("msj" => 0);
+			$obj = array ("resp" => 0);
 		}
 		
 		return json_encode ( $obj );

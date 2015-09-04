@@ -93,6 +93,7 @@
                 domTbl = {'config': defecto, 'datos': obtTbl};
             }
             obj.domTabla[div.id + i] = domTbl;
+            alert(obj);
         }
         iniciar(obj,div);
     }
