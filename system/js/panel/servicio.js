@@ -5,40 +5,29 @@
 
 $(function() {
     cmbTipo();
-    $("#fecha").datepicker({
-        changeMonth: true,
-        changeYear: true
+    $('.datepicker').pickadate({
+        labelMonthNext: '>>',
+        labelMonthPrev: '<<',
+        labelMonthSelect: 'Seleccione un mes',
+        labelYearSelect: 'Seleccione un año',
+        monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+        monthsShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+        weekdaysFull: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
+        weekdaysShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+        weekdaysLetter: ['D', 'L', 'M', 'I', 'J', 'V', 'S'],
+        today: 'Hoy',
+        clear: 'Limpiar',
+        close: 'Cerrar',
+        selectYears: 15,
+        selectMonths: true,
+        format: 'yyyy-mm-dd'
     });
-    $.datepicker.regional['es'] = {
-        closeText : 'Cerrar',
-        prevText : '&#x3c;Ant',
-        nextText : 'Sig&#x3e;',
-        currentText : 'Hoy',
-        monthNames : [ 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
-            'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre',
-            'Diciembre' ],
-        monthNamesShort : [ 'Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul',
-            'Ago', 'Sep', 'Oct', 'Nov', 'Dic' ],
-        dayNames : [ 'Domingo', 'Lunes', 'Martes', 'Mi&eacute;rcoles',
-            'Jueves', 'Viernes', 'S&aacute;bado' ],
-        dayNamesShort : [ 'Dom', 'Lun', 'Mar', 'Mi&eacute;', 'Juv', 'Vie',
-            'S&aacute;b' ],
-        dayNamesMin : [ 'Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'S&aacute;' ],
-        weekHeader : 'Sm',
-        dateFormat : 'dd/mm/yy',
-        firstDay : 1,
-        isRTL : false,
-        showMonthAfterYear : false,
-        yearSuffix : ''
-    };
-    $.datepicker.setDefaults($.datepicker.regional['es']);
-    $("#fecha").datepicker("option", "dateFormat", "yy-mm-dd");
 	listarSerie();
 });
 
 function cmbTipo() {
     $.ajax({
-        url : sUrlP + 'cmbTipo',
+        url : sUrlPanel + 'cmbTipo',
         dataType : 'JSON',
         success : function(json) {//alert(json);
             $.each(json, function(item, valor) {
@@ -52,35 +41,37 @@ function cmbTipo() {
 function limpiar(){
 	$("#nombre").val('');
 	$("#descrip").val('');
+    $("#resumen").val('');
 	$("#fecha").val('');
 }
 
 function Registrar() {
-	var nombre = $("#nombre").val();
+	var nombre = $("#titulo").val();
 	var descrip = $("#descrip").val();
 	var fecha = $("#fecha").val();
+    var resumen = $("#resumen").val();
     var cadena = new FormData();
-	cadena.append('nombre', nombre);
+	cadena.append('titulo', nombre);
 	cadena.append('descrip',descrip);
 	cadena.append('fecha',fecha);
+    cadena.append('resumen',resumen);
     cadena.append('oidcat', $('#categoria').val());
 
 	if(nombre == '' || descrip == '' || fecha == '' ){
 		alert("Debe ingresar todos los datos");
 		return false;
 	}
-
 	$.ajax({
-		url : sUrlP + "registrarSerie",
+		url : sUrlPanel + "registrarSerie",
 		type : 'POST',
 		data : cadena,
 		contentType : false,
 		processData : false,
 		cache : false,
-		success : function(msj) {
+		success : function(oid) {
 			alert('Se registro con exito');
 			limpiar();
-			window.location = sUrlP+"agregarGaleria/"+msj;
+			window.location = sUrlPanel+"agregarGaleria/"+oid;
 		}
 	});
 	return false;
@@ -88,19 +79,23 @@ function Registrar() {
 }
 
 function listarSerie(){//alert(sUrlP);
-	$.ajax({
-		url : sUrlP + "listarSerie",
-		type : "POST",
-		dataType : "json",
-		success : function(json) {//alert(json)
-			if(json['msj']==1){
-				var Grid1 = new TGrid(json, 'reporte','');
-				//Grid1.SetNumeracion(true);
-				//Grid1.SetEstilo('tgridh');
-				Grid1.SetName("in");
-				//Grid1.SetXls(true);
-				Grid1.Generar();
-			}else $("#reporte").html("No posee serie creada");
-		}
-	});
+    var datosCombo = {'0': 'Activo', '1': 'Inactivo'};
+    var origen={'tipoOrigen': 'php', 'rutaObjeto': sUrlPanel+'listarSerie','parametro':''};
+    $("#reporte").dtgrid(origen,[{
+            'titulo': 'Categorias',
+            'clase' : "",
+            'oculto':[1],
+            'editable': {'c2': 'texto', 'c3': 'texto', 'c4': 'texto', 'c6': datosCombo},
+            "accion": [{
+                "ejecuta": sUrlPanel+"modificarSerie",
+                "tipo": "php",
+                "clase": "mdi-action-check-circle",
+                "parametro": [],
+                "texto":"Guardar",
+                //"ocultar":true
+            }],
+            "boton":
+                [{"parametro":[],"titulo":"enviar","ejecuta":sUrlPanel+"Exporta_Exel","tipo":"php","clase":"mdi-action-done"}]
+        }]
+    );
 }

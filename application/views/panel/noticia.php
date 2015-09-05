@@ -48,8 +48,8 @@
                         </div>
                         <label for="autosize" class="control-label col-lg-2">Fecha</label>
                         <div class="col-lg-2">
-                            <input type="text" placeholder="fecha" class="form-control"
-                                   name="fecha" id="fecha"/>
+                            <input type="text" placeholder="fecha"
+                                   name="fecha" id="fecha" class="datepicker form-control"/>
                         </div>
                         <label for="autosize" class="control-label col-lg-2">Enlace</label>
 
@@ -63,22 +63,9 @@
                     <div class="form-group">
                         <label class="control-label col-lg-2">Seleccione Imagen</label>
                         <div class="col-lg-2">
-                            <div class="fileupload fileupload-new" data-provides="fileupload">
-                                <div class="fileupload-new thumbnail"
-                                     style="width: 200px; height: 150px;">
-                                    <img src="<?php echo __PANEL__; ?>img/demoUpload.jpg" alt=""/>
-                                </div>
-                                <div class="fileupload-preview fileupload-exists thumbnail"
-                                     style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
-                                <div>
-									<span class="btn btn-file btn-primary"><span
-                                            class="fileupload-new">Buscar Imagen</span><span
-                                            class="fileupload-exists">Cambiar</span> <input type="file"
-                                                                                            id='imagen'/> </span> <a
-                                        href="#"
-                                        class="btn btn-danger fileupload-exists"
-                                        data-dismiss="fileupload">Remover</a>
-                                </div>
+                            <div class="file-field input-field">
+                                <input class="file-path validate" type="text"/>
+                                <a class="waves-effect waves-light btn"><input type="file" id="imagen"/>Archivo</a>
                             </div>
                         </div>
                     </div>

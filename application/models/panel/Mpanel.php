@@ -77,24 +77,22 @@ join(Select * from portafolio
 	 * funciones de galeria
 	 */
 	function registrarGaleria($arr) {
-		$this->db->insert ( "portafolio", $arr );
+		$this->db->insert ( "t_galeria", $arr );
 		return "La imagen se registro correctamente";
 	}
 	function consultarGaleria($cod) {
-		$imagenes = $this->db->query ( 'SELECT * FROM portafolio WHERE oidser=' . $cod );
+		$imagenes = $this->db->query ( 'SELECT * FROM t_galeria WHERE oidpor=' . $cod );
 		$obj = array ();
 		$cant = $imagenes->num_rows ();
 		if ($cant > 0) {
-			$obj ['resp'] = 1;
 			$rsImg = $imagenes->result ();
-			$i = 0;
 			foreach ( $rsImg as $fila ) {
-				$i ++;
 				$rImg = '<img src="' . __IMG__ . 'galeria/' . $fila->imagen . '" width=200></img> ';
 				// $rImg = "epa";
-				$cuep [$i] = array ("1" => $fila->oid,"2" => $fila->imagen,"3" => $fila->oidser,"4" => "","5" => $rImg);
+				$cuep [] = array ($fila->oid,$fila->imagen,$fila->oidpor,$rImg);
 			}
-			$obj = array ("Cabezera" => $this->cab (),"Cuerpo" => $cuep,"Paginador" => 10,"Origen" => "json","msj" => "SI");
+            $cab=array("id","Archivo","Producto","Imagen");
+			$obj[] = array ("cabecera" => $cab,"cuerpo" => $cuep);
 		} else {
 			$obj = array ("msj" => "NO");
 		}
@@ -134,7 +132,7 @@ join(Select * from portafolio
     }
 	
 	function eliminarGaleria($arr) {
-		if ($this->db->query ( "DELETE FROM portafolio WHERE oid=" . $arr [0] )) {
+		if ($this->db->query ( "DELETE FROM t_galeria WHERE oid=" . $arr [0] )) {
 			$archivo = BASEPATH . 'img/galeria/' . $arr [1];
 			if (file_exists ( $archivo )) {
 				if (unlink ( $archivo ))
@@ -143,20 +141,18 @@ join(Select * from portafolio
 					$msj = "El archivo no fue borrado";
 			} else
 				$msj = "El archivo no existe";
+            $archivo = BASEPATH . 'img/galeria/medio/' . $arr [1];
+            if (file_exists ( $archivo )) {
+                if (unlink ( $archivo ))
+                    $msj = "El archivo fue borrado";
+                else
+                    $msj = "El archivo no fue borrado";
+            } else
+                $msj = "El archivo no existe";
 		} else {
 			$msj = "No se elimino";
 		}
 		return $msj;
-	}
-	function cab() {
-		$cabe = array ();
-		$cabe [1] = array ("titulo" => "","oculto" => 1);
-		$cabe [2] = array ("titulo" => "Imagen","atributos" => "width:30%;","buscar" => 0);
-        $cabe [3] = array ("titulo" => "Serie");
-		$cabe [4] = array ("titulo" => "#","tipo" => "bimagen","funcion" => 'eliminarGaleria',"parametro" => "1,2",	"ruta" => __IMG__ . "quitar.png",
-				"atributos" => "text-align:center;" );
-		$cabe [5] = array ("titulo" => "Ver","atributos" => "width:40%");
-		return $cabe;
 	}
 
 
@@ -164,7 +160,7 @@ join(Select * from portafolio
      * Funciones para noticia
      */
     function registrarNoticia($arr) {
-        $this->db->insert ( "noticias", $arr );
+        $this->db->insert ( "t_noticias", $arr );
         return "La imagen se registro correctamente";
     }
     function consultarNoticia() {
@@ -261,7 +257,7 @@ join(Select * from portafolio
 			foreach ( $rsTip as $fila ) {
 				$cuep [] = array ($fila->oid,$fila->categoria,$fila->descrip);
 			}
-			$obj = array ("cabecera" => $cabe,"cuerpo" => $cuep);
+			$obj[] = array ("cabecera" => $cabe,"cuerpo" => $cuep);
 		} else {
 			$obj = array ("resp" => 0);
 		}
@@ -289,30 +285,38 @@ join(Select * from portafolio
         }
         return $cate;
     }
+
+    function modTipo($datos){
+        $res = $this ->db ->query('update t_categoria set categoria="'.$datos[1].'",descrip="'.$datos[2].'" where oid='.$datos[0]);
+        if($res) return "Se Modifico Con Exito";
+        else return "No Se Pudo Modificar. Verifique los datos";
+    }
 	
 	/**
 	 * Funciones para Serie
 	 */
 	function registrarSerie($arr = null) {
-		$ban = $this->db->insert ( 'servicio', $arr );
+		$ban = $this->db->insert ( 't_portafolio', $arr );
 		
 		if ($ban) {
 			return $this->db->insert_id ();
 		}
 		return "No se pudo registrar";
 	}
-	function modificarSerie($arr = null, $id) {
-		$this->db->where ( 'id', $id );
-		$ban = $this->db->update ( 'servicio', $arr );
+	function modificarSerie($arr) {
+        $query = 'Update t_portafolio set titulo="'.$arr[1].'",descrip="'.$arr[2].'",
+		resumen="'.$arr[3].'",estatus='.$arr[5].' where id='.$arr[0];
+        //return $query;
+		$ban = $this->db->query ( $query);
 		if ($ban) {
 			return "Se modifico con exito";
 		}
 		return "No se pudo modificar";
 	}
 	function eliminarSerie($id) {
-		$ban = $this->db->query ( 'DELETE FROM serie where id=' . $id );
+		$ban = $this->db->query ( 'DELETE FROM t_portafolio where id=' . $id );
 		if ($ban) {
-			$rs = $this->db->query ( "select * from portafolio where oidser=" . $id );
+			$rs = $this->db->query ( "select * from t_galeria where oidpor=" . $id );
 			$rsG = $rs->result ();
 			foreach ( $rsG as $fila ) {
 				$arr [0] = $fila->oid;
@@ -324,41 +328,21 @@ join(Select * from portafolio
 		return "No se elimino";
 	}
 	function cabSer() {
-		$cabe = array ();
-		$cabe [1] = array ("titulo" => "Id","oculto" => 1);
-		$cabe [2] = array ("titulo" => "Nombre","buscar" => 0);
-		$cabe [3] = array ("titulo" => "Descripcion","buscar" => 0 ,"tipo"=>"texto");
-		$cabe [4] = array ("titulo" => "Fecha","buscar" => 0,"tipo"=>"calendario");
-		$cabe [5] = array ("titulo" => "Estatus","tipo"=>"combo_fijo");
-		$cabe [6] = array ("titulo" => "Modificar","tipo" => "bimagen","funcion" => 'modificarSerie',"parametro" => "1,3,4,5","ruta" => __IMG__ . "botones/aceptar1.png",
-				"atributos" => "text-align:center;height:50px;padding:20px;","mantiene" => 1);
-		$cabe [7] = array ("titulo" => "Eliminar","tipo" => "bimagen","funcion" => 'eliminarSerie',"parametro" => "1","ruta" => __IMG__ . "botones/quitar.png",
-				"atributos" => "text-align:center;height:50px;padding:20px;" );
-		return $cabe;
+
+
 	}
 	function listaSerie() {
-		$cmbEstatus = array ("1" => "Inactivo","0" => "Activo");
-		$cmb = array ("5" => $cmbEstatus);
-		$query = 'SELECT * FROM servicio order by fecha desc ;';
+        $cabe = array ('Id','Nombre','Resumen','Descripcion','Fecha','Estatus');
+		$query = 'SELECT *,if(estatus=0,"Activo","Inactivo")as est FROM t_portafolio order by fecha desc ;';
 		$tipo = $this->db->query ( $query );
 		$obj = array ();
 		$cant = $tipo->num_rows ();
 		if ($cant > 0) {
 			$rsTip = $tipo->result ();
-			$i = 0;
 			foreach ( $rsTip as $fila ) {
-				$i ++;
-				$cuep [$i] = array (
-						"1" => $fila->id,
-						"2" => $fila->nombre,
-						"3" => $fila->descrip,
-						"4" => $fila->fecha,
-						"5" => $fila->estatus,
-						"6" => '',
-						"7" => ''
-				);
+				$cuep[] = array ($fila->id,$fila->titulo,$fila->resumen,$fila->descrip,$fila->fecha,$fila->est);
 			}
-			$obj = array ("Cabezera" => $this->cabSer (),"Cuerpo" => $cuep,"Paginador" => 10,"Origen" => "json","msj" => 1,"Objetos" => $cmb);
+			$obj[] = array ("cabecera" => $cabe,"cuerpo" => $cuep);
 		} else {
 			$obj = array ("msj" => 0);
 		}
@@ -366,12 +350,12 @@ join(Select * from portafolio
 		return json_encode ( $obj );
 	}
 	function cmbSerie() {
-		$zona = $this->db->query ( 'Select * from servicio where estatus=0' );
+		$zona = $this->db->query ( 'Select * from t_portafolio' );
 		$rs = $zona->result ();
 		$lista = array ();
 		
 		foreach ( $rs as $fila ) {
-			$lista [$fila->id] = $fila->nombre;
+			$lista [$fila->id] = $fila->titulo;
 		}
 		return json_encode ( $lista );
 	}

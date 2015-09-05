@@ -41,35 +41,21 @@ function Registrar() {
 }
 
 function listarTipo(){
-    alert(1);
-    var origen={'tipoOrigen': 'php', 'rutaObjeto': sUrlPanel+'listarTipo','parametro':'para=1'};
+    var origen={'tipoOrigen': 'php', 'rutaObjeto': sUrlPanel+'listarTipo','parametro':''};
     $("#reporte").dtgrid(origen,[{
             'titulo': 'Categorias',
-            "filtro":[2],
-            'clase' : "brown darken-4  light-green-text lighten-4-text",
+            'clase' : "",
+            'oculto':[1],
             'editable': {'c2': 'texto', 'c3': 'texto'},
             "accion": [{
-                "ejecuta": "primera_funcion",
-                "tipo": "script",
-                "clase": "mdi-action-store",
+                "ejecuta": sUrlPanel+"modTipo",
+                "tipo": "php",
+                "clase": "mdi-action-check-circle",
                 "parametro": [],
-                "ocultar":true
-            }]
+                //"ocultar":true
+            }],
+            "boton":
+                [{"parametro":[],"titulo":"enviar","ejecuta":sUrlPanel+"Exporta_Exel","tipo":"php","clase":"mdi-action-done"}]
         }]
     );
-    alert(sUrlPanel);
-	/*$.ajax({
-		url : sUrlPanel + "listarTipo",
-		type : "POST",
-		dataType : "json",
-		success : function(json) {
-			if(json['msj']==1){
-				var Grid1 = new TGrid(json, 'reporte','');
-				//Grid1.SetNumeracion(true);
-				Grid1.SetName("tp");
-				//Grid1.SetXls(true);
-				Grid1.Generar();
-			}else $("#reporte").html("No posee tipos creados");
-		}
-	});*/
 }

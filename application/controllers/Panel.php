@@ -59,15 +59,20 @@ class Panel extends CI_Controller {
         //echo "pasa";
     }
 
+    function modTipo(){
+        $this -> load -> model('panel/mpanel', 'MPanel');
+        echo $this -> MPanel -> modTipo(json_decode($_POST['datos']));
+    }
+
 
     /**
      * Funciones para modulo Noticias
      */
 
     function noticia(){
-        if (!isset($_SESSION['usuario_inmo'])) {
+        if (!isset($_SESSION['usuario_ifamil'])) {
             session_destroy();
-            redirect(base_url() . 'index.php/principal');
+            redirect(base_url() . 'index.php/Panel');
         }
         $data['js'] = 'noticia';
         $data['formulario'] = 'noticia';
@@ -78,24 +83,25 @@ class Panel extends CI_Controller {
     }
 
     function registrarNoticia(){
-        $this -> load -> model('utilidades/mimagen', 'MImagen');
-        $this -> load -> model('panel/mpanel', 'MPanel');
+        $this -> load -> model('utilidades/Mimagen', 'MImagen');
+        $this -> load -> model('panel/Mpanel', 'MPanel');
 
         //$valor = $this -> MImagen -> cargar($_FILES, BASEPATH . 'img/noticia') -> salvar(400,400,2);
         $valor = $this -> MImagen -> cargar($_FILES, BASEPATH . 'img/noticia') -> salvar(400,200,2);
         $nombreImagen = $_FILES['imagen']['name'];
         $arr = array("imagen"=>$nombreImagen,"titulo"=>$_POST['titulo'],"descrip"=>$_POST['descrip'],"fecha"=>$_POST['fecha'],"enlace"=>$_POST['enlace'],"resumen"=>$_POST['resumen']);
+
         if($valor)echo $this -> MPanel -> registrarNoticia($arr);
         else echo "No se pudo guardar la imagen".$valor['mensaje'];
     }
 
     function listarNoticia(){
-        $this -> load -> model('panel/mpanel', 'MPanel');
+        $this -> load -> model('panel/Mpanel', 'MPanel');
         echo $this -> MPanel -> consultarNoticia();
     }
 
     function eliminarNoticia(){
-        $this -> load -> model('panel/mpanel', 'MPanel');
+        $this -> load -> model('panel/Mpanel', 'MPanel');
         $json = json_decode($_POST['objeto'], true);
         echo $this -> MPanel -> eliminarNoticia($json);
     }
@@ -121,34 +127,31 @@ class Panel extends CI_Controller {
     }
 
     function registrarSerie(){
-        $this -> load -> model('panel/mpanel', 'MPanel');
+        $this -> load -> model('panel/Mpanel', 'MPanel');
         echo $this -> MPanel -> registrarSerie($_POST);
 
     }
 
     function listarSerie(){
-        $this -> load -> model('panel/mpanel', 'MPanel');
+        $this -> load -> model('panel/Mpanel', 'MPanel');
         echo $this -> MPanel -> listaSerie();
     }
 
     function cmbSerie(){
-        $this -> load -> model('panel/mpanel', 'MPanel');
+        $this -> load -> model('panel/Mpanel', 'MPanel');
         echo $this -> MPanel -> cmbSerie();
         //echo "pasa";
     }
 
     function modificarSerie(){
-        $ele = json_decode($_POST['objeto'],true);
-        //print_R($_POST);
-        $datos=array("descrip"=>$ele[1],"fecha"=>$ele[3],"estatus"=>$ele[3]);
-
-        $this -> load -> model('panel/mpanel', 'MPanel');
-        echo $this -> MPanel -> modificarSerie($datos,$ele[0]);
+        $ele = json_decode($_POST['datos'],true);
+        $this -> load -> model('panel/Mpanel', 'MPanel');
+        echo $this -> MPanel -> modificarSerie($ele);
     }
 
     function eliminarSerie(){
         $ele = json_decode($_POST['objeto'],true);
-        $this -> load -> model('panel/mpanel', 'MPanel');
+        $this -> load -> model('panel/Mpanel', 'MPanel');
         echo $this -> MPanel -> eliminarSerie($ele[0]);
     }
 
@@ -157,22 +160,22 @@ class Panel extends CI_Controller {
      * Funcion para generar excel desde tgrid
      */
     public function Exporta_Exel() {
-        //print_R($_POST);
-        $this -> load -> model('utilidades/mexcel','MExcel');
+        print_R($_POST);
+        /*$this -> load -> model('utilidades/mexcel','MExcel');
         $this -> MExcel -> cabezera = json_decode($_POST['cabezera'] ,TRUE);
         $this -> MExcel -> cuerpo = json_decode($_POST['cuerpo'],TRUE);
         $nomb = 'reporte_'.Date('U').'.xls';
         $ruta = BASEPATH.'repository/xls/'.$nomb;
         $this -> MExcel -> Generar();
         $this -> MExcel -> Guardar($ruta);
-        echo "<br><center><a href='" . __LOCALWWW__ . "/system/repository/xls/".$nomb."' target='top'><img src='" . __IMG__ . "exel1.jpg' style='width:70px'>Click aqui</img></a>";
+        echo "<br><center><a href='" . __LOCALWWW__ . "/system/repository/xls/".$nomb."' target='top'><img src='" . __IMG__ . "exel1.jpg' style='width:70px'>Click aqui</img></a>";*/
     }
 
     /**
      * funciones de galeria
      */
     function agregarGaleria($id='') {
-        if (!isset($_SESSION['usuario_inmo'])) {
+        if (!isset($_SESSION['usuario_ifamil'])) {
             session_destroy();
             redirect(base_url() . 'index.php/principal');
         }
@@ -194,7 +197,7 @@ class Panel extends CI_Controller {
 
         $valor = $this -> MImagen -> cargar($_FILES, BASEPATH . 'img/galeria') -> salvar(680,480,2);
         $nombreImagen = $_FILES['imagen']['name'];
-        $arr = array("oidser"=>$_POST['oidser'],"imagen"=>$nombreImagen,"titulo"=>$_POST['titulo'],"detalle"=>$_POST['detalle'],"fecha"=>$_POST['fecha'],"enlace"=>$_POST['enlace']);
+        $arr = array("oidpor"=>$_POST['oidpor'],"imagen"=>$nombreImagen,"titulo"=>$_POST['titulo'],"detalle"=>$_POST['detalle'],"fecha"=>$_POST['fecha'],"enlace"=>$_POST['enlace']);
         if($valor)echo $this -> MPanel -> registrarGaleria($arr);
         else echo "No se pudo guardar la imagen".$valor['mensaje'];
         //echo "si";
@@ -202,15 +205,15 @@ class Panel extends CI_Controller {
     }
 
     function consultarGaleria() {
-        $this -> load -> model('panel/mpanel', 'MPanel');
-        $oidp = $_POST['codigo'];
+        $this -> load -> model('panel/Mpanel', 'MPanel');
+        $oidp = $_POST['id'];
         echo $this -> MPanel -> consultarGaleria($oidp);
         //echo "si";
     }
 
     function eliminarGaleria() {
-        $this -> load -> model('panel/mpanel', 'MPanel');
-        $json = json_decode($_POST['objeto'], true);
+        $this -> load -> model('panel/Mpanel', 'MPanel');
+        $json = json_decode($_POST['datos'], true);
         echo $this -> MPanel -> eliminarGaleria($json);
     }
 

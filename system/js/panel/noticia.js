@@ -8,34 +8,23 @@
 
 $(function() {
     listarNoticia();
-    $("#fecha").datepicker({
-        changeMonth: true,
-        changeYear: true
+    $('.datepicker').pickadate({
+        labelMonthNext: '>>',
+        labelMonthPrev: '<<',
+        labelMonthSelect: 'Seleccione un mes',
+        labelYearSelect: 'Seleccione un año',
+        monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+        monthsShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+        weekdaysFull: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
+        weekdaysShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+        weekdaysLetter: ['D', 'L', 'M', 'I', 'J', 'V', 'S'],
+        today: 'Hoy',
+        clear: 'Limpiar',
+        close: 'Cerrar',
+        selectYears: 15,
+        selectMonths: true,
+        format: 'yyyy-mm-dd'
     });
-    $.datepicker.regional['es'] = {
-        closeText : 'Cerrar',
-        prevText : '&#x3c;Ant',
-        nextText : 'Sig&#x3e;',
-        currentText : 'Hoy',
-        monthNames : [ 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
-            'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre',
-            'Diciembre' ],
-        monthNamesShort : [ 'Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul',
-            'Ago', 'Sep', 'Oct', 'Nov', 'Dic' ],
-        dayNames : [ 'Domingo', 'Lunes', 'Martes', 'Mi&eacute;rcoles',
-            'Jueves', 'Viernes', 'S&aacute;bado' ],
-        dayNamesShort : [ 'Dom', 'Lun', 'Mar', 'Mi&eacute;', 'Juv', 'Vie',
-            'S&aacute;b' ],
-        dayNamesMin : [ 'Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'S&aacute;' ],
-        weekHeader : 'Sm',
-        dateFormat : 'dd/mm/yy',
-        firstDay : 1,
-        isRTL : false,
-        showMonthAfterYear : false,
-        yearSuffix : ''
-    };
-    $.datepicker.setDefaults($.datepicker.regional['es']);
-    $("#fecha").datepicker("option", "dateFormat", "yy-mm-dd");
 });
 
 function registrar() {
@@ -45,7 +34,6 @@ function registrar() {
     var cadena = new FormData();
 
     cadena.append('imagen', imagen);
-
     cadena.append('titulo', $('#titulo').val());
     cadena.append('descrip', $('#descrip').val());
     cadena.append('resumen', $('#resumen').val());
@@ -61,7 +49,7 @@ function registrar() {
     $('#notificationModal').modal('show');
     //$("#carga_busqueda").dialog('open');
     $.ajax({
-        url : sUrlP + "registrarNoticia",
+        url : sUrlPanel + "registrarNoticia",
         type : 'POST',
         data : cadena,
         contentType : false,
@@ -81,7 +69,7 @@ function registrar() {
 
 function listarNoticia(){
     $.ajax({
-        url : sUrlP + "listarNoticia",
+        url : sUrlPanel + "listarNoticia",
         type : 'POST',
         contentType : false,
         processData : false,
