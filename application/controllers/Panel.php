@@ -254,9 +254,20 @@ class Panel extends CI_Controller {
 
         $valor = $this -> MImagen -> cargar($_FILES, BASEPATH . 'img/empresa/') -> salvar(119,81,2);
         $nombreImagen = $_FILES['imagen']['name'];
-        $arr = array("empresa"=>$_POST['empresa'],"imagen"=>$nombreImagen);
+        $arr = array("nombre"=>$_POST['empresa'],"imagen"=>$nombreImagen);
         if($valor)echo $this -> MPanel -> registrarEmpresa($arr);
         else echo "No se pudo guardar la imagen".$valor;
+    }
+
+    function listarEmpresa(){
+        $this -> load -> model('panel/Mpanel', 'MPanel');
+        echo $this -> MPanel -> listaEmpresa();
+    }
+
+    function eliminarEmpresa() {
+        $this -> load -> model('panel/Mpanel', 'MPanel');
+        $json = json_decode($_POST['datos'], true);
+        echo $this -> MPanel -> eliminarEmpresa($json);
     }
 
     /**

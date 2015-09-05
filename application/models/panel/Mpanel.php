@@ -372,7 +372,7 @@ join(Select * from portafolio
             $rsTip = $tipo->result ();
             foreach ( $rsTip as $fila ) {
                 $rImg = '<img src="' . __IMG__ . 'empresa/medio/' . $fila->imagen . '" width=200></img> ';
-                $cuep[] = array ($fila->id,$fila->empresa,$fila->imagen);
+                $cuep[] = array ($fila->id,$fila->nombre,$rImg);
             }
             $obj[] = array ("cabecera" => $cabe,"cuerpo" => $cuep);
         } else {
@@ -380,6 +380,30 @@ join(Select * from portafolio
         }
 
         return json_encode ( $obj );
+    }
+
+    function elimiarEmpresa(){
+        if ($this->db->query ( "DELETE FROM t_empresa WHERE id=" . $arr [0] )) {
+            $archivo = BASEPATH . 'img/empresa/' . $arr [1];
+            if (file_exists ( $archivo )) {
+                if (unlink ( $archivo ))
+                    $msj = "El archivo fue borrado";
+                else
+                    $msj = "El archivo no fue borrado";
+            } else
+                $msj = "El archivo no existe";
+            $archivo = BASEPATH . 'img/empresa/medio/' . $arr [1];
+            if (file_exists ( $archivo )) {
+                if (unlink ( $archivo ))
+                    $msj = "El archivo fue borrado";
+                else
+                    $msj = "El archivo no fue borrado";
+            } else
+                $msj = "El archivo no existe";
+        } else {
+            $msj = "No se elimino";
+        }
+        return $msj;
     }
 }
 ?>

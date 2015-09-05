@@ -7,7 +7,7 @@
  */
 
 $(function() {
-    listarEmpresa();
+    listarEmpresas();
 });
 
 function registrar() {
@@ -38,22 +38,22 @@ function registrar() {
             $("#modal_mensaje").html(msj);
             $("#msj_alertas").modal('show');
             //alert(msj);
-            listarNoticia();
+            listarEmpresas();
             limpiar();
         }
     });
 
 }
 
-function listarNoticia(){
-    var origen={'tipoOrigen': 'php', 'rutaObjeto': sUrlPanel+'listarNoticia','parametro':''};
+function listarEmpresas(){
+    var origen={'tipoOrigen': 'php', 'rutaObjeto': sUrlPanel+'listarEmpresa','parametro':''};
     $("#reporte").dtgrid(origen,[{
-            'titulo': 'Noticias',
+            'titulo': 'Publicidad a Empresas',
             'clase' : "",
             'oculto':[1],
             //'editable': {'c2': 'texto', 'c3': 'texto', 'c4': 'texto', 'c6': datosCombo},
             "accion": [{
-                "ejecuta": sUrlPanel+"eliminarNoticia",
+                "ejecuta": sUrlPanel+"eliminarEmpresa",
                 "tipo": "php",
                 "clase": "mdi-action-highlight-remove",
                 "parametro": [1],
@@ -67,10 +67,7 @@ function listarNoticia(){
 }
 
 function limpiar(){
-    $("#titulo").val('');
-    $("#descrip").val('');
-    $("#resumen").val('');
-    $("#fecha").val('');
-    $("#enlace").val('');
+    $("#empresa").val('');
+    $("#imagen").val('');
 
 }
