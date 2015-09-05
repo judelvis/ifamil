@@ -1,39 +1,3 @@
-<div class="main_btm1" id="noticias">
-    <div class="container">
-        <div class="title">
-            <hr class="team_hr team_hr_left hr_gray"/>
-            <center><h1>Noticias</h1></center>
-            <hr class="team_hr team_hr_left hr_gray"/>
-        </div>
-        <div class="main_grid">
-            <?php
-            if ($lst != 0) {
-                $i = 0;
-                foreach ($lst as $ls) {
-                    if ($i == 0) echo '<div class="row-fluid team">';
-                    $i++;
-                    echo '
-			<div class="col-md-3 span1_of_4" id="noticia_' . $ls->oid . '">
-				<div class="thumbnail" style="height:300px;">
-					<img src="' . __IMG__ . 'noticia/medio/' . $ls->imagen . '" alt="team 1">
-					<h3>' . $ls->titulo . '</h3>
-					<div class="mask">
-						<a href="' . site_url("principal2/verNoticia/$ls->oid") . '">
-						<h2><span >LEER</span></h2>
-						</a>
-					</div>
-				</div>
-			</div>
-			';
-                    if ($i == 4) {
-                        echo '</div>';
-                        break;
-                    }
-                }
-            }
-            ?></div>
-    </div>
-</div>
 <div class="main_bg"><!-- start main -->
     <div class="container">
         <div class="main_grid">
@@ -103,6 +67,42 @@
             </div>
             <!-- end span_of_4 -->
         </div>
+    </div>
+</div>
+<div class="main_btm1" id="noticias">
+    <div class="container">
+        <div class="title">
+            <hr class="team_hr team_hr_left hr_gray"/>
+            <center><h1>Noticias</h1></center>
+            <hr class="team_hr team_hr_left hr_gray"/>
+        </div>
+        <div class="main_grid">
+            <?php
+            if ($lst != 0) {
+                $i = 0;
+                foreach ($lst as $ls) {
+                    if ($i == 0) echo '<div class="row-fluid team">';
+                    $i++;
+                    echo '
+			<div class="col-md-3 span1_of_4" id="noticia_' . $ls->oid . '">
+				<div class="thumbnail" style="height:300px;">
+					<img src="' . __IMG__ . 'noticia/medio/' . $ls->imagen . '" alt="team 1">
+					<h3>' . $ls->titulo . '</h3>
+					<div class="mask">
+						<a href="' . site_url("principal2/verNoticia/$ls->oid") . '">
+						<h2><span >LEER</span></h2>
+						</a>
+					</div>
+				</div>
+			</div>
+			';
+                    if ($i == 4) {
+                        echo '</div>';
+                        break;
+                    }
+                }
+            }
+            ?></div>
     </div>
 </div>
 <div class="main_btm1" id="noticias">

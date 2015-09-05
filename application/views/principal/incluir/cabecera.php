@@ -104,10 +104,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <a id="touch-menu" class="mobile-menu" href="#">Menu</a>
                     <nav>
                         <ul class="menu list-unstyled">
-                            <li><a href="index.php">Inicio</a></li>
-                            <li><a href="about.php">Quienes Somos</a></li>
-                            <li><a href="service.html">Paquetes</a></li>
-                            <li><a href="portfolio.html">Afiliate</a>
+                            <li><a href="<?php echo base_url("index.php/Principal/index")?>">Inicio</a></li>
+                            <li><a href="<?php echo base_url("index.php/Principal/nosotros")?>">Quienes Somos</a></li>
+                            <li><a href="<?php echo base_url("index.php/Principal/paquetes")?>">Paquetes</a></li>
+                            <li><a href="<?php echo base_url("index.php/Principal/afiliate")?>">Afiliate</a>
                                 <!--<ul class="sub-menu list-unstyled">
                                     <li><a href="portfolio.html">Portfolio Page</a></li>
                                     <li><a href="portfolio.html">Portfolio Page</a></li>
@@ -120,8 +120,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     </li>
                                 </ul>
                                 </li>-->
-                            <li><a href="blog.html">Portafolio</a></li>
-                            <li><a href="contact.html">CONTACTO</a></li>
+                            <li><a href="<?php echo base_url("index.php/Principal/portafolio")?>">Portafolio</a></li>
+                            <li><a href="<?php echo base_url("index.php/Principal/contacto")?>">CONTACTO</a></li>
                             <li><a href="feature.html">Panel</a></li>
                         </ul>
                     </nav>
