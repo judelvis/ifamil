@@ -122,7 +122,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 </li>-->
                             <li><a href="blog.html">Portafolio</a></li>
                             <li><a href="contact.html">CONTACTO</a></li>
-                            <li><a href="feature.html">Eventos</a></li>
+                            <li><a href="feature.html">Panel</a></li>
                         </ul>
                     </nav>
                     <script src="<?php echo __MAQ__?>js/menu.js" type="text/javascript"></script>
