@@ -7,24 +7,7 @@
  */
 
 $(function() {
-    listarNoticia();
-    $('.datepicker').pickadate({
-        labelMonthNext: '>>',
-        labelMonthPrev: '<<',
-        labelMonthSelect: 'Seleccione un mes',
-        labelYearSelect: 'Seleccione un año',
-        monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-        monthsShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
-        weekdaysFull: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
-        weekdaysShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
-        weekdaysLetter: ['D', 'L', 'M', 'I', 'J', 'V', 'S'],
-        today: 'Hoy',
-        clear: 'Limpiar',
-        close: 'Cerrar',
-        selectYears: 15,
-        selectMonths: true,
-        format: 'yyyy-mm-dd'
-    });
+    listarEmpresa();
 });
 
 function registrar() {
@@ -34,22 +17,17 @@ function registrar() {
     var cadena = new FormData();
 
     cadena.append('imagen', imagen);
-    cadena.append('titulo', $('#titulo').val());
-    cadena.append('descrip', $('#descrip').val());
-    cadena.append('resumen', $('#resumen').val());
-    cadena.append('fecha', $('#fecha').val());
-    cadena.append('enlace', $('#enlace').val());
+    cadena.append('empresa', $('#empresa').val());
+    if($('#empresa').val() == ''){
 
-    if($('#titulo').val() == ''){
-
-        alert('Debe ingresar los datos');
+        alert('Debe ingresar empresa');
 
         return false;
     }
     $('#notificationModal').modal('show');
     //$("#carga_busqueda").dialog('open');
     $.ajax({
-        url : sUrlPanel + "registrarNoticia",
+        url : sUrlPanel + "registrarEmpresa",
         type : 'POST',
         data : cadena,
         contentType : false,

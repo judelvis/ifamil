@@ -164,20 +164,17 @@ join(Select * from portafolio
         return "La imagen se registro correctamente";
     }
     function consultarNoticia() {
-        $imagenes = $this->db->query ( 'SELECT * FROM noticias order by fecha DESC ');
+        $imagenes = $this->db->query ( 'SELECT * FROM t_noticias order by fecha DESC ');
         $obj = array ();
+        $cab = array ("id","Archivo","Titulo","Descripcion","Imagen");
         $cant = $imagenes->num_rows ();
         if ($cant > 0) {
-            $obj ['resp'] = 1;
             $rsImg = $imagenes->result ();
-            $i = 0;
             foreach ( $rsImg as $fila ) {
-                $i ++;
-                $rImg = '<img src="' . __IMG__ . 'noticia/' . $fila->imagen . '" width=200></img> ';
-                // $rImg = "epa";
-                $cuep [$i] = array ("1" => $fila->oid,"2" => $fila->imagen,"3" => $fila->titulo,"4" => $fila->descrip,"5" => "","6" => $rImg);
+                $rImg = '<img src="' . __IMG__ . 'noticia/medio/' . $fila->imagen . '" width=200></img> ';
+                $cuep[] = array ($fila->oid,$fila->imagen,$fila->titulo,$fila->descrip,$rImg);
             }
-            $obj = array ("Cabezera" => $this->cabNoticia (),"Cuerpo" => $cuep,"Paginador" => 10,"Origen" => "json","msj" => "SI");
+            $obj[] = array ("cabecera" => $cab,"cuerpo" => $cuep);
         } else {
             $obj = array ("msj" => "NO");
         }
@@ -185,7 +182,7 @@ join(Select * from portafolio
     }
 
     function listarNoticia(){
-        $query = 'Select * From noticias order by fecha DESC ';
+        $query = 'Select * From t_noticias order by fecha DESC ';
         $consulta = $this -> db -> query($query );
         $cant = $consulta -> num_rows();
         if($cant > 0){
@@ -197,7 +194,7 @@ join(Select * from portafolio
     }
 
     function verNoticia($id){
-        $query = 'Select * From noticias where oid='.$id.' order by fecha DESC ';
+        $query = 'Select * From t_noticias where oid='.$id.' order by fecha DESC ';
         $consulta = $this -> db -> query($query );
         $cant = $consulta -> num_rows();
         if($cant > 0){
@@ -209,8 +206,16 @@ join(Select * from portafolio
     }
 
     function eliminarNoticia($arr) {
-        if ($this->db->query ( "DELETE FROM noticias WHERE oid=" . $arr [0] )) {
+        if ($this->db->query ( "DELETE FROM t_noticias WHERE oid=" . $arr [0] )) {
             $archivo = BASEPATH . 'img/noticia/' . $arr [1];
+            if (file_exists ( $archivo )) {
+                if (unlink ( $archivo ))
+                    $msj = "El archivo fue borrado";
+                else
+                    $msj = "El archivo no fue borrado";
+            } else
+                $msj = "El archivo no existe";
+            $archivo = BASEPATH . 'img/noticia/medio/' . $arr [1];
             if (file_exists ( $archivo )) {
                 if (unlink ( $archivo ))
                     $msj = "El archivo fue borrado";
@@ -222,17 +227,6 @@ join(Select * from portafolio
             $msj = "No se elimino";
         }
         return $msj;
-    }
-    function cabNoticia() {
-        $cabe = array ();
-        $cabe [1] = array ("titulo" => "","oculto" => 1);
-        $cabe [2] = array ("titulo" => "Imagen","buscar" => 0);
-        $cabe [3] = array ("titulo" => "Titulo","buscar" => 0);
-        $cabe [4] = array ("titulo" => "Descripcion","buscar" => 0);
-        $cabe [5] = array ("titulo" => "#","tipo" => "bimagen","funcion" => 'eliminarNoticia',"parametro" => "1,2",	"ruta" => __IMG__ . "quitar.png",
-            "atributos" => "text-align:center;" );
-        $cabe [6] = array ("titulo" => "Ver","atributos" => "width:40%");
-        return $cabe;
     }
 	
 	/**
@@ -327,10 +321,6 @@ join(Select * from portafolio
 		}
 		return "No se elimino";
 	}
-	function cabSer() {
-
-
-	}
 	function listaSerie() {
         $cabe = array ('Id','Nombre','Resumen','Descripcion','Fecha','Estatus');
 		$query = 'SELECT *,if(estatus=0,"Activo","Inactivo")as est FROM t_portafolio order by fecha desc ;';
@@ -359,5 +349,37 @@ join(Select * from portafolio
 		}
 		return json_encode ( $lista );
 	}
+
+    /*
+     * funciones para empresa
+     */
+    function registrarEmpresa($arr){
+        $ban = $this->db->insert ( 't_empresa', $arr );
+
+        if ($ban) {
+            return "Se regristro con exito";
+        }
+        return "No se pudo registrar";
+    }
+
+    function listaEmpresa() {
+        $cabe = array ('Id','Empresa','Imagen');
+        $query = 'SELECT * FROM t_empresa;';
+        $tipo = $this->db->query ( $query );
+        $obj = array ();
+        $cant = $tipo->num_rows ();
+        if ($cant > 0) {
+            $rsTip = $tipo->result ();
+            foreach ( $rsTip as $fila ) {
+                $rImg = '<img src="' . __IMG__ . 'empresa/medio/' . $fila->imagen . '" width=200></img> ';
+                $cuep[] = array ($fila->id,$fila->empresa,$fila->imagen);
+            }
+            $obj[] = array ("cabecera" => $cabe,"cuerpo" => $cuep);
+        } else {
+            $obj = array ("msj" => 0);
+        }
+
+        return json_encode ( $obj );
+    }
 }
 ?>

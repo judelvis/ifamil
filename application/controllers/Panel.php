@@ -102,7 +102,7 @@ class Panel extends CI_Controller {
 
     function eliminarNoticia(){
         $this -> load -> model('panel/Mpanel', 'MPanel');
-        $json = json_decode($_POST['objeto'], true);
+        $json = json_decode($_POST['datos'], true);
         echo $this -> MPanel -> eliminarNoticia($json);
     }
 
@@ -230,6 +230,33 @@ class Panel extends CI_Controller {
         if(mail("jeancarlosrivas@gmail.com,jud.prog@gmail.com", "EMPRESA:INFORMACION", $cuerpo, $cabeceras))
             echo "SE ENVIO CORREO";
         else echo "ERROR";
+    }
+    /*
+     * Funciones para empresa
+     */
+    function empresa(){
+        if (!isset($_SESSION['usuario_ifamil'])) {
+            session_destroy();
+            redirect(base_url() . 'index.php/Panel');
+        }
+        $this -> load -> model('panel/Mpanel', 'MPanel');
+        $data['js'] = 'empresa';
+        $data['titulo'] = 'Empresas';
+        $data['formulario'] = 'empresa';
+        $this->load->view('panel/incluir/cabecera',$data);
+        $this->load->view('panel/incluir/menu');
+        $this->load->view('panel/principal',$data);
+    }
+
+    function registrarEmpresa(){
+        $this -> load -> model('utilidades/mimagen', 'MImagen');
+        $this -> load -> model('panel/mpanel', 'MPanel');
+
+        $valor = $this -> MImagen -> cargar($_FILES, BASEPATH . 'img/empresa/') -> salvar(119,81,2);
+        $nombreImagen = $_FILES['imagen']['name'];
+        $arr = array("empresa"=>$_POST['empresa'],"imagen"=>$nombreImagen);
+        if($valor)echo $this -> MPanel -> registrarEmpresa($arr);
+        else echo "No se pudo guardar la imagen".$valor;
     }
 
     /**
