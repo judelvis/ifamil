@@ -8,6 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
     <title>IFAMIL</title>
+    <link rel="shortcut icon" type="image/x-icon" style="width: 100%; height: 100%" href="<?php echo __IMG__?>images/favicon.ico">
     <!-- Bootstrap -->
     <link href="<?php echo __MAQ__ ?>css/bootstrap.min.css" rel='stylesheet' type='text/css'/>
     <link href="<?php echo __MAQ__ ?>css/bootstrap.css" rel='stylesheet' type='text/css'/>
@@ -122,7 +123,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 </li>-->
                             <li><a href="<?php echo base_url("index.php/Principal/portafolio")?>">Portafolio</a></li>
                             <li><a href="<?php echo base_url("index.php/Principal/contacto")?>">CONTACTO</a></li>
-                            <li><a href="feature.html">Panel</a></li>
                         </ul>
                     </nav>
                     <script src="<?php echo __MAQ__?>js/menu.js" type="text/javascript"></script>
