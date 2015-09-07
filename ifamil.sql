@@ -3,7 +3,7 @@
 -- Server version:               5.5.37-0ubuntu0.13.10.1 - (Ubuntu)
 -- Server OS:                    debian-linux-gnu
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-09-05 14:30:12
+-- Date/time:                    2015-09-07 07:46:06
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -65,10 +65,12 @@ CREATE TABLE IF NOT EXISTS `t_empresa` (
   `nombre` text COLLATE latin1_spanish_ci NOT NULL,
   `imagen` text COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
--- Dumping data for table ifamil.t_empresa: ~0 rows (approximately)
+-- Dumping data for table ifamil.t_empresa: ~1 rows (approximately)
 /*!40000 ALTER TABLE `t_empresa` DISABLE KEYS */;
+INSERT INTO `t_empresa` (`id`, `nombre`, `imagen`) VALUES
+	(1, 'Addidas', 'c1.png');
 /*!40000 ALTER TABLE `t_empresa` ENABLE KEYS */;
 
 
