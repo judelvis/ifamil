@@ -143,9 +143,16 @@
 <!-- end banner -->
 <div class="main_bg">
     <div class="container">
+        <div class="title">
+            <hr class="team_hr team_hr_left hr_gray"/>
+            <center><h1>Encuentranos</h1></center>
+            <hr class="team_hr team_hr_left hr_gray"/>
+        </div>
+        <center>
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1961.6755529000425!2d-66.89525299865238!3d10.472963174847518!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sve!4v1441404862591"
-            width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            width="80%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </center>
     </div>
     </div>
 

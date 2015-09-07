@@ -1,8 +1,9 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="es">
 <head>
     <title>IFAMIL</title>
     <link rel="shortcut icon" type="image/x-icon" style="width: 100%; height: 100%" href="<?php echo __IMG__?>images/favicon.ico">
+    <meta charset="UTF-8" />
     <!-- Bootstrap -->
     <link href="<?php echo __MAQ__ ?>css/bootstrap.css" rel='stylesheet' type='text/css'/>
     <meta name="viewport" content="width=device-width, initial-scale=1">

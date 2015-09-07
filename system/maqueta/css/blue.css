@@ -564,7 +564,7 @@ nav {
     width: 75%;
     position: absolute;
     top: 14px;
-    left: 16%;
+    left: 18%;
 }
 
 /*-- start footer --*/
@@ -1713,7 +1713,7 @@ h3.style {
 
     .line {
         width: 70%;
-        left: 20%;
+        left: 22%;
     }
 }
 
@@ -1765,8 +1765,7 @@ h3.style {
     }
 
     .line {
-        width: 60%;
-        left: 25%;
+        display: none;
     }
 
     .owl-prev {
@@ -1860,8 +1859,7 @@ h3.style {
     }
 
     .line {
-        width: 38%;
-        left: 40%;
+        display: none;
     }
 
     .btn {
