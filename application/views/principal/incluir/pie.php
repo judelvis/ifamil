@@ -9,7 +9,7 @@
     <div class="container">
         <div class="footer1">
             <div class="copy pull-left">
-                <p class="link"><span>&#169; All rights reserved | MamonSoft C.A.<a href="http://mamonsoft.com.ve/">
+                <p class="link"><span><a href="<?php echo site_url('Panel');?>">&#169; All rights reserved</a> | <a href="http://mamonsoft.com.ve/">MamonSoft C.A.
                         </a></span></p>
             </div>
             <div class="soc_icons pull-right">

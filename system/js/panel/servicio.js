@@ -89,7 +89,7 @@ function listarSerie(){//alert(sUrlP);
             "accion": [{
                 "ejecuta": sUrlPanel+"modificarSerie",
                 "tipo": "php",
-                "clase": "mdi-action-check-circle",
+                "clase": "mdi-content-save",
                 "parametro": [],
                 "texto":"Guardar",
                 //"ocultar":true

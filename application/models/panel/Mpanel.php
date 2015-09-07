@@ -382,6 +382,18 @@ join(Select * from portafolio
         return json_encode ( $obj );
     }
 
+    function listarEmpresa(){
+        $query = 'Select * From t_empresa';
+        $consulta = $this -> db -> query($query );
+        $cant = $consulta -> num_rows();
+        if($cant > 0){
+            $porta = $consulta -> result();
+        }else{
+            $porta = 0;
+        }
+        return $porta;
+    }
+
     function elimiarEmpresa(){
         if ($this->db->query ( "DELETE FROM t_empresa WHERE id=" . $arr [0] )) {
             $archivo = BASEPATH . 'img/empresa/' . $arr [1];

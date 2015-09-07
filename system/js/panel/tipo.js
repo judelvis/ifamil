@@ -50,7 +50,7 @@ function listarTipo(){
             "accion": [{
                 "ejecuta": sUrlPanel+"modTipo",
                 "tipo": "php",
-                "clase": "mdi-action-check-circle",
+                "clase": "mdi-content-save",
                 "parametro": [],
                 //"ocultar":true
             }],
