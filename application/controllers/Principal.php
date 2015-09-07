@@ -42,12 +42,14 @@ class Principal extends CI_Controller
     public function afiliate()
     {
         $this->load->view('principal/incluir/cabecera');
+        $this->load->view('principal/afiliate');
         $this->load->view('principal/incluir/pie');
     }
 
     public function contacto()
     {
         $this->load->view('principal/incluir/cabecera');
+        $this->load->view('principal/contacto');
         $this->load->view('principal/incluir/pie');
     }
 }

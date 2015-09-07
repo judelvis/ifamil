@@ -29,8 +29,24 @@ class Principal extends CI_Controller {
 	function index() {
 		echo "Hola Mundo";
 	}
-	
 
+	function registrarAfiliado(){
+		if(isset($_POST["cedula"])) {
+			$this->load->model("reserva/Afiliado", "Afiliado");
+			$this->Afiliado->cedula = $_POST["cedula"];
+			$this->Afiliado->nombre = $_POST["nombre"];
+			$this->Afiliado->telefono = $_POST["telefono"];
+			$this->Afiliado->correo = $_POST["correo"];
+			$this->Afiliado->fechaNacimiento = $_POST["fechaNacimiento"];
+			$this->Afiliado->faceBook = $_POST["faceBook"];
+			$this->Afiliado->profesion = $_POST["profesion"];
+			$this->Afiliado->salvar();
+			echo "Su proceso ha sido exitoso.";
+		}
+		else{
+			echo "Esta intentando acceder a una area restringida.";
+		}
+	}
 	
 	function logout() {
 		session_destroy();

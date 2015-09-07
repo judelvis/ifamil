@@ -1,16 +1,9 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE HTML>
 <html>
 <head>
     <title>IFAMIL</title>
     <link rel="shortcut icon" type="image/x-icon" style="width: 100%; height: 100%" href="<?php echo __IMG__?>images/favicon.ico">
     <!-- Bootstrap -->
-    <link href="<?php echo __MAQ__ ?>css/bootstrap.min.css" rel='stylesheet' type='text/css'/>
     <link href="<?php echo __MAQ__ ?>css/bootstrap.css" rel='stylesheet' type='text/css'/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="application/x-javascript"> addEventListener("load", function () {
@@ -25,7 +18,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!----font-Awesome----->
     <!-- start plugins -->
     <script type="text/javascript" src="<?php echo __MAQ__ ?>js/jquery.min.js"></script>
-    <script type="text/javascript" src="<?php echo __MAQ__ ?>js/bootstrap.js"></script>
     <script type="text/javascript" src="<?php echo __MAQ__ ?>js/bootstrap.min.js"></script>
     <!--start slider -->
     <link rel="stylesheet" href="<?php echo __MAQ__ ?>css/fwslider.css" media="all">
@@ -61,6 +53,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 playMovieMarginTop: 0,
                 bottomNavMarginBottom: -10
             });
+            var offset = 220;
+            var duration = 500;
+            jQuery(window).scroll(function() {
+                if (jQuery(this).scrollTop() > offset) {
+                    jQuery('.back-to-top').fadeIn(duration);
+                } else {
+                    jQuery('.back-to-top').fadeOut(duration);
+                }
+            });
+
+            jQuery('.back-to-top').click(function(event) {
+                event.preventDefault();
+                jQuery('html, body').animate({scrollTop: 0}, duration);
+                return false;
+            })
+
         });
     </script>
     <!-- Owl Carousel Assets -->
@@ -87,6 +95,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- start circle -->
 </head>
 <body>
+<a href="#" class="back-to-top">Volver arriba</a>
 <div class="row">
     <div class="col-xs-6 col-sm-3">
         <img style="width: 100%" src="<?php echo __IMG__ ?>images/logo1.jpg">

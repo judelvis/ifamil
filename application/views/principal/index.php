@@ -3,7 +3,9 @@
         <div class="main_grid">
             <div class="title">
                 <hr class="team_hr team_hr_left hr_gray"/>
-                <center><span class="line"></span><h1>Servicios</h1></center>
+                <center><span class="line"></span>
+
+                    <h1>Servicios</h1></center>
                 <hr class="team_hr team_hr_left hr_gray"/>
             </div>
             <div class="span_of_4"><!-- start span_of_4 -->
@@ -13,25 +15,10 @@
 
                         <h3>Paquetes</h3>
 
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s</p>
+                        <p>Realiza tu solicitud de paquetes ahora.</p>
 
                         <div class="read_more">
-                            <a class="btn btn-2 active" href="single-page.html">view more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 span1_of_4">
-                    <div class="span4_of_list">
-                        <span class="active"><i class="fa fa-group"></i></span>
-
-                        <h3>Asesoria</h3>
-
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s</p>
-
-                        <div class="read_more">
-                            <a class="btn  btn-2b" href="single-page.html">view more</a>
+                            <a class="btn btn-2 active" href="single-page.html">Ver mas</a>
                         </div>
                     </div>
                 </div>
@@ -41,11 +28,23 @@
 
                         <h3>Reservación</h3>
 
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s</p>
+                        <p>Reserva tu vuelo ya con nosotros.</p>
 
                         <div class="read_more">
-                            <a class="btn btn-2b" href="single-page.html">view more</a>
+                            <a class="btn btn-2b" href="single-page.html">Ver mas</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 span1_of_4">
+                    <div class="span4_of_list">
+                        <span class="active"><i class="fa fa-group"></i></span>
+
+                        <h3>Dejanos tu opinion</h3>
+
+                        <p>Dejanos tu opinion.</p>
+
+                        <div class="read_more">
+                            <a class="btn  btn-2b" href="single-page.html">Ver mas</a>
                         </div>
                     </div>
                 </div>
@@ -55,11 +54,10 @@
 
                         <h3>Otros Servicios</h3>
 
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s</p>
+                        <p>Observa nuestros otros servicios.</p>
 
                         <div class="read_more">
-                            <a class="btn btn-2b" href="single-page.html">view more</a>
+                            <a class="btn btn-2b" href="single-page.html">Ver mas</a>
                         </div>
                     </div>
                 </div>
@@ -105,7 +103,7 @@
             ?></div>
     </div>
 </div>
-<div class="main_btm1" id="noticias">
+<div class="main1_bg" id="noticias">>
     <div class="container">
         <div class="title">
             <hr class="team_hr team_hr_left hr_gray"/>
@@ -113,23 +111,43 @@
             <hr class="team_hr team_hr_left hr_gray"/>
         </div>
         <div class="main_grid">
-            <center><a class="twitter-timeline" href="https://twitter.com/ifamil_ca/favorites" data-widget-id="639939652024147968">Tweets favoritos de @ifamil_ca</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            <center>
+                <a class="twitter-timeline" href="https://twitter.com/ifamil_ca" data-widget-id="640861362185502720">Tweets
+                    por el @ifamil_ca.</a>
+                <script>!function (d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                        if (!d.getElementById(id)) {
+                            js = d.createElement(s);
+                            js.id = id;
+                            js.src = p + "://platform.twitter.com/widgets.js";
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }
+                    }(document, "script", "twitter-wjs");</script>
             </center>
         </div>
     </div>
 </div>
-<div class="main1_bg"><!-- start main1 -->
-    <div class="title">
-        <hr class="team_hr team_hr_left hr_gray"/>
-        <center><h1>Instagram</h1></center>
-        <hr class="team_hr team_hr_left hr_gray"/>
-    </div>
-    <center><iframe src="http://widget.websta.me/in/ifamil_c.a/?s=180&w=4&h=2&b=1&p=5" allowtransparency="true" frameborder="0" scrolling="no" style="border:none;overflow:hidden;width:780px; height: 350px" ></iframe> <!-- websta - web.stagram.com -->
-    </center>
+
+<!-- start main1 -->
+<div class="title">
+    <hr class="team_hr team_hr_left hr_gray"/>
+    <center><h1>Instagram</h1></center>
+    <hr class="team_hr team_hr_left hr_gray"/>
 </div>
-    <!-- end banner -->
-</div><iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1961.6755529000425!2d-66.89525299865238!3d10.472963174847518!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sve!4v1441404862591" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+
+<center>
+<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="4" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:500px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div> <p style=" margin:8px 0 0 0; padding:0 4px;"> <a href="https://instagram.com/p/6k76YdOOSM/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_top">#Ifamil #HazloDiferenteHazloConNosotros</a></p> <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">Una foto publicada por Viajes y Turismo IFAMIL (@ifamil_c.a) el <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2015-08-19T19:44:04+00:00">19 de Ago de 2015 a la(s) 12:44 PDT</time></p></div></blockquote>
+<script async defer src="//platform.instagram.com/en_US/embeds.js"></script></center>
+
+<!-- end banner -->
+<div class="main_bg">
+    <div class="container">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1961.6755529000425!2d-66.89525299865238!3d10.472963174847518!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sve!4v1441404862591"
+            width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+    </div>
 
 <div class="main_btm"><!-- start main_btm -->
     <div class="container">
@@ -149,7 +167,7 @@
                             echo '
                                 <div class="item">
                                     <div class="cau_left">
-                                        <img class="lazyOwl" data-src="'.__IMG__.'empresa/'.$em->imagen.'" alt="'.$em->nombre.'">
+                                        <img class="lazyOwl" data-src="' . __IMG__ . 'empresa/' . $em->imagen . '" alt="' . $em->nombre . '">
                                     </div>
                                 </div>
 			                ';
