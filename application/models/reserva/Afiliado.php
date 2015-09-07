@@ -17,14 +17,14 @@ class Afiliado extends CI_Model {
 	 * 
 	 */
 	private $tbl = 't_afiliados';
-	private $identificador = NULL;
-	private $cedula;
-	private $nombre;
-	private $fechaNacimiento;
-	private $telefono;
-	private $correo;
-	private $faceBook;
-	private $profesion;
+	public $identificador = NULL;
+	public $cedula;
+	public $nombre;
+	public $fechaNacimiento;
+	public $telefono;
+	public $correo;
+	public $faceBook;
+	public $profesion;
 
 	/**
 	 * Carga inicial del modelo por reflexion
