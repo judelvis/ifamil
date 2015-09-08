@@ -48,7 +48,7 @@ function registrar() {
     }
     $('#notificationModal').modal('show');
     //$("#carga_busqueda").dialog('open');
-    alert(sUrlPanel + "registrarNoticia");
+    //alert(sUrlPanel + "registrarNoticia");
     $.ajax({
         url : sUrlPanel + "registrarNoticia",
         type : 'POST',
@@ -56,7 +56,7 @@ function registrar() {
         contentType : false,
         processData : false,
         cache : false,
-        success : function(msj) {alert(msj);
+        success : function(msj) {//alert(msj);
             $('#notificationModal').modal('hide');
             $("#modal_mensaje").html(msj);
             $("#msj_alertas").modal('show');
