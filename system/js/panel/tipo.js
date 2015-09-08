@@ -41,6 +41,7 @@ function Registrar() {
 }
 
 function listarTipo(){
+    $("#reporte").html('');
     var origen={'tipoOrigen': 'php', 'rutaObjeto': sUrlPanel+'listarTipo','parametro':''};
     $("#reporte").dtgrid(origen,[{
             'titulo': 'Categorias',

@@ -166,19 +166,25 @@ join(Select * from portafolio
     function consultarNoticia() {
         $imagenes = $this->db->query ( 'SELECT * FROM t_noticias order by fecha DESC ');
         $obj = array ();
-        $cab = array ("id","Archivo","Titulo","Descripcion","Imagen");
+        $cab = array ("id","Archivo","Titulo","Descripcion","Resumen","Imagen");
         $cant = $imagenes->num_rows ();
         if ($cant > 0) {
             $rsImg = $imagenes->result ();
             foreach ( $rsImg as $fila ) {
                 $rImg = '<img src="' . __IMG__ . 'noticia/medio/' . $fila->imagen . '" width=200></img> ';
-                $cuep[] = array ($fila->oid,$fila->imagen,$fila->titulo,$fila->descrip,$rImg);
+                $cuep[] = array ($fila->oid,$fila->imagen,$fila->titulo,$fila->descrip,$fila ->resumen,$rImg);
             }
             $obj[] = array ("cabecera" => $cab,"cuerpo" => $cuep);
         } else {
             $obj = array ("msj" => "NO");
         }
         return json_encode ( $obj );
+    }
+
+    function modificarNoticia($arr){
+        $resp = $this -> db -> query('Update t_noticias set titulo="'.$arr[1].'",descrip="'.$arr[2].'",resumen="'.$arr[3].'" where oid='.$arr[0]);
+        if($resp) return "<h3>Se Actualizo con exito</h3>";
+        return "<h3>No se pudo modificar</h3>";
     }
 
     function listarNoticia(){
@@ -363,7 +369,7 @@ join(Select * from portafolio
     }
 
     function listaEmpresa() {
-        $cabe = array ('Id','Empresa','Imagen');
+        $cabe = array ('Id','Empresa','Imagen','nombre');
         $query = 'SELECT * FROM t_empresa;';
         $tipo = $this->db->query ( $query );
         $obj = array ();
@@ -371,8 +377,8 @@ join(Select * from portafolio
         if ($cant > 0) {
             $rsTip = $tipo->result ();
             foreach ( $rsTip as $fila ) {
-                $rImg = '<img src="' . __IMG__ . 'empresa/medio/' . $fila->imagen . '" width=200></img> ';
-                $cuep[] = array ($fila->id,$fila->nombre,$rImg);
+                $rImg = '<img src="' . __IMG__ . 'empresa/' . $fila->imagen . '" width=100></img> ';
+                $cuep[] = array ($fila->id,$fila->nombre,$rImg,$fila -> imagen);
             }
             $obj[] = array ("cabecera" => $cabe,"cuerpo" => $cuep);
         } else {
@@ -394,7 +400,7 @@ join(Select * from portafolio
         return $porta;
     }
 
-    function elimiarEmpresa(){
+    function eliminarEmpresa($arr){
         if ($this->db->query ( "DELETE FROM t_empresa WHERE id=" . $arr [0] )) {
             $archivo = BASEPATH . 'img/empresa/' . $arr [1];
             if (file_exists ( $archivo )) {

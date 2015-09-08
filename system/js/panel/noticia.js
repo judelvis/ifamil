@@ -70,19 +70,25 @@ function registrar() {
 
 function listarNoticia(){
     var origen={'tipoOrigen': 'php', 'rutaObjeto': sUrlPanel+'listarNoticia','parametro':''};
+    $("#reporte").html('');
     $("#reporte").dtgrid(origen,[{
             'titulo': 'Noticias',
             'clase' : "",
-            'oculto':[1],
-            //'editable': {'c2': 'texto', 'c3': 'texto', 'c4': 'texto', 'c6': datosCombo},
+            'oculto':[1,2],
+            'editable': {'c3': 'texto', 'c4': 'texto','c5':'texto'},
             "accion": [{
                 "ejecuta": sUrlPanel+"eliminarNoticia",
                 "tipo": "php",
                 "clase": "mdi-action-highlight-remove",
-                "parametro": [1],
+                "parametro": [1,2],
                 "texto":"Eliminar"
                 //"ocultar":true
-            }],
+            },{
+                "ejecuta": sUrlPanel+"modificarNoticia",
+                "tipo": "php",
+                "clase": "mdi-content-save",
+                "texto":"Guardar",
+                "parametro": [1,3,4,5]}],
             "boton":
                 [{"parametro":[],"titulo":"enviar","ejecuta":sUrlPanel+"Exporta_Exel","tipo":"php","clase":"mdi-action-done"}]
         }]

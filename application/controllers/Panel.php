@@ -100,6 +100,13 @@ class Panel extends CI_Controller {
         echo $this -> MPanel -> consultarNoticia();
     }
 
+    function modificarNoticia(){
+        $datos = json_decode($_POST['datos']);
+        $this -> load -> model('panel/Mpanel', 'MPanel');
+        echo $this -> MPanel -> modificarNoticia($datos);
+        //print_r($datos);
+    }
+
     function eliminarNoticia(){
         $this -> load -> model('panel/Mpanel', 'MPanel');
         $json = json_decode($_POST['datos'], true);
@@ -267,6 +274,7 @@ class Panel extends CI_Controller {
     function eliminarEmpresa() {
         $this -> load -> model('panel/Mpanel', 'MPanel');
         $json = json_decode($_POST['datos'], true);
+        //print_R($json);
         echo $this -> MPanel -> eliminarEmpresa($json);
     }
 

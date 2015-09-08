@@ -47,6 +47,7 @@ function registrar() {
 
 function listarEmpresas(){
     var origen={'tipoOrigen': 'php', 'rutaObjeto': sUrlPanel+'listarEmpresa','parametro':''};
+    $("#reporte").html('');
     $("#reporte").dtgrid(origen,[{
             'titulo': 'Publicidad a Empresas',
             'clase' : "",
@@ -56,12 +57,11 @@ function listarEmpresas(){
                 "ejecuta": sUrlPanel+"eliminarEmpresa",
                 "tipo": "php",
                 "clase": "mdi-action-highlight-remove",
-                "parametro": [1],
-                "texto":"Eliminar"
-                //"ocultar":true
+                "parametro": [1,4],
+                //"texto":"Eliminar"
+                "ocultar":true
             }],
-            "boton":
-                [{"parametro":[],"titulo":"enviar","ejecuta":sUrlPanel+"Exporta_Exel","tipo":"php","clase":"mdi-action-done"}]
+            //"boton":[{"parametro":[],"titulo":"enviar","ejecuta":sUrlPanel+"Exporta_Exel","tipo":"php","clase":"mdi-action-done"}]
         }]
     );
 }
