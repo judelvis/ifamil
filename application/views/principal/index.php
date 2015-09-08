@@ -112,7 +112,8 @@
         </div>
         <div class="main_grid">
             <center>
-                <a class="twitter-timeline" href="https://twitter.com/ifamil_ca" data-widget-id="640861362185502720">Tweets
+                <a class="twitter-timeline" href="https://twitter.com/ifamil_ca"
+                   data-widget-id="640861362185502720" data-tweet-limit="1" data-chrome="noheader noborder transparent">Tweets
                     por el @ifamil_ca.</a>
                 <script>!function (d, s, id) {
                         var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
