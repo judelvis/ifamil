@@ -24,6 +24,7 @@ class Principal extends CI_Controller
     public function nosotros()
     {
         $this->load->view('principal/incluir/cabecera');
+        $this->load->view('principal/nosotros');
         $this->load->view('principal/incluir/pie');
     }
 
