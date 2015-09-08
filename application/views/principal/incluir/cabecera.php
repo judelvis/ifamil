@@ -16,6 +16,7 @@
     <link href="<?php echo __MAQ__ ?>css/blue.css" rel="stylesheet" type="text/css" media="all"/>
     <!----font-Awesome----->
     <link rel="stylesheet" href="<?php echo __MAQ__ ?>fonts/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo __MAQ__ ?>jquery/jquery-ui.css">
     <!----font-Awesome----->
     <!-- start plugins -->
     <script type="text/javascript" src="<?php echo __MAQ__ ?>js/jquery.min.js"></script>

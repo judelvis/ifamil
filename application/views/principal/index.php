@@ -18,7 +18,7 @@
                         <p>Realiza tu solicitud de paquetes ahora.</p>
 
                         <div class="read_more">
-                            <a class="btn btn-2 active" href="single-page.html">Ver mas</a>
+                            <a class="btn btn-2 active" href="<?php echo base_url("index.php/Principal/paquetes")?>">Ver mas</a>
                         </div>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                         <p>Reserva tu vuelo ya con nosotros.</p>
 
                         <div class="read_more">
-                            <a class="btn btn-2b" href="single-page.html">Ver mas</a>
+                            <a class="btn btn-2b" href="<?php echo base_url("index.php/Principal/reservacion")?>">Ver mas</a>
                         </div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                         <p>Dejanos tu opinion.</p>
 
                         <div class="read_more">
-                            <a class="btn  btn-2b" href="single-page.html">Ver mas</a>
+                            <a class="btn  btn-2b" href="<?php echo base_url("index.php/Principal/opinion")?>">Ver mas</a>
                         </div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                         <p>Observa nuestros otros servicios.</p>
 
                         <div class="read_more">
-                            <a class="btn btn-2b" href="single-page.html">Ver mas</a>
+                            <a class="btn btn-2b" href="<?php echo base_url("index.php/Principal/oservicios")?>">Ver mas</a>
                         </div>
                     </div>
                 </div>
