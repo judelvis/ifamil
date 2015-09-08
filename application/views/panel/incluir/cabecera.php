@@ -39,7 +39,7 @@
 
 
     <script type="text/javascript" src="<?php echo __JSVIEW__ ?>general/Global.js"></script>
-
+    <link rel="stylesheet" href="<?php echo __DTGRID__ ?>css/dataTable.css">
     <link type="text/css" rel="stylesheet" href="<?php echo __DTGRID__ ?>md/css/materialize.min.css" media="screen,projection"/>
     <script type="text/javascript" src="<?php echo __DTGRID__ ?>js/dtgrid.js"></script>
     <script type="text/javascript" src="<?php echo __DTGRID__ ?>js/editar.js"></script>
@@ -55,7 +55,7 @@
 			<div class="modal" id="msj_alertas" tabindex="-1" role="dialog"
 				aria-labelledby="myModalLabel" aria-hidden="true">
 				<div class="modal-dialog">
-					<div class="modal-content">
+					<div class="">
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal"
 								aria-hidden="true">&times;</button>

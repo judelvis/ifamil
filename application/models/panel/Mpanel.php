@@ -78,7 +78,7 @@ join(Select * from portafolio
 	 */
 	function registrarGaleria($arr) {
 		$this->db->insert ( "t_galeria", $arr );
-		return "La imagen se registro correctamente";
+		return "<h4>La imagen se registro correctamente</h4>";
 	}
 	function consultarGaleria($cod) {
 		$imagenes = $this->db->query ( 'SELECT * FROM t_galeria WHERE oidpor=' . $cod );
@@ -136,21 +136,21 @@ join(Select * from portafolio
 			$archivo = BASEPATH . 'img/galeria/' . $arr [1];
 			if (file_exists ( $archivo )) {
 				if (unlink ( $archivo ))
-					$msj = "El archivo fue borrado";
+					$msj = "<h4>El archivo fue borrado</h4>";
 				else
-					$msj = "El archivo no fue borrado";
+					$msj = "<h4>El archivo no fue borrado</h4>";
 			} else
-				$msj = "El archivo no existe";
+				$msj = "<h4>El archivo no existe</h4>";
             $archivo = BASEPATH . 'img/galeria/medio/' . $arr [1];
             if (file_exists ( $archivo )) {
                 if (unlink ( $archivo ))
-                    $msj = "El archivo fue borrado";
+                    $msj = "<h4>El archivo fue borrado</h4>";
                 else
-                    $msj = "El archivo no fue borrado";
+                    $msj = "<h4>El archivo no fue borrado</h4>";
             } else
-                $msj = "El archivo no existe";
+                $msj = "<h4>El archivo no existe</h4>";
 		} else {
-			$msj = "No se elimino";
+			$msj = "<h4>No se elimino</h4>";
 		}
 		return $msj;
 	}
@@ -183,8 +183,8 @@ join(Select * from portafolio
 
     function modificarNoticia($arr){
         $resp = $this -> db -> query('Update t_noticias set titulo="'.$arr[1].'",descrip="'.$arr[2].'",resumen="'.$arr[3].'" where oid='.$arr[0]);
-        if($resp) return "<h3>Se Actualizo con exito</h3>";
-        return "<h3>No se pudo modificar</h3>";
+        if($resp) return "<h4>Se Actualizo con exito</h4>";
+        return "<h4>No se pudo modificar</h4>";
     }
 
     function listarNoticia(){
@@ -216,21 +216,21 @@ join(Select * from portafolio
             $archivo = BASEPATH . 'img/noticia/' . $arr [1];
             if (file_exists ( $archivo )) {
                 if (unlink ( $archivo ))
-                    $msj = "El archivo fue borrado";
+                    $msj = "<h4>El archivo fue borrado</h4>";
                 else
-                    $msj = "El archivo no fue borrado";
+                    $msj = "<h4>El archivo no fue borrado</h4>";
             } else
-                $msj = "El archivo no existe";
+                $msj = "<h4>El archivo no existe</h4>";
             $archivo = BASEPATH . 'img/noticia/medio/' . $arr [1];
             if (file_exists ( $archivo )) {
                 if (unlink ( $archivo ))
-                    $msj = "El archivo fue borrado";
+                    $msj = "<h4>El archivo fue borrado</h4>";
                 else
-                    $msj = "El archivo no fue borrado";
+                    $msj = "<h4>El archivo no fue borrado</h4>";
             } else
-                $msj = "El archivo no existe";
+                $msj = "<h4>El archivo no existe</h4>";
         } else {
-            $msj = "No se elimino";
+            $msj = "<h4>No se elimino</h4>";
         }
         return $msj;
     }
@@ -241,9 +241,9 @@ join(Select * from portafolio
 	function registrarTipo($arr = null) {
 		$ban = $this->db->insert ( 't_categoria', $arr );
 		if ($ban) {
-			return "Se Registro con Exito";
+			return "<h4>Se Registro con Exito</h4>";
 		}
-		return "No se pudo registrar";
+		return "<h4>No se pudo registrar</h4>";
 	}
 
 	function listaTipo() {
@@ -288,8 +288,8 @@ join(Select * from portafolio
 
     function modTipo($datos){
         $res = $this ->db ->query('update t_categoria set categoria="'.$datos[1].'",descrip="'.$datos[2].'" where oid='.$datos[0]);
-        if($res) return "Se Modifico Con Exito";
-        else return "No Se Pudo Modificar. Verifique los datos";
+        if($res) return "<h4>Se Modifico Con Exito</h4>";
+        else return "<h4>No Se Pudo Modificar. Verifique los datos</h4>";
     }
 	
 	/**
@@ -301,17 +301,18 @@ join(Select * from portafolio
 		if ($ban) {
 			return $this->db->insert_id ();
 		}
-		return "No se pudo registrar";
+		return "<h4>No se pudo registrar</h4>";
 	}
 	function modificarSerie($arr) {
-        $query = 'Update t_portafolio set titulo="'.$arr[1].'",descrip="'.$arr[2].'",
-		resumen="'.$arr[3].'",estatus='.$arr[5].' where id='.$arr[0];
+        $query = 'Update t_portafolio set titulo="'.$arr[1].'",resumen="'.$arr[2].'",descrip="'.$arr[3].'"';
+        if($arr[5] != 'Activo' && $arr[5] != 'Inactivo') $query.=',estatus='.$arr[5];
+        $query .=' where id='.$arr[0];
         //return $query;
 		$ban = $this->db->query ( $query);
 		if ($ban) {
-			return "Se modifico con exito";
+			return "<h4>Se modifico con exito</h4>";
 		}
-		return "No se pudo modificar";
+		return "<h4>No se pudo modificar</h4>";
 	}
 	function eliminarSerie($id) {
 		$ban = $this->db->query ( 'DELETE FROM t_portafolio where id=' . $id );
@@ -323,9 +324,9 @@ join(Select * from portafolio
 				$arr [1] = $fila->imagen;
 				$this->eliminarGaleria ( $arr );
 			}
-			return "Se elimino con exito";
+			return "<h4>Se elimino con exito</h4>";
 		}
-		return "No se elimino";
+		return "<h4>No se elimino</h4>";
 	}
 	function listaSerie() {
         $cabe = array ('Id','Nombre','Resumen','Descripcion','Fecha','Estatus');
@@ -363,9 +364,9 @@ join(Select * from portafolio
         $ban = $this->db->insert ( 't_empresa', $arr );
 
         if ($ban) {
-            return "Se regristro con exito";
+            return "<h4>Se regristro con exito</h4>";
         }
-        return "No se pudo registrar";
+        return "<h4>No se pudo registrar</h4>";
     }
 
     function listaEmpresa() {
@@ -405,21 +406,21 @@ join(Select * from portafolio
             $archivo = BASEPATH . 'img/empresa/' . $arr [1];
             if (file_exists ( $archivo )) {
                 if (unlink ( $archivo ))
-                    $msj = "El archivo fue borrado";
+                    $msj = "<h4>El archivo fue borrado</h4>";
                 else
-                    $msj = "El archivo no fue borrado";
+                    $msj = "<h4>El archivo no fue borrado</h4>";
             } else
-                $msj = "El archivo no existe";
+                $msj = "<h4>El archivo no existe</h4>";
             $archivo = BASEPATH . 'img/empresa/medio/' . $arr [1];
             if (file_exists ( $archivo )) {
                 if (unlink ( $archivo ))
-                    $msj = "El archivo fue borrado";
+                    $msj = "<h4>El archivo fue borrado</h4>";
                 else
-                    $msj = "El archivo no fue borrado";
+                    $msj = "<h4>El archivo no fue borrado</h4>";
             } else
-                $msj = "El archivo no existe";
+                $msj = "<h4>El archivo no existe</h4>";
         } else {
-            $msj = "No se elimino";
+            $msj = "<h4>No se elimino</h4>";
         }
         return $msj;
     }
