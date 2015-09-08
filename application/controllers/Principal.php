@@ -52,4 +52,30 @@ class Principal extends CI_Controller
         $this->load->view('principal/contacto');
         $this->load->view('principal/incluir/pie');
     }
+
+    /**
+     * funciones para noticias
+     */
+    function noticia(){
+        $this->load->model ( 'panel/Mpanel', 'MPanel' );
+        $busqueda = $this->MPanel->listarNoticia ();
+        $data ['lst'] = $busqueda;
+        ///$data ['slider'] = true;
+        $this->load->view ( 'principal/incluir/cabecera');
+        $this->load->view ( 'principal/noticia' ,$data);
+        $this->load->view ( 'principal/incluir/pie' );
+    }
+
+    function verNoticia($id){
+        $this->load->model ( 'panel/mpanel', 'MPanel' );
+        $busqueda = $this->MPanel->verNoticia ($id);
+        $data ['lst'] = $busqueda;
+        $data ['slider'] = true;
+
+        $this->load->view ( 'principal/incluir/cabecera',$data );
+        $this->load->view ( 'principal/verNoticia' ,$data);
+        $this->load->view ( 'principal/incluir/pie' );
+    }
+
+
 }

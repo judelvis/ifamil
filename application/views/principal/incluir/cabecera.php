@@ -119,6 +119,7 @@
                             <li><a href="<?php echo base_url("index.php/Principal/nosotros")?>">Quienes Somos</a></li>
                             <li><a href="<?php echo base_url("index.php/Principal/paquetes")?>">Paquetes</a></li>
                             <li><a href="<?php echo base_url("index.php/Principal/afiliate")?>">Afiliate</a>
+                            <li><a href="<?php echo base_url("index.php/Principal/noticia")?>">Noticias</a></li>
                                 <!--<ul class="sub-menu list-unstyled">
                                     <li><a href="portfolio.html">Portfolio Page</a></li>
                                     <li><a href="portfolio.html">Portfolio Page</a></li>
@@ -132,7 +133,7 @@
                                 </ul>
                                 </li>-->
                             <li><a href="<?php echo base_url("index.php/Principal/portafolio")?>">Portafolio</a></li>
-                            <li><a href="<?php echo base_url("index.php/Principal/contacto")?>">CONTACTO</a></li>
+                            <li><a href="<?php echo base_url("index.php/Principal/contacto")?>">CONTACTENOS</a></li>
                         </ul>
                     </nav>
                     <script src="<?php echo __MAQ__?>js/menu.js" type="text/javascript"></script>
