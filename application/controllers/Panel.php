@@ -92,7 +92,7 @@ class Panel extends CI_Controller {
         $arr = array("imagen"=>$nombreImagen,"titulo"=>$_POST['titulo'],"descrip"=>$_POST['descrip'],"fecha"=>$_POST['fecha'],"enlace"=>$_POST['enlace'],"resumen"=>$_POST['resumen']);
 
         if($valor)echo $this -> MPanel -> registrarNoticia($arr);
-        else echo "No se pudo guardar la imagen".$valor['mensaje'];
+        else echo "No se pudo registrar la noticia.".$valor['mensaje'];
     }
 
     function listarNoticia(){

@@ -161,7 +161,7 @@ join(Select * from portafolio
      */
     function registrarNoticia($arr) {
         $this->db->insert ( "t_noticias", $arr );
-        return "La imagen se registro correctamente";
+        return "La noticia se registro correctamente";
     }
     function consultarNoticia() {
         $imagenes = $this->db->query ( 'SELECT * FROM t_noticias order by fecha DESC ');
