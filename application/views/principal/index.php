@@ -87,7 +87,7 @@
 					<img src="' . __IMG__ . 'noticia/medio/' . $ls->imagen . '" alt="team 1">
 					<h3>' . $ls->titulo . '</h3>
 					<div class="mask">
-						<a href="' . site_url("principal2/verNoticia/$ls->oid") . '">
+						<a href="' . site_url("Principal/verNoticia/$ls->oid") . '">
 						<h2><span >LEER</span></h2>
 						</a>
 					</div>

@@ -816,6 +816,7 @@ h3.style {
     font-size: 14px;
     color: #7F8C8C;
     line-height: 1.5em;
+    text-align: justify !important;
 }
 
 .about p {
@@ -1526,14 +1527,18 @@ h3.style {
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     -o-border-radius: 2px;
-    box-shadow: inset 0px -4px 0px #47817E;
-    -webkit-box-shadow: inset 0px -4px 0px #47817E;
-    -moz-box-shadow: inset 0px -4px 0px #47817E;
-    -o-box-shadow: inset 0px -4px 0px #47817E;
+    box-shadow: inset 0px -4px 0px #1E4399;
+    -webkit-box-shadow: inset 0px -4px 0px #1E4399;
+    -moz-box-shadow: inset 0px -4px 0px #1E4399;
+    -o-box-shadow: inset 0px -4px 0px #1E4399;
 }
 
 .btn:hover {
-    background: blue;
+    background: red;
+    box-shadow: inset 0px -4px 0px red;
+    -webkit-box-shadow: inset 0px -4px 0px red;
+    -moz-box-shadow: inset 0px -4px 0px red;
+    -o-box-shadow: inset 0px -4px 0px red;
 }
 
 /* start contact */
@@ -1995,7 +2000,7 @@ h3.style {
     z-index:4;
 }
 .thumbnail h3 {
-    color: #E2534B;
+    color: #000000;
     margin-top:10px;
     font-size:20px;
 }
@@ -2009,7 +2014,7 @@ h3.style {
     left:0;
     width:100%;
     height:100%;
-    background:#E2534B;
+    background:red;
     position:absolute;
     -webkit-transition: all 0.2s ease-out;
     -moz-transition: all 0.2s ease-out;
@@ -2037,7 +2042,7 @@ h3.style {
     color:#fff;
 }
 .team .thumbnail .mask {
-    background: #E2534B;
+    background: red;
 }
 .team .thumbnail .mask h2 {
     margin-top:20%;

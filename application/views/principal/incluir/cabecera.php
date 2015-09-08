@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <title>IFAMIL</title>
-    <link rel="shortcut icon" type="image/x-icon" style="width: 100%; height: 100%" href="<?php echo __IMG__?>images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" style="width: 100%; height: 100%" href="<?php echo __IMG__?>images/favi.ico">
     <meta charset="UTF-8" />
     <!-- Bootstrap -->
     <link href="<?php echo __MAQ__ ?>css/bootstrap.css" rel='stylesheet' type='text/css'/>
@@ -119,7 +119,7 @@
                             <li><a href="<?php echo base_url("index.php/Principal/nosotros")?>">Quienes Somos</a></li>
                             <li><a href="<?php echo base_url("index.php/Principal/paquetes")?>">Paquetes</a></li>
                             <li><a href="<?php echo base_url("index.php/Principal/afiliate")?>">Afiliate</a>
-                            <li><a href="<?php echo base_url("index.php/Principal/noticia")?>">Noticias</a></li>
+                            <li><a href="<?php echo base_url("index.php/Principal/noticias")?>">Noticias</a></li>
                                 <!--<ul class="sub-menu list-unstyled">
                                     <li><a href="portfolio.html">Portfolio Page</a></li>
                                     <li><a href="portfolio.html">Portfolio Page</a></li>
