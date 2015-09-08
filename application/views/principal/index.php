@@ -67,6 +67,7 @@
         </div>
     </div>
 </div>
+
 <div class="main_btm1" id="noticias">
     <div class="container">
         <div class="title">
@@ -103,31 +104,42 @@
             ?></div>
     </div>
 </div>
-<div class="main1_bg" id="noticias">>
+
     <div class="container">
         <div class="title">
             <hr class="team_hr team_hr_left hr_gray"/>
             <center><h1>Twitter</h1></center>
             <hr class="team_hr team_hr_left hr_gray"/>
         </div>
-        <div class="main_grid">
-            <center>
-                <a class="twitter-timeline" href="https://twitter.com/ifamil_ca"
-                   data-widget-id="640861362185502720" data-tweet-limit="1" data-chrome="noheader noborder transparent">Tweets
-                    por el @ifamil_ca.</a>
-                <script>!function (d, s, id) {
-                        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-                        if (!d.getElementById(id)) {
-                            js = d.createElement(s);
-                            js.id = id;
-                            js.src = p + "://platform.twitter.com/widgets.js";
-                            fjs.parentNode.insertBefore(js, fjs);
-                        }
-                    }(document, "script", "twitter-wjs");</script>
-            </center>
-        </div>
     </div>
+<link rel='stylesheet' type="text/css" href="<?php echo __PARALAX__?>style/style.css"/>
+<link rel='stylesheet' type="text/css" href="<?php echo __PARALAX__?>css/scroller.css"/>
+<link rel='stylesheet' type="text/css" href="<?php echo __PARALAX__?>css/dzsparallaxer.css"/>
+<div id="prx2" class="dzsparallaxer auto-init" data-options='{  mode_scroll: "fromtop", animation_duration: "50", direction: "reverse",js_breakout: "off", settings_movexaftermouse: "on"}' style="">
+
+    <div class="divimage dzsparallaxer--target " style="width: 130%; height: 530px; background-image: url(<?php echo __PARALAX__?>img/img2.jpg)">
+    </div>
+
+    <div class=" center-it" style="font-style:normal;">
+        <center><br>
+            <a class="twitter-timeline" href="https://twitter.com/ifamil_ca"
+               data-widget-id="640861362185502720" data-tweet-limit="1" data-chrome="noheader noborder transparent">Tweets
+                por el @ifamil_ca.</a>
+            <script>!function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                    if (!d.getElementById(id)) {
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src = p + "://platform.twitter.com/widgets.js";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }
+                }(document, "script", "twitter-wjs");</script>
+        </center>
+    </div>
+
+
 </div>
+
 
 <!-- start main1 -->
 <div class="title">
@@ -187,3 +199,19 @@
             </div>
         </div>
     </div>
+    <script>
+        jQuery(document).ready(function($){
+            window.dzsscr_init($('.mwrap-wrapper'),{
+                'type':'scrollTop'
+                ,'settings_skin':'skin_apple'
+                ,enable_easing: 'on'
+                ,settings_autoresizescrollbar: 'on'
+                ,settings_chrome_multiplier : 0.04
+            })
+        });
+
+    </script>
+    <link rel='stylesheet' type="text/css" href="<?php echo __PARALAX__?>advancedscroller/plugin.css"/>
+    <script src="<?php echo __PARALAX__?>advancedscroller/plugin.js" type="text/javascript"></script>
+    <script src="<?php echo __PARALAX__?>dzsparallaxer/dzsparallaxer.js" type="text/javascript"></script>
+    <script src="<?php echo __PARALAX__?>dzsscroller/scroller.js" type="text/javascript"></script>
