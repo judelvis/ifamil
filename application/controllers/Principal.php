@@ -53,6 +53,25 @@ class Principal extends CI_Controller
         $this->load->view('principal/contacto');
         $this->load->view('principal/incluir/pie');
     }
+
+    public function reservacion()
+    {
+        $this->load->view('principal/incluir/cabecera');
+        $this->load->view('principal/reservacion');
+        $this->load->view('principal/incluir/pie');
+    }
+    public function opinion()
+    {
+        $this->load->view('principal/incluir/cabecera');
+        $this->load->view('principal/opinion');
+        $this->load->view('principal/incluir/pie');
+    }
+    public function oservicios()
+    {
+        $this->load->view('principal/incluir/cabecera');
+        $this->load->view('principal/oservicios');
+        $this->load->view('principal/incluir/pie');
+    }
     /**
      * funciones para noticias
      */

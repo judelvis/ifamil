@@ -1655,10 +1655,11 @@ h3.style {
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     -o-border-radius: 2px;
-    box-shadow: inset 0px -4px 0px #47817E;
-    -webkit-box-shadow: inset 0px -4px 0px ;
-    -moz-box-shadow: inset 0px -4px 0px #47817E;
-    -o-box-shadow: inset 0px -4px 0px #47817E;
+    box-shadow: inset 0px -4px 0px #1E4399;
+    -webkit-box-shadow: inset 0px -4px 0px #1E4399;;
+    -moz-box-shadow: inset 0px -4px 0px #1E4399;
+    -o-box-shadow: inset 0px -4px 0px #1E4399;
+    margin-bottom: 10px;
 }
 
 .contact-form form input[type="submit"]:hover {
