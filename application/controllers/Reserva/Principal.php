@@ -47,10 +47,6 @@ class Principal extends CI_Controller {
 			echo "Esta intentando acceder a una area restringida.";
 		}
 	}
-
-	function paralax(){
-		$this -> load->view("principal/paralax");
-	}
 	
 	function logout() {
 		session_destroy();

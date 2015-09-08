@@ -77,4 +77,9 @@ class Principal extends CI_Controller
         $this->load->view ( 'principal/incluir/pie' );
     }
 
+
+    function paralax(){
+        $this -> load->view("principal/paralax");
+    }
+
 }
