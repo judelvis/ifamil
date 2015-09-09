@@ -2,9 +2,9 @@
 /**
  * Created by PhpStorm.
  * User: breyner
- * Date: 9/5/15
- * Time: 3:22 PM
- */ ?>
+ * Date: 9/9/15
+ * Time: 4:56 PM
+ */?>
 <?php //print("<pre>");print_R($lst);?>
 <script type="text/javascript" src="<?php echo __MAQ__; ?>js/fliplightbox.min.js"></script>
 <script type="text/javascript">
@@ -72,54 +72,36 @@
     });
 </script>
 <div class="main_bg"><!-- start main -->
-    <img src="<?php echo __IMG__ ?>images/<?php echo $imagen ?>" style="width: 100%">
-
     <div class="container">
         <div class="main_grid1">
-            <hr class="team_hr team_hr_left hr_gray"/>
-            <center><h1><?php echo $titulo; ?></h1></center>
-            <hr class="team_hr team_hr_left hr_gray"/>
+            <h3 class="style pull-left"><?php echo $lst[0]->tit ; ?></h3>
+
             <div class="clearfix"></div>
         </div>
     </div>
 </div>
 <div class="main_btm1"><!-- start main_btm -->
     <div class="container">
-        <div class="portfolio_main col-md-9">
+        <div class="portfolio_main col-md-12">
             <div id="portfoliolist">
-                <?php
-                if ($lst == 0) {
-                    echo "No existen publicaciones.";
-                } else {
-                    foreach ($lst as $ls) {
-                        echo '
-                    <div class="col-md-2 blog_date">
-                        <span><h3>Publicado</h3><p>' . $ls->fecha . '</p></span>
-                        <span class="icon_date"><i class="fa fa-archive"></i> </span>
-                    </div>
-                    <div class="col-md-10 blog_left">
-                        <a href="#"><img src="'. __IMG__.'galeria/medio/'.$ls->imagen.'" alt="" class="img-responsive"/></a>
-                        <h4>'.$ls->titulo.'</h4>
-
-                        <p class="para">'.$ls->resumen.'</p>
-                        <div class="read_btn">
-                            <a href="'.site_url("Principal/paratodos/".$ls->id).'">
-                                <button class="btn">leer mas</button>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div><br>';
-                    }
-                }
-                ?>
+                <?php foreach ($lst as $ls) {
+                    echo '
+                                <div class="portfolio logo1" data-cat="logo">
+                                    <div class="portfolio-wrapper">
+                                        <div class="fancyDemo">
+                                                <a rel="group" title="" href="' . __IMG__ . 'galeria/' . $ls->imagen . '"><img src="' . __IMG__ . 'galeria/medio/' . $ls->imagen . '" alt="" class="img-responsive"/></a>
+                                        </div>
+                                        <div class="label">
+                                            <div class="label-text">
+                                                <a href="'.site_url("Principal/paratodos/".$ls->oidpor).'"><span class="text-category">'.$ls->nombre.'</span></a>
+                                            </div>
+                                            <div class="label-bg"></div>
+                                        </div>
+                                    </div>
+                                </div>';
+                } ?>
             </div>
             <div class="clearfix"></div>
-        </div>
-        <div class="col-md-2 blog_right">
-            <img src="<?php echo __IMG__?>images/prueba.png" class="img-responsive">
-            <img src="<?php echo __IMG__?>images/anuncio.jpg" class="img-responsive">
-            <img src="<?php echo __IMG__?>images/anuncio2.png" class="img-responsive">
-
         </div>
     </div>
 </div>
