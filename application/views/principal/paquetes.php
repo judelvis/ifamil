@@ -4,7 +4,7 @@
  * User: breyner
  * Date: 9/5/15
  * Time: 3:22 PM
- */?>
+ */ ?>
 <?php //print("<pre>");print_R($lst);?>
 <script type="text/javascript" src="<?php echo __MAQ__; ?>js/fliplightbox.min.js"></script>
 <script type="text/javascript">
@@ -72,11 +72,12 @@
     });
 </script>
 <div class="main_bg"><!-- start main -->
-    <img src="<?php echo __IMG__?>images/vacaciones.jpg" style="width: 100%">
+    <img src="<?php echo __IMG__ ?>images/<?php echo $imagen ?>" style="width: 100%">
+
     <div class="container">
         <div class="main_grid1">
             <hr class="team_hr team_hr_left hr_gray"/>
-            <center><h1>Paquetes</h1></center>
+            <center><h1><?php echo $titulo; ?></h1></center>
             <hr class="team_hr team_hr_left hr_gray"/>
             <div class="clearfix"></div>
         </div>
@@ -86,22 +87,31 @@
     <div class="container">
         <div class="portfolio_main col-md-12">
             <div id="portfoliolist">
-                <?php foreach ($lst as $ls) {
-                    echo '
-                                <div class="portfolio logo1" data-cat="logo">
-                                    <div class="portfolio-wrapper">
-                                        <div class="fancyDemo">
-                                                <a rel="group" title="" href="' . __IMG__ . 'galeria/' . $ls->imagen . '"><img src="' . __IMG__ . 'galeria/medio/' . $ls->imagen . '" alt="" class="img-responsive"/></a>
-                                        </div>
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a href="'.site_url("principal2/mostrarServicio/".$ls->oidser."/1").'"><span class="text-category">'.$ls->nombre.'</span></a>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>';
-                } ?>
+                <?php
+                if ($lst == 0) {
+                    echo "No existen publicaciones.";
+                } else {
+                    foreach ($lst as $ls) {
+                        echo '
+                    <div class="col-md-2 blog_date">
+                        <span><h3>Publicado</h3><p>' . $ls->fecha . '</p></span>
+                        <span class="icon_date"><i class="fa fa-archive"></i> </span>
+                    </div>
+                    <div class="col-md-10 blog_left">
+                        <a href="#"><img src="'. __IMG__.'galeria/medio/'.$ls->imagen.'" alt="" class="img-responsive"/></a>
+                        <h4>'.$ls->titulo.'</h4>
+
+                        <p class="para">'.$ls->resumen.'</p>
+                        <div class="read_btn">
+                            <a href="'.site_url("Principal/verNoticia/".$ls->id).'">
+                                <button class="btn">leer mas</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div><br>';
+                    }
+                }
+                ?>
             </div>
             <div class="clearfix"></div>
         </div>

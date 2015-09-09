@@ -28,10 +28,33 @@ class Principal extends CI_Controller
         $this->load->view('principal/incluir/pie');
     }
 
-    public function paquetes()
-    {
+    public function paquetes($cat){
+        $this -> load -> model('panel/Mpanel', 'MPanel');
+        switch($cat){
+            case 1:
+                $datos['imagen'] = 'vacaciones.jpg';
+                $datos['titulo'] = 'Transporte';
+                break;
+            case 2:
+                $datos['imagen'] = 'vacaciones.jpg';
+                $datos['titulo'] = 'Viajes';
+                break;
+            case 3:
+                $datos['imagen'] = 'vacaciones.jpg';
+                $datos['titulo'] = 'Hoteleria';
+                break;
+            case 4:
+                $datos['imagen'] = 'vacaciones.jpg';
+                $datos['titulo'] = 'Paquetes';
+                break;
+            default:
+                $datos['imagen'] = 'vacaciones.jpg';
+                $datos['titulo'] = 'Defecto';
+                break;
+        }
+        $datos['lst'] = $this -> MPanel ->consultarPortafolioCat($cat);
         $this->load->view('principal/incluir/cabecera');
-        $this->load->view('principal/paquetes');
+        $this->load->view('principal/paquetes',$datos);
         $this->load->view('principal/incluir/pie');
     }
 

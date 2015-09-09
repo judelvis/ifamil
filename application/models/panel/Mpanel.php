@@ -110,8 +110,10 @@ join(Select * from portafolio
         return $porta;
     }
 
-    function consultarServiciosCat($cat){
-        $consulta = $this -> db -> query("Select * From servicio join (select * from portafolio group by oidser)as porta on servicio.id = porta.oidser WHERE  oidcat=".$cat );
+    function consultarPortafolioCat($cat){
+        $consulta = $this -> db -> query("Select * From t_portafolio join (select * from t_galeria group by oidpor)
+          as porta on t_portafolio.id = porta.oidpor
+          WHERE  oidcat=".$cat );
         $cant = $consulta -> num_rows();
         if($cant > 0){
             $porta = $consulta -> result();

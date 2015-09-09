@@ -25,7 +25,7 @@
                         <span class="active"><i class="fa fa-location-arrow"></i></span>
                         <h3>Transporte</h3>
                         <div class="read_more">
-                            <a class="btn btn-2 active" href="<?php echo site_url("principal/serviciosCat/4");?>">ver mas</a>
+                            <a class="btn btn-2 active" href="<?php echo site_url("principal/paquetes/1");?>">ver mas</a>
                         </div>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                         <span class="active"><i class="fa fa-picture-o"></i></span>
                         <h3>Viajes</h3>
                         <div class="read_more">
-                            <a class="btn  btn-2b" href="<?php echo site_url("principal/serviciosCat/5");?>">ver mas</a>
+                            <a class="btn  btn-2b" href="<?php echo site_url("principal/paquetes/2");?>">ver mas</a>
                         </div>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
                         <span class="active"><i class="fa fa-hospital-o"></i></span>
                         <h3>Hoteleria</h3>
                         <div class="read_more">
-                            <a class="btn btn-2b" href="<?php echo site_url("principal2/serviciosCat/6");?>">ver mas</a>
+                            <a class="btn btn-2b" href="<?php echo site_url("Principal/paquetes/3");?>">ver mas</a>
                         </div>
                     </div>
                 </div>
@@ -54,7 +54,7 @@
                         <h3>Paquetes</h3>
 
                         <div class="read_more">
-                            <a class="btn btn-2b" href="<?php echo site_url("principal2/serviciosCat/8");?>">ver mas</a>
+                            <a class="btn btn-2b" href="<?php echo site_url("Principal/paquetes/4");?>">ver mas</a>
                         </div>
                     </div>
                 </div>

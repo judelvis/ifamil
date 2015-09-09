@@ -118,7 +118,7 @@
                         <ul class="menu list-unstyled">
                             <li><a href="<?php echo base_url("index.php/Principal/index")?>">Inicio</a></li>
                             <li><a href="<?php echo base_url("index.php/Principal/nosotros")?>">Quienes Somos</a></li>
-                            <li><a href="<?php echo base_url("index.php/Principal/paquetes")?>">Paquetes</a></li>
+                            <li><a href="<?php echo base_url("index.php/Principal/paquetes/4")?>">Paquetes</a></li>
                             <li><a href="<?php echo base_url("index.php/Principal/afiliate")?>">Afiliate</a>
                             <li><a href="<?php echo base_url("index.php/Principal/noticias")?>">Noticias</a></li>
                                 <!--<ul class="sub-menu list-unstyled">
