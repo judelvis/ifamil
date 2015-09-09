@@ -117,7 +117,7 @@
 <link rel='stylesheet' type="text/css" href="<?php echo __PARALAX__?>css/dzsparallaxer.css"/>
 <div id="prx2" class="dzsparallaxer auto-init" data-options='{  mode_scroll: "fromtop", animation_duration: "50", direction: "reverse",js_breakout: "off", settings_movexaftermouse: "on"}' style="">
 
-    <div class="divimage dzsparallaxer--target " style="width: 130%; height: 530px; background-image: url(<?php echo __PARALAX__?>img/img2.jpg)">
+    <div class="divimage dzsparallaxer--target " style="width: 130%; height: 530px; background-image: url(<?php echo __IMG__?>images/tovar.jpg)">
     </div>
 
     <div class=" center-it" style="font-style:normal;">

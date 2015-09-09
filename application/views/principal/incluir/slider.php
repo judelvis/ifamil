@@ -26,13 +26,32 @@
         </div>
         <!-- /Duplicate to create more slides -->
         <div class="slide">
-            <img src="<?php echo __IMG__?>images/media.jpg">
+            <img src="<?php echo __IMG__?>images/aviso1.jpg" class="img-responsive" >
 
             <div class="slide_content">
                 <div class="slide_content_wrap">
-                    <h4 class="title">Conoce mas hacerca de nosotros.</h4>
 
-                    <p class="description"> ...</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="<?php echo __IMG__?>images/ifamil1.jpg" class="img-responsive" >
+
+            <div class="slide_content">
+                <div class="slide_content_wrap">
+
+
+                </div>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="<?php echo __IMG__?>images/ifamil2.jpg" class="img-responsive" >
+
+            <div class="slide_content">
+                <div class="slide_content_wrap">
+
+
                 </div>
             </div>
         </div>

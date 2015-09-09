@@ -31,12 +31,14 @@ class Principal extends CI_Controller
     public function paquetes()
     {
         $this->load->view('principal/incluir/cabecera');
+        $this->load->view('principal/paquetes');
         $this->load->view('principal/incluir/pie');
     }
 
     public function portafolio()
     {
         $this->load->view('principal/incluir/cabecera');
+        $this->load->view('principal/portafolio');
         $this->load->view('principal/incluir/pie');
     }
 

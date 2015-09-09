@@ -133,7 +133,7 @@
                                     </li>
                                 </ul>
                                 </li>-->
-                            <li><a href="<?php echo base_url("index.php/Principal/portafolio")?>">Portafolio</a></li>
+                            <li><a href="<?php echo base_url("index.php/Principal/portafolio")?>">Servicios</a></li>
                             <li><a href="<?php echo base_url("index.php/Principal/contacto")?>">CONTACTENOS</a></li>
                         </ul>
                     </nav>

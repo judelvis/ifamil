@@ -42,6 +42,8 @@
             </div>
             <div class="col-md-2 blog_right">
 <img src="<?php echo __IMG__?>images/prueba.png" class="img-responsive">
+                <img src="<?php echo __IMG__?>images/anuncio.jpg" class="img-responsive">
+                <img src="<?php echo __IMG__?>images/anuncio2.png" class="img-responsive">
             </div>
 
         </div>

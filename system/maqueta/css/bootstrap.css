@@ -1796,12 +1796,13 @@ fieldset[disabled] .checkbox-inline {
 .input-sm {
   height: 30px;
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.5;
-  border-radius: 3px;
+  border-radius: 2px;
+  margin: 10px 0;
 }
 select.input-sm {
-  height: 30px;
+  height: 40px;
   line-height: 30px;
 }
 textarea.input-sm,
