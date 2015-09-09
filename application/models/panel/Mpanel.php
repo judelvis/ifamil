@@ -99,8 +99,8 @@ join(Select * from portafolio
 		return json_encode ( $obj );
 	}
 
-    function consultarGaleriaSerie($oidser){
-        $consulta = $this -> db -> query("Select * From portafolio join servicio on servicio.id = portafolio.oidser WHERE  oidser=".$oidser);
+    function consultarGaleriaPortafolio($oidser){
+        $consulta = $this -> db -> query("Select * From t_galeria join t_portafolio on t_portafolio.id = t_galeria.oidpor WHERE  oidpor=".$oidser);
         $cant = $consulta -> num_rows();
         if($cant > 0){
             $porta = $consulta -> result();
@@ -111,7 +111,7 @@ join(Select * from portafolio
     }
 
     function consultarPortafolioCat($cat){
-        $consulta = $this -> db -> query("Select * From t_portafolio join (select * from t_galeria group by oidpor)
+        $consulta = $this -> db -> query("Select * From t_portafolio left join (select * from t_galeria group by oidpor)
           as porta on t_portafolio.id = porta.oidpor
           WHERE  oidcat=".$cat );
         $cant = $consulta -> num_rows();
