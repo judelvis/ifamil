@@ -57,9 +57,7 @@ function registrar() {
         processData : false,
         cache : false,
         success : function(msj) {//alert(msj);
-            $('#notificationModal').modal('hide');
-            $("#modal_mensaje").html(msj);
-            $("#msj_alertas").modal('show');
+            alert(msj);
             //alert(msj);
             listarNoticia();
             limpiar();
