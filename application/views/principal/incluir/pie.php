@@ -18,8 +18,8 @@
                     <li><a href="https://instagram.com/ifamil_c.a/" target="_blank"><i class="fa fa-instagram"></i></a></li>
                     <li><a href="https://twitter.com/ifamil_ca" target="_blank"><i class="fa fa-twitter"></i></a></li>
                     <li><a href="https://www.facebook.com/profile.php?id=100008649614216" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a href="<?php echo site_url("Panel")?>"><i class="fa fa-rss"></i></a></li>
+                    <li><a href="https://plus.google.com/u/0/116239479180848308489/posts" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="<?php echo site_url("Panel")?>" target="_blank"><i class="fa fa-rss"></i></a></li>
 
                 </ul>
             </div>
