@@ -100,7 +100,7 @@ join(Select * from portafolio
 	}
 
     function consultarGaleriaPortafolio($oidser){
-        $consulta = $this -> db -> query("Select * From t_galeria join t_portafolio on t_portafolio.id = t_galeria.oidpor WHERE  oidpor=".$oidser);
+        $consulta = $this -> db -> query("Select *,t_portafolio.titulo as tit From t_galeria join t_portafolio on t_portafolio.id = t_galeria.oidpor WHERE  oidpor=".$oidser);
         $cant = $consulta -> num_rows();
         if($cant > 0){
             $porta = $consulta -> result();
