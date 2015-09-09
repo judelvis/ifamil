@@ -9,9 +9,34 @@
 /*!40101 SET NAMES utf8mb4 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+-- Dumping structure for table ifamil.contacto
+CREATE TABLE IF NOT EXISTS `contacto` (
+  `nombre` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `correo` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `telefono` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `mensaje` text COLLATE latin1_spanish_ci NOT NULL,
+  PRIMARY KEY (`correo`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
 -- Dumping data for table ifamil.contacto: ~0 rows (approximately)
 /*!40000 ALTER TABLE `contacto` DISABLE KEYS */;
 /*!40000 ALTER TABLE `contacto` ENABLE KEYS */;
+
+
+-- Dumping structure for table ifamil.t_afiliados
+CREATE TABLE IF NOT EXISTS `t_afiliados` (
+  `oid` int(10) NOT NULL AUTO_INCREMENT COMMENT 'Auto Incremento',
+  `ced` int(11) NOT NULL COMMENT 'Cedula de identidad',
+  `nom` varchar(255) NOT NULL COMMENT 'Nombre Completo',
+  `fna` varchar(50) NOT NULL COMMENT 'Fecha de Nacimiento',
+  `tel` varchar(64) NOT NULL COMMENT 'Teléfono Celular',
+  `cor` varchar(255) NOT NULL COMMENT 'Correo Electronico',
+  `fac` varchar(255) NOT NULL COMMENT 'FaceBook',
+  `pro` varchar(255) NOT NULL COMMENT 'Profesión',
+  PRIMARY KEY (`oid`),
+  UNIQUE KEY `cedula` (`ced`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='Listado de Clientes Padres';
 
 -- Dumping data for table ifamil.t_afiliados: ~2 rows (approximately)
 /*!40000 ALTER TABLE `t_afiliados` DISABLE KEYS */;
@@ -20,9 +45,29 @@ INSERT INTO `t_afiliados` (`oid`, `ced`, `nom`, `fna`, `tel`, `cor`, `fac`, `pro
 	(2, 25475192, 'Anthony UzcateguiP', '07/05/97', '041682821821', 'anthony-uzcategui7@gmail.com', 'AnthonyPEÑA', 'Buecetero');
 /*!40000 ALTER TABLE `t_afiliados` ENABLE KEYS */;
 
+
+-- Dumping structure for table ifamil.t_asociados
+CREATE TABLE IF NOT EXISTS `t_asociados` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `asociado` text COLLATE latin1_spanish_ci NOT NULL,
+  `imagen` text COLLATE latin1_spanish_ci NOT NULL,
+  `descrip` text COLLATE latin1_spanish_ci NOT NULL,
+  `modificado` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
 -- Dumping data for table ifamil.t_asociados: ~0 rows (approximately)
 /*!40000 ALTER TABLE `t_asociados` DISABLE KEYS */;
 /*!40000 ALTER TABLE `t_asociados` ENABLE KEYS */;
+
+
+-- Dumping structure for table ifamil.t_categoria
+CREATE TABLE IF NOT EXISTS `t_categoria` (
+  `oid` int(10) NOT NULL AUTO_INCREMENT,
+  `categoria` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `descrip` text COLLATE utf8_spanish_ci NOT NULL,
+  PRIMARY KEY (`oid`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- Dumping data for table ifamil.t_categoria: ~4 rows (approximately)
 /*!40000 ALTER TABLE `t_categoria` DISABLE KEYS */;
@@ -33,9 +78,28 @@ INSERT INTO `t_categoria` (`oid`, `categoria`, `descrip`) VALUES
 	(4, 'Paquetes', '');
 /*!40000 ALTER TABLE `t_categoria` ENABLE KEYS */;
 
+
+-- Dumping structure for table ifamil.t_datos
+CREATE TABLE IF NOT EXISTS `t_datos` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `mision` text COLLATE latin1_spanish_ci NOT NULL,
+  `vision` text COLLATE latin1_spanish_ci NOT NULL,
+  `modificado` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
 -- Dumping data for table ifamil.t_datos: ~0 rows (approximately)
 /*!40000 ALTER TABLE `t_datos` DISABLE KEYS */;
 /*!40000 ALTER TABLE `t_datos` ENABLE KEYS */;
+
+
+-- Dumping structure for table ifamil.t_empresa
+CREATE TABLE IF NOT EXISTS `t_empresa` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `nombre` text COLLATE latin1_spanish_ci NOT NULL,
+  `imagen` text COLLATE latin1_spanish_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 -- Dumping data for table ifamil.t_empresa: ~5 rows (approximately)
 /*!40000 ALTER TABLE `t_empresa` DISABLE KEYS */;
@@ -47,6 +111,21 @@ INSERT INTO `t_empresa` (`id`, `nombre`, `imagen`) VALUES
 	(8, 'IPSFA', 'IPSFA.png');
 /*!40000 ALTER TABLE `t_empresa` ENABLE KEYS */;
 
+
+-- Dumping structure for table ifamil.t_galeria
+CREATE TABLE IF NOT EXISTS `t_galeria` (
+  `oid` int(11) NOT NULL AUTO_INCREMENT,
+  `oidpor` int(11) NOT NULL,
+  `imagen` text COLLATE utf8_spanish_ci NOT NULL,
+  `titulo` text COLLATE utf8_spanish_ci NOT NULL,
+  `detalle` text COLLATE utf8_spanish_ci NOT NULL,
+  `fecha` date NOT NULL,
+  `modificado` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `enlace` text COLLATE utf8_spanish_ci NOT NULL,
+  PRIMARY KEY (`oid`),
+  KEY `oidpor` (`oidpor`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
 -- Dumping data for table ifamil.t_galeria: ~4 rows (approximately)
 /*!40000 ALTER TABLE `t_galeria` DISABLE KEYS */;
 INSERT INTO `t_galeria` (`oid`, `oidpor`, `imagen`, `titulo`, `detalle`, `fecha`, `modificado`, `enlace`) VALUES
@@ -56,17 +135,56 @@ INSERT INTO `t_galeria` (`oid`, `oidpor`, `imagen`, `titulo`, `detalle`, `fecha`
 	(4, 4, 'navidad4.jpg', 'Navidad', 'afda', '2015-09-12', '2015-09-09 17:17:25', '');
 /*!40000 ALTER TABLE `t_galeria` ENABLE KEYS */;
 
+
+-- Dumping structure for table ifamil.t_noticias
+CREATE TABLE IF NOT EXISTS `t_noticias` (
+  `oid` int(10) NOT NULL AUTO_INCREMENT,
+  `imagen` text NOT NULL,
+  `titulo` text NOT NULL,
+  `descrip` text NOT NULL,
+  `enlace` text NOT NULL,
+  `fecha` date NOT NULL,
+  `resumen` text NOT NULL,
+  `modificado` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`oid`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
 -- Dumping data for table ifamil.t_noticias: ~1 rows (approximately)
 /*!40000 ALTER TABLE `t_noticias` DISABLE KEYS */;
 INSERT INTO `t_noticias` (`oid`, `imagen`, `titulo`, `descrip`, `enlace`, `fecha`, `resumen`, `modificado`) VALUES
 	(1, 'rugby.jpg', 'IFAMIL BRINDA A SUS EMPLEADOS UN DÍA RECREACIONAL', 'Caracas, 18 de julio de 2015. Este jueves VIAJE Y TURISMO IFAMIL C.A a través de su gerente el Cnel. Juan Puertas Tovar, le dedico un día a sus empleados, a través de una visita a la hacienda Santa Teresa con el fin de esparcir e integrar a estas personas, que más de ser un grupo de trabajo, son la familia IFAMIL.\r\n\r\nLa actividad fue realizada en la hacienda Santa Teresa, allí recibieron los valores fundamentales, del  juego “Rugby” como son disciplina, respeto, integridad, pasión y solidaridad.\r\n\r\nDegustaron de un exquisito almuerzo y realizaron un recorrido donde conocieron el arte de hacer Ron.', '', '2015-07-18', 'La actividad fue realizada en la hacienda Santa Teresa, allí recibieron los valores fundamentales, del  juego “Rugby” como son disciplina, respeto, integridad, pasión y solidaridad.', '2015-09-08 08:51:50');
 /*!40000 ALTER TABLE `t_noticias` ENABLE KEYS */;
 
+
+-- Dumping structure for table ifamil.t_portafolio
+CREATE TABLE IF NOT EXISTS `t_portafolio` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `oidcat` int(11) NOT NULL DEFAULT '0',
+  `titulo` text COLLATE utf8_spanish_ci NOT NULL,
+  `descrip` text COLLATE utf8_spanish_ci NOT NULL,
+  `resumen` text COLLATE utf8_spanish_ci NOT NULL,
+  `fecha` date NOT NULL,
+  `modificado` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `estatus` tinyint(4) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `oidcat` (`oidcat`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
 -- Dumping data for table ifamil.t_portafolio: ~1 rows (approximately)
 /*!40000 ALTER TABLE `t_portafolio` DISABLE KEYS */;
 INSERT INTO `t_portafolio` (`id`, `oidcat`, `titulo`, `descrip`, `resumen`, `fecha`, `modificado`, `estatus`) VALUES
 	(3, 4, 'Navidad', 'naviadadfafdda', 'navidadafadfdagfad', '2015-09-11', '2015-09-09 17:14:05', 0);
 /*!40000 ALTER TABLE `t_portafolio` ENABLE KEYS */;
+
+
+-- Dumping structure for table ifamil.t_sitios
+CREATE TABLE IF NOT EXISTS `t_sitios` (
+  `oid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',
+  `nom` varchar(255) NOT NULL COMMENT 'Nombre Completo',
+  `cod` varchar(16) NOT NULL COMMENT 'Codigo del Sitio',
+  `est` varchar(255) NOT NULL COMMENT 'Estado o Provincia',
+  PRIMARY KEY (`oid`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1 COMMENT='Control de los sitios WEB';
 
 -- Dumping data for table ifamil.t_sitios: ~30 rows (approximately)
 /*!40000 ALTER TABLE `t_sitios` DISABLE KEYS */;
@@ -103,9 +221,35 @@ INSERT INTO `t_sitios` (`oid`, `nom`, `cod`, `est`) VALUES
 	(30, 'Aeropuerto Nacional Ezequiel Zamora', '', 'San Carlos');
 /*!40000 ALTER TABLE `t_sitios` ENABLE KEYS */;
 
+
+-- Dumping structure for table ifamil.t_solicitud
+CREATE TABLE IF NOT EXISTS `t_solicitud` (
+  `oid` int(11) NOT NULL COMMENT 'Identificador',
+  `oidc` int(11) NOT NULL COMMENT 'Identificador del Cliente',
+  `fre` date NOT NULL COMMENT 'Fecha Solicitud',
+  `ori` int(11) NOT NULL COMMENT 'Origen',
+  `des` int(11) NOT NULL COMMENT 'Destino',
+  `det` text NOT NULL COMMENT 'Detalles',
+  `tip` int(2) NOT NULL COMMENT 'Tipo de Solicitud',
+  `est` tinyint(1) NOT NULL COMMENT 'Estatus'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Control de Solicitudes';
+
 -- Dumping data for table ifamil.t_solicitud: ~0 rows (approximately)
 /*!40000 ALTER TABLE `t_solicitud` DISABLE KEYS */;
 /*!40000 ALTER TABLE `t_solicitud` ENABLE KEYS */;
+
+
+-- Dumping structure for table ifamil.t_usuarios
+CREATE TABLE IF NOT EXISTS `t_usuarios` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `documento` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `nombre` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `apellido` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `login` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `clave` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `nivel` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Dumping data for table ifamil.t_usuarios: ~1 rows (approximately)
 /*!40000 ALTER TABLE `t_usuarios` DISABLE KEYS */;
