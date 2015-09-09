@@ -16,8 +16,9 @@ class Afiliado extends CI_Model {
 	 * que requiera la afiliación a la institución, para ejercer derechos y obtener beneficios sobre la misma.
 	 * 
 	 */
+	
 	private $tbl = 't_afiliados';
-	public $identificador = NULL;
+	public $identificador = "NULL";
 	public $cedula;
 	public $nombre;
 	public $fechaNacimiento;

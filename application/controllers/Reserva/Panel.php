@@ -7,6 +7,7 @@
  * @author mamonsoft.ca-crash (Carlos Peña)
  * @date 2015-09-04
  */
+date_default_timezone_set ( 'America/Caracas' );
 session_start ();
 class Panel extends CI_Controller {
 	/**
@@ -60,7 +61,12 @@ class Panel extends CI_Controller {
 	/**
 	 * funcion para enviar correo
 	 */
-	function Envia_Correo() {
+	function enviaCorreo() {
+		$this->load->model('utilidades/Correo', 'Correo');
+		$this->Correo->para = "gesaodin@gmail.com";
+		$this->Correo->asunto = "Prueba de IFAMIL";
+		$this->Correo->contenido = "Que locura";
+		$this->Correo->enviar();
 	}
 	
 	/**
