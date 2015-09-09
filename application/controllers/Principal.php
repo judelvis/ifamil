@@ -65,11 +65,13 @@ class Principal extends CI_Controller
         $this->load->view('principal/incluir/pie');
     }
 
-    public function paratodos($id)
+    public function paratodos($id,$descrip=null)
     {
+
         $this->load->view('principal/incluir/cabecera');
         $this -> load -> model('panel/Mpanel', 'MPanel');
         $datos["lst"]=$this->MPanel->consultarGaleriaPortafolio($id);
+        if($descrip != null)$data ['descrip'] = true;
         $this->load->view('principal/paratodos', $datos);
         $this->load->view('principal/incluir/pie');
     }

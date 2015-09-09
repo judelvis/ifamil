@@ -103,7 +103,7 @@
 
                         <p class="para">'.$ls->resumen.'</p>
                         <div class="read_btn">
-                            <a href="'.site_url("Principal/paratodos/".$ls->id).'">
+                            <a href="'.site_url("Principal/paratodos/".$ls->id."/".$ls->descrip).'">
                                 <button class="btn">leer mas</button>
                             </a>
                         </div>

@@ -74,7 +74,7 @@
 <div class="main_bg"><!-- start main -->
     <div class="container">
         <div class="main_grid1">
-            <h3 class="style pull-left"><?php echo $lst[0]->tit ; ?></h3>
+            <h3 class="style pull-left"><?php echo $lst[0]->tit.$descrip ; ?></h3>
 
             <div class="clearfix"></div>
         </div>
@@ -82,26 +82,48 @@
 </div>
 <div class="main_btm1"><!-- start main_btm -->
     <div class="container">
-        <div class="portfolio_main col-md-12">
+        <div class="portfolio_main col-md-9">
             <div id="portfoliolist">
-                <?php foreach ($lst as $ls) {
-                    echo '
+                <?php
+                if(isset ($descrip)){
+                    echo '<div class="blog"><!-- start blog -->
+            <div class="blog_main col-md-12">
+
+                <div class="blog_list">
+                    <div class="col-md-12 blog_left">
+                        <p class="para">'.$lst[0]->descrip.'</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+            ';
+                }
+                ?>
+                <div class="portfolio_main">
+                    <div id="portfoliolist">
+                        <?php foreach($lst as $ls) {
+                            echo '
                                 <div class="portfolio logo1" data-cat="logo">
                                     <div class="portfolio-wrapper">
                                         <div class="fancyDemo">
                                                 <a rel="group" title="" href="' . __IMG__ . 'galeria/' . $ls->imagen . '"><img src="' . __IMG__ . 'galeria/medio/' . $ls->imagen . '" alt="" class="img-responsive"/></a>
                                         </div>
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a href="'.site_url("Principal/paratodos/".$ls->oidpor).'"><span class="text-category">'.$ls->nombre.'</span></a>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
                                     </div>
                                 </div>';
-                } ?>
+                        }?>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
             </div>
             <div class="clearfix"></div>
         </div>
+        <div class="col-md-2 blog_right">
+            <img src="<?php echo __IMG__?>images/prueba.png" class="img-responsive">
+            <img src="<?php echo __IMG__?>images/anuncio.jpg" class="img-responsive">
+            <img src="<?php echo __IMG__?>images/anuncio2.png" class="img-responsive">
+
+        </div>
     </div>
 </div>
+
