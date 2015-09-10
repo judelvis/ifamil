@@ -17,19 +17,19 @@
                 width="88%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe><div class="contact_main">
             </center>
                     <div class="col-md-4 company_ad">
-                    <h2>Direccion :</h2>
+                    <h2>Dirección :</h2>
                     <address>
-                        <p><b>IFAMIL ? Caracas ? Sede Principal:</b></p>
+                        <p><b>IFAMIL - Caracas - Sede Principal:</b></p>
                         <p>Av. Los Proceres C.C Los Proceres Nivel 3 </p>
                         <p>area socialista Urb. Aanta Monica Caracas </p>
                         <p>Distrito Capital Zona postal 1040.</p>
                         <p>Telefono:(0212) 661 56 16</p>
                         <p>Fax: (662) 41 06</p>
-                        <p><b>Sucursal IFAMIL ? Maracay:</b></p>
-                        <p>Av. Bol?var, Edif. Almacenes Militares I.P.S.F.A.,</p>
+                        <p><b>Sucursal IFAMIL - Maracay:</b></p>
+                        <p>Av. Bolívar, Edif. Almacenes Militares I.P.S.F.A.,</p>
                         <p>Los Jardines de Maracay. Maracay,</p>
                         <p>estado Aragua-Venezuela.</p>
-                        <p>Email: <a href="mailto:ifamil@hotmail.com">ifamil@hotmail.com</a></p>
+                        <p>Email: <a href="https://snt151.mail.live.com/" target="_blank">ifamil@hotmail.com</a>  <a href="https://plus.google.com/u/0/116239479180848308489/posts">ifamilviajesyturismo@gmail.com</a></p>
                         <p>Siguenos: <a href="https://www.facebook.com/profile.php?id=100008649614216">Facebook</a>, <a href="https://twitter.com/ifamil_ca">Twitter</a>, <a href="https://instagram.com/ifamil_c.a">Insatagram</a>.</p>
                     </address>
                 </div>

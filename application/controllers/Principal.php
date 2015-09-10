@@ -71,7 +71,7 @@ class Principal extends CI_Controller
         $this->load->view('principal/incluir/cabecera');
         $this -> load -> model('panel/Mpanel', 'MPanel');
         $datos["lst"]=$this->MPanel->consultarGaleriaPortafolio($id);
-        if($descrip != null)$data ['descrip'] = true;
+        if($descrip != null)$datos ['descrip'] = true;
         $this->load->view('principal/paratodos', $datos);
         $this->load->view('principal/incluir/pie');
     }
@@ -100,12 +100,6 @@ class Principal extends CI_Controller
     {
         $this->load->view('principal/incluir/cabecera');
         $this->load->view('principal/opinion');
-        $this->load->view('principal/incluir/pie');
-    }
-    public function oservicios()
-    {
-        $this->load->view('principal/incluir/cabecera');
-        $this->load->view('principal/oservicios');
         $this->load->view('principal/incluir/pie');
     }
     /**

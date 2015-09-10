@@ -52,12 +52,12 @@
                     <div class="span4_of_list">
                         <span class="active"><i class="fa fa-list"></i></span>
 
-                        <h3>Otros Servicios</h3>
+                        <h3>Contactenos</h3>
 
-                        <p>Observa nuestros otros servicios.</p>
+                        <p>Hazlo Diferente-Hazlo con Nosotros</p>
 
                         <div class="read_more">
-                            <a class="btn btn-2b" href="<?php echo base_url("index.php/Principal/oservicios")?>">Ver mas</a>
+                            <a class="btn btn-2b" href="<?php echo base_url("index.php/Principal/contacto")?>">Ver mas</a>
                         </div>
                     </div>
                 </div>
