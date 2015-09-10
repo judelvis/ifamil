@@ -115,7 +115,7 @@ class Sitio extends CI_Model {
 		$rs = array ();
 		
 		$lista = 'SELECT * FROM ' . $this->tbl . ' 
-				WHERE cod LIKE \'%' . $contenido . '%\' AND nom LIKE \'%' . $contenido . '%\' AND est 
+				WHERE cod LIKE \'%' . $contenido . '%\' OR nom LIKE \'%' . $contenido . '%\' OR est 
 						LIKE \'%' . $contenido . '%\'';
 		$resultado = $this->db->query ( $lista );		
 		$rs = $resultado->result ();
