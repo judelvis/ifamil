@@ -5,45 +5,8 @@
  * Date: 9/8/15
  * Time: 12:09 PM
  */?>
-<script>
-    $(function() {
-        $( "#fechadeSalida" ).datepicker({
-            changeMonth: true,
-            changeYear: true,
-            onClose: function( selectedDate ) {
-                $( "#fechadeLlegada" ).datepicker( "option", "minDate", selectedDate );
-            }
-        });
-        $( "#fechadeLlegada" ).datepicker({
-            changeMonth: true,
-            changeYear: true,
-            onClose: function( selectedDate ) {
-                $( "#fechadeSalida" ).datepicker( "option", "maxDate", selectedDate );
-            }
-        });
-        $.datepicker.regional['es'] = {
-            closeText: 'Cerrar',
-            prevText: '<Ant',
-            nextText: 'Sig>',
-            currentText: 'Hoy',
-            monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-            monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
-            dayNames: ['Domingo', 'Lunes', 'Martes', 'Mi?rcoles', 'Jueves', 'Viernes', 'S?bado'],
-            dayNamesShort: ['Dom','Lun','Mar','Mi?','Juv','Vie','S?b'],
-            dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','S?'],
-            weekHeader: 'Sm',
-            dateFormat: 'yy/mm/dd',
-            firstDay: 1,
-            isRTL: false,
-            showMonthAfterYear: false,
-            yearSuffix: ''
-        };
-        $.datepicker.setDefaults($.datepicker.regional['es']);
-        $(function () {
-            $("#fecha").datepicker();
-        });
-    });
-</script>
+<script type="text/javascript" src="<?php echo __JSVIEW__ ?>general/Global.js"></script>
+<script type="text/javascript" src="<?php echo __JSVIEW__ ?>frontEnd/reservacion.js"></script>
 <div class="contact-form">
     <img src="<?php echo __IMG__ ?>images/amarillo2.jpg" style="width: 100%">
 

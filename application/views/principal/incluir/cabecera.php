@@ -29,7 +29,7 @@
     <!--end slider -->
     <!-- must have -->
     <link href="<?php echo __MAQ__ ?>css/allinone_carousel.css" rel="stylesheet" type="text/css">
-    <script src="<?php echo __MAQ__ ?>js/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+    <!--<script src="<?php echo __MAQ__ ?>js/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>!-->
     <script src="<?php echo __MAQ__ ?>js/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
     <script src="<?php echo __MAQ__ ?>js/allinone_carousel.js" type="text/javascript"></script>
     <!--[if IE]>

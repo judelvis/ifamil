@@ -126,6 +126,14 @@ class Principal extends CI_Controller
         $this->load->view ( 'principal/incluir/pie' );
     }
 
+    function completarSitio(){
+        $this ->load->model("reserva/Sitio","Sitio");
+        $rs = $this ->Sitio ->listar($_GET['term']);
+        $datos = array();
+        foreach($rs[0]['rs'] as $fila)$datos[]=array("value"=>$fila->nom,'label'=>$fila->nom,'oid'=>$fila->oid);
+        echo json_encode($datos);
+    }
+
 
     function paralax(){
         $this -> load->view("principal/paralax");
