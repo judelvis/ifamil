@@ -74,8 +74,9 @@
 <div class="main_bg"><!-- start main -->
     <div class="container">
         <div class="main_grid1">
-            <h3 class="style pull-left"><?php echo $lst[0]->tit.$descrip ; ?></h3>
-
+            <hr class="team_hr team_hr_left hr_gray"/>
+            <center><h3><?php echo $lst[0]->tit.$descrip ; ?></h3></center>
+            <hr class="team_hr team_hr_left hr_gray"/>
             <div class="clearfix"></div>
         </div>
     </div>
@@ -116,11 +117,6 @@
             </div>
             <div class="clearfix"></div>
         </div>
-        <div class="col-md-2 blog_right">
-            <img src="<?php echo __IMG__?>images/prueba.png" class="img-responsive">
-            <img src="<?php echo __IMG__?>images/anuncio.jpg" class="img-responsive">
-            <img src="<?php echo __IMG__?>images/anuncio2.png" class="img-responsive">
 
-        </div>
     </div>
 </div>

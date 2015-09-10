@@ -4,9 +4,10 @@
  * User: breyner
  * Date: 9/5/15
  * Time: 3:25 PM
- */?>
+ */ ?>
 <div class="main_bg"><!-- start main -->
-    <img src="<?php echo __IMG__?>images/servicios.jpg" style="width: 100%">
+    <img src="<?php echo __IMG__ ?>images/servicios.jpg" style="width: 100%">
+
     <div class="container">
         <div class="main_grid1">
             <hr class="team_hr team_hr_left hr_gray"/>
@@ -16,52 +17,84 @@
         </div>
     </div>
 </div>
-<div class="main1_bg"><!-- start main -->
+<div class="main_btm1"><!-- start main_btm -->
     <div class="container">
-        <div class="main_grid">
-            <div class="span_of_4"><!-- start span_of_4 -->
-                <div class="col-md-3 span1_of_4">
-                    <div class="span4_of_list">
-                        <span class="active"><i class="fa fa-location-arrow"></i></span>
-                        <h3>Transporte</h3>
-                        <div class="read_more">
-                            <a class="btn btn-2 active" href="<?php echo site_url("principal/paquetes/1");?>">ver mas</a>
-                        </div>
+        <div class="blog"><!-- start blog -->
+            <div class="blog_main col-md-9">
+                <div class="blog_list">
+                    <div class="col-md-10 blog_left">
+                        <a href="#"><img src="<?php echo __IMG__; ?>images/turismo1.jpg" alt=""
+                                         class="img-responsive"/></a>
                     </div>
+                    <div class="clearfix"></div>
                 </div>
-                <div class="col-md-3 span1_of_4">
-                    <div class="span4_of_list">
-                        <span class="active"><i class="fa fa-picture-o"></i></span>
-                        <h3>Viajes</h3>
-                        <div class="read_more">
-                            <a class="btn  btn-2b" href="<?php echo site_url("principal/paquetes/2");?>">ver mas</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 span1_of_4">
-                    <div class="span4_of_list">
-                        <span class="active"><i class="fa fa-hospital-o"></i></span>
-                        <h3>Hoteleria</h3>
-                        <div class="read_more">
-                            <a class="btn btn-2b" href="<?php echo site_url("Principal/paquetes/3");?>">ver mas</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 span1_of_4">
-                    <div class="span4_of_list">
-                        <span class="active"><i class="fa fa-suitcase"></i></span>
 
-                        <h3>Paquetes</h3>
+                <div class="col-md-12 blog_left">
+                    <p class="para">Nuestra Agencia de Viajes, cuenta con 35 años de Experiencia comprobada en el gremio
+                        Turístico Nacional, poseemos un recurso humano calificado con gran experiencia en viajes de
+                        placer y viajes de negocios, además hemos ampliado nuestra red de comercialización con la
+                        finalidad de ofrecer a nuestra clientela una extensa gama de productos y servicios. </p>
+                </div>
+                <div class="clearfix"></div>
+                <div class="main_bg"><!-- start main -->
+                    <div class="container">
+                        <div class="main_grid1">
+                            <h3 class="style pull-left">Servicios turisticos que prestamos</h3>
 
-                        <div class="read_more">
-                            <a class="btn btn-2b" href="<?php echo site_url("Principal/paquetes/4");?>">ver mas</a>
+                            <div class="clearfix"></div>
                         </div>
                     </div>
                 </div>
+                    <div class="col-md-12 span1_of_3">
+                        <ul class="para">
+                            <br>
+                            <li><a href="#!"> Venta de Boletos Aéreos Nacionales e Internacionales.</a></li>
+                           <br>
+                            <li><a href="#!"> Servicio de Hospedaje  en Hoteles y Posadas  a Nivel  Nacional e Internacional.</a></li>
+                            <br>
+                            <li><a href="#!"> Servicio de Compra, Venta y Alquiler de Vehículos a Nivel Nacional e Internacional.</a></li>
+                            <br>
+                            <li><a href="#!"> Asesoría y Venta de Paquetes Nacionales e Internacionales, Full Days, Circuitos Turísticos, Paquete de Quinceañeras, Cruceros, Viajes Dorado, Viajes de Graduación.</a></li>
+                            <br>
+                            <li><a href="#!"> Organizamos Viajes de Grupos, Convenciones y  Congresos con Experiencia comprobada en el manejo de los mismos.</a></li>
+                            <br>
+                            <li><a href="#!"> Contamos con Los Sistemas de Reservación Aérea Global AMADEUS y KIU.</a> </li>
+                            <br>
+                            <li><a href="#!"> Ofrecemos  Atención Personalizada, a fin de Garantizar una Rápida  y Confiable Respuesta a sus Solicitudes.</a> </li>
+                            <br>
+                            <li><a href="#!"> Cobramos la Tasa más baja del Mercado por Concepto de  Servi Fee.</a> </li>
+                            <br>
+                            <li><a href="#!"> Poseemos Convenios con Proveedores Turísticos, Hoteles y Aerolíneas.</a> </li>
+                            <br>
+                            <li><a href="#!"> Ofrecemos a nuestra Distinguida Clientela Corporativa,  Servicio de Guardia   Nocturna, Fines de Semana  y  Días Feriados.</a> </li>
+                            <br>
+                            <li><a href="#!"> Organizamos Eventos,  Fiestas Corporativas, Fiestas de Fin de Año , Ferias Navideñas, Fiestas Infantiles, Día del Niño,  Fiestas Institucionales , entre Otras.</a> </li>
+                            <br>
+                            <li><a href="#!"> Ofrecemos Servicios Protocolares, Ceremoniales y de Logística, Promotoras, Modelos, Personal de Seguridad.  Animación  y  organización de cualquier presentación que así lo requiera.</a> </li>
+                            <br>
+                            <li><a href="#!"> Alquilamos  Salón de Fiesta de Uso Exclusivo “EL MIRADOR “.  Estratégicamente Ubicado en nuestras Instalaciones del IPSFA, con capacidad para 350 Personas.</a> </li>
+                            <br>
+                            <li><a href="#!"> Comercializamos: Materiales de Oficina, Materiales Eléctricos, Material Deportivo, Adquisición de Uniformes, Materiales de Limpieza, Tóner y Consumibles, Papel tipo Carta y Oficio, Multifuncionales, Cestas Navideñas entre otros.</a> </li>
+                            <br>
+                            <li><a href="#!"> Organizamos Planes Vacacionales, Visitas Guiadas y Campamentos con  Experiencia Comprobada en el Manejo de los Mismos.</a> </li>
+
+                        </ul>
+                    </div>
+
 
                 <div class="clearfix"></div>
             </div>
-            <!-- end span_of_4 -->
+
+            <div class="col-md-3 blog_right">
+                <img src="<?php echo __IMG__?>images/prueba.png" class="img-responsive">
+                <img src="<?php echo __IMG__?>images/anuncio.jpg" class="img-responsive">
+                <img src="<?php echo __IMG__?>images/anuncio2.png" class="img-responsive">
+                <img src="<?php echo __IMG__?>images/naci.png" class="img-responsive">
+
+
+            </div>
+            <div class="clearfix"></div>
         </div>
+        <!-- end blog -->
     </div>
 </div>
