@@ -12,19 +12,24 @@
 
     <div class="container">
         <hr class="team_hr team_hr_left hr_gray"/>
-        <center><h1>RESERVA YA</h1></center>
+        <center><h1>RESERVA YA</h1><h2 id="tituloPagina"></h2></center>
         <hr class="team_hr team_hr_left hr_gray"/>
-        <form method="post" action="http://localhost/ifamil/index.php/Reserva/Principal/registrarAfiliado">
+        <form method="post" action="#" onsubmit="return guardar();">
             <input type="hidden" name="categoria" id="categoria" value="<?php echo $tipo;?>">
             <div class="row">
                 <div class="col-md-6">
-                    <input type="text" name="correo" id="correo" placeholder="Correo Electronico">
+                    <input type="email" name="correo" id="correo" placeholder="Correo Electronico" required="required">
                 </div>
                 <div class="col-md-6">
-                    <input type="text" name="telefono" id="telefono" placeholder="Numero de telefono Celular">
+                    <input type="text" name="telefono" id="telefono" placeholder="Numero de telefono Celular" required="required">
                 </div>
             </div>
-            <div class="row hide">
+            <div class="row hide" id="divTransporte">
+                <div class="col-md-12">
+                    <input type="text" name="transporte" id="transporte" placeholder="Especifique ruta de transporte que desea tomar">
+                </div>
+            </div>
+            <div class="row hide" id="divViajes">
                 <div class="col-md-6">
                     <input type="text" name="desdeT" id="desdeT" placeholder="Aeropuerto de Salida">
                     <input type="hidden" name="desde" id="desde">
@@ -34,63 +39,61 @@
                     <input type="hidden" name="hasta" id="hasta">
                 </div>
             </div>
-            <div class="row hide">
+            <div class="row hide" id="divHotel">
                 <div class="col-md-6">
                     <select id="estado" name="estado" class="input-sm" style="width: 100%"  onchange="buscarDestino();"></select>
                 </div>
                 <div class="col-md-6">
-                    <select id="hospedaje" name="hospedaje" class="input-sm" style="width: 100%" ></select>
+                    <select id="hospedaje" name="hospedaje" class="input-sm" style="width: 100%" >
+                        <option value="0">Por asignar</option>
+                    </select>
                 </div>
             </div>
-            <div class="row hide">
+            <div class="row hide" id="divPaquete">
                 <div class="col-md-12">
-                    <input type="text" name="transporte" id="transporte" placeholder="Especifique ruta de transporte que desea tomar">
+                    <select id="paquete" name="paquete" class="input-sm" style="width: 100%"></select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <input type="text" name="fechaSalida" id="fechaSalida" placeholder="Fecha de Salida">
+                </div>
+                <div class="col-md-1">
+                    <input type="checkbox" id="vuelta"name="vuelta" class="input-sm" onclick="verificaVuelta();">Ida Y Vuelta?
+                </div>
+                <div class="col-md-6">
+                    <input type="text" name="fechaLlegada" id="fechaLlegada" placeholder="Fecha de Retorno" disabled="disabled">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <input type="text" name="fechadeSalida" id="fechadeSalida" placeholder="Fecha de Salida">
-                </div>
-                <div class="col-md-6">
-                    <input type="text" name="fechadeLlegada" id="fechadeLlegada" placeholder="Fecha de Llegada">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <select name="cantidadPasajeros" class="input-sm" style="width: 100%" id="cantidadPasajeros">
-                        <option value="0">Cantidad de Pasajeros</option>
-                        <?php for ($i = 1; $i <= 10; $i++) {
-                            echo "<option value='$i'>$i</option>";
-                        }
-
-                        ?>
-                    </select>
-                </div>
-
-                <div class="col-md-6">
-                    <select name="cantidadNinos" class="input-sm" style="width: 100%" id="cantidadNinos">
-                        <option value="0">Cantidad de Niños</option>
-                        <?php for ($i = 1; $i <= 10; $i++) {
-                            echo "<option value='$i'>$i</option>";
-                        }
-
-                        ?>
-                    </select>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <select name="cantidadAdultos" class="input-sm" style="width: 100%" id="cantidadAdultos">
+                    <select name="cantidadAdulto" class="input-sm" style="width: 100%" id="cantidadAdulto"required="required">
                         <option value="0">Cantidad de Adultos</option>
-                        <?php for ($i = 1; $i <= 10; $i++) {
+                        <?php for ($i = 1; $i <= 15; $i++) {
                             echo "<option value='$i'>$i</option>";
                         }
 
                         ?>
                     </select>
                 </div>
+
                 <div class="col-md-6">
-                    <input type="text" name="formadePago" id="formadePago" placeholder="Forma de pago que desea Usar">
+                    <select name="cantidadNino" class="input-sm" style="width: 100%" id="cantidadNino" required="required">
+                        <option value="0">Cantidad de Niños</option>
+                        <?php for ($i = 1; $i <= 15; $i++) {
+                            echo "<option value='$i'>$i</option>";
+                        }
+
+                        ?>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="text" name="detalle" id="detalle" placeholder="Escriba cualquier inquietu aqui">
+                </div>
+                <div class="col-md-6">
+                    <input type="text" name="formadePago" id="formadePago" placeholder="Forma de pago que desea Usar" required="required">
                 </div>
             </div>
             <span><input type="submit" value="ENVIAR"></span>

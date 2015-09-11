@@ -18,7 +18,7 @@
                         <p>Realiza tu solicitud de paquetes ahora.</p>
 
                         <div class="read_more">
-                            <a class="btn btn-2 active" href="<?php echo base_url("index.php/Principal/paquetes")?>">Ver mas</a>
+                            <a class="btn btn-2 active" href="<?php echo base_url("index.php/Principal/paquetes/4")?>">Ver mas</a>
                         </div>
                     </div>
                 </div>

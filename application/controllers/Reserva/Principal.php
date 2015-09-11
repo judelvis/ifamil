@@ -48,6 +48,32 @@ class Principal extends CI_Controller {
 		}
 	}
 	
+	function registrarSolicitud(){
+		if(isset($_POST["cedula"])) {
+			$this->load->model("reserva/Solicitud", "Solicitud");
+			$this->Solicitud->correo = $_POST["correo"];
+			$this->Solicitud->origen = $_POST["origen"];
+			$this->Solicitud->destino = $_POST["destino"];
+			$this->Solicitud->fechaSalida = $_POST["fechaSalida"];
+			$this->Solicitud->fechaLlegada= $_POST["fechaLlegada"];
+			$this->Solicitud->detalle = $_POST["detalle"];
+			$this->Solicitud->cantidaAdultos = $_POST["cantidaAdultos"];
+			$this->Solicitud->cantidadNinos = $_POST["cantidadNinos"];
+			$this->Solicitud->tipo = $_POST["tipo"];
+			$this->Solicitud->formaPago = $_POST["formaPago"];
+			$this->Solicitud->hospedaje = $_POST["hospedaje"];
+			$this->Solicitud->transporte = $_POST["transporte"];
+			$this->Solicitud->paquete = $_POST["paquete"];
+			
+			
+			$this->Solicitud->salvar();
+			echo "Su proceso ha sido exitoso.";
+		}
+		else{
+			echo "Esta intentando acceder a una area restringida.";
+		}
+	}
+	
 	function logout() {
 		session_destroy();
 		return true;
