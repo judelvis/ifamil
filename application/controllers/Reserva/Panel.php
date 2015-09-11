@@ -45,28 +45,38 @@ class Panel extends CI_Controller {
 		$this->load->model ( 'usuario/Iniciar', 'Iniciar' );
 		echo $this->Iniciar->validarCuenta ( $_POST );
 	}
-	
-	
-	
-	function listarVuelos(){
-		$this->load->model('reserva/Sitio', 'Sitio');
-		$cabecera = array ('Id','Nombre','codigo','Estado');
-		$rs = $this->Sitio->listar();		
-		foreach ( $rs[0]['rs'] as $fila ) {
-			$cuep[] = array ($fila->oid,$fila->nom,$fila->cod,$fila->est);
+	function listarVuelos() {
+		$this->load->model ( 'reserva/Sitio', 'Sitio' );
+		$cabecera = array (
+				'Id',
+				'Nombre',
+				'codigo',
+				'Estado' 
+		);
+		$rs = $this->Sitio->listar ();
+		foreach ( $rs [0] ['rs'] as $fila ) {
+			$cuep [] = array (
+					$fila->oid,
+					$fila->nom,
+					$fila->cod,
+					$fila->est 
+			);
 		}
-		$obj[] = array ("cabecera" => $cabecera,"cuerpo" => $cuep);
-		echo json_encode($obj);
+		$obj [] = array (
+				"cabecera" => $cabecera,
+				"cuerpo" => $cuep 
+		);
+		echo json_encode ( $obj );
 	}
 	/**
 	 * funcion para enviar correo
 	 */
 	function enviaCorreo() {
-		$this->load->model('utilidades/Correo', 'Correo');
+		$this->load->model ( 'utilidades/Correo', 'Correo' );
 		$this->Correo->para = "gesaodin@gmail.com";
 		$this->Correo->asunto = "Prueba de IFAMIL";
 		$this->Correo->contenido = "Que locura";
-		$this->Correo->enviar();
+		$this->Correo->enviar ();
 	}
 	
 	/**
@@ -77,12 +87,42 @@ class Panel extends CI_Controller {
 		redirect ( base_url () . 'index.php/Reserva/Panel' );
 	}
 	
-	
-	function listarPaquetes(){
-		$this->load->model('reserva/Paquete', 'Paquete');
-		print_r($this->Paquete->listarPaquetes());
+	/**
+	 */
+	function listarSolicitud() {
+		$this->load->model ( 'reserva/Solicitud', 'Solicitud' );
+		$cabecera = array (
+				'ID',
+				'Nombre Completo',
+				'Telefono',
+				'Correo',
+				'Tipo Solicitud',
+				'Estatus' 
+		);
+		$rs = $this->Solicitud->listarPendientes ();
+		foreach ( $rs [0] ['rs'] as $fila ) {
+			$cuep [] = array (
+					$fila->oid,
+					$fila->nom,
+					$fila->tel,
+					$fila->cor,
+					$fila->cat,
+					$fila->est 
+			);
+		}
+		$obj [] = array (
+				"cabecera" => $cabecera,
+				"cuerpo" => $cuep 
+		);
+		echo json_encode ( $obj );
 	}
 	
+	/**
+	 */
+	function listarPaquetes() {
+		$this->load->model ( 'reserva/Paquete', 'Paquete' );
+		print_r ( $this->Paquete->listarPaquetes () );
+	}
 	function __destruct() {
 	}
 }

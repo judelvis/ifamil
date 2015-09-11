@@ -99,7 +99,7 @@ class Solicitud extends CI_Model {
 		$bVal = false;
 		if ($this->correo != '') {
 			$this->db->insert ( $this->tbl, $this->mapearObjeto () );
-			if($this->correoActivo == TRUE)
+			//if(isset($this->Correo))
 			$bVal = true;
 		}
 		return $bVal;
@@ -108,8 +108,6 @@ class Solicitud extends CI_Model {
 	
 	function activarEnvioCorreo(){
 		$this->load->model('utilidades/Correo', 'Correo');
-		$this->correoElectronico = $this->Correo;
-		$this->correoActivo = TRUE;
 	}
 	/**
 	 * Obtener afiliado por identificador de elementos...
@@ -154,13 +152,13 @@ class Solicitud extends CI_Model {
 	 */
 	private function listar($categoria = 0, $estatus = 0, $fecha = NULL) {
 		$rs = array ();
+		$lista =  'SELECT * FROM ' . $this->tbl . ' LEFT JOIN t_afiliados ON ' . $this->tbl . '.cor=t_afiliados.cor' ;
 		if ($categoria == 0) {
-			$lista = 'SELECT * FROM ' . $this->tbl . ' WHERE est=' . $categoria;
+			$lista .= ' WHERE est=' . $categoria;
 		} else {
-			$lista = 'SELECT * FROM ' . $this->tbl . ' WHERE cat=' . $categoria . ' AND est=' . $estatus;
+			$lista .= ' WHERE cat=' . $categoria . ' AND est=' . $estatus;
 		}
-		if (isset ( $fecha )) {
-		}
+		if (isset ( $fecha )) $lista .= $fecha;
 		
 		$resultado = $this->db->query ( $lista );
 		$rs = $resultado->result ();
@@ -195,7 +193,12 @@ class Solicitud extends CI_Model {
 	}
 	
 	/**
+	 * 
+	 * @param Date $desde
+	 * @param Date $hasta
+	 * @return string
 	 */
 	function listarPorFecha($desde, $hasta) {
+		return ' AND fes BETWEEN (' . $desde . ' AND ' . $hasta . ')';
 	}
 }
