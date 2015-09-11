@@ -6,7 +6,7 @@
  * @author Carlos Peña
  *
  */
-class Sitio extends CI_Model {
+class Estado extends CI_Model {
 	
 	/**
 	 * Sitio: El lugar que ocupa una cosa.

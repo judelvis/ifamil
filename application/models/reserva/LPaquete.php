@@ -13,15 +13,22 @@ class LPaquete extends CI_Model {
 	 * 
 	 */
 	
-	public $tbl = "t_paquete";
+	public $tbl = "t_portafolio";
 	
 	public $identificador = "NULL";
-	public $categoria;
+	public $idCategoria;
+	public $titulo;
 	public $descripcion;
-	
+	public $resumen;
+	public $fecha;
+	public $modificado;
+	public $estatus;
 	
 	function __construct() {
 		parent::__contruct ();
+		if (! isset ( $this->db )) {
+			$this->load->database ();
+		}
 	}
 	
 	
@@ -63,6 +70,7 @@ class LPaquete extends CI_Model {
 	
 	
 	function __destruct() {
+		
 	}
 	
 	

@@ -130,28 +130,54 @@ class Solicitud extends CI_Model {
 	
 	/**
 	 *
-	 * @param number $categoria        	
+	 * @param Categoria $categoria        	
 	 * @param number $estatus        	
 	 * @return multitype:number string unknown
 	 */
-	function listar($categoria = 0, $estatus = 0) {
-		$donde = '';
+	private function listar($categoria = 0, $estatus = 0, $fecha = NULL) {
 		$rs = array ();
 		if ($categoria == 0) {
-			$lista = 'SELECT * FROM ' . $this->tbl . ' WHERE est=0';
+			$lista = 'SELECT * FROM ' . $this->tbl . ' WHERE est=' . $categoria;
 		} else {
 			$lista = 'SELECT * FROM ' . $this->tbl . ' WHERE cat=' . $categoria . ' AND est=' . $estatus;
 		}
+		if (isset ( $fecha )) {
+		}
+		
 		$resultado = $this->db->query ( $lista );
 		$rs = $resultado->result ();
 		
 		$arr [] = array (
-				'err' => 0, // $this->db->_error_number (),
-				'msj' => '', // $this->db->_error_message (),
+				'err' => 0,
+				'msj' => '',
 				'rs' => $rs 
 		);
 		return $arr;
 	}
 	
+	/**
+	 * 
+	 */
+	function listarTodo() {
+		return $this->listar();
+	}
 	
+	/**
+	 * 
+	 */
+	function listarPendientes() {
+		return $this->listar ( 0, 1 );
+	}
+	
+	/**
+	 * 
+	 */
+	function listarAtendidos(){
+		return $this->listar ( 0, 2 );
+	}
+	
+	/**
+	 */
+	function listarPorFecha($desde, $hasta) {
+	}
 }
