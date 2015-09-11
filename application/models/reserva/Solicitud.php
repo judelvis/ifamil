@@ -42,6 +42,17 @@ class Solicitud extends CI_Model {
 	public $estatus;
 	
 	/**
+	 * 
+	 * @var Boolean
+	 */
+	private $activarCorreo = FALSE;
+	
+	/**
+	 * 
+	 * @var Correo
+	 */
+	private $correoElectronico;
+	/**
 	 * Contructor de la clase
 	 * Verificar si la base de datos esta cargada
 	 */
@@ -88,11 +99,18 @@ class Solicitud extends CI_Model {
 		$bVal = false;
 		if ($this->correo != '') {
 			$this->db->insert ( $this->tbl, $this->mapearObjeto () );
+			if($this->correoActivo == TRUE)
 			$bVal = true;
 		}
 		return $bVal;
 	}
 	
+	
+	function activarEnvioCorreo(){
+		$this->load->model('utilidades/Correo', 'Correo');
+		$this->correoElectronico = $this->Correo;
+		$this->correoActivo = TRUE;
+	}
 	/**
 	 * Obtener afiliado por identificador de elementos...
 	 *

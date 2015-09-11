@@ -10,11 +10,8 @@ class LPaquete extends CI_Model {
 	
 	/**
 	 * Planes establecido por empresas proveedores
-	 * 
 	 */
-	
 	public $tbl = "t_portafolio";
-	
 	public $identificador = "NULL";
 	public $idCategoria;
 	public $titulo;
@@ -23,14 +20,12 @@ class LPaquete extends CI_Model {
 	public $fecha;
 	public $modificado;
 	public $estatus;
-	
 	function __construct() {
 		parent::__contruct ();
 		if (! isset ( $this->db )) {
 			$this->load->database ();
 		}
 	}
-	
 	
 	/**
 	 * Creando un objeto de tipo t_afiliados DB
@@ -41,47 +36,39 @@ class LPaquete extends CI_Model {
 		$data = array ( //
 				'oid' => $this->identificador, //
 				'categoria' => $this->categoria, //
-				'descrip' => $this->descripcion
+				'descrip' => $this->descripcion 
 		);
 		return $data;
 	}
-	
 	
 	/**
 	 * Listar todos los items de la tabla
 	 *
 	 * @return array
 	 */
-	private function listar($categoria, $titulo, $resumen, $fecha) {
+	private function listar($categoria, $titulo = NULL, $resumen = NULL, $fecha = NULL) {
 		$donde = '';
 		$rs = array ();
-	
+		
 		$lista = 'SELECT * FROM ' . $this->tbl . 'WHERE oidcat=' . $categoria;
 		$resultado = $this->db->query ( $lista );
 		$rs = $resultado->result ();
-	
+		
 		$arr [] = array (
 				'err' => 0, // $this->db->_error_number (),
-				'msj' => '', //$this->db->_error_message (),
-				'rs' => $rs
+				'msj' => '', // $this->db->_error_message (),
+				'rs' => $rs 
 		);
 		return $arr;
 	}
 	
 	/**
-	 * 
+	 *
 	 * @return Ambigous <multitype:, multitype:number string unknown >
 	 */
-	function listarPaquetes(){
-		return $this->listar(4);
+	function listarPaquetes() {
+		return $this->listar ( 4 );
 	}
-	
-	
 	function __destruct() {
-		
 	}
-	
-	
-	
-	
 }
