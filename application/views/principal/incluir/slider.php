@@ -35,16 +35,7 @@
                 </div>
             </div>
         </div>
-        <div class="slide">
-            <img src="<?php echo __IMG__?>images/ifamil1.jpg" class="img-responsive" >
 
-            <div class="slide_content">
-                <div class="slide_content_wrap">
-
-
-                </div>
-            </div>
-        </div>
         <div class="slide">
             <img src="<?php echo __IMG__?>images/ifamil2.jpg" class="img-responsive" >
 

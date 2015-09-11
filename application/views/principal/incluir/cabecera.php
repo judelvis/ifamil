@@ -100,16 +100,16 @@
 <a href="#" class="back-to-top">Volver arriba</a>
 <div class="row">
     <div class="col-xs-6 col-sm-3">
-        <img style="width: 100%" src="<?php echo __IMG__ ?>images/logo1.jpg">
+        <img style="width: 100%" src="<?php echo __IMG__ ?>images/logo1.png">
     </div>
     <div class="col-xs-6 col-sm-3">
-        <img src="<?php echo __IMG__ ?>images/banner5.jpg">
+        <img src="<?php echo __IMG__ ?>images/banner5.png">
     </div>
     <div class="col-xs-6 col-sm-4"></div>
     <div class="col-xs-6 col-sm-2">
-        <img src="<?php echo __IMG__ ?>images/banner6.jpg" class="img-responsive">
+        <img src="<?php echo __IMG__ ?>images/banner6.png" class="img-responsive">
     </div>
-    <div class="header_bg">
+    <div class="header_bg x">
         <div class="container">
             <div class="header">
                 <div class="h_menu">
