@@ -31,7 +31,7 @@
                         <p>Reserva tu vuelo ya con nosotros.</p>
 
                         <div class="read_more">
-                            <a class="btn btn-2b" href="<?php echo base_url("index.php/Principal/reservacion")?>">Ver mas</a>
+                            <a class="btn btn-2b" href="<?php echo base_url("index.php/Principal/solicitud/4")?>">Ver mas</a>
                         </div>
                     </div>
                 </div>

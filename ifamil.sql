@@ -1,16 +1,17 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Versión del servidor:         5.5.44-0ubuntu0.14.04.1 - (Ubuntu)
--- SO del servidor:              debian-linux-gnu
--- HeidiSQL Versión:             9.3.0.4984
+-- Server version:               5.5.37-0ubuntu0.13.10.1 - (Ubuntu)
+-- Server OS:                    debian-linux-gnu
+-- HeidiSQL version:             7.0.0.4053
+-- Date/time:                    2015-09-11 11:29:37
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8mb4 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40101 SET NAMES utf8 */;
+/*!40014 SET FOREIGN_KEY_CHECKS=0 */;
 
--- Volcando estructura para tabla ifamil.contacto
+-- Dumping structure for table ifamil.contacto
+DROP TABLE IF EXISTS `contacto`;
 CREATE TABLE IF NOT EXISTS `contacto` (
   `nombre` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
   `correo` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
@@ -19,12 +20,13 @@ CREATE TABLE IF NOT EXISTS `contacto` (
   PRIMARY KEY (`correo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
--- Volcando datos para la tabla ifamil.contacto: ~0 rows (aproximadamente)
+-- Dumping data for table ifamil.contacto: ~0 rows (approximately)
 /*!40000 ALTER TABLE `contacto` DISABLE KEYS */;
 /*!40000 ALTER TABLE `contacto` ENABLE KEYS */;
 
 
--- Volcando estructura para tabla ifamil.t_afiliados
+-- Dumping structure for table ifamil.t_afiliados
+DROP TABLE IF EXISTS `t_afiliados`;
 CREATE TABLE IF NOT EXISTS `t_afiliados` (
   `oid` int(10) NOT NULL AUTO_INCREMENT COMMENT 'Auto Incremento',
   `ced` int(11) NOT NULL COMMENT 'Cedula de identidad',
@@ -38,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `t_afiliados` (
   UNIQUE KEY `cedula` (`ced`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='Listado de Clientes Padres';
 
--- Volcando datos para la tabla ifamil.t_afiliados: ~2 rows (aproximadamente)
+-- Dumping data for table ifamil.t_afiliados: ~2 rows (approximately)
 /*!40000 ALTER TABLE `t_afiliados` DISABLE KEYS */;
 INSERT INTO `t_afiliados` (`oid`, `ced`, `nom`, `fna`, `tel`, `cor`, `fac`, `pro`) VALUES
 	(1, 25475197, 'Anthony Uzcategui', '07/05/97', '041682821823', 'anthony-uzcategui7@gmail.com', 'AnthonyPEÑ', 'TAXISTA'),
@@ -46,7 +48,8 @@ INSERT INTO `t_afiliados` (`oid`, `ced`, `nom`, `fna`, `tel`, `cor`, `fac`, `pro
 /*!40000 ALTER TABLE `t_afiliados` ENABLE KEYS */;
 
 
--- Volcando estructura para tabla ifamil.t_asociados
+-- Dumping structure for table ifamil.t_asociados
+DROP TABLE IF EXISTS `t_asociados`;
 CREATE TABLE IF NOT EXISTS `t_asociados` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `asociado` text COLLATE latin1_spanish_ci NOT NULL,
@@ -56,12 +59,13 @@ CREATE TABLE IF NOT EXISTS `t_asociados` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
--- Volcando datos para la tabla ifamil.t_asociados: ~0 rows (aproximadamente)
+-- Dumping data for table ifamil.t_asociados: ~0 rows (approximately)
 /*!40000 ALTER TABLE `t_asociados` DISABLE KEYS */;
 /*!40000 ALTER TABLE `t_asociados` ENABLE KEYS */;
 
 
--- Volcando estructura para tabla ifamil.t_categoria
+-- Dumping structure for table ifamil.t_categoria
+DROP TABLE IF EXISTS `t_categoria`;
 CREATE TABLE IF NOT EXISTS `t_categoria` (
   `oid` int(10) NOT NULL AUTO_INCREMENT,
   `categoria` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
@@ -69,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `t_categoria` (
   PRIMARY KEY (`oid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
--- Volcando datos para la tabla ifamil.t_categoria: ~4 rows (aproximadamente)
+-- Dumping data for table ifamil.t_categoria: ~4 rows (approximately)
 /*!40000 ALTER TABLE `t_categoria` DISABLE KEYS */;
 INSERT INTO `t_categoria` (`oid`, `categoria`, `descrip`) VALUES
 	(1, 'Transporte', ''),
@@ -79,7 +83,8 @@ INSERT INTO `t_categoria` (`oid`, `categoria`, `descrip`) VALUES
 /*!40000 ALTER TABLE `t_categoria` ENABLE KEYS */;
 
 
--- Volcando estructura para tabla ifamil.t_datos
+-- Dumping structure for table ifamil.t_datos
+DROP TABLE IF EXISTS `t_datos`;
 CREATE TABLE IF NOT EXISTS `t_datos` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `mision` text COLLATE latin1_spanish_ci NOT NULL,
@@ -88,12 +93,13 @@ CREATE TABLE IF NOT EXISTS `t_datos` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
--- Volcando datos para la tabla ifamil.t_datos: ~0 rows (aproximadamente)
+-- Dumping data for table ifamil.t_datos: ~0 rows (approximately)
 /*!40000 ALTER TABLE `t_datos` DISABLE KEYS */;
 /*!40000 ALTER TABLE `t_datos` ENABLE KEYS */;
 
 
--- Volcando estructura para tabla ifamil.t_empresa
+-- Dumping structure for table ifamil.t_empresa
+DROP TABLE IF EXISTS `t_empresa`;
 CREATE TABLE IF NOT EXISTS `t_empresa` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `nombre` text COLLATE latin1_spanish_ci NOT NULL,
@@ -101,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `t_empresa` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
--- Volcando datos para la tabla ifamil.t_empresa: ~5 rows (aproximadamente)
+-- Dumping data for table ifamil.t_empresa: ~5 rows (approximately)
 /*!40000 ALTER TABLE `t_empresa` DISABLE KEYS */;
 INSERT INTO `t_empresa` (`id`, `nombre`, `imagen`) VALUES
 	(4, 'Locatel', 'locatel.png'),
@@ -112,7 +118,46 @@ INSERT INTO `t_empresa` (`id`, `nombre`, `imagen`) VALUES
 /*!40000 ALTER TABLE `t_empresa` ENABLE KEYS */;
 
 
--- Volcando estructura para tabla ifamil.t_galeria
+-- Dumping structure for table ifamil.t_estados
+DROP TABLE IF EXISTS `t_estados`;
+CREATE TABLE IF NOT EXISTS `t_estados` (
+  `oid` int(18) NOT NULL AUTO_INCREMENT,
+  `estado` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  PRIMARY KEY (`oid`)
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+-- Dumping data for table ifamil.t_estados: ~24 rows (approximately)
+/*!40000 ALTER TABLE `t_estados` DISABLE KEYS */;
+INSERT INTO `t_estados` (`oid`, `estado`) VALUES
+	(1, 'Amazonas'),
+	(2, 'Anzoategui'),
+	(3, 'Apure'),
+	(4, 'Aragua'),
+	(5, 'Barinas'),
+	(6, 'Bolívar'),
+	(7, 'Carabobo'),
+	(8, 'Cojedes'),
+	(9, 'Delta Amacuro'),
+	(10, 'Distrito Capital'),
+	(11, 'Falcón'),
+	(12, 'Guárico'),
+	(13, 'Lara'),
+	(14, 'Mérida'),
+	(15, 'Miranda'),
+	(16, 'Monagas'),
+	(17, 'Nueva Esparta'),
+	(18, 'Portuguesa'),
+	(19, 'Sucre'),
+	(20, 'Táchira'),
+	(21, 'Trujillo'),
+	(22, 'Vargas'),
+	(23, 'Yaracuy'),
+	(24, 'Zulia');
+/*!40000 ALTER TABLE `t_estados` ENABLE KEYS */;
+
+
+-- Dumping structure for table ifamil.t_galeria
+DROP TABLE IF EXISTS `t_galeria`;
 CREATE TABLE IF NOT EXISTS `t_galeria` (
   `oid` int(11) NOT NULL AUTO_INCREMENT,
   `oidpor` int(11) NOT NULL,
@@ -126,7 +171,7 @@ CREATE TABLE IF NOT EXISTS `t_galeria` (
   KEY `oidpor` (`oidpor`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
--- Volcando datos para la tabla ifamil.t_galeria: ~7 rows (aproximadamente)
+-- Dumping data for table ifamil.t_galeria: ~14 rows (approximately)
 /*!40000 ALTER TABLE `t_galeria` DISABLE KEYS */;
 INSERT INTO `t_galeria` (`oid`, `oidpor`, `imagen`, `titulo`, `detalle`, `fecha`, `modificado`, `enlace`) VALUES
 	(1, 2, 'navidad.jpg', 'Navidad', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '2015-09-14', '2015-09-09 16:59:00', ''),
@@ -146,7 +191,8 @@ INSERT INTO `t_galeria` (`oid`, `oidpor`, `imagen`, `titulo`, `detalle`, `fecha`
 /*!40000 ALTER TABLE `t_galeria` ENABLE KEYS */;
 
 
--- Volcando estructura para tabla ifamil.t_noticias
+-- Dumping structure for table ifamil.t_noticias
+DROP TABLE IF EXISTS `t_noticias`;
 CREATE TABLE IF NOT EXISTS `t_noticias` (
   `oid` int(10) NOT NULL AUTO_INCREMENT,
   `imagen` text NOT NULL,
@@ -159,14 +205,15 @@ CREATE TABLE IF NOT EXISTS `t_noticias` (
   PRIMARY KEY (`oid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla ifamil.t_noticias: ~1 rows (aproximadamente)
+-- Dumping data for table ifamil.t_noticias: ~1 rows (approximately)
 /*!40000 ALTER TABLE `t_noticias` DISABLE KEYS */;
 INSERT INTO `t_noticias` (`oid`, `imagen`, `titulo`, `descrip`, `enlace`, `fecha`, `resumen`, `modificado`) VALUES
 	(1, 'rugby.jpg', 'IFAMIL BRINDA A SUS EMPLEADOS UN DÍA RECREACIONAL', 'Caracas, 18 de julio de 2015. Este jueves VIAJE Y TURISMO IFAMIL C.A a través de su gerente el Cnel. Juan Puertas Tovar, le dedico un día a sus empleados, a través de una visita a la hacienda Santa Teresa con el fin de esparcir e integrar a estas personas, que más de ser un grupo de trabajo, son la familia IFAMIL.\r\n\r\nLa actividad fue realizada en la hacienda Santa Teresa, allí recibieron los valores fundamentales, del  juego “Rugby” como son disciplina, respeto, integridad, pasión y solidaridad.\r\n\r\nDegustaron de un exquisito almuerzo y realizaron un recorrido donde conocieron el arte de hacer Ron.', '', '2015-07-18', 'La actividad fue realizada en la hacienda Santa Teresa, allí recibieron los valores fundamentales, del  juego “Rugby” como son disciplina, respeto, integridad, pasión y solidaridad.', '2015-09-08 08:51:50');
 /*!40000 ALTER TABLE `t_noticias` ENABLE KEYS */;
 
 
--- Volcando estructura para tabla ifamil.t_portafolio
+-- Dumping structure for table ifamil.t_portafolio
+DROP TABLE IF EXISTS `t_portafolio`;
 CREATE TABLE IF NOT EXISTS `t_portafolio` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `oidcat` int(11) NOT NULL DEFAULT '0',
@@ -180,7 +227,7 @@ CREATE TABLE IF NOT EXISTS `t_portafolio` (
   KEY `oidcat` (`oidcat`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
--- Volcando datos para la tabla ifamil.t_portafolio: ~2 rows (aproximadamente)
+-- Dumping data for table ifamil.t_portafolio: ~3 rows (approximately)
 /*!40000 ALTER TABLE `t_portafolio` DISABLE KEYS */;
 INSERT INTO `t_portafolio` (`id`, `oidcat`, `titulo`, `descrip`, `resumen`, `fecha`, `modificado`, `estatus`) VALUES
 	(4, 4, 'Isla la tortuga', '<lul class="para"><li>Incluye:</li>\r\n<li>Traslado en unidades ejecutivas Caracas- Chirimena- Caracas.</li>\r\n<li>Traslado en lancha Chirimena- La Tortuga- Chirimena.</li>\r\n<li>Todas las comidas (02 desayuno-02 almuerzo-01cena)(comida a base de pescado, desayunos arepa y sándwich).</li>\r\n<li>Pernocta en carpa con colchón (el colchon ya esta incluido con la carpa).</li>\r\n<li>Cava con hielo, agua y refresco.</li>\r\n<li>Toldo y sillas de playa.</li>\r\n<li>Paseo a los cayos Tortuguillos.</li>\r\n<li>Paramedico.</li></ul>', '<p class="para">Vive una mágica experiencia en la Isla de Margarita 2 DIAS / 1 NOCHE</p>', '2015-09-11', '2015-09-11 09:59:31', 0),
@@ -189,7 +236,8 @@ INSERT INTO `t_portafolio` (`id`, `oidcat`, `titulo`, `descrip`, `resumen`, `fec
 /*!40000 ALTER TABLE `t_portafolio` ENABLE KEYS */;
 
 
--- Volcando estructura para tabla ifamil.t_sitios
+-- Dumping structure for table ifamil.t_sitios
+DROP TABLE IF EXISTS `t_sitios`;
 CREATE TABLE IF NOT EXISTS `t_sitios` (
   `oid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',
   `nom` varchar(255) NOT NULL COMMENT 'Nombre Completo',
@@ -198,7 +246,7 @@ CREATE TABLE IF NOT EXISTS `t_sitios` (
   PRIMARY KEY (`oid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1 COMMENT='Control de los sitios WEB';
 
--- Volcando datos para la tabla ifamil.t_sitios: ~30 rows (aproximadamente)
+-- Dumping data for table ifamil.t_sitios: ~30 rows (approximately)
 /*!40000 ALTER TABLE `t_sitios` DISABLE KEYS */;
 INSERT INTO `t_sitios` (`oid`, `nom`, `cod`, `est`) VALUES
 	(1, 'Aeropuerto Internacional de Maiquetía Simón Bolívar', 'CCS', 'Caracas'),
@@ -234,7 +282,8 @@ INSERT INTO `t_sitios` (`oid`, `nom`, `cod`, `est`) VALUES
 /*!40000 ALTER TABLE `t_sitios` ENABLE KEYS */;
 
 
--- Volcando estructura para tabla ifamil.t_solicitud
+-- Dumping structure for table ifamil.t_solicitud
+DROP TABLE IF EXISTS `t_solicitud`;
 CREATE TABLE IF NOT EXISTS `t_solicitud` (
   `oid` int(11) NOT NULL COMMENT 'Identificador',
   `oidc` int(11) NOT NULL COMMENT 'Identificador del Cliente',
@@ -246,12 +295,13 @@ CREATE TABLE IF NOT EXISTS `t_solicitud` (
   `est` tinyint(1) NOT NULL COMMENT 'Estatus'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Control de Solicitudes';
 
--- Volcando datos para la tabla ifamil.t_solicitud: ~0 rows (aproximadamente)
+-- Dumping data for table ifamil.t_solicitud: ~0 rows (approximately)
 /*!40000 ALTER TABLE `t_solicitud` DISABLE KEYS */;
 /*!40000 ALTER TABLE `t_solicitud` ENABLE KEYS */;
 
 
--- Volcando estructura para tabla ifamil.t_usuarios
+-- Dumping structure for table ifamil.t_usuarios
+DROP TABLE IF EXISTS `t_usuarios`;
 CREATE TABLE IF NOT EXISTS `t_usuarios` (
   `id` int(5) NOT NULL AUTO_INCREMENT,
   `documento` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -263,11 +313,10 @@ CREATE TABLE IF NOT EXISTS `t_usuarios` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Volcando datos para la tabla ifamil.t_usuarios: ~1 rows (aproximadamente)
+-- Dumping data for table ifamil.t_usuarios: ~1 rows (approximately)
 /*!40000 ALTER TABLE `t_usuarios` DISABLE KEYS */;
 INSERT INTO `t_usuarios` (`id`, `documento`, `nombre`, `apellido`, `login`, `clave`, `nivel`) VALUES
 	(1, '1', 'Administrador', 'Administrador', 'admin', '202cb962ac59075b964b07152d234b70', 0);
 /*!40000 ALTER TABLE `t_usuarios` ENABLE KEYS */;
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

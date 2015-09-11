@@ -33,18 +33,18 @@ $(function() {
     $("#fecha").datepicker();
     $.datepicker.setDefaults($.datepicker.regional['es']);
     //alert(sUrlP);
-    $("#desde").autocomplete({
+    $("#desdeT").autocomplete({
         source:sUrlP+"completarSitio",
         minLength: 2,
         select: function( event, ui ) {
-            alert(ui.item.oid);
+            $("#desde").val(ui.item.oid);
         }
     });
-    $("#hasta").autocomplete({
+    $("#hastaT").autocomplete({
         source:sUrlP+"completarSitio",
         minLength: 2,
         select: function( event, ui ) {
-            alert(ui.item.oid);
+            $("#hasta").val(ui.item.oid);
         }
     });
 });

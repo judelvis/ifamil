@@ -90,10 +90,12 @@ class Principal extends CI_Controller
         $this->load->view('principal/incluir/pie');
     }
 
-    public function reservacion()
+    public function solicitud($tipo = null,$oid=null)
     {
+        $data['tipo'] = $tipo;
+        $data['oid'] = $oid;
         $this->load->view('principal/incluir/cabecera');
-        $this->load->view('principal/reservacion');
+        $this->load->view('principal/reservacion',$data);
         $this->load->view('principal/incluir/pie');
     }
     public function opinion()
