@@ -12,7 +12,7 @@ class Estado extends CI_Model {
 	 * Sitio: El lugar que ocupa una cosa.
 	 * Definicion de elementos del Origen y Destino del sistema
 	 */
-	private $tbl = 't_sitios';
+	private $tbl = 't_estado';
 	public $identificador = NULL;
 	public $estado;
 	
