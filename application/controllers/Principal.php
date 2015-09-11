@@ -136,13 +136,20 @@ class Principal extends CI_Controller
         echo json_encode($datos);
     }
 
-    function completarPaquete(){
-
+    function comboPaquetes(){
+        $this ->load -> model("reserva/Paquete","Paquete");
+        //echo "bien";
+        $rs=$this -> Paquete -> listarPaquetes();
+        $item = array();
+        foreach($rs[0]['rs'] as $fila){
+            $item[$fila->id] = $fila->titulo;
+        }
+        echo json_encode($item);
     }
 
     function comboEstados(){
         $this ->load -> model("reserva/Estado","Estado");
-        echo "lego";
+        //echo "lego";
         $rs=$this -> Estado -> listar();
         $item = array();
         foreach($rs[0]['rs'] as $fila){
