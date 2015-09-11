@@ -136,6 +136,21 @@ class Principal extends CI_Controller
         echo json_encode($datos);
     }
 
+    function completarPaquete(){
+
+    }
+
+    function comboEstados(){
+        $this ->load -> model("reserva/Estado","Estado");
+        echo "lego";
+        $rs=$this -> Estado -> listar();
+        $item = array();
+        foreach($rs[0]['rs'] as $fila){
+            $item[$fila->oid] = $fila->estado;
+        }
+        echo json_encode($item);
+    }
+
 
     function paralax(){
         $this -> load->view("principal/paralax");

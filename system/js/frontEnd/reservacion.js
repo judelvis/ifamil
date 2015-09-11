@@ -47,4 +47,41 @@ $(function() {
             $("#hasta").val(ui.item.oid);
         }
     });
+
+    $("#paqueteT").autocomplete({
+        source:sUrlP+"completarPaquete",
+        minLength: 2,
+        select: function( event, ui ) {
+            $("#paquete").val(ui.item.oid);
+        }
+    });
+
+    listaEstados();
+    verificarCat();
 });
+
+function listaEstados(){
+    alert(sUrlP + "comboEstados");
+    $.ajax({
+        url : sUrlP + "comboEstados",
+        type : "post",
+        //dataType : "json",
+        success : function(data) {alert(data);
+            $.each(data, function(item, valor) {
+                $("#estado").append(new Option(valor,item));
+            });
+            $("#estado").append(new Option("Seleccione Estado", "0"));
+        }
+    });
+}
+
+function verificarCat(){
+    var cat = $("#categoria").val();
+    switch (cat){
+        case '1': $("#divTransporte").toggleClass('hide');break;
+        case '2': $("#divViajes").toggleClass('hide');break;
+        case '3': $("#divHotel").toggleClass('hide');break;
+        case '4': $("#divPaquete").toggleClass('hide');break;
+        default: alert(cat);
+    }
+}

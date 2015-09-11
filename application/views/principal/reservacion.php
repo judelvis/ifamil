@@ -24,7 +24,12 @@
                     <input type="text" name="telefono" id="telefono" placeholder="Numero de telefono Celular">
                 </div>
             </div>
-            <div class="row hide">
+            <div class="row hide" id="divTransporte">
+                <div class="col-md-12">
+                    <input type="text" name="transporte" id="transporte" placeholder="Especifique ruta de transporte que desea tomar">
+                </div>
+            </div>
+            <div class="row hide" id="divViajes">
                 <div class="col-md-6">
                     <input type="text" name="desdeT" id="desdeT" placeholder="Aeropuerto de Salida">
                     <input type="hidden" name="desde" id="desde">
@@ -34,7 +39,7 @@
                     <input type="hidden" name="hasta" id="hasta">
                 </div>
             </div>
-            <div class="row hide">
+            <div class="row hide" id="divHotel">
                 <div class="col-md-6">
                     <select id="estado" name="estado" class="input-sm" style="width: 100%"  onchange="buscarDestino();"></select>
                 </div>
@@ -42,9 +47,10 @@
                     <select id="hospedaje" name="hospedaje" class="input-sm" style="width: 100%" ></select>
                 </div>
             </div>
-            <div class="row hide">
+            <div class="row hide" id="divPaquete">
                 <div class="col-md-12">
-                    <input type="text" name="transporte" id="transporte" placeholder="Especifique ruta de transporte que desea tomar">
+                    <input type="text" name="paquereT" id="paqueteT" placeholder="Describa el paquete que desea">
+                    <input type="hidden" name="paquete" id="paquete">
                 </div>
             </div>
             <div class="row">
