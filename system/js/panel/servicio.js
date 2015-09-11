@@ -85,7 +85,7 @@ function listarSerie(){//alert(sUrlP);
             'titulo': 'Categorias',
             'clase' : "",
             'oculto':[1],
-            'editable': {'c2': 'texto', 'c3': 'textArea', 'c4': 'textArea', 'c6': datosCombo},
+            'editable': {'c2': 'texto', 'c3': 'texto', 'c4': 'texto', 'c6': datosCombo},
             "accion": [{
                 "ejecuta": sUrlPanel+"modificarSerie",
                 "tipo": "php",
