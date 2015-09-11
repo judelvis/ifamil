@@ -76,6 +76,13 @@ class Panel extends CI_Controller {
 		session_destroy ();
 		redirect ( base_url () . 'index.php/Reserva/Panel' );
 	}
+	
+	
+	function listarPaquetes(){
+		$this->load->model('reserva/Paquete', 'Paquete');
+		print_r($this->Paquete->listarPaquetes());
+	}
+	
 	function __destruct() {
 	}
 }

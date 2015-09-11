@@ -6,7 +6,7 @@
 * @author Carlos Peña
 *
 */
-class LPaquete extends CI_Model {
+class Paquete extends CI_Model {
 	
 	/**
 	 * Planes establecido por empresas proveedores
@@ -20,8 +20,10 @@ class LPaquete extends CI_Model {
 	public $fecha;
 	public $modificado;
 	public $estatus;
+	
+	
 	function __construct() {
-		parent::__contruct ();
+		parent::__construct ();
 		if (! isset ( $this->db )) {
 			$this->load->database ();
 		}
@@ -50,7 +52,7 @@ class LPaquete extends CI_Model {
 		$donde = '';
 		$rs = array ();
 		
-		$lista = 'SELECT * FROM ' . $this->tbl . 'WHERE oidcat=' . $categoria;
+		$lista = 'SELECT * FROM ' . $this->tbl . ' WHERE oidcat=' . $categoria;
 		$resultado = $this->db->query ( $lista );
 		$rs = $resultado->result ();
 		
