@@ -1,29 +1,44 @@
+/**
+ * 
+ * Fecha Creacion: 09 de Octubre de 2015
+ * @author mamonsoft.ca-crash (Carlos Peña)
+ */
+
+
 $(function() {
-	listarVuelos();
+
+
+listarSolicitud();
+
 });
 
-function listarVuelos() {
-	alert(1);
+/**
+ * 
+ */
+
+function listarSolicitud() {
 	var origen = {
 		'tipoOrigen' : 'php',
-		'rutaObjeto' : sUrlP + 'listarVuelos',
+		'rutaObjeto' : sUrlP + 'listarSolicitud',
 		'parametro' : ''
 	};
+	
+	
 	$("#reporte").dtgrid(origen, [ {
-		'titulo' : 'Rutas de Vuelos',
+		'titulo' : '',
 		'clase' : "",
 		'oculto' : [ 1 ],
 		'editable' : {
+			'c1' : 'texto',
 			'c2' : 'texto',
-			'c3' : 'texto',
-			'c4' : 'texto'
+			'c3' : 'texto'
 		},
+		"paginador": 10,
 		"accion" : [ {
-			"ejecuta" : sUrlPanel + "modificarSerie",
+			"ejecuta" : sUrlP + "modificarSerie",
 			"tipo" : "php",
 			"clase" : "mdi-action-check-circle",
 			"parametro" : [],
-			"texto" : "Guardar",
 		} ],
 		"boton" : [ {
 			"parametro" : [],

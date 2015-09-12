@@ -7,15 +7,15 @@ class Solicitud extends CI_Model {
 	 * Transporte, Hospedaje y tours.
 	 */
 	private $tbl = 't_solicitud';
-	public $identificar = "NULL";
+	public $identificador = "NULL";
 	public $correo = '';
 	public $origen = '';
 	public $destino = '';
 	public $fechaSalida;
 	public $fechaLlegada;
 	public $detalle = '';
-	public $cantidaAdultos = 0;
-	public $cantidaNinos = 0;
+	public $cantidadAdulto = 0;
+	public $cantidadNino = 0;
 	
 	/**
 	 * Forma de pago del Cliente
@@ -39,7 +39,7 @@ class Solicitud extends CI_Model {
 	 *
 	 * @var integer
 	 */
-	public $estatus;
+	public $estatus = 0;
 	
 	/**
 	 * 
@@ -68,7 +68,7 @@ class Solicitud extends CI_Model {
 	 *
 	 * @return array
 	 */
-	private function mapearObjeto() {
+	 function mapearObjeto() {
 		$data = array ( //
 				'oid' => $this->identificador, //
 				'cor' => $this->correo, //
@@ -77,10 +77,10 @@ class Solicitud extends CI_Model {
 				'fes' => $this->fechaSalida,
 				'fel' => $this->fechaLlegada,
 				'det' => $this->detalle,
-				'caa' => $this->cantidaAdultos,
-				'can' => $this->cantidaNinos,
+				'caa' => $this->cantidadAdulto,
+				'can' => $this->cantidadNino,
 				'tip' => $this->tipo,
-				'fpa' => $this->formaPago,
+				'fap' => $this->formaPago,
 				'hos' => $this->hospedaje,
 				'tra' => $this->transporte,
 				'paq' => $this->paquete,
@@ -96,7 +96,7 @@ class Solicitud extends CI_Model {
 	 * @return boolean
 	 */
 	function salvar() {
-		$bVal = false;
+		$bVal = false;		
 		if ($this->correo != '') {
 			$this->db->insert ( $this->tbl, $this->mapearObjeto () );
 			//if(isset($this->Correo))
@@ -127,10 +127,10 @@ class Solicitud extends CI_Model {
 				$this->fechaSalida = $val->fes;
 				$this->fechaLlegada = $val->fel;
 				$this->detalle = $val->det;
-				$this->cantidaAdultos = $val->caa;
-				$this->cantidaNinos = $val->can;
+				$this->cantidadAdulto = $val->caa;
+				$this->cantidadNinos = $val->can;
 				$this->tipo = $val->tip;
-				$this->formaPago = $val->fpa;
+				$this->formaPago = $val->fap;
 				$this->hospedaje = $val->hos;
 				$this->transporte = $val->tra;
 				$this->paquete = $val->paq;

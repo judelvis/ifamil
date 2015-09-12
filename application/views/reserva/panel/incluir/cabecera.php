@@ -44,7 +44,7 @@
     <script type="text/javascript" src="<?php echo __DTGRID__ ?>js/dtgrid.js"></script>
     <script type="text/javascript" src="<?php echo __DTGRID__ ?>js/editar.js"></script>
     <script type="text/javascript" src="<?php echo __DTGRID__ ?>js/paginador.js"></script>
-    <script type="text/javascript" src="<?php echo __JSVIEW__ ?>panel/<?php echo $js; ?>.js"></script>
+    <script type="text/javascript" src="<?php echo __JSVIEW__ ?>reserva/<?php echo $js; ?>.js"></script>
     
     <script type="text/javascript" src="<?php echo __DTGRID__ ?>js/accion.js"></script>
     <script type="text/javascript" src="<?php echo __DTGRID__ ?>md/js/materialize.min.js"></script>

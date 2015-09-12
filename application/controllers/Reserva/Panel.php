@@ -30,14 +30,14 @@ class Panel extends CI_Controller {
 	
 	/**
 	 * Interfaz de usuario
-	 */
+	 git */
 	function principal() {
 		if (! isset ( $_SESSION ['usuario_ifamil'] )) {
 			session_destroy ();
 			redirect ( base_url () . 'index.php/Reserva/Panel' );
 		} else {
 			$this->load->model ( 'panel/Mpanel', 'MPanel' );
-			$data ['js'] = 'servicio';
+			$data ['js'] = 'solicitud';
 			$data ['titulo'] = 'Solicitudes Pendientes';
 			$data ['formulario'] = 'reservaciones';
 			$this->load->view ( 'reserva/panel/incluir/cabecera', $data );
@@ -55,9 +55,9 @@ class Panel extends CI_Controller {
 			redirect ( base_url () . 'index.php/Reserva/Panel' );
 		} else {
 			$this->load->model ( 'panel/Mpanel', 'MPanel' );
-			$data ['js'] = 'servicio';
-			$data ['titulo'] = 'Solicitudes Pendientes';
-			$data ['formulario'] = 'reservaciones';
+			$data ['js'] = 'sitio';
+			$data ['titulo'] = 'Listado de Rutas o Aeropuertos';
+			$data ['formulario'] = 'sitio';
 			$this->load->view ( 'reserva/panel/incluir/cabecera', $data );
 			$this->load->view ( 'reserva/panel/incluir/menu' );
 			$this->load->view ( 'reserva/panel/principal', $data );
@@ -69,7 +69,7 @@ class Panel extends CI_Controller {
 		$this->load->model ( 'usuario/Iniciar', 'Iniciar' );
 		echo $this->Iniciar->validarCuenta ( $_POST );
 	}
-	function listarVuelos() {
+	function listarSitios() {
 		$this->load->model ( 'reserva/Sitio', 'Sitio' );
 		$cabecera = array (
 				'Id',
@@ -131,7 +131,7 @@ class Panel extends CI_Controller {
 					$fila->nom,
 					$fila->tel,
 					$fila->cor,
-					$fila->cat,
+					$fila->tip,
 					$fila->est 
 			);
 		}

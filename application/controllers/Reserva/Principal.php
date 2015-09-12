@@ -49,19 +49,18 @@ class Principal extends CI_Controller {
 	}
 	
 	function registrarSolicitud(){
-		
+		$this->load->model("reserva/Solicitud", "Solicitud");
 		if(isset($_POST["correo"])) {
-			$this->load->model("reserva/Solicitud", "Solicitud");
 			$this->Solicitud->correo = $_POST["correo"];
 			$this->Solicitud->origen = $_POST["origen"];
 			$this->Solicitud->destino = $_POST["destino"];
 			$this->Solicitud->fechaSalida = $_POST["fechaSalida"];
 			$this->Solicitud->fechaLlegada= $_POST["fechaLlegada"];
 			$this->Solicitud->detalle = $_POST["detalle"];
-			$this->Solicitud->cantidaAdultos = $_POST["cantidaAdultos"];
-			$this->Solicitud->cantidadNinos = $_POST["cantidadNinos"];
-			$this->Solicitud->tipo = $_POST["tipo"];
-			$this->Solicitud->formaPago = $_POST["formaPago"];
+			$this->Solicitud->cantidadAdulto = $_POST["cantidadAdulto"];
+			$this->Solicitud->cantidadNino = $_POST["cantidadNino"];
+			$this->Solicitud->tipo = $_POST["categoria"];
+			$this->Solicitud->formaPago = $_POST["formadePago"];
 			$this->Solicitud->hospedaje = $_POST["hospedaje"];
 			$this->Solicitud->transporte = $_POST["transporte"];
 			$this->Solicitud->paquete = $_POST["paquete"];
@@ -70,7 +69,6 @@ class Principal extends CI_Controller {
 		}
 		else{
 			echo "Esta intentando acceder a una area privada.";
-			print_r($_POST);
 		}
 	}
 	
@@ -79,6 +77,9 @@ class Principal extends CI_Controller {
 		return true;
 	}
 	
+	function info(){
+		phpinfo();
+	}
 	/**
 	 * Salida del sistema
 	 */
