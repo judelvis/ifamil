@@ -1,5 +1,6 @@
 var sUrl = 'http://' + window.location.hostname + '/ifamil';
 var sUrlP = sUrl + '/index.php/Principal/';
+var sUrlR = sUrl + '/index.php/Reserva/';
 var sUrlPanel = sUrl + '/index.php/Panel/';
 var sImg = sUrl + '/system/img/';
 var sMaq = sUrl + '/system/maq/';

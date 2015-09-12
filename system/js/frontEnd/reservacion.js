@@ -117,6 +117,14 @@ function verificaVuelta(){
 function guardar(){
     $datos = $("form").serialize();
     alert($datos);
-    var ruta = "Reserva/Principal/registrarAfiliado";
+    var ruta = "Principal/registrarAfiliado";
+    $.ajax({
+        url : sUrlR + ruta,
+        type : "post",
+        //dataType : "json",
+        success : function(data) {//alert(data);
+            alert(data);
+        }
+    });
     return false;
 }
