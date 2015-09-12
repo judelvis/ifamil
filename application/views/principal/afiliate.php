@@ -17,7 +17,13 @@
         <hr class="team_hr team_hr_left hr_gray"/>
         <form method="post" action="#" onsubmit="return guardar();">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-1 input-sm">
+                    <select id="V" name="V"style="width: 100%;" >
+                        <option value="v">V</option>
+                        <option value="e">E</option><
+                    </select>
+                </div>
+                <div class="col-md-5">
                     <input type="text" name="cedula" id="cedula" placeholder="Cedula" required="required" onkeypress="return soloNumeros(event);">
                 </div>
                 <div class="col-md-6">
@@ -28,6 +34,7 @@
                 </div>
                 <div class="col-md-2">
                     <select id="codTel" name="codTel"style="width: 100%;" class="input-sm">
+                        <option value="0">Codigo</option>
                         <option value="0416">0416</option><option value="0426">0426</option>
                         <option value="0414">0414</option><option value="0424">0424</option>
                         <option value="0412">0412</option>
@@ -42,10 +49,16 @@
                 <div class="col-md-6">
                     <input type="text" name="faceBook" placeholder="FaceBook">
                 </div>
+                <div class="col-md-12">
+                    <select id="profesion" name="profesion "style="width: 100%;" class="input-sm">
+                        <option value="0">Profesión</option>
+                        <option value="M">Uniformado</option>
+                        <option value="P">Particular</option>
+
+                    </select>
+                </div>
             </div>
-            <div class="col-md-12">
-                <input type="text" name="profesion" placeholder="Profesion" required="required">
-            </div>
+
             <span><input type="submit" value="ENVIAR"></span>
         </form>
     </div>
