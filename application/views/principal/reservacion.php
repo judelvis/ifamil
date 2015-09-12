@@ -21,14 +21,14 @@
                     <input type="email" name="correo" id="correo" placeholder="Correo Electronico" required="required">
                 </div>
                 <div class="col-md-1">
-                    <select id="codTel" name="codTel" class="input-sm">
+                    <select id="codTel" name="codTel"style="width: 100%;" class="input-sm">
                         <option value="0416">0416</option><option value="0426">0426</option>
                         <option value="0414">0414</option><option value="0424">0424</option>
                         <option value="0412">0412</option>
                     </select>
                     </div>
                 <div class="col-md-5">
-                    <input type="text" name="telefono" id="telefono"class="input-sm" placeholder="Numero de telefono Celular" required="required">
+                    <input style="width: 100%;" type="text" name="telefono" id="telefono" placeholder="Numero de telefono Celular" required="required" onkeypress="return soloNumeros(event);">
                 </div>
             </div>
             <div class="row hide" id="divTransporte">
