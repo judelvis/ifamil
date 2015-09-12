@@ -115,6 +115,7 @@ function verificaVuelta(){
 }
 
 function guardar(){
+    $("#fechaLlegada").attr("disabled",false);
     datos = $("form").serialize();
     alert(datos);
     var ruta = "Principal/registrarSolicitud";
@@ -130,5 +131,6 @@ function guardar(){
             });
         }
     });
+    $("#fechaLlegada").attr("disabled","disabled");
     return false;
 }
