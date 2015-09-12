@@ -115,13 +115,14 @@ function verificaVuelta(){
 }
 
 function guardar(){
-    $datos = $("form").serialize();
+    datos = $("form").serialize();
     alert($datos);
     var ruta = "Principal/registrarSolicitud";
     $.ajax({
         url : sUrlR + ruta,
         type : "post",
         //dataType : "json",
+        data:datos,
         success : function(data) {//alert(data);
             alert(data);
         }
