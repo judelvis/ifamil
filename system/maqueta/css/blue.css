@@ -1604,7 +1604,7 @@ h3.style {
     margin-bottom: 10px;
 }
 
-.contact-form form input[type="text"], .contact-form form textarea, input[type="email"] {
+.contact-form form input[type="text"], .contact-form form textarea, input[type=email] {
     font-family: 'roboto_condensedregular';
     margin: 10px 0;
     box-shadow: none;
