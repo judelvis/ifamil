@@ -116,7 +116,7 @@ function verificaVuelta(){
 
 function guardar(){
     datos = $("form").serialize();
-    alert($datos);
+    alert(datos);
     var ruta = "Principal/registrarSolicitud";
     $.ajax({
         url : sUrlR + ruta,
