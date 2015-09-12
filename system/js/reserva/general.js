@@ -30,13 +30,13 @@ $(function() {
 function listarVuelos() {
 	var origen = {
 		'tipoOrigen' : 'php',
-		'rutaObjeto' : sUrlP + 'listarVuelos',
+		'rutaObjeto' : sUrlP + 'listarSolicitud',
 		'parametro' : ''
 	};
 	
 	
 	$("#reporte").dtgrid(origen, [ {
-		'titulo' : 'Rutas de Vuelos',
+		'titulo' : '',
 		'clase' : "",
 		'oculto' : [ 1 ],
 		'editable' : {

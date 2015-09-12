@@ -27,6 +27,10 @@ class Panel extends CI_Controller {
 	function index() {
 		$this->load->view ( 'reserva/entrar' );
 	}
+	
+	/**
+	 * Interfaz de usuario
+	 */
 	function principal() {
 		if (! isset ( $_SESSION ['usuario_ifamil'] )) {
 			session_destroy ();
@@ -34,13 +38,33 @@ class Panel extends CI_Controller {
 		} else {
 			$this->load->model ( 'panel/Mpanel', 'MPanel' );
 			$data ['js'] = 'servicio';
-			$data ['titulo'] = 'Reservaciones';
+			$data ['titulo'] = 'Solicitudes Pendientes';
 			$data ['formulario'] = 'reservaciones';
 			$this->load->view ( 'reserva/panel/incluir/cabecera', $data );
 			$this->load->view ( 'reserva/panel/incluir/menu' );
 			$this->load->view ( 'reserva/panel/principal', $data );
 		}
 	}
+	
+	/**
+	 * Interfaz de usuario
+	 */
+	function ruta() {
+		if (! isset ( $_SESSION ['usuario_ifamil'] )) {
+			session_destroy ();
+			redirect ( base_url () . 'index.php/Reserva/Panel' );
+		} else {
+			$this->load->model ( 'panel/Mpanel', 'MPanel' );
+			$data ['js'] = 'servicio';
+			$data ['titulo'] = 'Solicitudes Pendientes';
+			$data ['formulario'] = 'reservaciones';
+			$this->load->view ( 'reserva/panel/incluir/cabecera', $data );
+			$this->load->view ( 'reserva/panel/incluir/menu' );
+			$this->load->view ( 'reserva/panel/principal', $data );
+		}
+	}
+	
+	
 	function validarUsuario() {
 		$this->load->model ( 'usuario/Iniciar', 'Iniciar' );
 		echo $this->Iniciar->validarCuenta ( $_POST );
@@ -90,6 +114,7 @@ class Panel extends CI_Controller {
 	/**
 	 */
 	function listarSolicitud() {
+		$cuep = array();
 		$this->load->model ( 'reserva/Solicitud', 'Solicitud' );
 		$cabecera = array (
 				'ID',

@@ -1,6 +1,6 @@
 <?php
 defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
-date_default_timezone_set("American/Caracas");
+date_default_timezone_set("America/Caracas");
 /**
  *
  * @author Carlos Pena
@@ -49,7 +49,8 @@ class Principal extends CI_Controller {
 	}
 	
 	function registrarSolicitud(){
-		if(isset($_POST["cedula"])) {
+		
+		if(isset($_POST["correo"])) {
 			$this->load->model("reserva/Solicitud", "Solicitud");
 			$this->Solicitud->correo = $_POST["correo"];
 			$this->Solicitud->origen = $_POST["origen"];
@@ -64,13 +65,12 @@ class Principal extends CI_Controller {
 			$this->Solicitud->hospedaje = $_POST["hospedaje"];
 			$this->Solicitud->transporte = $_POST["transporte"];
 			$this->Solicitud->paquete = $_POST["paquete"];
-			
-			
 			$this->Solicitud->salvar();
 			echo "Su proceso ha sido exitoso.";
 		}
 		else{
-			echo "Esta intentando acceder a una area restringida.";
+			echo "Esta intentando acceder a una area privada.";
+			print_r($_POST);
 		}
 	}
 	

@@ -50,7 +50,7 @@
 	<script src="<?php echo __PANEL__;?>plugins/uniform/jquery.uniform.min.js"></script>
 	<script src="<?php echo __PANEL__;?>plugins/datepicker/js/bootstrap-datepicker.js"></script>
 	<script src="<?php echo __PANEL__;?>plugins/validVal/js/jquery.validVal.min.js"></script>
-		<script src="<?php echo __PANEL__;?>plugins/colorpicker/js/bootstrap-colorpicker.js"></script>
+	<script src="<?php echo __PANEL__;?>plugins/colorpicker/js/bootstrap-colorpicker.js"></script>
 	<script src="<?php echo __PANEL__;?>plugins/timepicker/js/bootstrap-timepicker.min.js"></script>
 
 	<script src="<?php echo __PANEL__;?>plugins/switch/static/js/bootstrap-switch.min.js"></script>
