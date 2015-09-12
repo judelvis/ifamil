@@ -1,3 +1,4 @@
+<script type="text/javascript" src="<?php echo __JSVIEW__ ?>general/Global.js"></script>
 <div class="main_bg"><!-- start main -->
     <div class="container">
         <div class="main_grid1">
@@ -37,10 +38,19 @@
                     <div class="contact-form">
                         <h2>Contacto</h2>
                         <form method="post" action="<?php echo base_url("index.php/Principal/enviarcontacto")?>">
-                            <input type="text" id="nombre" name="nombre" placeholder="Nombre y Apellido...">
-                            <input type="text" id="correo" name="correo" placeholder="Correo...">
-                            <input type="text" id="telefono" name="telefono" placeholder="Telefono celular o de habitacion...">
-                            <textarea id="mensaje" name="mensaje" placeholder="Mensaje..."></textarea>
+                            <input type="text" id="nombre" name="nombre" placeholder="Nombre y Apellido..." required="required">
+                            <input type="email" name="correo" id="correo" placeholder="Correo Electronico" required="required">
+                            <div class="col-md-3">
+                                <select id="codTel" name="codTel"style="width: 100%;" class="input-sm">
+                                    <option value="0416">0416</option><option value="0426">0426</option>
+                                    <option value="0414">0414</option><option value="0424">0424</option>
+                                    <option value="0412">0412</option>
+                                </select>
+                            </div>
+                            <div class="col-md-9">
+                                <input style="width: 100%;" type="text" name="telefono" id="telefono" placeholder="Numero de telefono Celular" required="required" onkeypress="return soloNumeros(event);">
+                            </div>
+                            <textarea id="mensaje" name="mensaje" placeholder="Mensaje..." required="required"></textarea>
                             <span><input type="submit" value="ENVIAR"></span>
                         </form>
                     </div>

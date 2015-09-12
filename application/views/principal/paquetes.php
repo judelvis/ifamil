@@ -95,7 +95,7 @@
                         echo '
                     <div class="col-md-2 blog_date">
                         <span><h3>Publicado</h3><p>' . $ls->fecha . '</p></span>
-                        <span class="icon_date"><i class="fa fa-archive"></i> </span>
+                        <span class="icon_date"><i class="fa fa-suitcase"></i> </span>
                     </div>
                     <div class="col-md-10 blog_left">
                         <a href="#"><img src="'. __IMG__.'galeria/medio/'.$ls->imagen.'" alt="" class="img-responsive"/></a>
@@ -122,6 +122,11 @@
             <img src="<?php echo __IMG__?>images/inter.png" class="img-responsive">
             <img src="<?php echo __IMG__?>images/salto.jpg" class="img-responsive">
             <img src="<?php echo __IMG__?>images/ifamil1.jpg" class="img-responsive">
+            <img src="<?php echo __IMG__?>images/ofi.jpg" class="img-responsive">
+            <img src="<?php echo __IMG__?>images/cas.jpg" class="img-responsive">
+            <img src="<?php echo __IMG__?>images/puente.jpg" class="img-responsive">
+            <img src="<?php echo __IMG__?>images/cuartel.jpg" class="img-responsive">
+            <img src="<?php echo __IMG__?>images/arte.jpg" class="img-responsive">
 
         </div>
     </div>

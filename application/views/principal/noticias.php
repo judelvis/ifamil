@@ -20,7 +20,7 @@
                         echo '
                     <div class="col-md-2 blog_date">
                         <span><h3>Publicado</h3><p>' . $ls->fecha . '</p></span>
-                        <span class="icon_date"><i class="fa fa-archive"></i> </span>
+                        <span class="icon_date"><i class="fa fa-list-alt"></i> </span>
                     </div>
                     <div class="col-md-10 blog_left">
                         <a href="#"><img src="'. __IMG__.'noticia/medio/'.$ls->imagen.'" alt="" class="img-responsive"/></a>
