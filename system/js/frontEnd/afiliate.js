@@ -28,7 +28,7 @@ $(function() {
 
 function guardar(){
     datos = $("form").serialize();
-    alert(datos);
+    //alert(datos);
     var ruta = "Principal/registrarAfiliado";
     $.ajax({
         url : sUrlR + ruta,

@@ -1,6 +1,6 @@
 function guardar(){
     datos = $("form").serialize();
-    alert(datos);
+    //alert(datos);
 
     $.ajax({
         url : sUrlP + 'enviarContacto',

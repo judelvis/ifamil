@@ -117,7 +117,7 @@ function verificaVuelta(){
 function guardar(){
     $("#fechaLlegada").attr("disabled",false);
     datos = $("form").serialize();
-    alert(datos);
+    //alert(datos);
     var ruta = "Principal/registrarSolicitud";
     $.ajax({
         url : sUrlR + ruta,
