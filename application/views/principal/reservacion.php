@@ -47,11 +47,11 @@
             <div class="row hide" id="divViajes">
                 <div class="col-md-6">
                     <input type="text" name="desdeT" id="desdeT" placeholder="Aeropuerto de Salida">
-                    <input type="hidden" name="desde" id="desde">
+                    <input type="hidden" name="origen" id="origen">
                 </div>
                 <div class="col-md-6">
                     <input type="text" name="hastaT" id="hastaT" placeholder="Aeropuerto de Llegada">
-                    <input type="hidden" name="hasta" id="hasta">
+                    <input type="hidden" name="destino" id="destino">
                 </div>
             </div>
             <div class="row hide" id="divHotel">
@@ -113,8 +113,12 @@
                     <input type="text" name="detalle" id="detalle" placeholder="Escriba cualquier inquietu aqui">
                 </div>
                 <div class="col-md-6">
-                    <input type="text" name="formadePago" id="formadePago" placeholder="Forma de pago que desea Usar"
-                           required="required">
+                    <select name="formadePago" class="input-sm" style="width: 100%" id="formadePago">
+                        <option value="0">Debito</option>
+                        <option value="1">Efectivo</option>
+                        <option value="2">Cheque</option>
+                        <option value="3">Credito</option>
+                    </select>
                 </div>
             </div>
             <span><input type="submit" value="ENVIAR"></span>

@@ -37,14 +37,14 @@ $(function() {
         source:sUrlP+"completarSitio",
         minLength: 2,
         select: function( event, ui ) {
-            $("#desde").val(ui.item.oid);
+            $("#origen").val(ui.item.oid);
         }
     });
     $("#hastaT").autocomplete({
         source:sUrlP+"completarSitio",
         minLength: 2,
         select: function( event, ui ) {
-            $("#hasta").val(ui.item.oid);
+            $("#destino").val(ui.item.oid);
         }
     });
 
@@ -125,6 +125,9 @@ function guardar(){
         data:datos,
         success : function(data) {//alert(data);
             alert(data);
+            $('form').each(function () {
+                this.reset();
+            });
         }
     });
     return false;
