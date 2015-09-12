@@ -75,7 +75,7 @@
     <div class="container">
         <div class="main_grid1">
             <hr class="team_hr team_hr_left hr_gray"/>
-            <center><h3><?php echo $lst[0]->tit.$descrip ; ?></h3></center>
+            <center><h3><?php echo $lst[0]->tit; ?></h3></center>
             <hr class="team_hr team_hr_left hr_gray"/>
             <div class="clearfix"></div>
         </div>
@@ -87,7 +87,7 @@
             <div id="portfoliolist">
                 <div class="portfolio_main">
                         <?php
-                        if(isset ($descrip)) {
+                        if(isset ($lst[0]->descrip)) {
                             echo '<div class="blog"><!-- start blog -->
                             <div class="blog_main col-md-12">
 
@@ -108,7 +108,9 @@
                                     <div class="portfolio-wrapper">
                                         <div class="fancyDemo">
                                                 <a rel="group" title="" href="' . __IMG__ . 'galeria/' . $ls->imagen . '"><img src="' . __IMG__ . 'galeria/medio/' . $ls->imagen . '" alt="" class="img-responsive"/></a>
+
                                         </div>
+
                                     </div>
                                 </div>';
                         }?>
