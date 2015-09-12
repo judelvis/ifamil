@@ -1,40 +1,13 @@
 <?php
 /**
- * Created by PhpStorm.
+ * Created by Antony
  * User: breyner
  * Date: 9/5/15
  * Time: 3:24 PM
  */ ?>
-<script>
-    $(function() {
-        $( "#fechaNacimiento" ).datepicker({
-            changeMonth: true,
-            changeYear: true
-        });
-        $.datepicker.regional['es'] = {
-            closeText: 'Cerrar',
-            prevText: '<Ant',
-            nextText: 'Sig>',
-            currentText: 'Hoy',
-            monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-            monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
-            dayNames: ['Domingo', 'Lunes', 'Martes', 'Mi?rcoles', 'Jueves', 'Viernes', 'S?bado'],
-            dayNamesShort: ['Dom','Lun','Mar','Mi?','Juv','Vie','S?b'],
-            dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','S?'],
-            weekHeader: 'Sm',
-            dateFormat: 'yy/mm/dd',
-            firstDay: 1,
-            isRTL: false,
-            showMonthAfterYear: false,
-            yearSuffix: ''
-        };
-        $.datepicker.setDefaults($.datepicker.regional['es']);
-        $(function () {
-            $("#fecha").datepicker();
-        });
-    });
-</script>
+
 <script type="text/javascript" src="<?php echo __JSVIEW__ ?>general/Global.js"></script>
+<script type="text/javascript" src="<?php echo __JSVIEW__ ?>frontEnd/afiliate.js"></script>
 <div class="contact-form">
     <img src="<?php echo __IMG__ ?>images/amarillo2.jpg" style="width: 100%">
 
@@ -42,7 +15,7 @@
         <hr class="team_hr team_hr_left hr_gray"/>
         <center><h1>AFILIATE YA</h1></center>
         <hr class="team_hr team_hr_left hr_gray"/>
-        <form method="post" action="http://localhost/ifamil/index.php/Reserva/Principal/registrarAfiliado">
+        <form method="post" action="#" onsubmit="return guardar();">
             <div class="row">
                 <div class="col-md-6">
                     <input type="text" name="cedula" id="cedula" placeholder="Cedula" required="required" onkeypress="return soloNumeros(event);">
