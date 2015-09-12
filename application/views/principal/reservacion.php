@@ -75,9 +75,11 @@
                     <input type="text" name="fechaSalida" id="fechaSalida" placeholder="Fecha de Salida">
                 </div>
                 <div class="col-md-1">
-                    Ida Y
-                    Vuelta?<input type="checkbox" id="vuelta" name="vuelta" class="input-sm"
-                                  onclick="verificaVuelta();">
+                    <div class="checkbox">
+                        <label>
+                            Ida y Vuelta?<input type="checkbox" id="vuelta" name="vuelta" onclick="verificaVuelta();">
+                        </label>
+                    </div>
                 </div>
                 <div class="col-md-6">
                     <input type="text" name="fechaLlegada" id="fechaLlegada" placeholder="Fecha de Retorno"

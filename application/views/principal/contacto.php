@@ -1,4 +1,5 @@
 <script type="text/javascript" src="<?php echo __JSVIEW__ ?>general/Global.js"></script>
+<script type="text/javascript" src="<?php echo __JSVIEW__ ?>frontEnd/contacto.js"></script>
 <div class="main_bg"><!-- start main -->
     <div class="container">
         <div class="main_grid1">
@@ -35,9 +36,9 @@
                     </address>
                 </div>
                 <div class="col-md-8">
-                    <div class="contact-form">
+                    <div class="contact-form" id="formulario">
                         <h2>Contacto</h2>
-                        <form method="post" action="<?php echo base_url("index.php/Principal/enviarcontacto")?>">
+                        <form method="post" action="#" onsubmit="guardar();">
                             <input type="text" id="nombre" name="nombre" placeholder="Nombre y Apellido..." required="required">
                             <input type="email" name="correo" id="correo" placeholder="Correo Electronico" required="required">
                             <div class="col-md-3">

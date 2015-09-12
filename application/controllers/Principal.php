@@ -158,6 +158,11 @@ class Principal extends CI_Controller
         echo json_encode($item);
     }
 
+    function enviarContacto(){
+        print("<pre>");
+        print_R($_POST);
+    }
+
 
     function paralax(){
         $this -> load->view("principal/paralax");
