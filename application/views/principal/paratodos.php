@@ -77,7 +77,7 @@
             <hr class="team_hr team_hr_left hr_gray"/>
             <center><h3><?php echo $lst[0]->tit; ?></h3></center>
             <hr class="team_hr team_hr_left hr_gray"/>
-            <div class="clearfix"></div>
+
         </div>
     </div>
 </div>
@@ -90,12 +90,11 @@
                         if(isset ($lst[0]->descrip)) {
                             echo '<div class="blog"><!-- start blog -->
                             <div class="blog_main col-md-12">
-
                                 <div class="blog_list">
-                                    <div class="col-md-12 blog_left">
+
                                         <p class="para">' . $lst[0]->descrip . '</p>
-                                    </div>
-                                    <div class="clearfix"></div>
+
+
                                 </div>
                             </div>
 
@@ -119,6 +118,5 @@
             </div>
             <div class="clearfix"></div>
         </div>
-
     </div>
 </div>
