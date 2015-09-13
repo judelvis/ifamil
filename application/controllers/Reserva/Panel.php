@@ -54,7 +54,6 @@ class Panel extends CI_Controller {
 			session_destroy ();
 			redirect ( base_url () . 'index.php/Reserva/Panel' );
 		} else {
-			$this->load->model ( 'panel/Mpanel', 'MPanel' );
 			$data ['js'] = 'sitio';
 			$data ['titulo'] = 'Listado de Rutas o Aeropuertos';
 			$data ['formulario'] = 'sitio';
@@ -69,6 +68,24 @@ class Panel extends CI_Controller {
 		$this->load->model ( 'usuario/Iniciar', 'Iniciar' );
 		echo $this->Iniciar->validarCuenta ( $_POST );
 	}
+
+    function registrarSitio(){
+        $this->load->model ( 'reserva/Sitio', 'Sitio' );
+        //echo "hola";
+        //print_R($_POST);
+        $this ->Sitio -> nombre = $_POST['nom'];
+        $this ->Sitio -> codigo = $_POST['cod'];
+        $this ->Sitio -> estado = $_POST['est'];
+        $resp = $this -> Sitio -> Salvar();
+        if($resp) echo "Se registro con exito";
+        else echo "Error al registrar";
+    }
+
+    function enviarRespuesta(){
+        print("<pre>");
+        print_R($_POST);
+    }
+
 	function listarSitios() {
 		$this->load->model ( 'reserva/Sitio', 'Sitio' );
 		$cabecera = array (
@@ -149,5 +166,6 @@ class Panel extends CI_Controller {
 		print_r ( $this->Paquete->listarPaquetes () );
 	}
 	function __destruct() {
+
 	}
 }

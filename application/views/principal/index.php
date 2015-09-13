@@ -11,7 +11,7 @@
             <div class="span_of_4"><!-- start span_of_4 -->
                 <div class="col-md-3 span1_of_4">
                     <div class="span4_of_list">
-                        <span class="active"><i class="fa fa-suitcase "></i></span>
+                        <span class="active"><a href="<?php echo base_url("index.php/Principal/paquetes/4")?>"><i class="fa fa-suitcase "></i></a></span>
 
                         <h3>Paquetes</h3>
 
@@ -24,7 +24,7 @@
                 </div>
                 <div class="col-md-3 span1_of_4">
                     <div class="span4_of_list">
-                        <span class="active"><i class="fa fa-plane"></i></span>
+                        <span class="active"><a href="<?php echo base_url("index.php/Principal/solicitud/2")?>"><i class="fa fa-plane"></i></a></span>
 
                         <h3>Reservación</h3>
 
@@ -37,7 +37,7 @@
                 </div>
                 <div class="col-md-3 span1_of_4">
                     <div class="span4_of_list">
-                        <span class="active"><i class="fa fa-group"></i></span>
+                        <span class="active"><a href="<?php echo base_url("index.php/Principal/opinion")?>"><i class="fa fa-group"></i></a></span>
 
                         <h3>Dejanos tu opinion</h3>
 

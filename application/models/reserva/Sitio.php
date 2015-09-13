@@ -12,11 +12,11 @@ class Sitio extends CI_Model {
 	 * Sitio: El lugar que ocupa una cosa.
 	 * Definicion de elementos del Origen y Destino del sistema
 	 */
-	private $tbl = 't_sitios';
-	private $identificador = NULL;
-	private $nombre;
-	private $codigo;
-	private $estado;
+	public $tbl = 't_sitios';
+	public $identificador = NULL;
+	public $nombre;
+	public $codigo;
+	public $estado;
 	
 	
 	/**
