@@ -11,7 +11,7 @@
 				<li class="panel "><a href="<?php echo site_url("Reserva/Panel/ruta") ?>"> <i class="icon-th-list">
 				</i>Rutas</a></li>
 				
-				<li><a href="<?php echo site_url("panel/cerrar") ?>"><i class="icon-signin"></i> Salir </a></li>
+				<li><a href="<?php echo site_url("Reserva/Panel/cerrar") ?>"><i class="icon-signin"></i> Salir </a></li>
 
 			</ul>
 

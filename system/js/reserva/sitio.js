@@ -3,8 +3,7 @@ $(function() {
 });
 
 function listarSitios() {
-	
-	alert(sUrlP + 'listarSitios');
+	//alert(sUrlP + 'listarSitios');
 	var origen = {
 		'tipoOrigen' : 'php',
 		'rutaObjeto' : sUrlP + 'listarSitios',
@@ -33,4 +32,29 @@ function listarSitios() {
 			"clase" : "mdi-action-done"
 		} ]
 	} ]);
+}
+
+function registrar() {
+    var nom = $("#nom").val();
+    var cod = $("#cod").val();
+    var est = $("#est").val();
+    var cadena = "nom="+nom+"&cod="+cod+"&est="+est;
+    if(nom == '' || cod=='' || est == ''){
+        alert("Debe ingresar todo los datos.");
+        return false;
+    }
+    //alert(sUrlP+ "registrarSitio"+cadena);
+    $.ajax({
+        url : sUrlP + "registrarSitio",
+        type : 'POST',
+        data : cadena,
+        success : function(msj) {
+            alert(msj);
+            listarSitios();
+            $('form').each(function () {
+                this.reset();
+            });
+        }
+    });
+    return false;
 }
