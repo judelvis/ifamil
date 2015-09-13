@@ -34,22 +34,7 @@ function listarSolicitud() {
 			"ejecuta" : sUrlP + "modificarSerie",
 			"tipo" : "php",
 			"clase" : "mdi-action-check-circle",
-			"parametro" : [],
-<<<<<<< HEAD
-=======
-		},{
-            "ejecuta" : "enviar",
-            "tipo" : "script",
-            "clase" : "mdi-communication-email",
-            "parametro" : [4],
-        } ],
-		"boton" : [ {
-			"parametro" : [],
-			"titulo" : "enviar",
-			"ejecuta" : sUrlP + "Exporta_Exel",
-			"tipo" : "php",
-			"clase" : "mdi-action-done"
->>>>>>> c4037cfe87a0c924e09ed596fd1bd823be70d612
+			"parametro" : []
 		} ]
 	} ]);
 }
