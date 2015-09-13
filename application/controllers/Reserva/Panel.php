@@ -30,7 +30,8 @@ class Panel extends CI_Controller {
 	
 	/**
 	 * Interfaz de usuario
-	 git */
+	 * git
+	 */
 	function principal() {
 		if (! isset ( $_SESSION ['usuario_ifamil'] )) {
 			session_destroy ();
@@ -63,8 +64,6 @@ class Panel extends CI_Controller {
 			$this->load->view ( 'reserva/panel/principal', $data );
 		}
 	}
-	
-	
 	function validarUsuario() {
 		$this->load->model ( 'usuario/Iniciar', 'Iniciar' );
 		echo $this->Iniciar->validarCuenta ( $_POST );
@@ -114,7 +113,7 @@ class Panel extends CI_Controller {
 	/**
 	 */
 	function listarSolicitud() {
-		$cuep = array();
+		$cuep = array ();
 		$this->load->model ( 'reserva/Solicitud', 'Solicitud' );
 		$cabecera = array (
 				'ID',
@@ -122,7 +121,8 @@ class Panel extends CI_Controller {
 				'Telefono',
 				'Correo',
 				'Tipo Solicitud',
-				'Estatus' 
+				'Estatus',
+				'Observacion'
 		);
 		$rs = $this->Solicitud->listarPendientes ();
 		foreach ( $rs [0] ['rs'] as $fila ) {
@@ -131,8 +131,9 @@ class Panel extends CI_Controller {
 					$fila->nom,
 					$fila->tel,
 					$fila->cor,
-					$fila->tip,
-					$fila->est 
+					$fila->categoria,
+					$this->estatus($fila->est),
+					""
 			);
 		}
 		$obj [] = array (
@@ -140,6 +141,21 @@ class Panel extends CI_Controller {
 				"cuerpo" => $cuep 
 		);
 		echo json_encode ( $obj );
+	}
+	private function estatus($estatus) {
+		$valor = "";
+		switch ($estatus) {
+			case 0 :
+				$valor = "Pendiente";
+				break;
+				case 1 :
+					$valor = "Atendido";
+					break;
+			default :
+				$valor = "Pendiente";
+				break;
+		}
+		return $valor;
 	}
 	
 	/**

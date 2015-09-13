@@ -152,12 +152,16 @@ class Solicitud extends CI_Model {
 	 */
 	private function listar($categoria = 0, $estatus = 0, $fecha = NULL) {
 		$rs = array ();
-		$lista =  'SELECT * FROM ' . $this->tbl . ' LEFT JOIN t_afiliados ON ' . $this->tbl . '.cor=t_afiliados.cor' ;
+		$lista =  'SELECT * FROM ' . $this->tbl . ' LEFT JOIN t_afiliados ON ' . $this->tbl . '.cor=t_afiliados.cor ';
+		$lista .= 'LEFT JOIN t_categoria ON  ' . $this->tbl . '.tip = t_categoria.oid ';
 		if ($categoria == 0) {
 			$lista .= ' WHERE est=' . $categoria;
 		} else {
 			$lista .= ' WHERE cat=' . $categoria . ' AND est=' . $estatus;
 		}
+		
+		
+		
 		if (isset ( $fecha )) $lista .= $fecha;
 		
 		$resultado = $this->db->query ( $lista );
