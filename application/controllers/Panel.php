@@ -135,6 +135,9 @@ class Panel extends CI_Controller {
 
     function registrarSerie(){
         $this -> load -> model('panel/Mpanel', 'MPanel');
+        $_POST['titulo'] = $this->db->escape($_POST['titulo']);
+        $_POST['descrip'] = $this->db->escape($_POST['descrip']);
+        $_POST['resumen'] = $this->db->escape($_POST['resumen']);
         echo $this -> MPanel -> registrarSerie($_POST);
 
     }
@@ -152,6 +155,7 @@ class Panel extends CI_Controller {
 
     function modificarSerie(){
         $ele = json_decode($_POST['datos'],true);
+        print_R($ele);
         $this -> load -> model('panel/Mpanel', 'MPanel');
         echo $this -> MPanel -> modificarSerie($ele);
     }

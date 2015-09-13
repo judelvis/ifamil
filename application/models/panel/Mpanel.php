@@ -306,7 +306,9 @@ join(Select * from portafolio
 		return "<h4>No se pudo registrar</h4>";
 	}
 	function modificarSerie($arr) {
-        $query = 'Update t_portafolio set titulo="'.$arr[1].'",resumen="'.$arr[2].'",descrip="'.$arr[3].'"';
+        $descrip =$this->db->escape($arr[3]);
+        $resumen =$this->db->escape($arr[2]);
+        $query = 'Update t_portafolio set titulo="'.$arr[1].'",resumen="'.$resumen.'",descrip="'.$descrip.'"';
         if($arr[5] != 'Activo' && $arr[5] != 'Inactivo') $query.=',estatus='.$arr[5];
         $query .=' where id='.$arr[0];
         //return $query;
