@@ -113,7 +113,7 @@ join(Select * from portafolio
     function consultarPortafolioCat($cat){
         $consulta = $this -> db -> query("Select * From t_portafolio left join (select * from t_galeria group by oidpor)
           as porta on t_portafolio.id = porta.oidpor
-          WHERE  oidcat=".$cat );
+          WHERE estatus=0 and  oidcat=".$cat." order by t_portafolio.fecha desc" );
         $cant = $consulta -> num_rows();
         if($cant > 0){
             $porta = $consulta -> result();
@@ -184,7 +184,10 @@ join(Select * from portafolio
     }
 
     function modificarNoticia($arr){
-        $resp = $this -> db -> query('Update t_noticias set titulo="'.$arr[1].'",descrip="'.$arr[2].'",resumen="'.$arr[3].'" where oid='.$arr[0]);
+        $titulo = $this->db->escape($arr[1]);
+        $descrip = $this->db->escape($arr[2]);
+        $resumen = $this->db->escape($arr[3]);
+        $resp = $this -> db -> query('Update t_noticias set titulo="'.$titulo.'",descrip="'.$descrip.'",resumen="'.$resumen.'" where oid='.$arr[0]);
         if($resp) return "<h4>Se Actualizo con exito</h4>";
         return "<h4>No se pudo modificar</h4>";
     }
