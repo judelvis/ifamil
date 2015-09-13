@@ -22,30 +22,19 @@ function listarSolicitud() {
 		'rutaObjeto' : sUrlP + 'listarSolicitud',
 		'parametro' : ''
 	};
-	
-	
 	$("#reporte").dtgrid(origen, [ {
 		'titulo' : '',
 		'clase' : "",
 		'oculto' : [ 1 ],
 		'editable' : {
-			'c1' : 'texto',
-			'c2' : 'texto',
-			'c3' : 'texto'
+			'c7' : 'texto' //Observaciones
 		},
-		"paginador": 10,
+		"paginador": 20,
 		"accion" : [ {
 			"ejecuta" : sUrlP + "modificarSerie",
 			"tipo" : "php",
 			"clase" : "mdi-action-check-circle",
 			"parametro" : [],
-		} ],
-		"boton" : [ {
-			"parametro" : [],
-			"titulo" : "enviar",
-			"ejecuta" : sUrlP + "Exporta_Exel",
-			"tipo" : "php",
-			"clase" : "mdi-action-done"
 		} ]
 	} ]);
 }
