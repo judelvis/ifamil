@@ -53,6 +53,7 @@ $(function() {
     verificarCat();
 });
 
+
 function listaEstados(){
     //alert(sUrlP + "comboEstados");
     $.ajax({
@@ -79,6 +80,12 @@ function listaPaquetes(){
                 $("#paquete").append(new Option(valor,item));
             });
             $("#paquete").append(new Option("Seleccione Paquete", "0"));
+            var paq = $("#vaPaquete").val();
+            //alert(paq);
+            if(paq != ''){
+                $("#paquete > option[value="+ paq +"]").attr("selected","selected");
+                $("#paquete").attr("readonly",true);
+            }
         }
     });
 }
