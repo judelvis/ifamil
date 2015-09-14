@@ -1,9 +1,9 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Server version:               5.5.37-0ubuntu0.13.10.1 - (Ubuntu)
+-- Server version:               5.5.44-0ubuntu0.14.04.1 - (Ubuntu)
 -- Server OS:                    debian-linux-gnu
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-09-11 11:29:37
+-- Date/time:                    2015-09-14 07:35:47
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -38,13 +38,14 @@ CREATE TABLE IF NOT EXISTS `t_afiliados` (
   `pro` varchar(255) NOT NULL COMMENT 'Profesión',
   PRIMARY KEY (`oid`),
   UNIQUE KEY `cedula` (`ced`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='Listado de Clientes Padres';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COMMENT='Listado de Clientes Padres';
 
--- Dumping data for table ifamil.t_afiliados: ~2 rows (approximately)
+-- Dumping data for table ifamil.t_afiliados: ~3 rows (approximately)
 /*!40000 ALTER TABLE `t_afiliados` DISABLE KEYS */;
 INSERT INTO `t_afiliados` (`oid`, `ced`, `nom`, `fna`, `tel`, `cor`, `fac`, `pro`) VALUES
 	(1, 25475197, 'Anthony Uzcategui', '07/05/97', '041682821823', 'anthony-uzcategui7@gmail.com', 'AnthonyPEÑ', 'TAXISTA'),
-	(2, 25475192, 'Anthony UzcateguiP', '07/05/97', '041682821821', 'anthony-uzcategui7@gmail.com', 'AnthonyPEÑA', 'Buecetero');
+	(2, 25475192, 'Anthony UzcateguiP', '07/05/97', '041682821821', 'anthony-uzcategui7@gmail.com', 'AnthonyPEÑA', 'Buecetero'),
+	(3, 17456121, 'judelvis rivas', '1985/12/23', '354564', 'jud.prog@gmail.com', '', 'sdfsdfdsf');
 /*!40000 ALTER TABLE `t_afiliados` ENABLE KEYS */;
 
 
@@ -169,9 +170,9 @@ CREATE TABLE IF NOT EXISTS `t_galeria` (
   `enlace` text COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`oid`),
   KEY `oidpor` (`oidpor`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
--- Dumping data for table ifamil.t_galeria: ~14 rows (approximately)
+-- Dumping data for table ifamil.t_galeria: ~18 rows (approximately)
 /*!40000 ALTER TABLE `t_galeria` DISABLE KEYS */;
 INSERT INTO `t_galeria` (`oid`, `oidpor`, `imagen`, `titulo`, `detalle`, `fecha`, `modificado`, `enlace`) VALUES
 	(1, 2, 'navidad.jpg', 'Navidad', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '2015-09-14', '2015-09-09 16:59:00', ''),
@@ -187,7 +188,11 @@ INSERT INTO `t_galeria` (`oid`, `oidpor`, `imagen`, `titulo`, `detalle`, `fecha`
 	(12, 5, 'LOS LLANOS.jpg', '', '', '0000-00-00', '2015-09-11 10:11:52', ''),
 	(13, 6, 'bueceo.jpg', 'Isla de Margarita Buceo o snorkeling', 'margarita', '2015-09-11', '2015-09-11 10:26:13', ''),
 	(14, 6, 'buceo2.jpg', '', '', '0000-00-00', '2015-09-11 10:22:49', ''),
-	(15, 6, 'buceo3.jpg', '', '', '0000-00-00', '2015-09-11 10:22:59', '');
+	(15, 6, 'buceo3.jpg', '', '', '0000-00-00', '2015-09-11 10:22:59', ''),
+	(17, 7, 'isla2.jpg', 'cvcvbv', 'cvbvcbvcbvcbv', '2015-09-11', '2015-09-11 16:19:02', ''),
+	(18, 7, 'isal.jpg', 'dsf', 'dsf', '2015-09-11', '2015-09-11 16:19:52', ''),
+	(19, 8, '13trapiche01_700.jpg', 'imagen', 'dfdsf', '0000-00-00', '2015-09-13 15:02:41', ''),
+	(20, 9, 'P1120315.JPG', 'asdfds', 'dsf', '2015-09-16', '2015-09-13 15:12:15', 'dsfsa');
 /*!40000 ALTER TABLE `t_galeria` ENABLE KEYS */;
 
 
@@ -225,14 +230,17 @@ CREATE TABLE IF NOT EXISTS `t_portafolio` (
   `estatus` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `oidcat` (`oidcat`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
--- Dumping data for table ifamil.t_portafolio: ~3 rows (approximately)
+-- Dumping data for table ifamil.t_portafolio: ~6 rows (approximately)
 /*!40000 ALTER TABLE `t_portafolio` DISABLE KEYS */;
 INSERT INTO `t_portafolio` (`id`, `oidcat`, `titulo`, `descrip`, `resumen`, `fecha`, `modificado`, `estatus`) VALUES
-	(4, 4, 'Isla la tortuga', '<lul class="para"><li>Incluye:</li>\r\n<li>Traslado en unidades ejecutivas Caracas- Chirimena- Caracas.</li>\r\n<li>Traslado en lancha Chirimena- La Tortuga- Chirimena.</li>\r\n<li>Todas las comidas (02 desayuno-02 almuerzo-01cena)(comida a base de pescado, desayunos arepa y sándwich).</li>\r\n<li>Pernocta en carpa con colchón (el colchon ya esta incluido con la carpa).</li>\r\n<li>Cava con hielo, agua y refresco.</li>\r\n<li>Toldo y sillas de playa.</li>\r\n<li>Paseo a los cayos Tortuguillos.</li>\r\n<li>Paramedico.</li></ul>', '<p class="para">Vive una mágica experiencia en la Isla de Margarita 2 DIAS / 1 NOCHE</p>', '2015-09-11', '2015-09-11 09:59:31', 0),
+	(4, 4, 'Isla la tortuga', '<ul class="para"><li>Incluye:</li>\r\n<li>Traslado en unidades ejecutivas Caracas- Chirimena- Caracas.</li>\r\n<li>Traslado en lancha Chirimena- La Tortuga- Chirimena.</li>\r\n<li>Todas las comidas (02 desayuno-02 almuerzo-01cena)(comida a base de pescado, desayunos arepa y sándwich).</li>\r\n<li>Pernocta en carpa con colchón (el colchon ya esta incluido con la carpa).</li>\r\n<li>Cava con hielo, agua y refresco.</li>\r\n<li>Toldo y sillas de playa.</li>\r\n<li>Paseo a los cayos Tortuguillos.</li>\r\n<li>Paramedico.</li></ul>', '<p class="para">Vive una mágica experiencia en la Isla de Margarita 2 DIAS / 1 NOCHE</p>', '2015-09-11', '2015-09-12 17:08:28', 0),
 	(5, 4, 'Los Llanos', '<ul class="para"><li>Incluye:</li>\r\n<li>Asistencia aeropuerto Barinas, traslado In/Out.</li>\r\n<li>Alojamiento en habitación Full equipo.\r\n<li>Desayuno, almuerzo, cena, y bebidas durante las comidas (No Alcohólicas).\r\n<li>Actividades recreativas observación del comportamiento de la anaconda, cancha de bolas criollas, pesca deportiva, piscina tipo jacuzzi, paseo en bicicleta, mesa de ping pong exhibición ecuestre y safari nocturno(Ciertas condiciones aplican).</li></ul>', '<p class="para">Vive una mágica experencia en los Llanos', '2015-09-11', '2015-09-11 10:16:13', 0),
-	(6, 4, 'Isla de Margarita Buceo o Snorkeling', 'En nuestro tour de buceo o snorkeling por los frailes, usted disfrutara dentro de sus siete pequeñas islas ubicadas al noreste de Margarita una experiencia maravillosa donde lo llevara a descubrir un mundo totalmente diferente, y hermoso a la vez.\r\n\r\nSnorkelling incluye:\r\n\r\nTranslado Hotel- Muelle- Hotel, Observando la abundante vida marina y reconociendo una gran cantidad de peces tropicales en aguas claras y tranquilas, Almuerzo, refrigerios, y equipos.\r\nDuracion:8horas aproximadamente.\r\n\r\nBuceo incluye:\r\n\r\nTraslado Hotel-Muelle-Hotel.\r\nDos inmersiones de no mas de 20 metros de profundidad, guiadas por un experto, Dive Master que le mostrara diferentes especies de vida marina.\r\nAlmuerzo, refrigerios y equipos.\r\nDuración de 8 horas aproximadamente.', '<p class="para">Vive una mágica experiencia en la Isla de Margarita 2 DIAS/ 1 NOCHE</p>', '2015-09-11', '2015-09-11 10:30:03', 0);
+	(6, 4, 'Isla de Margarita Buceo o Snorkeling', 'En nuestro tour de buceo o snorkeling por los frailes, usted disfrutara dentro de sus siete pequeñas islas ubicadas al noreste de Margarita una experiencia maravillosa donde lo llevara a descubrir un mundo totalmente diferente, y hermoso a la vez.\r\n\r\nSnorkelling incluye:\r\n\r\nTranslado Hotel- Muelle- Hotel, Observando la abundante vida marina y reconociendo una gran cantidad de peces tropicales en aguas claras y tranquilas, Almuerzo, refrigerios, y equipos.\r\nDuracion:8horas aproximadamente.\r\n\r\nBuceo incluye:\r\n\r\nTraslado Hotel-Muelle-Hotel.\r\nDos inmersiones de no mas de 20 metros de profundidad, guiadas por un experto, Dive Master que le mostrara diferentes especies de vida marina.\r\nAlmuerzo, refrigerios y equipos.\r\nDuración de 8 horas aproximadamente.', '<p class="para">Vive una mágica experiencia en la Isla de Margarita 2 DIAS/ 1 NOCHE</p>', '2015-09-11', '2015-09-11 10:30:03', 0),
+	(7, 4, 'paquete 1', '\'<p class="parra">Aca va el contenido largo</p><br><div style="background-color:#00ff66">Epale</div>\'', '\'resumen paqjuetre 1\'', '2015-09-11', '2015-09-13 14:48:52', 0),
+	(8, 4, '\'<h2>titulo principal</h2>\'', '\'<h5>Descripcion probando</h5\'', '\'<p class=\\"parra\\">Resumen Ejemplo</p>\'', '2015-09-16', '2015-09-13 15:00:56', 0),
+	(9, 4, '\'dsfdsf\'', '\'dfafddsf\'', '\'dsfdsf\'', '2015-09-08', '2015-09-13 15:11:53', 0);
 /*!40000 ALTER TABLE `t_portafolio` ENABLE KEYS */;
 
 
@@ -244,9 +252,9 @@ CREATE TABLE IF NOT EXISTS `t_sitios` (
   `cod` varchar(16) NOT NULL COMMENT 'Codigo del Sitio',
   `est` varchar(255) NOT NULL COMMENT 'Estado o Provincia',
   PRIMARY KEY (`oid`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1 COMMENT='Control de los sitios WEB';
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1 COMMENT='Control de los sitios WEB';
 
--- Dumping data for table ifamil.t_sitios: ~30 rows (approximately)
+-- Dumping data for table ifamil.t_sitios: ~31 rows (approximately)
 /*!40000 ALTER TABLE `t_sitios` DISABLE KEYS */;
 INSERT INTO `t_sitios` (`oid`, `nom`, `cod`, `est`) VALUES
 	(1, 'Aeropuerto Internacional de Maiquetía Simón Bolívar', 'CCS', 'Caracas'),
@@ -278,25 +286,36 @@ INSERT INTO `t_sitios` (`oid`, `nom`, `cod`, `est`) VALUES
 	(27, 'Aeropuerto Parque Nacional Los Roques', 'LRV', 'Los Roques'),
 	(28, 'Aeropuerto Néstor Areas', 'SNF', 'San Felipe'),
 	(29, 'Aeropuerto Nacional Bartolomé Salom', 'PBL', 'Puerto Cabello'),
-	(30, 'Aeropuerto Nacional Ezequiel Zamora', '', 'San Carlos');
+	(30, 'Aeropuerto Nacional Ezequiel Zamora', '', 'San Carlos'),
+	(31, 'Aeropuerto Judelvis', 'jud', 'merida');
 /*!40000 ALTER TABLE `t_sitios` ENABLE KEYS */;
 
 
 -- Dumping structure for table ifamil.t_solicitud
 DROP TABLE IF EXISTS `t_solicitud`;
 CREATE TABLE IF NOT EXISTS `t_solicitud` (
-  `oid` int(11) NOT NULL COMMENT 'Identificador',
-  `oidc` int(11) NOT NULL COMMENT 'Identificador del Cliente',
-  `fre` date NOT NULL COMMENT 'Fecha Solicitud',
+  `oid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',
+  `cor` varchar(64) NOT NULL COMMENT 'Correo Electronico del cliente',
+  `fes` date NOT NULL COMMENT 'Fecha Solicitud',
+  `fel` int(11) NOT NULL COMMENT 'Fecha de Llegada',
   `ori` int(11) NOT NULL COMMENT 'Origen',
   `des` int(11) NOT NULL COMMENT 'Destino',
+  `caa` int(2) NOT NULL COMMENT 'Cantidad Adultos',
+  `can` int(2) NOT NULL COMMENT 'Cantidad de Ni;os',
   `det` text NOT NULL COMMENT 'Detalles',
   `tip` int(2) NOT NULL COMMENT 'Tipo de Solicitud',
-  `est` tinyint(1) NOT NULL COMMENT 'Estatus'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Control de Solicitudes';
+  `fap` int(1) NOT NULL COMMENT 'Forma de Pago',
+  `hos` varchar(256) NOT NULL COMMENT 'Hospedaje',
+  `tra` varchar(256) NOT NULL COMMENT 'Transporte',
+  `paq` int(2) NOT NULL COMMENT 'Paquete',
+  `est` tinyint(1) NOT NULL COMMENT 'Estatus',
+  PRIMARY KEY (`oid`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COMMENT='Control de Solicitudes';
 
--- Dumping data for table ifamil.t_solicitud: ~0 rows (approximately)
+-- Dumping data for table ifamil.t_solicitud: ~1 rows (approximately)
 /*!40000 ALTER TABLE `t_solicitud` DISABLE KEYS */;
+INSERT INTO `t_solicitud` (`oid`, `cor`, `fes`, `fel`, `ori`, `des`, `caa`, `can`, `det`, `tip`, `fap`, `hos`, `tra`, `paq`, `est`) VALUES
+	(1, 'jud.prog@gmail.com', '2015-09-24', 2015, 31, 1, 4, 2, 'epale', 2, 1, '0', '', 4, 0);
 /*!40000 ALTER TABLE `t_solicitud` ENABLE KEYS */;
 
 
