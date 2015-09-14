@@ -1,6 +1,7 @@
 $(function() {
     $( "#fechaSalida" ).datepicker({
         changeMonth: true,
+        minDate: 0,
         changeYear: true,
         onClose: function( selectedDate ) {
             $( "#fechaLlegada" ).datepicker( "option", "minDate", selectedDate );
@@ -9,6 +10,7 @@ $(function() {
     $( "#fechaLlegada" ).datepicker({
         changeMonth: true,
         changeYear: true,
+        minDate: 0,
         onClose: function( selectedDate ) {
             $( "#fechaSalida" ).datepicker( "option", "maxDate", selectedDate );
         }

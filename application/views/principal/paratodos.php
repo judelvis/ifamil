@@ -112,7 +112,13 @@
 
                                     </div>
                                 </div>';
-                        }?>
+                        }
+                       echo ' <div class="clearfix"></div><div class="read_btn">
+                        <a href="'.site_url("Principal/solicitud/4/".$lst[0]->id).'">
+                        <button class="btn">Realiza tu solicitud</button>
+                        </a>
+                    </div>';
+                        ?>
                     <div class="clearfix"></div>
                 </div>
             </div>
