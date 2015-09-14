@@ -17,13 +17,7 @@
         <hr class="team_hr team_hr_left hr_gray"/>
         <form method="post" action="#" onsubmit="return guardar();">
             <div class="row">
-                <div class="col-md-1 input-sm">
-                    <select id="V" name="V"style="width: 100%;" >
-                        <option value="v">V</option>
-                        <option value="e">E</option><
-                    </select>
-                </div>
-                <div class="col-md-5">
+                <div class="col-md-6">
                     <input type="text" name="cedula" id="cedula" placeholder="Cedula" required="required" onkeypress="return soloNumeros(event);">
                 </div>
                 <div class="col-md-6">
@@ -51,8 +45,9 @@
                 </div>
                 <div class="col-md-12">
                     <select id="profesion" name="profesion "style="width: 100%;" class="input-sm">
-                        <option value="0">Profesión</option>
-                        <option value="M">Uniformado</option>
+                        <option value="0">Seleccione su condición</option>
+                        <option value="M">Uniformado activo</option>
+                        <option value="M">Uniformado jubilado</option>
                         <option value="P">Particular</option>
 
                     </select>

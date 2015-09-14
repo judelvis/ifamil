@@ -101,12 +101,21 @@
                         <a href="#"><img src="'. __IMG__.'galeria/medio/'.$ls->imagen.'" alt="" class="img-responsive"/></a>
                         <h4>'.$ls->titulo.'</h4>
 
+
                         <p class="para">'.$ls->resumen.'</p>
+
                         <div class="read_btn">
                             <a href="'.site_url("Principal/paratodos/".$ls->id).'">
                                 <button class="btn">leer mas</button>
+                                <button class="btn">Realiza tu solicitud</button>
                             </a>
                         </div>
+
+
+
+
+
+
                     </div>
                     <div class="clearfix"></div><br>';
                     }
