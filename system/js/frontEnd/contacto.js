@@ -1,7 +1,10 @@
 function guardar(){
-    datos = $("form").serialize();
-    //alert(datos);
-
+    var nombre = $("#nombre").val();
+    var correo = $("#correo").val();
+    var telefono = $("#codTel").val()+"-"+$("#telefono").val();
+    var mensaje = $("#mensaje").val();
+    var datos = "nombre="+nombre+"&correo="+correo+"&telefono="+telefono+"&mensaje="+mensaje;
+    //alert(datos+sUrlP);
     $.ajax({
         url : sUrlP + 'enviarContacto',
         type : "post",

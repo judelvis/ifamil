@@ -38,7 +38,7 @@
                 <div class="col-md-8">
                     <div class="contact-form" id="formulario">
                         <h2>Contacto</h2>
-                        <form method="post" action="#" onsubmit="guardar();">
+                        <form method="post" action="#" onsubmit="return guardar();">
                             <input type="text" id="nombre" name="nombre" placeholder="Nombre y Apellido..." required="required">
                             <input type="email" name="correo" id="correo" placeholder="Correo Electronico" required="required">
                             <div class="row">

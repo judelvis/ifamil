@@ -159,8 +159,9 @@ class Principal extends CI_Controller
     }
 
     function enviarContacto(){
-        print("<pre>");
-        print_R($_POST);
+        $this ->load->database();
+        $this ->db->insert("t_contactos",$_POST);
+        echo "Se registro con exito";
     }
 
 
