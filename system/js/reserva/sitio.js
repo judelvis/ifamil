@@ -23,13 +23,6 @@ function listarSitios() {
 			"tipo" : "php",
 			"clase" : "mdi-action-check-circle",
 			"parametro" : []
-		} ],
-		"boton" : [ {
-			"parametro" : [],
-			"titulo" : "enviar",
-			"ejecuta" : sUrlP + "Exporta_Exel",
-			"tipo" : "php",
-			"clase" : "mdi-action-done"
 		} ]
 	} ]);
 }
