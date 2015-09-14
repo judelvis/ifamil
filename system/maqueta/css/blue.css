@@ -1694,7 +1694,12 @@ h3.style {
         position: fixed;
     }
 }
-
+@media only screen and (max-width: 1920px) {
+    .menu li a {
+        padding: 10px 36px 10px 36px;
+        margin-top: 40px;
+    }
+}
 @media only screen and (max-width: 1600px) {
     .menu li a {
         padding: 10px 33px 10px 33px;

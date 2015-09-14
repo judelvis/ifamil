@@ -41,6 +41,7 @@
                         <form method="post" action="#" onsubmit="guardar();">
                             <input type="text" id="nombre" name="nombre" placeholder="Nombre y Apellido..." required="required">
                             <input type="email" name="correo" id="correo" placeholder="Correo Electronico" required="required">
+                            <div class="row">
                             <div class="col-md-3">
                                 <select id="codTel" name="codTel"style="width: 100%;" class="input-sm" onchange="verificarCodigo()">
                                     <option value="0">Código</option>
@@ -52,6 +53,7 @@
                             </div>
                             <div class="col-md-9">
                                 <input style="width: 100%;" type="text" name="telefono" id="telefono" placeholder="Numero de telefono Celular" maxlength="7" required="required" onkeypress="return soloNumeros(event);">
+                            </div>
                             </div>
                             <textarea id="mensaje" name="mensaje" placeholder="Mensaje..." required="required"></textarea>
                             <span><input type="submit" value="ENVIAR"></span>

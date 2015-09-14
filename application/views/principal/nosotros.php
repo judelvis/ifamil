@@ -52,7 +52,7 @@
 
         <div class="technology_main">
             <div class="technology_list col-md-6">
-                <h2>Mision</h2>
+                <h2>Misión</h2>
 
                 <div class="tech_para">
                     <p class="para"> Prestar los mejores servicios en viajes y turismo a nivel nacional e internacional con una alta calidad y responsabilidad, amparados con un excelente servicio de atención al cliente y un personal altamente capacitado, manteniendo un horizonte claro del beneficio de bienestar social que deben recibir nuestros afiliados. </p>
@@ -63,7 +63,7 @@
                 <div class="clearfix"></div>
             </div>
             <div class="technology_list col-md-6">
-                <h2>Vision</h2>
+                <h2>Visión</h2>
 
                 <div class="tech_para">
                     <p class="para">Ser la agencia de viajes y turismo más competitiva y confiable del mercado, que ofrezca un alto nivel de calidad en sus servicios y beneficio social, con el propósito de satisfacer las necesidades de sus clientes tanto en el sector militar, gubernamental como público en general. </p>
