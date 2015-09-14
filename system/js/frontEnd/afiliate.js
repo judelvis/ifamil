@@ -42,3 +42,10 @@ function guardar(){
     });
     return false;
 }
+function verificarCodigo(){
+    var cod=$("#codTel").val();
+    if(cod=="otros"){
+        $("#telefono").attr("maxlength","11")
+    }
+    else{ $("#telefono").attr("maxlength","7")}
+}

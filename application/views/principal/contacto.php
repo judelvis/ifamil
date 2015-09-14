@@ -42,7 +42,7 @@
                             <input type="text" id="nombre" name="nombre" placeholder="Nombre y Apellido..." required="required">
                             <input type="email" name="correo" id="correo" placeholder="Correo Electronico" required="required">
                             <div class="col-md-3">
-                                <select id="codTel" name="codTel"style="width: 100%;" class="input-sm">
+                                <select id="codTel" name="codTel"style="width: 100%;" class="input-sm" onchange="verificarCodigo()">
                                     <option value="0">Código</option>
                                     <option value="0416">0416</option><option value="0426">0426</option>
                                     <option value="0414">0414</option><option value="0424">0424</option>

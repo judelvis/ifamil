@@ -55,7 +55,7 @@
                         <h3>Contactenos</h3>
 
                         <p>Hazlo Diferente-Hazlo con Nosotros</p>
-
+<br>
                         <div class="read_more">
                             <a class="btn btn-2b" href="<?php echo base_url("index.php/Principal/contacto")?>">Ver mas</a>
                         </div>

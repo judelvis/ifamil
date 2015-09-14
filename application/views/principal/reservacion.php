@@ -24,14 +24,14 @@
                     <input type="email" name="correo" id="correo" placeholder="Correo Electronico" required="required">
                 </div>
                 <div class="col-md-2">
-                    <select id="codTel" name="codTel" style="width: 100%;" class="input-sm">
+                    <select id="codTel" name="codTel" style="width: 100%;" class="input-sm" onchange="verificarCodigo()">
                         <option value="0">Código</option>
                         <option value="0416">0416</option>
                         <option value="0426">0426</option>
                         <option value="0414">0414</option>
                         <option value="0424">0424</option>
                         <option value="0412">0412</option>
-                        <option value="Otros">Otros</option>
+                        <option value="otros">Otros</option>
                     </select>
                 </div>
                 <div class="col-md-4">
@@ -124,6 +124,7 @@
                         <option value="1">Efectivo</option>
                         <option value="2">Cheque</option>
                         <option value="3">Credito</option>
+                        <option value="4">Tranfrerencias</option>
                     </select>
                 </div>
             </div>
