@@ -28,7 +28,7 @@
                 </div>
                 <div class="col-md-2">
                     <select id="codTel" name="codTel"style="width: 100%;" class="input-sm">
-                        <option value="0">Codigo</option>
+                        <option value="0">Código</option>
                         <option value="0416">0416</option><option value="0426">0426</option>
                         <option value="0414">0414</option><option value="0424">0424</option>
                         <option value="0412">0412</option>
