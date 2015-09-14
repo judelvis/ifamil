@@ -47,10 +47,11 @@
                                     <option value="0416">0416</option><option value="0426">0426</option>
                                     <option value="0414">0414</option><option value="0424">0424</option>
                                     <option value="0412">0412</option>
+                                    <option value="otros">Otros</option>
                                 </select>
                             </div>
                             <div class="col-md-9">
-                                <input style="width: 100%;" type="text" name="telefono" id="telefono" placeholder="Numero de telefono Celular" required="required" onkeypress="return soloNumeros(event);">
+                                <input style="width: 100%;" type="text" name="telefono" id="telefono" placeholder="Numero de telefono Celular" maxlength="7" required="required" onkeypress="return soloNumeros(event);">
                             </div>
                             <textarea id="mensaje" name="mensaje" placeholder="Mensaje..." required="required"></textarea>
                             <span><input type="submit" value="ENVIAR"></span>

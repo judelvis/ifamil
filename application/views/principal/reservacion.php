@@ -31,11 +31,12 @@
                         <option value="0414">0414</option>
                         <option value="0424">0424</option>
                         <option value="0412">0412</option>
+                        <option value="Otros">Otros</option>
                     </select>
                 </div>
                 <div class="col-md-4">
                     <input style="width: 100%;" type="text" name="telefono" id="telefono"
-                           placeholder="Numero de telefono Celular" required="required"
+                           placeholder="Numero de telefono Celular" maxlength="7" required="required"
                            onkeypress="return soloNumeros(event);">
                 </div>
             </div>

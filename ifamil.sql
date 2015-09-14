@@ -339,3 +339,4 @@ INSERT INTO `t_usuarios` (`id`, `documento`, `nombre`, `apellido`, `login`, `cla
 /*!40000 ALTER TABLE `t_usuarios` ENABLE KEYS */;
 /*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+t_portafolio
