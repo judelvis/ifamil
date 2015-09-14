@@ -63,6 +63,23 @@ class Panel extends CI_Controller {
 			$this->load->view ( 'reserva/panel/principal', $data );
 		}
 	}
+	
+	function marketing() {
+		if (! isset ( $_SESSION ['usuario_ifamil'] )) {
+			session_destroy ();
+			redirect ( base_url () . 'index.php/Reserva/Panel' );
+		} else {
+			$data ['js'] = 'marketing';
+			$data ['titulo'] = 'Estrategia de Envios';
+			$data ['formulario'] = 'marketing';
+			$this->load->view ( 'reserva/panel/incluir/cabecera', $data );
+			$this->load->view ( 'reserva/panel/incluir/menu' );
+			$this->load->view ( 'reserva/panel/principal', $data );
+		}
+	}
+	/**
+	 * ------------------------------------------------------------
+	 */
 	function validarUsuario() {
 		$this->load->model ( 'usuario/Iniciar', 'Iniciar' );
 		echo $this->Iniciar->validarCuenta ( $_POST );
@@ -84,6 +101,32 @@ class Panel extends CI_Controller {
         print("<pre>");
         print_R($_POST);
     }
+    
+    
+    function listarAfiliados() {
+    	$this->load->model ( 'reserva/Afiliado', 'Afiliado' );
+    	$cabecera = array (
+    			'Id',
+    			'Nombre',
+    			'correo',
+    			'telefono'
+    	);
+    	$rs = $this->Afiliado->listar ();
+    	foreach ( $rs [0] ['rs'] as $fila ) {
+    		$cuep [] = array (
+    				$fila->oid,
+    				$fila->nom,
+    				$fila->cor,
+    				$fila->tel
+    		);
+    	}
+    	$obj [] = array (
+    			"cabecera" => $cabecera,
+    			"cuerpo" => $cuep
+    	);
+    	echo json_encode ( $obj );
+    }
+    
 
 	function listarSitios() {
 		$this->load->model ( 'reserva/Sitio', 'Sitio' );

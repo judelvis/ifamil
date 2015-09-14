@@ -28,14 +28,12 @@ $(function() {
 
 function guardar(){
     datos = $("form").serialize();
-    //alert(datos);
     var ruta = "Principal/registrarAfiliado";
     $.ajax({
         url : sUrlR + ruta,
         type : "post",
-        //dataType : "json",
         data:datos,
-        success : function(data) {//alert(data);
+        success : function(data) {
             alert(data);
             $('form').each(function () {
                 this.reset();

@@ -27,7 +27,7 @@ function listarSolicitud() {
 		'clase' : "",
 		'oculto' : [ 1 ],
 		'editable' : {
-			'c7' : 'texto' //Observaciones
+			'c7' : 'texto'
 		},
 		"paginador": 20,
 		"accion" : [ {
@@ -40,14 +40,8 @@ function listarSolicitud() {
             "tipo" : "script",
             "clase" : "mdi-communication-email",
             "parametro" : [4],
-        } ],
-		"boton" : [ {
-			"parametro" : [],
-			"titulo" : "enviar",
-			"ejecuta" : sUrlP + "Exporta_Exel",
-			"tipo" : "php",
-			"clase" : "mdi-action-done"
-		} ]
+        } ]
+		
 	} ]);
 }
 
@@ -60,7 +54,6 @@ function enviar(correo){
 function enviarCorreo(){
     var mensaje = $("#mensaje").val();
     var correo = $("#correo").val();
-    //alert(mensaje);
     if(mensaje == ''){
         alert("Ingrese mensaje a enviar por correo");
         return false;
