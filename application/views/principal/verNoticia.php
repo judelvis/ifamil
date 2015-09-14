@@ -5,6 +5,14 @@
  * Date: 9/8/15
  * Time: 9:02 AM
  */ ?>
+<div id="fb-root "></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.4";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 <div class="main_bg"><!-- start main -->
     <div class="container">
         <div class="main_grid1">
@@ -31,6 +39,7 @@
                         <h4>Resumen</h4>
 
                         <p class="para"><?php echo $lst[0]->resumen; ?></p>
+                        <div class="fb-like" data-layout="button_count"></div>
                     </div>
                     <div class="technology_list col-md-12">
                         <br>
