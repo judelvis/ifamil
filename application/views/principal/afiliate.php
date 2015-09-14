@@ -47,10 +47,10 @@
                 <div class="col-md-12">
                     <select id="profesion" name="profesion" style="width: 100%;" class="input-sm">
                         <option value="0">Seleccione su condición</option>
-                        <option value="A">Uniformado activo</option>
-                        <option value="J">Uniformado jubilado</option>
+                        <option value="A">Militar Activo</option>
+                        <option value="J">Militar Jubilado</option>
                         <option value="P">Particular</option>
-
+                        <option value="R">Empresa</option>
                     </select>
                 </div>
             </div>
