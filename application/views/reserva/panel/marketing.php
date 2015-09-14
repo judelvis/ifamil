@@ -21,24 +21,23 @@
                     <div class="form-group">
 
                         <div class="col-lg-4">
-                            <input type="text" placeholder="Ingrese Nombre Aeropuero" class="form-control"
-                                   name="nom" id="nom" required="required"/>
+                            <select id="paquete" name="paquete" class="browser-default"></select>
                         </div>
 
                         <div class="col-lg-4">
-                            <input type="text" placeholder="Ingrese Codigo Del Aeropuero" class="form-control"
-                                   name="cod" id="cod" required="required"/>
+                            <select id="profesion" name="profesion" class="browser-default">
+                                <option value="0">Seleccione su condición</option>
+                                <option value="A">Militar Activo</option>
+                                <option value="J">Militar Jubilado</option>
+                                <option value="P">Particular</option>
+                                <option value="R">Empresa</option>
+                            </select>
+
                         </div>
                         <div class="col-lg-4">
-                            <input type="text" placeholder="Ingrese Nombre Del Estado" class="form-control"
-                                   name="est" id="est" required="required"/>
+                            <button class="btn btn-primary" data-toggle="modal" onclick="enviar();">Enviar
+                            </button>
                         </div>
-                    </div>
-
-                    <div class="panel-body">
-                        <button class="btn btn-primary" data-toggle="modal" onclick="registrar();">Registrar
-                        </button>
-
                     </div>
                 </form>
             </div>
