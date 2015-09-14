@@ -13,7 +13,7 @@
         <hr class="team_hr team_hr_left hr_gray"/>
         <center><h1>DANOS TU OPINION</h1></center>
         <hr class="team_hr team_hr_left hr_gray"/>
-        <form method="post" action="http://localhost/ifamil/index.php/Reserva/Principal/registrarAfiliado">
+        <form method="post" action="#" onsubmit="return guardar();">
             <div class="row">
                 <div class="col-md-6">
                     <input type="text" name="cedula" id="cedula" placeholder="Cedula" required="required" onkeypress="return soloNumeros(event);">

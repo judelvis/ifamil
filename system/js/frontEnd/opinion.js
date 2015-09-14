@@ -2,9 +2,13 @@
  * Created by breyner on 14/09/15.
  */
 function guardar(){
-    datos = $("form").serialize();
-    //alert(datos);
-
+    var nombre = $("#nombre").val();
+    var cedula = $("#cedula").val();
+    var correo = $("#correo").val();
+    var telefono = $("#codTel").val()+"-"+$("#telefono").val();
+    var mensaje = $("#mensaje").val();
+    var datos = "cedula="+cedula+"&nombre="+nombre+"&correo="+correo+"&telefono="+telefono+"&mensaje="+mensaje;
+    //alert(datos+sUrlP);
     $.ajax({
         url : sUrlP + 'enviarOpinion',
         type : "post",

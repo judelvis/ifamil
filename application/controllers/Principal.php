@@ -164,6 +164,12 @@ class Principal extends CI_Controller
         echo "Se registro con exito";
     }
 
+    function enviarOpinion(){
+        $this ->load->database();
+        $this ->db->insert("t_opinion",$_POST);
+        echo "Se registro con exito";
+    }
+
 
     function paralax(){
         $this -> load->view("principal/paralax");
