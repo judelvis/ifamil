@@ -44,10 +44,10 @@
                     <input type="text" name="faceBook" placeholder="FaceBook">
                 </div>
                 <div class="col-md-12">
-                    <select id="profesion" name="profesion "style="width: 100%;" class="input-sm">
+                    <select id="profesion" name="profesion" style="width: 100%;" class="input-sm">
                         <option value="0">Seleccione su condición</option>
-                        <option value="M">Uniformado activo</option>
-                        <option value="M">Uniformado jubilado</option>
+                        <option value="A">Uniformado activo</option>
+                        <option value="J">Uniformado jubilado</option>
                         <option value="P">Particular</option>
 
                     </select>
