@@ -180,6 +180,8 @@ class Panel extends CI_Controller {
 				'Nombre Completo',
 				'Telefono',
 				'Correo',
+				'Origen',
+				'Destino',
 				'Tipo Solicitud',
 				'Estatus',
 				'Observacion'
@@ -187,10 +189,12 @@ class Panel extends CI_Controller {
 		$rs = $this->Solicitud->listarPendientes ();
 		foreach ( $rs [0] ['rs'] as $fila ) {
 			$cuep [] = array (
-					$fila->oid,
+					$fila->identificador,
 					$fila->nom,
 					$fila->tel,
-					$fila->cor,
+					$fila->correo,
+					$fila->ori,
+					$fila->des,
 					$fila->categoria,
 					$this->estatus($fila->est),
 					""
@@ -216,6 +220,11 @@ class Panel extends CI_Controller {
 				break;
 		}
 		return $valor;
+	}
+	
+	function listarDetalleSolicitud(){
+		//print_r($_POST);
+		echo 'Hola Mundo';
 	}
 	
 	/**

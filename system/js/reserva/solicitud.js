@@ -25,11 +25,10 @@ function listarSolicitud() {
 	$("#reporte").dtgrid(origen, [ {
 		'titulo' : '',
 		'clase' : "",
-		'oculto' : [ 1 ],
+		'oculto' : [ 1,4,5,6 ],
 		'editable' : {
 			'c7' : 'texto'
-		},
-		"paginador": 20,
+		},		
 		"accion" : [ {
 			"ejecuta" : sUrlP + "modificarSerie",
 			"tipo" : "php",
@@ -40,7 +39,12 @@ function listarSolicitud() {
             "tipo" : "script",
             "clase" : "mdi-communication-email",
             "parametro" : [4],
-        } ]
+        } ],
+        "detalle": [{
+        	"tipo": "post",
+        	"ruta": sUrlP + 'listarDetalleSolicitud',
+        	"parametro": [1]
+        }]
 		
 	} ]);
 }
