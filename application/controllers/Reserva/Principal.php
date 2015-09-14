@@ -35,7 +35,7 @@ class Principal extends CI_Controller {
 			$this->load->model("reserva/Afiliado", "Afiliado");
 			$this->Afiliado->cedula = $_POST["cedula"];
 			$this->Afiliado->nombre = $_POST["nombre"];
-			$this->Afiliado->telefono = $_POST["telefono"];
+			$this->Afiliado->telefono = $_POST["codTel"] . '-' . $_POST["telefono"];
 			$this->Afiliado->correo = $_POST["correo"];
 			$this->Afiliado->fechaNacimiento = $_POST["fechaNacimiento"];
 			$this->Afiliado->faceBook = $_POST["faceBook"];
