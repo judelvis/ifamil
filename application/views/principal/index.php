@@ -11,14 +11,14 @@
             <div class="span_of_4"><!-- start span_of_4 -->
                 <div class="col-md-3 span1_of_4">
                     <div class="span4_of_list">
-                        <span class="active"><a href="<?php echo base_url("index.php/Principal/paquetes/4")?>"><i class="fa fa-suitcase "></i></a></span>
+                        <span class="active"><a href="<?php echo base_url("index.php/Principal/solicitud/4")?>"><i class="fa fa-suitcase "></i></a></span>
 
                         <h3>Paquetes</h3>
 
                         <p>Realiza tu solicitud de paquetes ahora.</p>
 
                         <div class="read_more">
-                            <a class="btn btn-2 active" href="<?php echo base_url("index.php/Principal/paquetes/4")?>">Ver mas</a>
+                            <a class="btn btn-2 active" href="<?php echo base_url("index.php/Principal/solicitud/4")?>">Ver mas</a>
                         </div>
                     </div>
                 </div>
