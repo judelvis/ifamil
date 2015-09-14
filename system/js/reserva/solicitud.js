@@ -40,11 +40,11 @@ function listarSolicitud() {
             "clase" : "mdi-communication-email",
             "parametro" : [4],
         } ],
-        "detalle": [{
+        "detalle": {
         	"tipo": "post",
         	"ruta": sUrlP + 'listarDetalleSolicitud',
         	"parametro": [1]
-        }]
+        }
 		
 	} ]);
 }

@@ -159,7 +159,7 @@ class Panel extends CI_Controller {
 		$this->Correo->para = "gesaodin@gmail.com";
 		$this->Correo->asunto = "Prueba de IFAMIL";
 		$this->Correo->contenido = "Que locura";
-		$this->Correo->enviar ();
+		//$this->Correo->enviar ();
 	}
 	
 	/**
