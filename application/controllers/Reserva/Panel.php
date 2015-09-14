@@ -234,11 +234,18 @@ class Panel extends CI_Controller {
 		$this->Sitio->obtenerID($this->Solicitud->destino);
 		$destino = $this->Sitio->nombre;
 		$fechaS = $this->Solicitud->fechaSalida;
-		$fechaL =$this->Solicitud->fechaLlegada;
+		$fechaL = $this->Solicitud->fechaLlegada;
+		$cantidaNino = $this->Solicitud->cantidadNino;
+		$cantidaAdulto = $this->Solicitud->cantidadAdulto;
+		$formaPago = $this->Solicitud->formaPago;
 		
 		echo "Fecha de Partida: $fechaS <br>
 				  Fecha de Llegada: $fechaL<br>
-				  Origen: <i>$origen</i><br>Destino: <i>$destino</i>";
+				  Cantidad de Adultos: $cantidaAdulto<br>
+				  Cantidad de Niños: $cantidaNino<br>
+				  Origen: <i>$origen</i><br>
+					Destino: <i>$destino</i><br>
+					Forma de Pago: Debito<i>$formaPago</i>";
 		
 		//print_r($this->Sitio);		
 	}
