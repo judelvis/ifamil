@@ -18,7 +18,6 @@ class Sitio extends CI_Model {
 	public $codigo;
 	public $estado;
 	
-	
 	/**
 	 * Carga inicial del modelo por reflexion
 	 */
@@ -40,7 +39,7 @@ class Sitio extends CI_Model {
 				'nom' => $this->nombre, //
 				'cod' => $this->codigo,
 				'est' => $this->estado 
-		);		
+		);
 		return $data;
 	}
 	
@@ -53,7 +52,7 @@ class Sitio extends CI_Model {
 	function salvar() {
 		$bVal = false;
 		if ($this->nombre != '') {
-			$this->db->insert ($this->tbl, $this->mapearObjeto () );
+			$this->db->insert ( $this->tbl, $this->mapearObjeto () );
 			$bVal = true;
 		}
 		return $bVal;
@@ -65,19 +64,18 @@ class Sitio extends CI_Model {
 	 * @param number $identificador        	
 	 * @return array
 	 */
-	function obtenerSitioID($identificador = 0) {
+	function obtenerID($identificador = 0) {
 		$sCon = 'SELECT * FROM ' . $this->tbl . ' WHERE oid=' . $identificador . ' LIMIT 1';
-		$rs = $this->db->query ( $consulta );
-		if ($this->db->_error_number () == 0) {
-			foreach ( $rs->result () as $clv => $val ) {
-				$this->identificador = $val->oid;
-				$this->nombre = $val->nom;
-				$this->descripcion = $val->des;
-			}
+		$rs = $this->db->query ( $sCon );		
+		foreach ( $rs->result () as $clv => $val ) {
+			$this->identificador = $val->oid;
+			$this->nombre = $val->nom;
+			$this->codigo = $val->cod;
+			$this->estado = $val->est;
 		}
 		$arr [] = array (
-				'err' => 0, // $this->db->_error_number (),
-				'msj' => '', // $this->db->_error_message ()
+				'err' => 0, 
+				'msj' => '' 
 		);
 		return $arr;
 	}
@@ -88,7 +86,7 @@ class Sitio extends CI_Model {
 	 * @param string $nombre        	
 	 * @return multitype:number string
 	 */
-	function obtenerSitioNombre($nombre = '') {	
+	function obtenerSitioNombre($nombre = '') {
 		$sCon = 'SELECT * FROM  ' . $this->tbl . ' WHERE nom=\'' . $nombre . '\' LIMIT 1;';
 		$rs = $this->db->query ( $consulta );
 		if ($this->db->_error_number () == 0) {
@@ -100,8 +98,9 @@ class Sitio extends CI_Model {
 		}
 		$arr [] = array (
 				'err' => 0, // $this->db->_error_number (),
-				'msj' => '', // $this->db->_error_message ()
-		);
+				'msj' => '' 
+		) // $this->db->_error_message ()
+;
 		return $arr;
 	}
 	
@@ -117,38 +116,37 @@ class Sitio extends CI_Model {
 		$lista = 'SELECT * FROM ' . $this->tbl . ' 
 				WHERE cod LIKE \'%' . $contenido . '%\' OR nom LIKE \'%' . $contenido . '%\' OR est 
 						LIKE \'%' . $contenido . '%\'';
-		$resultado = $this->db->query ( $lista );		
+		$resultado = $this->db->query ( $lista );
 		$rs = $resultado->result ();
 		
 		$arr [] = array (
 				'err' => 0, // $this->db->_error_number (),
-				'msj' => '', //$this->db->_error_message (),
+				'msj' => '', // $this->db->_error_message (),
 				'rs' => $rs 
 		);
 		return $arr;
 	}
-	
-	
 	function actualizar() {
 		$data = $this->mapearObjeto ();
 		$this->db->where ( 'oid', $data ['oid'] );
-	
+		
 		$this->db->update ( $this->tbl, $data );
 		$arr [] = array (
 				'err' => 0, // $this->db->_error_number (),
-				'msj' => '', //$this->db->_error_message ()
-		);
+				'msj' => '' 
+		) // $this->db->_error_message ()
+;
 		return $arr;
 	}
 	
 	/**
 	 * Eliminar un registro de la base de datos
-	 * 
+	 *
 	 * @return boolean
 	 */
-	function eliminar(){
+	function eliminar() {
 		$sCon = 'DELETE FROM ' . $this->tbl . ' WHERE oid=' . $this->identificador . ' LIMIT 1';
-		$this -> db -> query($sCon);
+		$this->db->query ( $sCon );
 		return true;
 	}
 	

@@ -223,8 +223,24 @@ class Panel extends CI_Controller {
 	}
 	
 	function listarDetalleSolicitud(){
-		//print_r($_POST);
-		echo 'Hola Mundo';
+		$json = json_decode($_POST['datos'], true);
+		$this->load->model ( 'reserva/Solicitud', 'Solicitud' );
+		$this->load->model ( 'reserva/Sitio', 'Sitio' );
+		$this->load->model ( 'reserva/Paquete', 'Paquete' );
+	
+		$this->Solicitud->obtenerID($json[0]);
+		$this->Sitio->obtenerID($this->Solicitud->origen);
+		$origen = $this->Sitio->nombre;
+		$this->Sitio->obtenerID($this->Solicitud->destino);
+		$destino = $this->Sitio->nombre;
+		$fechaS = $this->Solicitud->fechaSalida;
+		$fechaL =$this->Solicitud->fechaLlegada;
+		
+		echo "Fecha de Partida: $fechaS <br>
+				  Fecha de Llegada: $fechaL<br>
+				  Origen: <i>$origen</i><br>Destino: <i>$destino</i>";
+		
+		//print_r($this->Sitio);		
 	}
 	
 	/**

@@ -115,10 +115,10 @@ class Solicitud extends CI_Model {
 	 * @param number $identificador        	
 	 * @return array
 	 */
-	function obtenerSolicitudID($identificador = 0) {
-		$sCon = 'SELECT * FROM ' . $this->tbl . ' WHERE oid=' . $identificador . ' LIMIT 1';
-		$rs = $this->db->query ( $consulta );
-		if ($this->db->_error_number () == 0) {
+	function obtenerID($identificador = 0) {
+		$sCon = 'SELECT * FROM ' . $this->tbl . ' WHERE ' . $this->tbl . '.oid=' . $identificador . ' LIMIT 1';
+		$rs = $this->db->query ( $sCon );
+		//if ($this->db->_error_number () == 0) {
 			foreach ( $rs->result () as $clv => $val ) {
 				$this->identificador = $val->oid;
 				$this->correo = $val->cor; //
@@ -136,7 +136,7 @@ class Solicitud extends CI_Model {
 				$this->paquete = $val->paq;
 				$this->estatus = $val->est;
 			}
-		}
+		//}
 		$arr [] = array (
 				'err' => 0,
 				'msj' => '' 
