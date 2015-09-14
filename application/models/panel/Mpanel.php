@@ -184,9 +184,9 @@ join(Select * from portafolio
     }
 
     function modificarNoticia($arr){
-        $titulo = $this->db->escape($arr[1]);
-        $descrip = $this->db->escape($arr[2]);
-        $resumen = $this->db->escape($arr[3]);
+        $titulo = $this->db->escape_str($arr[1]);
+        $descrip = $this->db->escape_str($arr[2]);
+        $resumen = $this->db->escape_str($arr[3]);
         $resp = $this -> db -> query('Update t_noticias set titulo="'.$titulo.'",descrip="'.$descrip.'",resumen="'.$resumen.'" where oid='.$arr[0]);
         if($resp) return "<h4>Se Actualizo con exito</h4>";
         return "<h4>No se pudo modificar</h4>";
@@ -309,9 +309,10 @@ join(Select * from portafolio
 		return "<h4>No se pudo registrar</h4>";
 	}
 	function modificarSerie($arr) {
-        $descrip =$this->db->escape($arr[3]);
-        $resumen =$this->db->escape($arr[2]);
-        $query = 'Update t_portafolio set titulo="'.$arr[1].'",resumen="'.$resumen.'",descrip="'.$descrip.'"';
+        $descrip =$this->db->escape_str($arr[3]);
+        $resumen =$this->db->escape_str($arr[2]);
+        $tit =$this->db->escape_str($arr[1]);
+        $query = 'Update t_portafolio set titulo="'.$tit.'",resumen="'.$resumen.'",descrip="'.$descrip.'"';
         if($arr[5] != 'Activo' && $arr[5] != 'Inactivo') $query.=',estatus='.$arr[5];
         $query .=' where id='.$arr[0];
         //return $query;

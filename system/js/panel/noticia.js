@@ -86,10 +86,8 @@ function listarNoticia(){
                 "tipo": "php",
                 "clase": "mdi-content-save",
                 "texto":"Guardar",
-                "parametro": [1,3,4,5]}],
-            "boton":
-                [{"parametro":[],"titulo":"enviar","ejecuta":sUrlPanel+"Exporta_Exel","tipo":"php","clase":"mdi-action-done"}]
-        }]
+                "parametro": [1,3,4,5]}]
+            }]
     );
 }
 

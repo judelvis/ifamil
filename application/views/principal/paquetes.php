@@ -107,15 +107,11 @@
                         <div class="read_btn">
                             <a href="'.site_url("Principal/paratodos/".$ls->id).'">
                                 <button class="btn">leer mas</button>
+                            </a>
+                            <a href="'.site_url("Principal/solicitud/4/".$ls->id).'">
                                 <button class="btn">Realiza tu solicitud</button>
                             </a>
                         </div>
-
-
-
-
-
-
                     </div>
                     <div class="clearfix"></div><br>';
                     }

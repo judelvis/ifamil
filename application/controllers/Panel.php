@@ -89,7 +89,7 @@ class Panel extends CI_Controller {
         //$valor = $this -> MImagen -> cargar($_FILES, BASEPATH . 'img/noticia') -> salvar(400,400,2);
         $valor = $this -> MImagen -> cargar($_FILES, BASEPATH . 'img/noticia') -> salvar(400,200,2);
         $nombreImagen = $_FILES['imagen']['name'];
-        $_POST['resumen'] = $this->db->escape($_POST['resumen']);$_POST['descrip'] = $this->db->escape($_POST['descrip']);$_POST['titulo'] = $this->db->escape($_POST['titulo']);
+        $_POST['resumen'] = $this->db->escape_str($_POST['resumen']);$_POST['descrip'] = $this->db->escape_str($_POST['descrip']);$_POST['titulo'] = $this->db->escape_str($_POST['titulo']);
         $arr = array("imagen"=>$nombreImagen,"titulo"=>$_POST['titulo'],"descrip"=>$_POST['descrip'],"fecha"=>$_POST['fecha'],"enlace"=>$_POST['enlace'],"resumen"=>$_POST['resumen']);
 
         if($valor)echo $this -> MPanel -> registrarNoticia($arr);
@@ -136,9 +136,9 @@ class Panel extends CI_Controller {
 
     function registrarSerie(){
         $this -> load -> model('panel/Mpanel', 'MPanel');
-        $_POST['titulo'] = $this->db->escape($_POST['titulo']);
-        $_POST['descrip'] = $this->db->escape($_POST['descrip']);
-        $_POST['resumen'] = $this->db->escape($_POST['resumen']);
+        $_POST['titulo'] = $this->db->escape_str($_POST['titulo']);
+        $_POST['descrip'] = $this->db->escape_str($_POST['descrip']);
+        $_POST['resumen'] = $this->db->escape_str($_POST['resumen']);
         echo $this -> MPanel -> registrarSerie($_POST);
 
     }
@@ -156,7 +156,7 @@ class Panel extends CI_Controller {
 
     function modificarSerie(){
         $ele = json_decode($_POST['datos'],true);
-        print_R($ele);
+        //print_R($ele);
         $this -> load -> model('panel/Mpanel', 'MPanel');
         echo $this -> MPanel -> modificarSerie($ele);
     }

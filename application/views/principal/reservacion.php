@@ -69,6 +69,7 @@
             <div class="row hide" id="divPaquete">
                 <div class="col-md-12">
                     <select id="paquete" name="paquete" class="input-sm" style="width: 100%"></select>
+                    <input type="hidden" id="vaPaquete" value="<?php echo $oid;?>">
                 </div>
             </div>
             <div class="row">

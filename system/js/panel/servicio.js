@@ -93,8 +93,6 @@ function listarSerie(){//alert(sUrlP);
                 "parametro": [],
                 //"ocultar":true
             }],
-            "boton":
-                [{"parametro":[],"titulo":"enviar","ejecuta":sUrlPanel+"Exporta_Exel","tipo":"php","clase":"mdi-action-done"}]
         }]
     );
 }
