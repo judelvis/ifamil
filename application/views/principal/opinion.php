@@ -6,6 +6,7 @@
  * Time: 12:08 PM
  */?>
 <script type="text/javascript" src="<?php echo __JSVIEW__ ?>general/Global.js"></script>
+<script type="text/javascript" src="<?php echo __JSVIEW__ ?>frontEnd/opinion.js"></script>
 <div class="contact-form">
     <img src="<?php echo __IMG__?>images/amarillo2.jpg" style="width: 100%">
     <div class="container">

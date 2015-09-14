@@ -14,12 +14,7 @@
             <!-- Texts container -->
             <div class="slide_content">
                 <div class="slide_content_wrap">
-                    <!-- Text title -->
-                    <h4 class="title">Ven y reconoce nuestros viajes y servicios.</h4>
-                    <!-- /Text title -->
-                    <!-- Text description -->
-                    <p class="description">Hazlo difrente, hazlo con nosotros.</p>
-                    <!-- /Text description -->
+
                 </div>
             </div>
             <!-- /Texts container -->
