@@ -105,10 +105,8 @@
     <div class="col-xs-6 col-sm-3">
         <img src="<?php echo __IMG__ ?>images/banner5.png">
     </div>
-    <div class="col-xs-6 col-sm-4"></div>
-    <div class="col-xs-6 col-sm-2">
-        <img src="<?php echo __IMG__ ?>images/banner6.png" class="img-responsive">
-    </div>
+    <div class="col-xs-6 col-sm-6"></div>
+
     <div class="header_bg x">
         <div class="container">
             <div class="header">
