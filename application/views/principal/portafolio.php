@@ -79,10 +79,6 @@
                                 Navideñas, Fiestas Infantiles, Día del Niño, Fiestas Institucionales , entre Otras.</a>
                         </li>
                         <br>
-                        <li><a href="<?php echo base_url("index.php/Principal/contacto")?>"> Ofrecemos Servicios Protocolares, Ceremoniales y de Logística, Promotoras,
-                                Modelos, Personal de Seguridad. Animación y organización de cualquier presentación que
-                                así lo requiera.</a></li>
-                        <br>
                         <li><a href="<?php echo base_url("index.php/Principal/contacto")?>"> Alquilamos Salón de Fiesta de Uso Exclusivo “EL MIRADOR “. Estratégicamente
                                 Ubicado en nuestras Instalaciones del IPSFA, con capacidad para 350 Personas.</a></li>
                         <br>

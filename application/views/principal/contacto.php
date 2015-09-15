@@ -26,12 +26,12 @@
                         <p>area socialista Urb. Aanta Monica Caracas </p>
                         <p>Distrito Capital Zona postal 1040.</p>
                         <p>Telefono:(0212) 661 56 16</p>
-                        <p>Fax: (662) 41 06</p>
+                        <p>Fax: (0212) 662 41 06</p>
                         <p><b>Sucursal IFAMIL - Maracay:</b></p>
                         <p>Av. Bolívar, Edif. Almacenes Militares I.P.S.F.A.,</p>
                         <p>Los Jardines de Maracay. Maracay,</p>
                         <p>estado Aragua-Venezuela.</p>
-                        <p>Email: <a href="https://snt151.mail.live.com/" target="_blank">ifamil@hotmail.com</a>  <a href="https://plus.google.com/u/0/116239479180848308489/posts">ifamilviajesyturismo@gmail.com</a></p>
+                        <p>Email: <a href="https://plus.google.com/u/0/116239479180848308489/posts">ifamilviajesyturismo@gmail.com</a></p>
                         <p>Siguenos: <a href="https://www.facebook.com/profile.php?id=100008649614216">Facebook</a>, <a href="https://twitter.com/ifamil_ca">Twitter</a>, <a href="https://instagram.com/ifamil_c.a">Insatagram</a>.</p>
                     </address>
                 </div>

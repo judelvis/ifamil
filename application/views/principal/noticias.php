@@ -41,7 +41,15 @@
             <div class="col-md-2 blog_right z">
                 <img src="<?php echo __IMG__?>images/prueba.png" class="img-responsive">
                 <img src="<?php echo __IMG__?>images/anuncio.jpg" class="img-responsive">
-                <img src="<?php echo __IMG__?>images/anuncio2.png" class="img-responsive">
+                <img src="<?php echo __IMG__?>images/naci.png" class="img-responsive">
+                <img src="<?php echo __IMG__?>images/inter.png" class="img-responsive">
+                <img src="<?php echo __IMG__?>images/salto.jpg" class="img-responsive">
+                <img src="<?php echo __IMG__?>images/ifamil1.jpg" class="img-responsive">
+                <img src="<?php echo __IMG__?>images/ofi.jpg" class="img-responsive">
+                <img src="<?php echo __IMG__?>images/cas.jpg" class="img-responsive">
+                <img src="<?php echo __IMG__?>images/puente.jpg" class="img-responsive">
+                <img src="<?php echo __IMG__?>images/cuartel.jpg" class="img-responsive">
+                <img src="<?php echo __IMG__?>images/arte.jpg" class="img-responsive">
 
             </div>
             <div class="clearfix"></div>

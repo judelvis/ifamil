@@ -12,7 +12,7 @@
 
     <div class="container">
         <hr class="team_hr team_hr_left hr_gray"/>
-        <center><h1>RESERVA YA</h1>
+        <center><h1>COTIZA YA</h1>
 
             <h2 id="tituloPagina"></h2></center>
         <hr class="team_hr team_hr_left hr_gray"/>
