@@ -9,7 +9,7 @@
     <div class="slider_container">
         <div class="slide">
             <!-- Slide image -->
-            <img src="<?php echo __IMG__?>images/slider.png">
+            <img src="<?php echo __IMG__?>images/slider.png" class="img-responsive">
             <!-- /Slide image -->
             <!-- Texts container -->
             <div class="slide_content">
@@ -33,6 +33,16 @@
 
         <div class="slide">
             <img src="<?php echo __IMG__?>images/ifamil2.jpg" class="img-responsive" >
+
+            <div class="slide_content">
+                <div class="slide_content_wrap">
+
+
+                </div>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="<?php echo __IMG__?>images/ifamil.jpg" class="img-responsive" >
 
             <div class="slide_content">
                 <div class="slide_content_wrap">

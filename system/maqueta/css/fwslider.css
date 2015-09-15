@@ -15,10 +15,11 @@
     z-index: 0;
     width:100%;
 	height: auto;
+
 }
 
 #fwslider .slide img {
-    width:100%;
+    margin: 0px auto;
 }
 
 #fwslider .slidePrev {

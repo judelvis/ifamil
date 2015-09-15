@@ -100,7 +100,7 @@
 <a href="#" class="back-to-top">Volver arriba</a>
 <div class="row">
     <div class="col-xs-6 col-sm-3">
-        <img style="width: 100%" src="<?php echo __IMG__ ?>images/logo1.png">
+        <img src="<?php echo __IMG__ ?>images/logo12.png" class="img-responsive">
     </div>
     <div class="col-xs-6 col-sm-3">
         <img src="<?php echo __IMG__ ?>images/banner5.png">
