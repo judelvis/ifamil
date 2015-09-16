@@ -9,7 +9,7 @@
     <div class="slider_container">
         <div class="slide">
             <!-- Slide image -->
-            <img src="<?php echo __IMG__?>images/slider.png" class="img-responsive x">
+            <img style="width: 100%" src="<?php echo __IMG__?>images/slider.png" class="img-responsive x">
             <!-- /Slide image -->
             <!-- Texts container -->
             <div class="slide_content">
@@ -21,7 +21,7 @@
         </div>
         <!-- /Duplicate to create more slides -->
         <div class="slide">
-            <img src="<?php echo __IMG__?>images/aviso1.jpg" class="img-responsive x" >
+            <img style="width: 100%" src="<?php echo __IMG__?>images/aviso1.jpg" class="img-responsive x" >
 
             <div class="slide_content">
                 <div class="slide_content_wrap">
@@ -32,7 +32,7 @@
         </div>
 
         <div class="slide">
-            <img src="<?php echo __IMG__?>images/ifamil2.jpg" class="img-responsive x" >
+            <img style="width: 100%" src="<?php echo __IMG__?>images/ifamil2.jpg" class="img-responsive x" >
 
             <div class="slide_content">
                 <div class="slide_content_wrap">

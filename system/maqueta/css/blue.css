@@ -14,7 +14,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 body {
     font-family: 'roboto_condensedregular';
-    background: #ffffff;
+    background: #f1f1f1;
     font-size: 100%;
 }
 
@@ -236,11 +236,11 @@ nav {
 /* start slider */
 /* start mian */
 .main_bg {
-    background: #F3F3F3;
+    background: #ffffff;
 }
 
 .main_grid {
-    padding: 4% 0;
+    padding: 2% 25px;
 }
 
 .top_grid {
@@ -328,7 +328,7 @@ nav {
 
 .span4_of_list {
     cursor: pointer;
-    background: #ffffff;
+    background: #f3f3f3;
     padding: 20px 20px 50px;
     border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -982,7 +982,7 @@ h3.style {
 }
 @media (min-width: 1200px) {
     .container1 {
-        width: 1170px;
+        width: 1352px;
     }
 }
 @media (min-width: 1920px) {
@@ -1633,7 +1633,7 @@ h3.style {
 
 .contact-form form input[type="text"], .contact-form form textarea, input[type=email] {
     font-family: 'roboto_condensedregular';
-    margin: 10px 0;
+    margin: 10px -10px;
     box-shadow: none;
     border: 1px solid #C7C7C7;
     background: #DDDDDD;
