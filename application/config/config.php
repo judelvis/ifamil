@@ -513,4 +513,5 @@ define("__PANEL__", $config['base_url'] . "/system/assets/");
 define("__DTGRID__", $config['base_url'] . "/system/dtgrid/");
 define("__MAQ__", $config['base_url'] . "/system/maqueta/");
 define("__PARALAX__", $config['base_url'] . "/system/paralaxer/");
+define("__SLIDER__", $config['base_url'] . "/system/camera/");
 define("__LOCALWWW__", $config['base_url']);

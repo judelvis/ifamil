@@ -5,46 +5,38 @@
  * Date: 04/09/15
  * Time: 09:15 AM
  */?>
-<div id="fwslider"><!-- start slider -->
-    <div class="slider_container">
-        <div class="slide">
-            <!-- Slide image -->
-            <img style="width: 100%" src="<?php echo __IMG__?>images/slider.png" class="img-responsive x">
-            <!-- /Slide image -->
-            <!-- Texts container -->
-            <div class="slide_content">
-                <div class="slide_content_wrap">
+<link rel='stylesheet' id='camera-css'  href='<?php echo __SLIDER__;?>css/camera.css' type='text/css' media='all'>
 
-                </div>
-            </div>
-            <!-- /Texts container -->
+
+<script type='text/javascript' src='<?php echo __SLIDER__;?>scripts/jquery.mobile.customized.min.js'></script>
+<script type='text/javascript' src='<?php echo __SLIDER__;?>scripts/jquery.easing.1.3.js'></script>
+<script type='text/javascript' src='<?php echo __SLIDER__;?>scripts/camera.min.js'></script>
+<script>
+    jQuery(function(){
+
+        jQuery('#camera_wrap_1').camera({
+            thumbnails: false,
+            //height: '5%'
+        });
+
+    });
+</script>
+<div class="container">
+<div class="camera_wrap camera_magenta_skin" id="camera_wrap_1">
+    <div data-thumb="<?php echo __SLIDER__?>images/slides/bridge.jpg" data-src="<?php echo __SLIDER__?>images/slides/bridge.jpg">
+        <div class="camera_caption fadeFromBottom">
+            Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
         </div>
-        <!-- /Duplicate to create more slides -->
-        <div class="slide">
-            <img style="width: 100%" src="<?php echo __IMG__?>images/aviso1.jpg" class="img-responsive x" >
-
-            <div class="slide_content">
-                <div class="slide_content_wrap">
-
-
-                </div>
-            </div>
-        </div>
-
-        <div class="slide">
-            <img style="width: 100%" src="<?php echo __IMG__?>images/ifamil2.jpg" class="img-responsive x" >
-
-            <div class="slide_content">
-                <div class="slide_content_wrap">
-
-
-                </div>
-            </div>
-        </div>
-        <!--/slide -->
     </div>
-    <div class="timers"></div>
-    <div class="slidePrev"><span></span></div>
-    <div class="slideNext"><span></span></div>
+    <div data-thumb="<?php echo __SLIDER__?>images/slides/leaf.jpg" data-src="<?php echo __SLIDER__?>images/slides/leaf.jpg">
+        <div class="camera_caption fadeFromBottom">
+            It uses a light version of jQuery mobile, <em>navigate the slides by swiping with your fingers</em>
+        </div>
+    </div>
+    <div data-thumb="<?php echo __SLIDER__?>images/slides/leaf.jpg" data-src="<?php echo __SLIDER__?>images/slides/leaf.jpg">
+        <div class="camera_caption fadeFromBottom">
+            <em>It's completely free</em> (even if a donation is appreciated)
+        </div>
+    </div>
 </div>
-<!--/slider -->
+</div>

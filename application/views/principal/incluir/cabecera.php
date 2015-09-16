@@ -21,12 +21,7 @@
     <!-- start plugins -->
     <script type="text/javascript" src="<?php echo __MAQ__ ?>js/jquery.min.js"></script>
     <script type="text/javascript" src="<?php echo __MAQ__ ?>js/bootstrap.min.js"></script>
-    <!--start slider -->
-    <link rel="stylesheet" href="<?php echo __MAQ__ ?>css/fwslider.css" media="all">
-    <script src="<?php echo __MAQ__ ?>js/jquery-ui.min.js"></script>
-    <script src="<?php echo __MAQ__ ?>js/css3-mediaqueries.js"></script>
-    <script src="<?php echo __MAQ__ ?>js/fwslider.js"></script>
-    <!--end slider -->
+
     <!-- must have -->
     <link href="<?php echo __MAQ__ ?>css/allinone_carousel.css" rel="stylesheet" type="text/css">
     <!--<script src="<?php echo __MAQ__ ?>js/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>!-->
@@ -37,7 +32,6 @@
     <!-- must have -->
     <script>
         jQuery(function () {
-
             jQuery('#allinone_carousel_charming').allinone_carousel({
                 skin: 'charming',
                 width: 990,
