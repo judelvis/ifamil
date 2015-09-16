@@ -1774,7 +1774,9 @@
 					$('.camera_pag li',wrap).removeClass('cameracurrent');
 					$('.camera_pag li',wrap).eq(slideI).addClass('cameracurrent');
 				}
-						
+
+
+
 				if($(thumbs).length){
 					$('li', thumbs).removeClass('cameracurrent');
 					$('li', thumbs).eq(slideI).addClass('cameracurrent');

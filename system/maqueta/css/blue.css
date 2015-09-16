@@ -984,6 +984,9 @@ h3.style {
     .container1 {
         width: 1352px;
     }
+    .cameraCont, .cameraContents{
+        margin-left: -20px;
+    }
 }
 @media (min-width: 1920px) {
     .container1 {

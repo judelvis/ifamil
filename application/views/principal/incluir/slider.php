@@ -16,27 +16,27 @@
 
         jQuery('#camera_wrap_1').camera({
             thumbnails: false,
+            pagination: false,
+            alignment: 'center',
+            time:400,
+            loader: false
             //height: '5%'
         });
 
     });
 </script>
 <div class="container">
-<div class="camera_wrap camera_magenta_skin" id="camera_wrap_1">
-    <div data-thumb="<?php echo __SLIDER__?>images/slides/bridge.jpg" data-src="<?php echo __SLIDER__?>images/slides/bridge.jpg">
-        <div class="camera_caption fadeFromBottom">
+<div class="camera_wrap  camera_red_skin" id="camera_wrap_1">
+    <div style="width: 100%" data-src="<?php echo __IMG__?>images/prueba1.jpg">
+        <!--<div class="camera_caption fadeFromBottom">
             Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
-        </div>
+        </div>-->
     </div>
     <div data-thumb="<?php echo __SLIDER__?>images/slides/leaf.jpg" data-src="<?php echo __SLIDER__?>images/slides/leaf.jpg">
-        <div class="camera_caption fadeFromBottom">
-            It uses a light version of jQuery mobile, <em>navigate the slides by swiping with your fingers</em>
-        </div>
+
     </div>
     <div data-thumb="<?php echo __SLIDER__?>images/slides/leaf.jpg" data-src="<?php echo __SLIDER__?>images/slides/leaf.jpg">
-        <div class="camera_caption fadeFromBottom">
-            <em>It's completely free</em> (even if a donation is appreciated)
-        </div>
+
     </div>
 </div>
 </div>
