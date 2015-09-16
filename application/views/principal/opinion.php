@@ -11,7 +11,7 @@
     <img src="<?php echo __IMG__?>images/amarillo2.jpg" style="width: 100%">
     <div class="container">
         <hr class="team_hr team_hr_left hr_gray"/>
-        <center><h1>DANOS TU OPINION</h1></center>
+        <center><h1>TU OPINÓN ES IMPORTANTE</h1></center>
         <hr class="team_hr team_hr_left hr_gray"/>
         <form method="post" action="#" onsubmit="return guardar();">
             <div class="row">
@@ -37,7 +37,7 @@
                     <input style="width: 100%;" type="text" name="telefono" id="telefono" placeholder="Numero de telefono Celular" maxlength="7" required="required" onkeypress="return soloNumeros(event);">
                 </div>
                 <div class="col-md-12">
-                    <textarea id="mensaje" name="mensaje" placeholder="Dinos tu opinión..." required="required"></textarea>
+                    <textarea id="mensaje" name="mensaje" placeholder="Tu opinión es importante..." required="required"></textarea>
                 </div>
             </div>
 

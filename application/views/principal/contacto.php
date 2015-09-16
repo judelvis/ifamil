@@ -4,7 +4,7 @@
     <div class="container">
         <div class="main_grid1">
             <hr class="team_hr team_hr_left hr_gray"/>
-            <center><h1>CONTACTANOS</h1></center>
+            <center><h1>CONTACTENOS</h1></center>
             <hr class="team_hr team_hr_left hr_gray"/>
             <div class="clearfix"></div>
         </div>
@@ -14,6 +14,7 @@
     <div class="container">
         <div class="contact">
             <center>
+                <p class="para">Sede principal Caracas</p>
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1961.6755529000425!2d-66.89525299865238!3d10.472963174847518!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sve!4v1441404862591"
                 width="88%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe><div class="contact_main">

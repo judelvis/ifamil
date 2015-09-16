@@ -6,8 +6,9 @@
  * Time: 3:25 PM
  */ ?>
 <div class="main_bg"><!-- start main -->
-    <img src="<?php echo __IMG__ ?>images/servicios.jpg" style="width: 100%">
-
+    <center>
+    <img src="<?php echo __IMG__ ?>images/servicios1.jpg" style="width: 100%">
+        </center>
     <div class="container">
         <div class="main_grid1">
             <hr class="team_hr team_hr_left hr_gray"/>

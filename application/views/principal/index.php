@@ -115,8 +115,7 @@
 <link rel='stylesheet' type="text/css" href="<?php echo __PARALAX__?>style/style.css"/>
 <link rel='stylesheet' type="text/css" href="<?php echo __PARALAX__?>css/scroller.css"/>
 <link rel='stylesheet' type="text/css" href="<?php echo __PARALAX__?>css/dzsparallaxer.css"/>
-<div id="prx2" class="dzsparallaxer auto-init" data-options='{  mode_scroll: "fromtop", animation_duration: "50", direction: "reverse",js_breakout: "off", settings_movexaftermouse: "on"}' style="">
-
+<div id="prx2" class="dzsparallaxer auto-init out-of-bootstrap use-loading" data-options='{ direction: "normal"}' >
     <div class="divimage dzsparallaxer--target " style="width: 130%; height: 530px; background-image: url(<?php echo __IMG__?>images/tw.jpg)">
     </div>
 

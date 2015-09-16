@@ -97,6 +97,7 @@
     <!-- start circle -->
 </head>
 <body>
+<div class="container1">
 <a href="#" class="back-to-top">Volver arriba</a>
 <div class="row">
     <div class="col-xs-6 col-sm-3">
@@ -105,7 +106,12 @@
     <div class="col-xs-6 col-sm-3">
         <img src="<?php echo __IMG__ ?>images/banner5.png">
     </div>
-    <div class="col-xs-6 col-sm-6"></div>
+    <div class="col-xs-6 col-sm-4"></div>
+    <div class="col-xs-6 col-sm-2">
+        <br>
+        <img  style="float: left; padding-right: 10px" src="<?php echo __IMG__ ?>images/vene2.png" class="img-responsive">
+        <img  style="float: left" src="<?php echo __IMG__ ?>images/ingles.png" class="img-responsive">
+    </div>
 
     <div class="header_bg x">
         <div class="container">
@@ -119,18 +125,6 @@
                             <li><a href="<?php echo base_url("index.php/Principal/paquetes/4")?>">Paquetes</a></li>
                             <li><a href="<?php echo base_url("index.php/Principal/afiliate")?>">Afiliate</a>
                             <li><a href="<?php echo base_url("index.php/Principal/noticias")?>">Noticias</a></li>
-                                <!--<ul class="sub-menu list-unstyled">
-                                    <li><a href="portfolio.html">Portfolio Page</a></li>
-                                    <li><a href="portfolio.html">Portfolio Page</a></li>
-                                    <li><a href="portfolio.html">Portfolio Page</a>
-                                        <ul class="list-unstyled">
-                                            <li><a href="portfolio.html">Sub-Menu 1</a></li>
-                                            <li><a href="portfolio.html">Sub-Menu 2</a></li>
-                                            <li><a href="portfolio.html">Sub-Menu 3</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                                </li>-->
                             <li><a href="<?php echo base_url("index.php/Principal/portafolio")?>">Servicios</a></li>
                             <li><a href="<?php echo base_url("index.php/Principal/contacto")?>">CONTACTENOS</a></li>
                         </ul>
