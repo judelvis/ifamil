@@ -103,16 +103,15 @@ CREATE TABLE IF NOT EXISTS `t_empresa` (
   `nombre` text COLLATE latin1_spanish_ci NOT NULL,
   `imagen` text COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
--- Volcando datos para la tabla ifamil.t_empresa: ~5 rows (aproximadamente)
+-- Volcando datos para la tabla ifamil.t_empresa: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `t_empresa` DISABLE KEYS */;
 INSERT INTO `t_empresa` (`id`, `nombre`, `imagen`) VALUES
-	(4, 'Locatel', 'locatel.png'),
-	(5, 'PDVSA', 'pdvsa.png'),
 	(6, 'Conatel', 'conatel.png'),
-	(7, 'Commerso', 'comersso.png'),
-	(8, 'IPSFA', 'IPSFA.png');
+	(8, 'IPSFA', 'IPSFA.png'),
+	(11, 'Corpoelec', 'corpoelec.png'),
+	(12, 'Sudeban', 'sudeban.PNG');
 /*!40000 ALTER TABLE `t_empresa` ENABLE KEYS */;
 
 
@@ -244,7 +243,7 @@ CREATE TABLE IF NOT EXISTS `t_portafolio` (
   `estatus` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `oidcat` (`oidcat`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- Volcando datos para la tabla ifamil.t_portafolio: ~3 rows (aproximadamente)
 /*!40000 ALTER TABLE `t_portafolio` DISABLE KEYS */;
@@ -262,9 +261,9 @@ CREATE TABLE IF NOT EXISTS `t_sitios` (
   `cod` varchar(16) NOT NULL COMMENT 'Codigo del Sitio',
   `est` varchar(255) NOT NULL COMMENT 'Estado o Provincia',
   PRIMARY KEY (`oid`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1 COMMENT='Control de los sitios WEB';
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=latin1 COMMENT='Control de los sitios WEB';
 
--- Volcando datos para la tabla ifamil.t_sitios: ~31 rows (aproximadamente)
+-- Volcando datos para la tabla ifamil.t_sitios: ~38 rows (aproximadamente)
 /*!40000 ALTER TABLE `t_sitios` DISABLE KEYS */;
 INSERT INTO `t_sitios` (`oid`, `nom`, `cod`, `est`) VALUES
 	(1, 'Aeropuerto Internacional de Maiquetía Simón Bolívar', 'CCS', 'Caracas'),
@@ -297,7 +296,14 @@ INSERT INTO `t_sitios` (`oid`, `nom`, `cod`, `est`) VALUES
 	(28, 'Aeropuerto Néstor Areas', 'SNF', 'San Felipe'),
 	(29, 'Aeropuerto Nacional Bartolomé Salom', 'PBL', 'Puerto Cabello'),
 	(30, 'Aeropuerto Nacional Ezequiel Zamora', '', 'San Carlos'),
-	(31, 'Aeropuerto Judelvis', 'jud', 'merida');
+	(31, 'Aeropuerto Judelvis', 'jud', 'merida'),
+	(32, 'Miami International Airport', 'MIA', 'Miami'),
+	(33, 'Aeropuerto Internacional Reina Beatrix', 'AUA', 'Aruba'),
+	(34, 'Aeropuerto Internacional de Maiquetía Simón Bolívar', 'CSS', 'Caracas'),
+	(35, 'Aeropuerto Internacional de Tocumen', 'PTY', 'Panamá'),
+	(36, 'Aeropuerto Internacional José María Córdova', 'MDE', 'Medellín'),
+	(37, 'Aeropuerto Internacional Las Américas', 'SDQ', 'Santo Domingo República Dominicana'),
+	(38, 'Aeropuerto Internacional de Punta Cana', 'PUJ', ' Punta Cana');
 /*!40000 ALTER TABLE `t_sitios` ENABLE KEYS */;
 
 
@@ -319,14 +325,15 @@ CREATE TABLE IF NOT EXISTS `t_solicitud` (
   `paq` int(2) NOT NULL COMMENT 'Paquete',
   `est` tinyint(1) NOT NULL COMMENT 'Estatus',
   PRIMARY KEY (`oid`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COMMENT='Control de Solicitudes';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 COMMENT='Control de Solicitudes';
 
--- Volcando datos para la tabla ifamil.t_solicitud: ~3 rows (aproximadamente)
+-- Volcando datos para la tabla ifamil.t_solicitud: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `t_solicitud` DISABLE KEYS */;
 INSERT INTO `t_solicitud` (`oid`, `cor`, `fes`, `fel`, `ori`, `des`, `caa`, `can`, `det`, `tip`, `fap`, `hos`, `tra`, `paq`, `est`) VALUES
 	(1, 'jud.prog@gmail.com', '2015-09-24', 2015, 31, 1, 4, 2, 'epale', 2, 1, '0', '', 4, 0),
 	(2, 'gdfgfdg3@ffdg', '2015-09-01', 2015, 0, 0, 8, 4, 'kalsndlasndlnasdlknasdlknasldknlaskndklasdnlaskndlaskndas', 4, 0, '0', '', 5, 0),
-	(3, 'sdsd2ads@fdf', '2015-07-08', 0, 0, 0, 13, 8, 'sdfsdfsdfsf', 4, 4, '0', '', 6, 0);
+	(3, 'sdsd2ads@fdf', '2015-07-08', 0, 0, 0, 13, 8, 'sdfsdfsdfsf', 4, 4, '0', '', 6, 0),
+	(4, 'moiadas@ohoh', '2015-09-16', 2015, 0, 1, 8, 6, 'awdasdasd', 2, 3, '0', '', 4, 0);
 /*!40000 ALTER TABLE `t_solicitud` ENABLE KEYS */;
 
 

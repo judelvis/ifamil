@@ -43,18 +43,21 @@
                             <input type="text" id="nombre" name="nombre" placeholder="Nombre y Apellido..." required="required">
                             <input type="email" name="correo" id="correo" placeholder="Correo Electronico" required="required">
                             <div class="row">
-                            <div class="col-md-3">
-                                <select id="codTel" name="codTel"style="width: 100%;" class="input-sm" onchange="verificarCodigo()">
-                                    <option value="0">Código</option>
-                                    <option value="0416">0416</option><option value="0426">0426</option>
-                                    <option value="0414">0414</option><option value="0424">0424</option>
-                                    <option value="0412">0412</option>
-                                    <option value="otros">Otros</option>
-                                </select>
-                            </div>
-                            <div class="col-md-9">
-                                <input style="width: 100%;" type="text" name="telefono" id="telefono" placeholder="Numero de telefono Celular" maxlength="7" required="required" onkeypress="return soloNumeros(event);">
-                            </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <select id="codTel" name="codTel"style="width: 95%;" class="input-sm" onchange="verificarCodigo()">
+                                            <option value="0">Código</option>
+                                            <option value="0416">0416</option><option value="0426">0426</option>
+                                            <option value="0414">0414</option><option value="0424">0424</option>
+                                            <option value="0412">0412</option>
+                                            <option value="otros">Otros</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-9">
+                                        <input style="width: 95%; margin-left: 2px" type="text" name="telefono" id="telefono" placeholder="Numero de telefono Celular" maxlength="7" required="required" onkeypress="return soloNumeros(event);">
+                                    </div>
+                                </div>
                             </div>
                             <textarea id="mensaje" name="mensaje" placeholder="Mensaje..." required="required"></textarea>
                             <span><input type="submit" value="ENVIAR"></span>
