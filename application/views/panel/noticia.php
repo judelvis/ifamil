@@ -27,33 +27,52 @@
                 <form class="form-horizontal">
 
                     <div class="form-group">
-                        <label for="autosize" class="control-label col-lg-2">Titulo</label>
+                        <label for="autosize" class="control-label col-sm-1">Titulo</label>
 
-                        <div class="col-lg-2">
+                        <div class="col-lg-3">
                             <input type="text" placeholder="Titulo" class="form-control"
                                    name="titulo" id="titulo"/>
                         </div>
-                        <label for="autosize" class="control-label col-lg-2">Detalle</label>
+                        <label for="autosize" class="control-label col-sm-1">Detalle</label>
 
-                        <div class="col-lg-6">
+                        <div class="col-lg-3">
                             <textarea id="descrip" name="descrip" class="form-control"></textarea>
+                        </div>
+                        <label for="autosize" class="control-label col-sm-1">Resumen</label>
+
+                        <div class="col-lg-3">
+                            <textarea id="resumen" name="resumen" class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="autosize" class="control-label col-sm-1">Titulo Ing.</label>
+
+                        <div class="col-lg-3">
+                            <input type="text" placeholder="Titulo En Ingles" class="form-control"
+                                   name="titulo_i" id="titulo_i"/>
+                        </div>
+                        <label for="autosize" class="control-label col-sm-1">Detalle Ing.</label>
+
+                        <div class="col-lg-3">
+                            <textarea id="descrip_i" name="descrip_i" class="form-control"></textarea>
+                        </div>
+                        <label for="autosize" class="control-label col-sm-1">Resumen Ing.</label>
+
+                        <div class="col-lg-3">
+                            <textarea id="resumen_i" name="resumen_i" class="form-control"></textarea>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="autosize" class="control-label col-lg-2">Resumen</label>
 
-                        <div class="col-lg-2">
-                            <textarea id="resumen" name="resumen" class="form-control"></textarea>
-                        </div>
-                        <label for="autosize" class="control-label col-lg-2">Fecha</label>
-                        <div class="col-lg-2">
+                        <label for="autosize" class="control-label col-md-1">Fecha</label>
+                        <div class="col-lg-3">
                             <input type="text" placeholder="fecha"
                                    name="fecha" id="fecha" class="datepicker form-control"/>
                         </div>
-                        <label for="autosize" class="control-label col-lg-2">Enlace</label>
+                        <label for="autosize" class="control-label col-md-1">Enlace</label>
 
-                        <div class="col-lg-2">
+                        <div class="col-lg-3">
                             <input type="text" placeholder="Enlace" class="form-control"
                                    name="enlace" id="enlace"/>
                         </div>

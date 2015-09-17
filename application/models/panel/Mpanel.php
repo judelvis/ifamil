@@ -168,13 +168,14 @@ join(Select * from portafolio
     function consultarNoticia() {
         $imagenes = $this->db->query ( 'SELECT * FROM t_noticias order by fecha DESC ');
         $obj = array ();
-        $cab = array ("id","Archivo","Titulo","Descripcion","Resumen","Imagen");
+        $cab = array ("id","Archivo","Titulo","Descripcion","Resumen","Titulo Ing.","Descrip. Ing","Resumen Ing.","Imagen");
         $cant = $imagenes->num_rows ();
         if ($cant > 0) {
             $rsImg = $imagenes->result ();
             foreach ( $rsImg as $fila ) {
                 $rImg = '<img src="' . __IMG__ . 'noticia/medio/' . $fila->imagen . '" width=200></img> ';
-                $cuep[] = array ($fila->oid,$fila->imagen,$fila->titulo,$fila->descrip,$fila ->resumen,$rImg);
+                $cuep[] = array ($fila->oid,$fila->imagen,$fila->titulo,$fila->descrip,$fila ->resumen,
+                    $fila->titulo_i,$fila->descrip_i,$fila ->resumen_i,$rImg);
             }
             $obj[] = array ("cabecera" => $cab,"cuerpo" => $cuep);
         } else {
@@ -187,7 +188,11 @@ join(Select * from portafolio
         $titulo = $this->db->escape_str($arr[1]);
         $descrip = $this->db->escape_str($arr[2]);
         $resumen = $this->db->escape_str($arr[3]);
-        $resp = $this -> db -> query('Update t_noticias set titulo="'.$titulo.'",descrip="'.$descrip.'",resumen="'.$resumen.'" where oid='.$arr[0]);
+        $titulo_i = $this->db->escape_str($arr[4]);
+        $descrip_i = $this->db->escape_str($arr[5]);
+        $resumen_i = $this->db->escape_str($arr[6]);
+        $resp = $this -> db -> query('Update t_noticias set titulo="'.$titulo.'",descrip="'.$descrip.'",resumen="'.$resumen.'",
+         titulo_i="'.$titulo_i.'",descrip_i="'.$descrip_i.'",resumen_i="'.$resumen_i.'" where oid='.$arr[0]);
         if($resp) return "<h4>Se Actualizo con exito</h4>";
         return "<h4>No se pudo modificar</h4>";
     }
@@ -253,14 +258,14 @@ join(Select * from portafolio
 
 	function listaTipo() {
 		$query = 'SELECT * FROM t_categoria';
-        $cabe  = array ("id","Nombre","Descripcion");
+        $cabe  = array ("id","Nombre","Descripcion","Nombre I","Descripcion I");
 		$tipo = $this->db->query ( $query );
 		$obj = array ();
 		$cant = $tipo->num_rows ();
 		if ($cant > 0) {
 			$rsTip = $tipo->result ();
 			foreach ( $rsTip as $fila ) {
-				$cuep [] = array ($fila->oid,$fila->categoria,$fila->descrip);
+				$cuep [] = array ($fila->oid,$fila->categoria,$fila->descrip,$fila->categoria_i,$fila->descrip_i);
 			}
 			$obj[] = array ("cabecera" => $cabe,"cuerpo" => $cuep);
 		} else {
@@ -292,7 +297,8 @@ join(Select * from portafolio
     }
 
     function modTipo($datos){
-        $res = $this ->db ->query('update t_categoria set categoria="'.$datos[1].'",descrip="'.$datos[2].'" where oid='.$datos[0]);
+        $res = $this ->db ->query('update t_categoria set categoria="'.$datos[1].'",descrip="'.$datos[2].'",
+         categoria_i="'.$datos[3].'",descrip_i="'.$datos[4].'" where oid='.$datos[0]);
         if($res) return "<h4>Se Modifico Con Exito</h4>";
         else return "<h4>No Se Pudo Modificar. Verifique los datos</h4>";
     }
@@ -312,8 +318,12 @@ join(Select * from portafolio
         $descrip =$this->db->escape_str($arr[3]);
         $resumen =$this->db->escape_str($arr[2]);
         $tit =$this->db->escape_str($arr[1]);
-        $query = 'Update t_portafolio set titulo="'.$tit.'",resumen="'.$resumen.'",descrip="'.$descrip.'"';
-        if($arr[5] != 'Activo' && $arr[5] != 'Inactivo') $query.=',estatus='.$arr[5];
+        $descrip2 =$this->db->escape_str($arr[6]);
+        $resumen2 =$this->db->escape_str($arr[5]);
+        $tit2 =$this->db->escape_str($arr[4]);
+        $query = 'Update t_portafolio set titulo="'.$tit.'",resumen="'.$resumen.'",descrip="'.$descrip.'",
+        titulo_i="'.$tit2.'",resumen_i="'.$resumen2.'",descrip_i="'.$descrip2.'"';
+        if($arr[8] != 'Activo' && $arr[8] != 'Inactivo') $query.=',estatus='.$arr[8];
         $query .=' where id='.$arr[0];
         //return $query;
 		$ban = $this->db->query ( $query);
@@ -337,7 +347,7 @@ join(Select * from portafolio
 		return "<h4>No se elimino</h4>";
 	}
 	function listaSerie() {
-        $cabe = array ('Id','Nombre','Resumen','Descripcion','Fecha','Estatus');
+        $cabe = array ('Id','Nombre','Resumen','Descrip.','Nombre Ing.','Resumen Ing.','Descrip. Ing.','Fecha','Estatus');
 		$query = 'SELECT *,if(estatus=0,"Activo","Inactivo")as est FROM t_portafolio order by fecha desc ;';
 		$tipo = $this->db->query ( $query );
 		$obj = array ();
@@ -345,7 +355,8 @@ join(Select * from portafolio
 		if ($cant > 0) {
 			$rsTip = $tipo->result ();
 			foreach ( $rsTip as $fila ) {
-				$cuep[] = array ($fila->id,$fila->titulo,$fila->resumen,$fila->descrip,$fila->fecha,$fila->est);
+				$cuep[] = array ($fila->id,$fila->titulo,$fila->resumen,$fila->descrip,
+                    $fila->titulo_i,$fila->resumen_i,$fila->descrip_i,$fila->fecha,$fila->est);
 			}
 			$obj[] = array ("cabecera" => $cabe,"cuerpo" => $cuep);
 		} else {

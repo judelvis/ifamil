@@ -46,15 +46,21 @@ function limpiar(){
 }
 
 function Registrar() {
-	var nombre = $("#titulo").val();
+    var fecha = $("#fecha").val();
+    var nombre = $("#titulo").val();
 	var descrip = $("#descrip").val();
-	var fecha = $("#fecha").val();
     var resumen = $("#resumen").val();
+    var nombre_i = $("#titulo_i").val();
+    var descrip_i = $("#descrip_i").val();
+    var resumen_i = $("#resumen_i").val();
     var cadena = new FormData();
 	cadena.append('titulo', nombre);
 	cadena.append('descrip',descrip);
-	cadena.append('fecha',fecha);
     cadena.append('resumen',resumen);
+    cadena.append('titulo_i', nombre_i);
+    cadena.append('descrip_i',descrip_i);
+    cadena.append('resumen_i',resumen_i);
+    cadena.append('fecha',fecha);
     cadena.append('oidcat', $('#categoria').val());
 
 	if(nombre == '' || descrip == '' || fecha == '' ){
@@ -85,7 +91,8 @@ function listarSerie(){//alert(sUrlP);
             'titulo': 'Categorias',
             'clase' : "",
             'oculto':[1],
-            'editable': {'c2': 'texto', 'c3': 'texto', 'c4': 'texto', 'c6': datosCombo},
+            'editable': {'c2': 'texto', 'c3': 'texto', 'c4': 'texto',
+                'c5': 'texto', 'c6': 'texto', 'c7': 'texto','c9': datosCombo},
             "accion": [{
                 "ejecuta": sUrlPanel+"modificarSerie",
                 "tipo": "php",

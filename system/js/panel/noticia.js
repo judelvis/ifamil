@@ -37,6 +37,9 @@ function registrar() {
     cadena.append('titulo', $('#titulo').val());
     cadena.append('descrip', $('#descrip').val());
     cadena.append('resumen', $('#resumen').val());
+    cadena.append('titulo_i', $('#titulo_i').val());
+    cadena.append('descrip_i', $('#descrip_i').val());
+    cadena.append('resumen_i', $('#resumen_i').val());
     cadena.append('fecha', $('#fecha').val());
     cadena.append('enlace', $('#enlace').val());
 
@@ -73,7 +76,7 @@ function listarNoticia(){
             'titulo': 'Noticias',
             'clase' : "",
             'oculto':[1,2],
-            'editable': {'c3': 'texto', 'c4': 'texto','c5':'texto'},
+            'editable': {'c3': 'texto', 'c4': 'texto','c5':'texto','c6': 'texto', 'c7': 'texto','c8':'texto'},
             "accion": [{
                 "ejecuta": sUrlPanel+"eliminarNoticia",
                 "tipo": "php",
@@ -86,7 +89,7 @@ function listarNoticia(){
                 "tipo": "php",
                 "clase": "mdi-content-save",
                 "texto":"Guardar",
-                "parametro": [1,3,4,5]}]
+                "parametro": [1,3,4,5,6,7,8]}]
             }]
     );
 }
