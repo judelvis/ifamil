@@ -55,7 +55,7 @@ if(isset($_SESSION['idioma']) && $_SESSION['idioma']=='_i'){
     <img  style="float: left" src="'.__IMG__ .'images/vene2.png" class="img-responsive"></a></div>';
 }?>
 <body>
-<div class="container">
+<div class="container1">
 <a href="#" class="back-to-top"><?php echo $subir;?></a>
 <div class="row">
     <div class="col-xs-6 col-sm-3">
