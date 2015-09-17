@@ -58,7 +58,7 @@ if(isset($_SESSION['idioma']) && $_SESSION['idioma']=='_i'){
 <div class="container1">
     <div class="row">
 <a href="#" class="back-to-top"><?php echo $subir;?></a>
-
+        <div class="row3">
     <div class="col-xs-6 col-sm-3">
         <img src="<?php echo __IMG__ ?>images/logo12.png" class="img-responsive">
     </div>
@@ -70,10 +70,10 @@ if(isset($_SESSION['idioma']) && $_SESSION['idioma']=='_i'){
         <br>
         <?php echo $bandera;?>
     </div>
-
+</div>
     <div class="header_bg x">
         <div class="container">
-            <div class="row1">
+
             <div class="header">
                 <div class="h_menu">
                     <a id="touch-menu" class="mobile-menu" href="#">Menu</a>
@@ -94,6 +94,6 @@ if(isset($_SESSION['idioma']) && $_SESSION['idioma']=='_i'){
             </div>
         </div>
     </div>
-    </div>
+
 
 
