@@ -95,12 +95,12 @@
             <div id="portfoliolist">
                 <div class="portfolio_main">
                         <?php
-                        if(isset ($lst[0]->descrip)) {
+                        if(isset ($lst[0]->des)) {
                             echo '
                             <div class="blog_main col-md-12">
                                 <div class="blog_list">
 
-                                        <p class="para">' . $lst[0]->descrip . '</p>
+                                        <p class="para">' . $lst[0]->des . '</p>
 
 
                                 </div>

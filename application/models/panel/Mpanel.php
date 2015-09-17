@@ -100,7 +100,13 @@ join(Select * from portafolio
 	}
 
     function consultarGaleriaPortafolio($oidser){
-        $consulta = $this -> db -> query("Select *,t_portafolio.titulo as tit From t_galeria join t_portafolio on t_portafolio.id = t_galeria.oidpor WHERE  oidpor=".$oidser);
+        $query = "Select *,";
+        $camp = 't_portafolio.titulo as tit ,t_portafolio.resumen as res ,t_portafolio.descrip as des';
+        if(isset($_SESSION['idioma']) && $_SESSION['idioma']=='_i'){
+            $camp = 't_portafolio.titulo_i as tit,t_portafolio.resumen_i as res ,t_portafolio.descrip_i as des';
+        }
+        $query .= $camp." From t_galeria join t_portafolio on t_portafolio.id = t_galeria.oidpor WHERE  oidpor=".$oidser;
+        $consulta = $this -> db -> query($query);
         $cant = $consulta -> num_rows();
         if($cant > 0){
             $porta = $consulta -> result();
@@ -111,9 +117,15 @@ join(Select * from portafolio
     }
 
     function consultarPortafolioCat($cat){
-        $consulta = $this -> db -> query("Select * From t_portafolio left join (select * from t_galeria group by oidpor)
+        $query = "Select t_portafolio.fecha,id,imagen, ";
+        $camp = 't_portafolio.titulo as tit ,t_portafolio.resumen as res ,t_portafolio.descrip as des';
+        if(isset($_SESSION['idioma']) && $_SESSION['idioma']=='_i'){
+            $camp = 't_portafolio.titulo_i as tit,t_portafolio.resumen_i as res ,t_portafolio.descrip_i as des';
+        }
+        $query.= $camp." From t_portafolio left join (select * from t_galeria group by oidpor)
           as porta on t_portafolio.id = porta.oidpor
-          WHERE estatus=0 and  oidcat=".$cat." order by t_portafolio.fecha desc" );
+          WHERE estatus=0 and  oidcat=".$cat." order by t_portafolio.fecha desc";
+        $consulta = $this -> db -> query($query);
         $cant = $consulta -> num_rows();
         if($cant > 0){
             $porta = $consulta -> result();
