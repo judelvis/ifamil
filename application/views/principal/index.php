@@ -144,7 +144,7 @@ if(isset($_SESSION['idioma']) && $_SESSION['idioma']=='_i'){
 			<div class="col-md-3 span1_of_4" id="noticia_' . $ls->oid . '">
 				<div class="thumbnail" style="height:300px;">
 					<img src="' . __IMG__ . 'noticia/medio/' . $ls->imagen . '" alt="team 1">
-					<h3>' . $ls->titulo . '</h3>
+					<h3>' . $ls->tit . '</h3>
 					<div class="mask">
 						<a href="' . site_url("Principal/verNoticia/$ls->oid") . '">
 						<h2><span >LEER</span></h2>

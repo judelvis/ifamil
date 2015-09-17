@@ -198,7 +198,10 @@ join(Select * from portafolio
     }
 
     function listarNoticia(){
-        $query = 'Select * From t_noticias order by fecha DESC ';
+        $query = 'Select oid,imagen,titulo as tit From t_noticias order by fecha DESC ';
+        if(isset($_SESSION['idioma']) && $_SESSION['idioma']=='_i'){
+            $query = 'Select oid,imagen,titulo_i as tit From t_noticias order by fecha DESC ';
+        }
         $consulta = $this -> db -> query($query );
         $cant = $consulta -> num_rows();
         if($cant > 0){
