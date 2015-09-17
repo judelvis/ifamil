@@ -46,12 +46,15 @@
     <!-- Owl Carousel Assets -->
 </head>
 <?php
+$actual = str_replace("/","-",uri_string());
+$cerrar = site_url("Principal/cerrar").'/'.$actual;
+$idioma = site_url("Principal/idioma").'/'.$actual;
 $subir="Volver Arriba";$home = 'Inicio';$quien='Quienes Somos';$paq = 'Paquete';$afi = 'Afiliate';$con ='Contactenos';$not = "Noticias";$ser = "Servicios";
-$bandera = '<div style="float: right;"><a class="btn-link" href="'.site_url("Principal/idioma").'">
+$bandera = '<div style="float: right;"><a class="btn-link" href="'.$idioma.'">
 <img  style="float: left" src="'.__IMG__ .'images/ingles.png" class="img-responsive"></a></div>';
 if(isset($_SESSION['idioma']) && $_SESSION['idioma']=='_i'){
     $subir="Back to Top";$home = 'Home';$quien='Who we are';$paq = 'Pac';$afi = 'Afil';$con ='Contact';$not = "News";$ser = "Services";
-    $bandera = '<div style="float: right;z-index: 0;"><a class="" href="'.site_url("Principal/cerrar").'">
+    $bandera = '<div style="float: right;z-index: 0;"><a class="" href="'.$cerrar.'">
     <img  style="float: left" src="'.__IMG__ .'images/vene2.png" class="img-responsive"></a></div>';
 }?>
 <body>

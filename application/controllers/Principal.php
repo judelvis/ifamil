@@ -10,14 +10,17 @@ class Principal extends CI_Controller
         $this->load->helper('url');
     }
 
-    function idioma(){
+    function idioma($dir=''){
         $_SESSION['idioma'] = '_i';
-        redirect ( base_url () );
+        $ruta = str_replace("-","/",$dir);
+        redirect ( base_url ().'index.php/'.$ruta );
     }
 
-    function cerrar($dir) {
+    function cerrar($dir='') {
+
         session_destroy ();
-        redirect ( $dir );
+        $ruta = str_replace("-","/",$dir);
+        redirect ( base_url ().'index.php/'.$ruta );
     }
 
     public function index()
