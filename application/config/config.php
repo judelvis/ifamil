@@ -515,3 +515,4 @@ define("__MAQ__", $config['base_url'] . "/system/maqueta/");
 define("__PARALAX__", $config['base_url'] . "/system/paralaxer/");
 define("__SLIDER__", $config['base_url'] . "/system/camera/");
 define("__LOCALWWW__", $config['base_url']);
+define("__PAG__", 4);

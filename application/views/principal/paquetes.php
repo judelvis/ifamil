@@ -69,7 +69,15 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $("div.fancyDemo a").fancybox();
+        pagina(1);
     });
+    function pagina(p){
+        tam = $('#paginador li').size();
+        for(var i=1;i<=tam;i++){
+            $(".pag"+i).hide();
+        }
+        $(".pag"+p).show();
+    }
 </script>
 <div class="main_bg"><!-- start main -->
     <img src="<?php echo __IMG__ ?>images/<?php echo $imagen ?>" style="width: 100%">
@@ -91,7 +99,18 @@
                 if ($lst == 0) {
                     echo "No existen publicaciones.";
                 } else {
+                    $i = 0;
+                    $j=1;$band=0;
+                    echo '<div class="row pag'.$j.'">';
                     foreach ($lst as $ls) {
+                        $i ++;
+                        if($band == __PAG__){
+                            $j++;
+                            $band=1;
+                            echo '</div>';
+                            echo '<div class="row pag'.$j.'">';
+                        }
+                        $band++;
                         echo '
                     <div class="col-md-2 blog_date">
                         <span><h3>Publicado</h3><p>' . $ls->fecha . '</p></span>
@@ -115,6 +134,16 @@
                     </div>
                     <div class="clearfix"></div><br>';
                     }
+                    echo '</div>';
+                    $npag = count($lst)/__PAG__;
+                    if(($npag)>1 ){
+                        echo'<nav><ul class="pagination pagination-lg" id="paginador">';
+                        $tam =ceil($npag);
+                        for($i=1;$i<=$tam;$i++){
+                            echo'<li><a href="#portfoliolist" onclick="pagina('.$i.')">'.$i.'</a></li>';
+                        }
+                        echo '</ul>	</nav>';
+                    }
                 }
                 ?>
             </div>
@@ -132,7 +161,6 @@
             <img src="<?php echo __IMG__?>images/puente.jpg" class="img-responsive">
             <img src="<?php echo __IMG__?>images/cuartel.jpg" class="img-responsive">
             <img src="<?php echo __IMG__?>images/arte.jpg" class="img-responsive">
-
         </div>
     </div>
 </div>
