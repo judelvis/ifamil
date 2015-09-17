@@ -19,14 +19,13 @@
             pagination: false,
             alignment: 'center',
             time:400,
-            loader: false
-            //height: '5%'
+            height: '30%'
         });
 
     });
 </script>
-<div class="container">
-<div class="camera_wrap  camera_red_skin" id="camera_wrap_1">
+
+<div class="camera_wrap  camera_red_skin" id="camera_wrap_1" style="background-color: #FFFFFF;margin-right: 0px auto">
     <div style="width: 100%" data-src="<?php echo __IMG__?>images/prueba1.jpg">
         <!--<div class="camera_caption fadeFromBottom">
             Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
@@ -39,4 +38,4 @@
 
     </div>
 </div>
-</div>
+<div class="clearfix"></div>

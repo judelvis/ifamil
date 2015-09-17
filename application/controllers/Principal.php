@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+session_start ();
 class Principal extends CI_Controller
 {
 
@@ -8,6 +8,16 @@ class Principal extends CI_Controller
     {
         parent::__construct();
         $this->load->helper('url');
+    }
+
+    function idioma(){
+        $_SESSION['idioma'] = '_i';
+        redirect ( base_url () );
+    }
+
+    function cerrar() {
+        session_destroy ();
+        redirect ( base_url () );
     }
 
     public function index()

@@ -23,32 +23,8 @@
     <script type="text/javascript" src="<?php echo __JSVIEW__; ?>jquery/jquery-ui-1.10.4.custom.js"></script>
     <script type="text/javascript" src="<?php echo __MAQ__ ?>js/bootstrap.min.js"></script>
 
-    <!-- must have -->
-    <link href="<?php echo __MAQ__ ?>css/allinone_carousel.css" rel="stylesheet" type="text/css">
-    <script src="<?php echo __MAQ__ ?>js/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
-    <script src="<?php echo __MAQ__ ?>js/allinone_carousel.js" type="text/javascript"></script>
-    <!--[if IE]>
-    <script src="<?php echo __MAQ__?>js/excanvas.compiled.js" type="text/javascript"></script><![endif]-->
-    <!-- must have -->
     <script>
         jQuery(function () {
-            jQuery('#allinone_carousel_charming').allinone_carousel({
-                skin: 'charming',
-                width: 990,
-                height: 454,
-                responsive: true,
-                autoPlay: 3,
-                resizeImages: true,
-                autoHideBottomNav: false,
-                showElementTitle: false,
-                verticalAdjustment: 50,
-                showPreviewThumbs: false,
-                //easing:'easeOutBounce',
-                numberOfVisibleItems: 5,
-                nextPrevMarginTop: 23,
-                playMovieMarginTop: 0,
-                bottomNavMarginBottom: -10
-            });
             var offset = 220;
             var duration = 500;
             jQuery(window).scroll(function() {
@@ -68,31 +44,19 @@
         });
     </script>
     <!-- Owl Carousel Assets -->
-    <link href="<?php echo __MAQ__ ?>css/owl.carousel.css" rel="stylesheet">
-    <script src="<?php echo __MAQ__ ?>js/owl.carousel.js"></script>
-    <script>
-        $(document).ready(function () {
-
-            $("#owl-demo").owlCarousel({
-                items: 4,
-                lazyLoad: true,
-                autoPlay: true,
-                navigation: true,
-                navigationText: ["", ""],
-                rewindNav: false,
-                scrollPerPage: false,
-                pagination: false,
-                paginationNumbers: false,
-            });
-
-        });
-    </script>
-    <!-- //Owl Carousel Assets -->
-    <!-- start circle -->
 </head>
+<?php
+$subir="Volver Arriba";$home = 'Inicio';$quien='Quienes Somos';$paq = 'Paquete';$afi = 'Afiliate';$con ='Contactenos';$not = "Noticias";$ser = "Servicios";
+$bandera = '<div style="float: right;"><a class="" href="'.site_url("Principal/idioma").'">
+<img  style="float: left" src="'.__IMG__ .'images/ingles.png" class="img-responsive"></a></div>';
+if(isset($_SESSION['idioma']) && $_SESSION['idioma']=='_i'){
+    $subir="Back to Top";$home = 'Home';$quien='Who we are';$paq = 'Pac';$afi = 'Afil';$con ='Contact';$not = "News";$ser = "Services";
+    $bandera = '<div style="float: right;"><a class="" href="'.site_url("Principal/cerrar").'">
+    <img  style="float: left" src="'.__IMG__ .'images/vene2.png" class="img-responsive"></a></div>';
+}?>
 <body>
-<div class="container1">
-<a href="#" class="back-to-top">Volver arriba</a>
+<div class="container">
+<a href="#" class="back-to-top"><?php echo $subir;?></a>
 <div class="row">
     <div class="col-xs-6 col-sm-3">
         <img src="<?php echo __IMG__ ?>images/logo12.png" class="img-responsive">
@@ -103,8 +67,7 @@
     <div class="col-xs-6 col-sm-4"></div>
     <div class="col-xs-6 col-sm-2">
         <br>
-        <img  style="float: left; padding-right: 10px" src="<?php echo __IMG__ ?>images/vene2.png" class="img-responsive">
-        <img  style="float: left" src="<?php echo __IMG__ ?>images/ingles.png" class="img-responsive">
+        <?php echo $bandera;?>
     </div>
 
     <div class="header_bg x">
@@ -114,13 +77,13 @@
                     <a id="touch-menu" class="mobile-menu" href="#">Menu</a>
                     <nav>
                         <ul class="menu list-unstyled">
-                            <li><a href="<?php echo base_url("index.php/Principal/index")?>">Inicio</a></li>
-                            <li><a href="<?php echo base_url("index.php/Principal/nosotros")?>">Quienes Somos</a></li>
-                            <li><a href="<?php echo base_url("index.php/Principal/paquetes/4")?>">Paquetes</a></li>
-                            <li><a href="<?php echo base_url("index.php/Principal/afiliate")?>">Afiliate</a>
-                            <li><a href="<?php echo base_url("index.php/Principal/noticias")?>">Noticias</a></li>
-                            <li><a href="<?php echo base_url("index.php/Principal/portafolio")?>">Servicios</a></li>
-                            <li><a href="<?php echo base_url("index.php/Principal/contacto")?>">CONTACTENOS</a></li>
+                            <li><a href="<?php echo base_url("index.php/Principal/index")?>"><?php echo $home;?></a></li>
+                            <li><a href="<?php echo base_url("index.php/Principal/nosotros")?>"><?php echo $quien;?></a></li>
+                            <li><a href="<?php echo base_url("index.php/Principal/paquetes/4")?>"><?php echo $paq;?></a></li>
+                            <li><a href="<?php echo base_url("index.php/Principal/afiliate")?>"><?php echo $afi;?></a>
+                            <li><a href="<?php echo base_url("index.php/Principal/noticias")?>"><?php echo $not;?></a></li>
+                            <li><a href="<?php echo base_url("index.php/Principal/portafolio")?>"><?php echo $ser;?></a></li>
+                            <li><a href="<?php echo base_url("index.php/Principal/contacto")?>"><?php echo $con;?></a></li>
                         </ul>
                     </nav>
                     <script src="<?php echo __MAQ__?>js/menu.js" type="text/javascript"></script>

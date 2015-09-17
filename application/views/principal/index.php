@@ -1,3 +1,61 @@
+<!-- must have -->
+<link href="<?php echo __MAQ__ ?>css/allinone_carousel.css" rel="stylesheet" type="text/css">
+<script src="<?php echo __MAQ__ ?>js/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="<?php echo __MAQ__ ?>js/allinone_carousel.js" type="text/javascript"></script>
+<!--[if IE]>
+<script src="<?php echo __MAQ__?>js/excanvas.compiled.js" type="text/javascript"></script><![endif]-->
+<!-- must have -->
+
+
+<script>
+    jQuery(function () {
+        jQuery('#allinone_carousel_charming').allinone_carousel({
+            skin: 'charming',
+            width: 990,
+            height: 454,
+            responsive: true,
+            autoPlay: 3,
+            resizeImages: true,
+            autoHideBottomNav: false,
+            showElementTitle: false,
+            verticalAdjustment: 50,
+            showPreviewThumbs: false,
+            //easing:'easeOutBounce',
+            numberOfVisibleItems: 5,
+            nextPrevMarginTop: 23,
+            playMovieMarginTop: 0,
+            bottomNavMarginBottom: -10
+        });
+
+    });
+</script>
+<link href="<?php echo __MAQ__ ?>css/owl.carousel.css" rel="stylesheet">
+<script src="<?php echo __MAQ__ ?>js/owl.carousel.js"></script>
+<script>
+    $(document).ready(function () {
+
+        $("#owl-demo").owlCarousel({
+            items: 4,
+            lazyLoad: true,
+            autoPlay: true,
+            navigation: true,
+            navigationText: ["", ""],
+            rewindNav: false,
+            scrollPerPage: false,
+            pagination: false,
+            paginationNumbers: false,
+        });
+
+    });
+</script>
+<!-- //Owl Carousel Assets -->
+<!-- start circle -->
+
+<?php
+
+if(isset($_SESSION['idioma']) && $_SESSION['idioma']=='_i'){
+
+}?>
 <div class="main_bg"><!-- start main -->
     <div class="container">
         <div class="main_grid">
