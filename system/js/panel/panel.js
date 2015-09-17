@@ -47,8 +47,8 @@ function registrar() {
 
 	cadena.append('imagen', imagen);
 	cadena.append('oidpor', $('#serie').val());
-    cadena.append('titulo', $('#titulo').val());
-    cadena.append('detalle', $('#detalle').val());
+    //cadena.append('titulo', $('#titulo').val());
+    //cadena.append('detalle', $('#detalle').val());
     cadena.append('fecha', $('#fecha').val());
     cadena.append('enlace', $('#enlace').val());
 	

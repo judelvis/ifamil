@@ -90,7 +90,10 @@ class Panel extends CI_Controller {
         $valor = $this -> MImagen -> cargar($_FILES, BASEPATH . 'img/noticia') -> salvar(400,200,2);
         $nombreImagen = $_FILES['imagen']['name'];
         $_POST['resumen'] = $this->db->escape_str($_POST['resumen']);$_POST['descrip'] = $this->db->escape_str($_POST['descrip']);$_POST['titulo'] = $this->db->escape_str($_POST['titulo']);
-        $arr = array("imagen"=>$nombreImagen,"titulo"=>$_POST['titulo'],"descrip"=>$_POST['descrip'],"fecha"=>$_POST['fecha'],"enlace"=>$_POST['enlace'],"resumen"=>$_POST['resumen']);
+        $_POST['resumen_i'] = $this->db->escape_str($_POST['resumen_i']);$_POST['descrip_i'] = $this->db->escape_str($_POST['descrip_i']);$_POST['titulo_i'] = $this->db->escape_str($_POST['titulo_i']);
+        $arr = array("imagen"=>$nombreImagen,"titulo"=>$_POST['titulo'],"descrip"=>$_POST['descrip'],
+            "fecha"=>$_POST['fecha'],"enlace"=>$_POST['enlace'],"resumen"=>$_POST['resumen'],
+            "titulo_i"=>$_POST['titulo_i'],"descrip_i"=>$_POST['descrip_i'],"resumen_i"=>$_POST['resumen_i']);
 
         if($valor)echo $this -> MPanel -> registrarNoticia($arr);
         else echo "No se pudo registrar la noticia.".$valor['mensaje'];
@@ -126,7 +129,7 @@ class Panel extends CI_Controller {
         }
         $this -> load -> model('panel/Mpanel', 'MPanel');
         $data['js'] = 'servicio';
-        $data['titulo'] = 'Portafolio';
+        $data['titulo'] = 'Paquetes';
         $data['formulario'] = 'portafolio';
         $this->load->view('panel/incluir/cabecera',$data);
         $this->load->view('panel/incluir/menu');
@@ -139,8 +142,10 @@ class Panel extends CI_Controller {
         $_POST['titulo'] = $this->db->escape_str($_POST['titulo']);
         $_POST['descrip'] = $this->db->escape_str($_POST['descrip']);
         $_POST['resumen'] = $this->db->escape_str($_POST['resumen']);
+        $_POST['titulo_i'] = $this->db->escape_str($_POST['titulo_i']);
+        $_POST['descrip_i'] = $this->db->escape_str($_POST['descrip_i']);
+        $_POST['resumen_i'] = $this->db->escape_str($_POST['resumen_i']);
         echo $this -> MPanel -> registrarSerie($_POST);
-
     }
 
     function listarSerie(){
@@ -209,7 +214,7 @@ class Panel extends CI_Controller {
 
         $valor = $this -> MImagen -> cargar($_FILES, BASEPATH . 'img/galeria') -> salvar(680,480,2);
         $nombreImagen = $_FILES['imagen']['name'];
-        $arr = array("oidpor"=>$_POST['oidpor'],"imagen"=>$nombreImagen,"titulo"=>$_POST['titulo'],"detalle"=>$_POST['detalle'],"fecha"=>$_POST['fecha'],"enlace"=>$_POST['enlace']);
+        $arr = array("oidpor"=>$_POST['oidpor'],"imagen"=>$nombreImagen,"titulo"=>"","detalle"=>"","fecha"=>$_POST['fecha'],"enlace"=>$_POST['enlace']);
         if($valor)echo $this -> MPanel -> registrarGaleria($arr);
         else echo "No se pudo guardar la imagen".$valor['mensaje'];
         //echo "si";

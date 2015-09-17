@@ -35,17 +35,6 @@
                         </div>
 					</div>
 
-                    <div class="form-group">
-                        <label for="autosize" class="control-label col-lg-2">Titulo</label>
-                        <div class="col-lg-2">
-                                <input type="text" placeholder="Titulo" class="form-control"
-                                       name="titulo" id="titulo"  />
-                        </div>
-                        <label for="autosize" class="control-label col-lg-2">Detalle</label>
-                        <div class="col-lg-6">
-                            <textarea id="detalle" name="detalle" class="form-control"></textarea>
-                        </div>
-                    </div>
 
 					<div class="form-group">
 						<label class="control-label col-lg-2">Seleccione Imagen</label>

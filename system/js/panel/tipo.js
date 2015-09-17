@@ -9,18 +9,24 @@ $(function() {
 function limpiar(){
 	$("#categoria").val('');
     $("#descrip").val('');
+    $("#categoria_i").val('');
+    $("#descrip_i").val('');
 }
 
 function Registrar() {
 	var nombre = $("#categoria").val();
     var descrip = $("#descrip").val();
+    var nombre_i = $("#categoria_i").val();
+    var descrip_i = $("#descrip_i").val();
 
 	var cadena = new FormData();
 	cadena.append('categoria', nombre);
     cadena.append('descrip', descrip);
+    cadena.append('categoria_i', nombre_i);
+    cadena.append('descrip_i', descrip_i);
 
-	if(nombre == ''){
-		alert("Debe ingresar una categoria");
+	if(nombre == '' || nombre_i==''){
+		alert("Debe ingresar los titulos de la categoria");
 		return false;
 	}
 	
@@ -47,7 +53,7 @@ function listarTipo(){
             'titulo': 'Categorias',
             'clase' : "",
             'oculto':[1],
-            'editable': {'c2': 'texto', 'c3': 'texto'},
+            'editable': {'c2': 'texto', 'c3': 'texto','c4': 'texto', 'c5': 'texto'},
             "accion": [{
                 "ejecuta": sUrlPanel+"modTipo",
                 "tipo": "php",
