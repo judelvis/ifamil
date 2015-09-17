@@ -24,9 +24,9 @@
                     </div>
                     <div class="col-md-10 blog_left">
                         <a href="#"><img src="'. __IMG__.'noticia/medio/'.$ls->imagen.'" alt="" class="img-responsive"/></a>
-                        <h4>'.$ls->titulo.'</h4>
+                        <h4>'.$ls->tit.'</h4>
 
-                        <p class="para">'.$ls->resumen.'</p>
+                        <p class="para">'.$ls->res.'</p>
                         <div class="read_btn">
                             <a href="'.site_url("Principal/verNoticia/".$ls->oid).'">
                                 <button class="btn">leer mas</button>

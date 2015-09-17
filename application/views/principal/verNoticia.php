@@ -17,7 +17,7 @@
     <div class="container">
         <div class="main_grid1">
             <hr class="team_hr team_hr_left hr_gray"/>
-            <center><h1><?php echo $lst[0]->titulo; ?></h1></center>
+            <center><h1><?php echo $lst[0]->tit; ?></h1></center>
             <hr class="team_hr team_hr_left hr_gray"/>
             <div class="clearfix"></div>
 
@@ -38,13 +38,13 @@
                     <div class="col-md-4 blog_left">
                         <h4>Resumen</h4>
 
-                        <p class="para"><?php echo $lst[0]->resumen; ?></p>
+                        <p class="para"><?php echo $lst[0]->res; ?></p>
                         <div class="fb-like" data-layout="button_count"></div>
                     </div>
                     <div class="technology_list col-md-12">
                         <br>
 
-                        <p class="para"><?php echo $lst[0]->descrip; ?></p>
+                        <p class="para"><?php echo $lst[0]->des; ?></p>
 
                         <div class="clearfix"></div>
 
