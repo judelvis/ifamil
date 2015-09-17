@@ -7,7 +7,7 @@
  */ ?>
 <div class="main_bg"><!-- start main -->
 
-    <img src="<?php echo __IMG__ ?>images/aviso1.jpg" style="width: 100%">
+    <img src="<?php echo __IMG__ ?>images/aviso2.jpg" style="width: 100%">
 
     <div class="container">
         <div class="main_grid1">
