@@ -49,11 +49,11 @@
 $actual = str_replace("/","-",uri_string());
 $cerrar = site_url("Principal/cerrar").'/'.$actual;
 $idioma = site_url("Principal/idioma").'/'.$actual;
-$subir="Volver Arriba";$home = 'Inicio';$quien='Quienes Somos';$paq = 'Paquete';$afi = 'Afiliate';$con ='Contactenos';$not = "Noticias";$ser = "Servicios";
+$subir="Volver Arriba";$home = 'Inicio';$quien='Quienes Somos';$paq = 'Paquetes';$afi = 'Afiliate';$con ='Contactenos';$not = "Noticias";$ser = "Servicios";
 $bandera = '<div style="float: right;"><a class="btn-link" href="'.$idioma.'">
 <img  style="float: left" src="'.__IMG__ .'images/ingles.png" class="img-responsive"></a></div>';
 if(isset($_SESSION['idioma']) && $_SESSION['idioma']=='_i'){
-    $subir="Back to Top";$home = 'Home';$quien='Who we are';$paq = 'Pac';$afi = 'Afil';$con ='Contact';$not = "News";$ser = "Services";
+    $subir="Back to Top";$home = 'Home';$quien='Who we are';$paq = 'Packages';$afi = 'Register';$con ='Contact Us';$not = "News";$ser = "Services";
     $bandera = '<div style="float: right;z-index: 0;"><a class="" href="'.$cerrar.'">
     <img  style="float: left" src="'.__IMG__ .'images/vene2.png" class="img-responsive"></a></div>';
 }?>
@@ -84,7 +84,13 @@ if(isset($_SESSION['idioma']) && $_SESSION['idioma']=='_i'){
                         <ul class="menu list-unstyled">
                             <li><a href="<?php echo base_url("index.php/Principal/index")?>"><?php echo $home;?></a></li>
                             <li><a href="<?php echo base_url("index.php/Principal/nosotros")?>"><?php echo $quien;?></a></li>
-                            <li><a href="<?php echo base_url("index.php/Principal/paquetes/4")?>"><?php echo $paq;?></a></li>
+                            <li><a href="<?php echo base_url("index.php/Principal/paquetes/4")?>"><?php echo $paq;?></a>
+                            <ul class="sub-menu list-unstyled">
+                                <li><a href="<?php echo base_url("index.php/Principal/viajeV")?>">Viaja por Venezuela</a></li>
+                                <li><a href="<?php echo base_url("index.php/Principal/viajeI")?>">Viajes Internacionales</a></li>
+
+                                </ul>
+                            </li>
                             <li><a href="<?php echo base_url("index.php/Principal/afiliate")?>"><?php echo $afi;?></a>
                             <li><a href="<?php echo base_url("index.php/Principal/noticias")?>"><?php echo $not;?></a></li>
                             <li><a href="<?php echo base_url("index.php/Principal/portafolio")?>"><?php echo $ser;?></a></li>

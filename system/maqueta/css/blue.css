@@ -94,9 +94,9 @@ nav {
     display: none;
     margin: 0;
     padding: 0;
-    width: 132px;
+    width: 120px;
     position: absolute;
-    top: 42px;
+    top: 55px;
     left: 0px;
     background: #ffffff;
 }
@@ -113,16 +113,16 @@ nav {
     font-size: 14px;
     font-weight: normal;
     display: block;
-    color: #ffffff;
+    color: #000000;
     border-left: 3px solid #C03C35;
-    background: #E2534B;
-    padding: 10px 20px;
+    background: #ffffff;
+    padding: 0px 20px 0px 9px;
 }
 
 .menu ul li a:hover, .menu ul li:hover > a {
-    background: #f0f0f0;
-    border-left: 3px solid #62A29E;
-    color: #797979;
+    background:  red;
+    border-left: 3px solid blue;
+    color: #ffffff;
     box-shadow: none;
     border-radius: 0px;
     -webkit-border-radius: 0px;

@@ -71,6 +71,20 @@ class Principal extends CI_Controller
         $this->load->view('principal/incluir/pie');
     }
 
+    public function viajeV()
+    {
+        $this->load->view('principal/incluir/cabecera');
+        $this->load->view('principal/viajeV');
+        $this->load->view('principal/incluir/pie');
+    }
+    public function viajeI()
+    {
+        $this->load->view('principal/incluir/cabecera');
+        $this->load->view('principal/viajeI');
+        $this->load->view('principal/incluir/pie');
+    }
+
+
     public function portafolio()
     {
         $this->load->view('principal/incluir/cabecera');
