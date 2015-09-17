@@ -47,17 +47,18 @@
 </head>
 <?php
 $subir="Volver Arriba";$home = 'Inicio';$quien='Quienes Somos';$paq = 'Paquete';$afi = 'Afiliate';$con ='Contactenos';$not = "Noticias";$ser = "Servicios";
-$bandera = '<div style="float: right;"><a class="" href="'.site_url("Principal/idioma").'">
+$bandera = '<div style="float: right;"><a class="btn-link" href="'.site_url("Principal/idioma").'">
 <img  style="float: left" src="'.__IMG__ .'images/ingles.png" class="img-responsive"></a></div>';
 if(isset($_SESSION['idioma']) && $_SESSION['idioma']=='_i'){
     $subir="Back to Top";$home = 'Home';$quien='Who we are';$paq = 'Pac';$afi = 'Afil';$con ='Contact';$not = "News";$ser = "Services";
-    $bandera = '<div style="float: right;"><a class="" href="'.site_url("Principal/cerrar").'">
+    $bandera = '<div style="float: right;z-index: 0;"><a class="" href="'.site_url("Principal/cerrar").'">
     <img  style="float: left" src="'.__IMG__ .'images/vene2.png" class="img-responsive"></a></div>';
 }?>
 <body>
 <div class="container1">
+    <div class="row">
 <a href="#" class="back-to-top"><?php echo $subir;?></a>
-<div class="row">
+
     <div class="col-xs-6 col-sm-3">
         <img src="<?php echo __IMG__ ?>images/logo12.png" class="img-responsive">
     </div>
@@ -72,6 +73,7 @@ if(isset($_SESSION['idioma']) && $_SESSION['idioma']=='_i'){
 
     <div class="header_bg x">
         <div class="container">
+            <div class="row1">
             <div class="header">
                 <div class="h_menu">
                     <a id="touch-menu" class="mobile-menu" href="#">Menu</a>
@@ -92,6 +94,6 @@ if(isset($_SESSION['idioma']) && $_SESSION['idioma']=='_i'){
             </div>
         </div>
     </div>
-</div>
+    </div>
 
 
