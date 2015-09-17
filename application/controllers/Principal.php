@@ -15,9 +15,9 @@ class Principal extends CI_Controller
         redirect ( base_url () );
     }
 
-    function cerrar() {
+    function cerrar($dir) {
         session_destroy ();
-        redirect ( base_url () );
+        redirect ( $dir );
     }
 
     public function index()

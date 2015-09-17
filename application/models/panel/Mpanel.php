@@ -198,10 +198,12 @@ join(Select * from portafolio
     }
 
     function listarNoticia(){
-        $query = 'Select oid,imagen,titulo as tit From t_noticias order by fecha DESC ';
+        $query = 'Select oid,imagen,fecha,';
+        $camp = 'titulo as tit ,resumen as res ';
         if(isset($_SESSION['idioma']) && $_SESSION['idioma']=='_i'){
-            $query = 'Select oid,imagen,titulo_i as tit From t_noticias order by fecha DESC ';
+            $camp = 'titulo_i as tit,resumen_i as res';
         }
+        $query .= $camp.' From t_noticias order by fecha DESC ';
         $consulta = $this -> db -> query($query );
         $cant = $consulta -> num_rows();
         if($cant > 0){
@@ -213,7 +215,12 @@ join(Select * from portafolio
     }
 
     function verNoticia($id){
-        $query = 'Select * From t_noticias where oid='.$id.' order by fecha DESC ';
+        $query = 'Select oid,fecha, imagen,';
+        $camp = 'titulo as tit ,resumen as res ,descrip as des';
+        if(isset($_SESSION['idioma']) && $_SESSION['idioma']=='_i'){
+            $camp = 'titulo_i as tit,resumen_i as res ,descrip_i as des';
+        }
+        $query .=$camp.' From t_noticias where oid='.$id.' order by fecha DESC ';
         $consulta = $this -> db -> query($query );
         $cant = $consulta -> num_rows();
         if($cant > 0){
