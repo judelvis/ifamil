@@ -32,10 +32,10 @@
             Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
         </div>-->
     </div>
-    <div data-thumb="<?php echo __SLIDER__?>images/slides/leaf.jpg" data-src="<?php echo __SLIDER__?>images/slides/leaf.jpg">
+    <div data-thumb="<?php echo __SLIDER__?>images/slides/leaf.jpg" data-src="<?php echo __IMG__?>images/servicios1.jpg">
 
     </div>
-    <div data-thumb="<?php echo __SLIDER__?>images/slides/leaf.jpg" data-src="<?php echo __SLIDER__?>images/slides/leaf.jpg">
+    <div data-thumb="<?php echo __SLIDER__?>images/slides/leaf.jpg" data-src="<?php echo __IMG__?>images/turismo1.jpg">
 
     </div>
 </div>

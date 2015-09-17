@@ -4,7 +4,7 @@
     <div class="container">
         <div class="main_grid1">
             <hr class="team_hr team_hr_left hr_gray"/>
-            <center><h1>CONTACTENOS</h1></center>
+            <center><h1>CONTACTANOS</h1></center>
             <hr class="team_hr team_hr_left hr_gray"/>
             <div class="clearfix"></div>
         </div>
@@ -14,7 +14,6 @@
     <div class="container">
         <div class="contact">
             <center>
-                <p class="para">Sede principal Caracas</p>
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1961.6755529000425!2d-66.89525299865238!3d10.472963174847518!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sve!4v1441404862591"
                 width="88%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe><div class="contact_main">
@@ -43,21 +42,18 @@
                             <input type="text" id="nombre" name="nombre" placeholder="Nombre y Apellido..." required="required">
                             <input type="email" name="correo" id="correo" placeholder="Correo Electronico" required="required">
                             <div class="row">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <select id="codTel" name="codTel"style="width: 95%;" class="input-sm" onchange="verificarCodigo()">
-                                            <option value="0">Código</option>
-                                            <option value="0416">0416</option><option value="0426">0426</option>
-                                            <option value="0414">0414</option><option value="0424">0424</option>
-                                            <option value="0412">0412</option>
-                                            <option value="otros">Otros</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-md-9">
-                                        <input style="width: 95%; margin-left: 2px" type="text" name="telefono" id="telefono" placeholder="Numero de telefono Celular" maxlength="7" required="required" onkeypress="return soloNumeros(event);">
-                                    </div>
-                                </div>
+                            <div class="col-md-3">
+                                <select id="codTel" name="codTel"style="width: 100%;" class="input-sm" onchange="verificarCodigo()">
+                                    <option value="0">Código</option>
+                                    <option value="0416">0416</option><option value="0426">0426</option>
+                                    <option value="0414">0414</option><option value="0424">0424</option>
+                                    <option value="0412">0412</option>
+                                    <option value="otros">Otros</option>
+                                </select>
+                            </div>
+                            <div class="col-md-9">
+                                <input style="width: 100%;" type="text" name="telefono" id="telefono" placeholder="Numero de telefono Celular" maxlength="7" required="required" onkeypress="return soloNumeros(event);">
+                            </div>
                             </div>
                             <textarea id="mensaje" name="mensaje" placeholder="Mensaje..." required="required"></textarea>
                             <span><input type="submit" value="ENVIAR"></span>

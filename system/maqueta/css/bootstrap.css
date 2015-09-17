@@ -1801,7 +1801,7 @@ fieldset[disabled] .checkbox-inline {
   font-size: 13px;
   line-height: 1.5;
   border-radius: 2px;
-  margin: 10px 0;
+  margin: 10px -10px;
 }
 select.input-sm {
   height: 40px;
