@@ -25,7 +25,7 @@ function listarSolicitud() {
 	$("#reporte").dtgrid(origen, [ {
 		'titulo' : '',
 		'clase' : "",
-		'oculto' : [ 1,4,5,6 ],
+		'oculto' : [ 1,3,5,6 ],
 		'editable' : {
 			'c7' : 'texto'
 		},		

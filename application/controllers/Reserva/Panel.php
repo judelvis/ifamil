@@ -63,7 +63,6 @@ class Panel extends CI_Controller {
 			$this->load->view ( 'reserva/panel/principal', $data );
 		}
 	}
-	
 	function marketing() {
 		if (! isset ( $_SESSION ['usuario_ifamil'] )) {
 			session_destroy ();
@@ -84,50 +83,46 @@ class Panel extends CI_Controller {
 		$this->load->model ( 'usuario/Iniciar', 'Iniciar' );
 		echo $this->Iniciar->validarCuenta ( $_POST );
 	}
-
-    function registrarSitio(){
-        $this->load->model ( 'reserva/Sitio', 'Sitio' );
-        //echo "hola";
-        //print_R($_POST);
-        $this ->Sitio -> nombre = $_POST['nom'];
-        $this ->Sitio -> codigo = $_POST['cod'];
-        $this ->Sitio -> estado = $_POST['est'];
-        $resp = $this -> Sitio -> Salvar();
-        if($resp) echo "Se registro con exito";
-        else echo "Error al registrar";
-    }
-
-    function enviarRespuesta(){
-        print("<pre>");
-        print_R($_POST);
-    }
-    
-    
-    function listarAfiliados() {
-    	$this->load->model ( 'reserva/Afiliado', 'Afiliado' );
-    	$cabecera = array (
-    			'Id',
-    			'Nombre',
-    			'correo',
-    			'telefono'
-    	);
-    	$rs = $this->Afiliado->listar ();
-    	foreach ( $rs [0] ['rs'] as $fila ) {
-    		$cuep [] = array (
-    				$fila->oid,
-    				$fila->nom,
-    				$fila->cor,
-    				$fila->tel
-    		);
-    	}
-    	$obj [] = array (
-    			"cabecera" => $cabecera,
-    			"cuerpo" => $cuep
-    	);
-    	echo json_encode ( $obj );
-    }
-    
-
+	function registrarSitio() {
+		$this->load->model ( 'reserva/Sitio', 'Sitio' );
+		// echo "hola";
+		// print_R($_POST);
+		$this->Sitio->nombre = $_POST ['nom'];
+		$this->Sitio->codigo = $_POST ['cod'];
+		$this->Sitio->estado = $_POST ['est'];
+		$resp = $this->Sitio->Salvar ();
+		if ($resp)
+			echo "Se registro con exito";
+		else
+			echo "Error al registrar";
+	}
+	function enviarRespuesta() {
+		print ("<pre>") ;
+		print_R ( $_POST );
+	}
+	function listarAfiliados() {
+		$this->load->model ( 'reserva/Afiliado', 'Afiliado' );
+		$cabecera = array (
+				'Id',
+				'Nombre',
+				'correo',
+				'telefono' 
+		);
+		$rs = $this->Afiliado->listar ();
+		foreach ( $rs [0] ['rs'] as $fila ) {
+			$cuep [] = array (
+					$fila->oid,
+					$fila->nom,
+					$fila->cor,
+					$fila->tel 
+			);
+		}
+		$obj [] = array (
+				"cabecera" => $cabecera,
+				"cuerpo" => $cuep 
+		);
+		echo json_encode ( $obj );
+	}
 	function listarSitios() {
 		$this->load->model ( 'reserva/Sitio', 'Sitio' );
 		$cabecera = array (
@@ -159,7 +154,7 @@ class Panel extends CI_Controller {
 		$this->Correo->para = "gesaodin@gmail.com";
 		$this->Correo->asunto = "Prueba de IFAMIL";
 		$this->Correo->contenido = "Que locura";
-		//$this->Correo->enviar ();
+		// $this->Correo->enviar ();
 	}
 	
 	/**
@@ -184,7 +179,7 @@ class Panel extends CI_Controller {
 				'Destino',
 				'Tipo Solicitud',
 				'Estatus',
-				'Observacion'
+				'Observacion' 
 		);
 		$rs = $this->Solicitud->listarPendientes ();
 		foreach ( $rs [0] ['rs'] as $fila ) {
@@ -196,8 +191,8 @@ class Panel extends CI_Controller {
 					$fila->ori,
 					$fila->des,
 					$fila->categoria,
-					$this->estatus($fila->est),
-					""
+					$this->estatus ( $fila->est ),
+					"" 
 			);
 		}
 		$obj [] = array (
@@ -212,26 +207,25 @@ class Panel extends CI_Controller {
 			case 0 :
 				$valor = "Pendiente";
 				break;
-				case 1 :
-					$valor = "Atendido";
-					break;
+			case 1 :
+				$valor = "Atendido";
+				break;
 			default :
 				$valor = "Pendiente";
 				break;
 		}
 		return $valor;
 	}
-	
-	function listarDetalleSolicitud(){
-		$json = json_decode($_POST['datos'], true);
+	function listarDetalleSolicitud() {
+		$json = json_decode ( $_POST ['datos'], true );
 		$this->load->model ( 'reserva/Solicitud', 'Solicitud' );
 		$this->load->model ( 'reserva/Sitio', 'Sitio' );
 		$this->load->model ( 'reserva/Paquete', 'Paquete' );
-	
-		$this->Solicitud->obtenerID($json[0]);
-		$this->Sitio->obtenerID($this->Solicitud->origen);
+		
+		$this->Solicitud->obtenerID ( $json [0] );
+		$this->Sitio->obtenerID ( $this->Solicitud->origen );
 		$origen = $this->Sitio->nombre;
-		$this->Sitio->obtenerID($this->Solicitud->destino);
+		$this->Sitio->obtenerID ( $this->Solicitud->destino );
 		$destino = $this->Sitio->nombre;
 		$fechaS = $this->Solicitud->fechaSalida;
 		$fechaL = $this->Solicitud->fechaLlegada;
@@ -245,11 +239,32 @@ class Panel extends CI_Controller {
 				  Cantidad de Niños: $cantidaNino<br>
 				  Origen: <i>$origen</i><br>
 					Destino: <i>$destino</i><br>
-					Forma de Pago: Debito<i>$formaPago</i>";
+					Forma de Pago: <i>" . $this->formaPago ( $formaPago ) . "</i>";
 		
-		//print_r($this->Sitio);		
+		// print_r($this->Sitio);
 	}
-	
+	function formaPago($forma) {
+		switch ($forma) {
+			case 0 :
+				return "Debito";
+				break;
+			case 1 :
+				return "Efectivo";
+				break;
+			case 2 :
+				return "Cheque";
+				break;
+			case 3 :
+				return "Credito";
+				break;
+			case 4 :
+				return "Transferencia";
+				break;
+			default :
+				return "Err. De Modalidad";
+				break;
+		}
+	}
 	/**
 	 */
 	function listarPaquetes() {
@@ -257,6 +272,5 @@ class Panel extends CI_Controller {
 		print_r ( $this->Paquete->listarPaquetes () );
 	}
 	function __destruct() {
-
 	}
 }
