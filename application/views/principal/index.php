@@ -218,13 +218,17 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
 			<div class="col-md-3 span1_of_4" id="noticia_' . $ls->oid . '">
 				<div class="thumbnail" style="height:300px;">
 					<img src="' . __IMG__ . 'noticia/medio/' . $ls->imagen . '" alt="team 1">
-					<h3>' . $ls->tit . '</h3>
 					<div class="mask">
-					    <h4>'.$ls->res.'</h4>
-						<a href="' . site_url("Principal/verNoticia/$ls->oid") . '">
-						Ver mas
-						</a>
+					    <h4>'.substr($ls->res,0,350) .'</h4>
+					    <ul class="social">
+                        <li>
+                            <a href="' . site_url("Principal/verNoticia/$ls->oid") . '">
+                                <span >LEER</span>
+                            </a>
+                        </li>
+                    </ul>
 					</div>
+                    <h3>' . $ls->tit . '</h3>
 				</div>
 			</div>
 			';
