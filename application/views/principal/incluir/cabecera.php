@@ -109,10 +109,10 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
                                     <a href="<?php echo base_url("index.php/Principal/nosotros") ?>"><?php echo $quien; ?></a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url("index.php/Principal/paquetes/4") ?>"><?php echo $paq; ?></a>
+                                    <a href="#"><?php echo $paq; ?></a>
                                     <ul class="sub-menu list-unstyled">
                                         <li><a href="<?php echo base_url("index.php/Principal/viajeV") ?>"><?php echo $v; ?></a></li>
-                                        <li><a href="<?php echo base_url("index.php/Principal/viajeI") ?>"><?php echo $i; ?></a></li>
+                                        <li><a href="<?php echo base_url("index.php/Principal/paquetes/6") ?>"><?php echo $i; ?></a></li>
 
                                     </ul>
                                 </li>

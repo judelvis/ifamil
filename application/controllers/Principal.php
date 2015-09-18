@@ -45,20 +45,34 @@ class Principal extends CI_Controller
         $this -> load -> model('panel/Mpanel', 'MPanel');
         switch($cat){
             case 1:
-                $datos['imagen'] = 'vacaciones.jpg';
-                $datos['titulo'] = 'Transporte';
+                $datos['imagen'] = 'costa.jpg';
+                $datos['titulo'] = 'Sol Y Playa';
+                if(isset($_SESSION['idioma']))$datos['titulo'] = 'Sun And Beach';
                 break;
             case 2:
-                $datos['imagen'] = 'vacaciones.jpg';
-                $datos['titulo'] = 'Viajes';
+                $datos['imagen'] = 'montaña.jpg';
+                $datos['titulo'] = 'Montaña';
+                if(isset($_SESSION['idioma']))$datos['titulo'] = 'Mountains';
                 break;
             case 3:
-                $datos['imagen'] = 'vacaciones.jpg';
-                $datos['titulo'] = 'Hoteleria';
+                $datos['imagen'] = 'selva.jpg';
+                $datos['titulo'] = 'Selva';
+                if(isset($_SESSION['idioma']))$datos['titulo'] = 'Jungle';
                 break;
             case 4:
-                $datos['imagen'] = 'vacaciones.jpg';
-                $datos['titulo'] = 'Paquetes';
+                $datos['imagen'] = 'llano.jpg';
+                $datos['titulo'] = 'LLano';
+                if(isset($_SESSION['idioma']))$datos['titulo'] = 'Plains';
+                break;
+            case 5:
+                $datos['imagen'] = 'ciudad.jpg';
+                $datos['titulo'] = 'Ciudad';
+                if(isset($_SESSION['idioma']))$datos['titulo'] = 'City';
+                break;
+            case 6:
+                $datos['imagen'] = 'ciudad.jpg';
+                $datos['titulo'] = 'Paquetes Internacionales';
+                if(isset($_SESSION['idioma']))$datos['titulo'] = 'International Travel';
                 break;
             default:
                 $datos['imagen'] = 'vacaciones.jpg';

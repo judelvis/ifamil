@@ -32,44 +32,45 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
             <div class="span_of_4" style="margin-left: 40px;padding: 20px 0px 30px 8px "><!-- start span_of_4 -->
                 <div class="col-md-2">
                     <div class="span4_of_list">
-                        <img src="<?php echo __IMG__?>images/island.png">
+                        <a href="<?php echo site_url("Principal/paquetes/1");?>"><img src="<?php echo __IMG__?>images/island.png">
 
-                        <h4><?php echo $s; ?></h4>
-
+                        <h4><?php echo $s; ?></h4></a>
                     </div>
                 </div>
                 <div class="col-md-2">
                     <div class="span4_of_list">
-                        <img src="<?php echo __IMG__?>images/peaks.png">
-
+                        <a href="<?php echo site_url("Principal/paquetes/2");?>"><img src="<?php echo __IMG__?>images/peaks.png">
                         <h4><?php echo $m; ?></h4>
-
+                        </a>
                         <br><br>
                     </div>
                 </div>
                 <div class="col-md-2">
                     <div class="span4_of_list"
                     ">
-                    <img src="<?php echo __IMG__?>images/woods2.png">
+                    <a href="<?php echo site_url("Principal/paquetes/3");?>"><img src="<?php echo __IMG__?>images/woods2.png">
 
                     <h4><?php echo $sel; ?></h4>
+                    </a>
                     <br><br>
                 </div>
             </div>
             <div class="col-md-2">
                 <div class="span4_of_list">
-                    <img src="<?php echo __IMG__?>images/horseman2.png">
+                    <a href="<?php echo site_url("Principal/paquetes/4");?>"><img src="<?php echo __IMG__?>images/horseman2.png">
 
                     <h4><?php echo $ll; ?></h4>
+                    </a>
                     <br><br>
 
                 </div>
             </div>
             <div class="col-md-2">
                 <div class="span4_of_list">
-                    <img src="<?php echo __IMG__?>images/urban.png">
+                    <a href="<?php echo site_url("Principal/paquetes/5");?>"><img src="<?php echo __IMG__?>images/urban.png">
 
                     <h4 ><?php echo $c; ?></h4>
+                    </a>
                     <br><br>
 
                 </div>
