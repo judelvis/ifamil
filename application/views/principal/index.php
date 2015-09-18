@@ -181,8 +181,9 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
 					<img src="' . __IMG__ . 'noticia/medio/' . $ls->imagen . '" alt="team 1">
 					<h3>' . $ls->tit . '</h3>
 					<div class="mask">
+					    <h4>'.$ls->res.'</h4>
 						<a href="' . site_url("Principal/verNoticia/$ls->oid") . '">
-						<h2><span >LEER</span></h2>
+						Ver mas
 						</a>
 					</div>
 				</div>
