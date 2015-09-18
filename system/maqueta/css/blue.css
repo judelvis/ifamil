@@ -1565,6 +1565,7 @@ h3.style {
     -webkit-box-shadow: inset 0px -4px 0px #1E4399;
     -moz-box-shadow: inset 0px -4px 0px #1E4399;
     -o-box-shadow: inset 0px -4px 0px #1E4399;
+    margin-bottom: 10px;
 }
 
 .btn:hover {

@@ -290,26 +290,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
             <br>
 
             <div class="cau_hide">
-                <div class="cursual"><!--  start cursual  -->
-                    <h4>Empresas Asociadas<span class="line"></span></h4>
-                </div>
-                <div id="owl-demo2" class="owl-carousel"><!----start-img-cursual---->
-                    <?php
-                    if ($emp != 0) {
-                        $i = 0;
-                        foreach ($emp as $em) {
-                            echo '
-                                <div class="item">
-                                    <div class="cau_left">
-                                        <img class="lazyOwl" data-src="' . __IMG__ . 'empresa/' . $em->imagen . '" alt="' . $em->nombre . '">
-                                    </div>
-                                </div>
-			                ';
-                        }
-                    }
-                    ?>
-                </div>
-                <!----//End-img-cursual---->
+
 
                 <div class="cursual"><!--  start cursual  -->
                     <h4>Otros enlaces<span class="line"></span></h4>
@@ -317,68 +298,24 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
                 <div id="owl-demo" class="owl-carousel"><!----start-img-cursual---->
                     <div class="item">
                         <div class="cau_left">
-                            <img class="lazyOwl" data-src="images/c1.png" alt="Lazy Owl Image">
+                           <a href="http://www.mintur.gob.ve/mintur/" target="_blank>"><img class="lazyOwl" src="<?php echo __IMG__?>images/mintur.png"></a>
                         </div>
                     </div>
                     <div class="item">
                         <div class="cau_left">
-                            <img class="lazyOwl" data-src="images/c2.png" alt="Lazy Owl Image">
+                            <a href="http://www.inatur.gob.ve/" target="_blank"> <img class="lazyOwl" src="<?php echo __IMG__?>images/inatur.png"></a>
                         </div>
                     </div>
                     <div class="item">
                         <div class="cau_left">
-                            <img class="lazyOwl" data-src="images/c3.png" alt="Lazy Owl Image">
+                            <a href="http://www.venetur.gob.ve/" target="_blank"> <img class="lazyOwl" src="<?php echo __IMG__?>images/venetur.png"></a>
                         </div>
                     </div>
                     <div class="item">
                         <div class="cau_left">
-                            <img class="lazyOwl" data-src="images/c1.png" alt="Lazy Owl Image">
+                            <a href="http://cormetur.merida.gob.ve/" target="_blank"> <img class="lazyOwl" src="<?php echo __IMG__?>images/cormetur.png"></a>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="cau_left">
-                            <img class="lazyOwl" data-src="images/c2.png" alt="Lazy Owl Image">
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="cau_left">
-                            <img class="lazyOwl" data-src="images/c3.png" alt="Lazy Owl Image">
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="cau_left">
-                            <img class="lazyOwl" data-src="images/c1.png" alt="Lazy Owl Image">
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="cau_left">
-                            <img class="lazyOwl" data-src="images/c4.png" alt="Lazy Owl Image">
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="cau_left">
-                            <img class="lazyOwl" data-src="images/c1.png" alt="Lazy Owl Image">
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="cau_left">
-                            <img class="lazyOwl" data-src="images/c2.png" alt="Lazy Owl Image">
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="cau_left">
-                            <img class="lazyOwl" data-src="images/c3.png" alt="Lazy Owl Image">
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="cau_left">
-                            <img class="lazyOwl" data-src="images/c1.png" alt="Lazy Owl Image">
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="cau_left">
-                            <img class="lazyOwl" data-src="images/c2.png" alt="Lazy Owl Image">
-                        </div>
                     </div>
                 </div>
                 <!----//End-img-cursual---->
