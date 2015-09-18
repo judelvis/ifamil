@@ -50,11 +50,11 @@ $actual = str_replace("/","-",uri_string());
 $cerrar = site_url("Principal/cerrar").'/'.$actual;
 $idioma = site_url("Principal/idioma").'/'.$actual;
 $subir="Volver Arriba";$home = 'Inicio';$quien='Quienes Somos';$paq = 'Paquetes';$afi = 'Afiliate';$con ='Contactenos';$not = "Noticias";$ser = "Servicios";
-$bandera = '<div style="float: right;"><a class="btn-link" href="'.$idioma.'">
+$bandera = '<div style="float: right;"><a href="'.$idioma.'">
 <img  style="float: left" src="'.__IMG__ .'images/ingles.png" class="img-responsive"></a></div>';
 if(isset($_SESSION['idioma']) && $_SESSION['idioma']=='_i'){
     $subir="Back to Top";$home = 'Home';$quien='Who we are';$paq = 'Packages';$afi = 'Register';$con ='Contact Us';$not = "News";$ser = "Services";
-    $bandera = '<div style="float: right;z-index: 0;"><a class="" href="'.$cerrar.'">
+    $bandera = '<div style="float: right;"><a href="'.$cerrar.'">
     <img  style="float: left" src="'.__IMG__ .'images/vene2.png" class="img-responsive"></a></div>';
 }?>
 <body>

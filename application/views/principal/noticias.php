@@ -1,3 +1,15 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        pagina(1);
+    });
+    function pagina(p){
+        tam = $('#paginador li').size();
+        for(var i=1;i<=tam;i++){
+            $(".pag"+i).hide();
+        }
+        $(".pag"+p).show();
+    }
+</script>
 <div class="main_bg"><!-- start main -->
     <div class="container">
         <div class="main_grid1">
@@ -12,11 +24,22 @@
 </div>
 <div class="main_btm1"><!-- start main_btm -->
     <div class="container">
-        <div class="blog"><!-- start blog -->
+        <div class="blog" id="noti"><!-- start blog -->
             <div class="blog_main col-md-9">
                 <div class="blog_list">
                     <?php
-                    foreach($lst as $ls) {
+                    $i = 0;
+                    $j=1;$band=0;
+                    echo '<div class="row pag'.$j.'">';
+                    foreach ($lst as $ls) {
+                        $i ++;
+                        if($band == __PAG__){
+                            $j++;
+                            $band=1;
+                            echo '</div>';
+                            echo '<div class="row pag'.$j.'">';
+                        }
+                        $band++;
                         echo '
                     <div class="col-md-2 blog_date">
                         <span><h3>Publicado</h3><p>' . $ls->fecha . '</p></span>
@@ -34,7 +57,18 @@
                         </div>
                     </div>
                     <div class="clearfix"></div><br>';
-                    }?>
+                    }
+                    echo '</div>';
+                    $npag = count($lst)/__PAG__;
+                    if(($npag)>1 ){
+                        echo'<nav><ul class="pagination pagination-lg" id="paginador">';
+                        $tam =ceil($npag);
+                        for($i=1;$i<=$tam;$i++){
+                            echo'<li><a href="#noti" onclick="pagina('.$i.')">'.$i.'</a></li>';
+                        }
+                        echo '</ul>	</nav>';
+                    }
+                    ?>
                 </div>
                 <div class="clearfix"></div>
             </div>
