@@ -183,7 +183,9 @@ class Principal extends CI_Controller
         $rs=$this -> Paquete -> listarPaquetes();
         $item = array();
         foreach($rs[0]['rs'] as $fila){
-            $item[$fila->id] = $fila->titulo;
+            $valor = $fila->titulo;
+            if(isset($_SESSION['idioma'])) $valor = $fila->titulo_i;
+            $item[$fila->id] = $valor;
         }
         echo json_encode($item);
     }

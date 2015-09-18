@@ -99,14 +99,14 @@ function buscarDestino(){
 function verificarCat(){
     var cat = $("#categoria").val();
     switch (cat){
-        case '1': $("#divTransporte").toggleClass('hide');$("#tituloPagina").html(" TU TRASNPORTE");
+        case '1': $("#divTransporte").toggleClass('hide');//$("#tituloPagina").html(" TU TRASNPORTE");
             break;
-        case '2': $("#divViajes").toggleClass('hide');$("#tituloPagina").html(" TU VUELO");
+        case '2': $("#divViajes").toggleClass('hide');//$("#tituloPagina").html(" TU VUELO");
             break;
-        case '3': $("#divHotel").toggleClass('hide');$("#tituloPagina").html(" TU HOSPEDAJE");
+        case '3': $("#divHotel").toggleClass('hide');//$("#tituloPagina").html(" TU HOSPEDAJE");
             $("#fechaSalida").attr("placeholder","Fecha De Entrada");$("#fechaLlegada").attr("placeholder","Fecha De salida");
             break;
-        case '4': $("#divPaquete").toggleClass('hide');$("#tituloPagina").html(" TU PAQUETE");
+        case '4': $("#divPaquete").toggleClass('hide');//$("#tituloPagina").html(" TU PAQUETE");
             break;
         default: alert(cat);
     }
