@@ -2131,7 +2131,6 @@ h3.style {
 .back-to-top {
     position: fixed;
     bottom: 6em;
-    right: 0px;
     text-decoration: none;
     color: #000000;
     background-color: rgba(235, 235, 235, 0.80);
