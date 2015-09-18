@@ -72,6 +72,7 @@ $opi = 'Dejanos tu opinión';
 $opi2 = "Tu opinión es importante.";
 $contc = "Contactenos";
 $contc2 = "Hazlo Diferente-Hazlo con Nosotros.";
+$ver="VER MAS";
 if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     $servi = "Services";
     $paq = 'Packages';
@@ -82,7 +83,48 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     $opi2 = "Your opinion is important.<br><br>";
     $contc = "Contact Us";
     $contc2 = "Different do - Do it with us.<br><br>";
+    $ver="VIEW MORE";
 } ?>
+<div class="main_btm"><!-- start main_btm -->
+    <div class="container">
+        <div class="main span_of_3">
+
+            <br>
+
+            <div class="cau_hide">
+
+
+                <div class="cursual"><!--  start cursual  -->
+                    <h4>Otros enlaces<span class="line"></span></h4>
+                </div>
+                <div id="owl-demo" class="owl-carousel"><!----start-img-cursual---->
+                    <div class="item">
+                        <div class="cau_left">
+                            <a href="http://www.mintur.gob.ve/mintur/" target="_blank>"><img class="lazyOwl" src="<?php echo __IMG__?>images/mintur.png"></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="cau_left">
+                            <a href="http://www.inatur.gob.ve/" target="_blank"> <img class="lazyOwl" src="<?php echo __IMG__?>images/inatur.png"></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="cau_left">
+                            <a href="http://www.venetur.gob.ve/" target="_blank"> <img class="lazyOwl" src="<?php echo __IMG__?>images/venetur.png"></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="cau_left">
+                            <a href="http://cormetur.merida.gob.ve/" target="_blank"> <img class="lazyOwl" src="<?php echo __IMG__?>images/cormetur.png"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!----//End-img-cursual---->
+        </div>
+    </div>
+</div>
+</div>
 <div class="main_bg"><!-- start main -->
     <div class="container">
         <div class="main_grid">
@@ -105,7 +147,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
 
                         <div class="read_more">
                             <a class="btn btn-2 active"
-                               href="<?php echo base_url("index.php/Principal/solicitud/4") ?>">Ver mas</a>
+                               href="<?php echo base_url("index.php/Principal/solicitud/4") ?>"><?php echo $ver;?></a>
                         </div>
                     </div>
                 </div>
@@ -119,8 +161,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
                         <p><?php echo $solic2; ?></p>
 
                         <div class="read_more">
-                            <a class="btn btn-2b" href="<?php echo base_url("index.php/Principal/solicitud/2") ?>">Ver
-                                mas</a>
+                            <a class="btn btn-2b" href="<?php echo base_url("index.php/Principal/solicitud/2") ?>"><?php echo $ver;?></a>
                         </div>
                     </div>
                 </div>
@@ -134,8 +175,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
                         <p><?php echo $opi2 ?></p>
 
                         <div class="read_more">
-                            <a class="btn  btn-2b" href="<?php echo base_url("index.php/Principal/opinion") ?>">Ver
-                                mas</a>
+                            <a class="btn  btn-2b" href="<?php echo base_url("index.php/Principal/opinion") ?>"><?php echo $ver;?></a>
                         </div>
                     </div>
                 </div>
@@ -149,8 +189,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
                         <br>
 
                         <div class="read_more">
-                            <a class="btn btn-2b" href="<?php echo base_url("index.php/Principal/contacto") ?>">Ver
-                                mas</a>
+                            <a class="btn btn-2b" href="<?php echo base_url("index.php/Principal/contacto") ?>"><?php echo $ver;?></a>
                         </div>
                     </div>
                 </div>
@@ -284,46 +323,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
 </div>
 
 
-<div class="main_btm"><!-- start main_btm -->
-    <div class="container">
-        <div class="main span_of_3">
 
-            <br>
-
-            <div class="cau_hide">
-
-
-                <div class="cursual"><!--  start cursual  -->
-                    <h4>Otros enlaces<span class="line"></span></h4>
-                </div>
-                <div id="owl-demo" class="owl-carousel"><!----start-img-cursual---->
-                    <div class="item">
-                        <div class="cau_left">
-                           <a href="http://www.mintur.gob.ve/mintur/" target="_blank>"><img class="lazyOwl" src="<?php echo __IMG__?>images/mintur.png"></a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="cau_left">
-                            <a href="http://www.inatur.gob.ve/" target="_blank"> <img class="lazyOwl" src="<?php echo __IMG__?>images/inatur.png"></a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="cau_left">
-                            <a href="http://www.venetur.gob.ve/" target="_blank"> <img class="lazyOwl" src="<?php echo __IMG__?>images/venetur.png"></a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="cau_left">
-                            <a href="http://cormetur.merida.gob.ve/" target="_blank"> <img class="lazyOwl" src="<?php echo __IMG__?>images/cormetur.png"></a>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <!----//End-img-cursual---->
-            </div>
-        </div>
-    </div>
-</div>
 </div>
 </div>
 <script>
