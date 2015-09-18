@@ -48,11 +48,11 @@ class Paquete extends CI_Model {
 	 *
 	 * @return array
 	 */
-	private function listar($categoria, $titulo = NULL, $resumen = NULL, $fecha = NULL) {
+	private function listar($categoria='', $titulo = NULL, $resumen = NULL, $fecha = NULL) {
 		$donde = '';
 		$rs = array ();
 		
-		$lista = 'SELECT * FROM ' . $this->tbl . ' WHERE oidcat=' . $categoria;
+		$lista = 'SELECT * FROM ' . $this->tbl;
 		$resultado = $this->db->query ( $lista );
 		$rs = $resultado->result ();
 		
@@ -69,7 +69,7 @@ class Paquete extends CI_Model {
 	 * @return Ambigous <multitype:, multitype:number string unknown >
 	 */
 	function listarPaquetes() {
-		return $this->listar ( 4 );
+		return $this->listar ( );
 	}
 	function __destruct() {
 	}
