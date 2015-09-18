@@ -1658,7 +1658,7 @@ h3.style {
 
 .contact-form form textarea {
     resize: none;
-    height: 160px;
+    height: 320px;
 }
 
 .contact-form form input[type="text"]:hover, .contact-form form textarea:hover {

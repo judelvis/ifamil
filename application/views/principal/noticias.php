@@ -10,11 +10,18 @@
         $(".pag"+p).show();
     }
 </script>
+<?php
+$t = "Noticias";
+if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
+    $t = "News";
+
+} ?>
+
 <div class="main_bg"><!-- start main -->
     <div class="container">
         <div class="main_grid1">
             <hr class="team_hr team_hr_left hr_gray"/>
-            <center><h1>NOTICIAS</h1></center>
+            <center><h1><?php echo $t; ?></h1></center>
             <hr class="team_hr team_hr_left hr_gray"/>
             <div class="clearfix"></div>
         </div>

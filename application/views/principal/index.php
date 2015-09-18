@@ -73,6 +73,8 @@ $opi2 = "Tu opinión es importante.";
 $contc = "Contactenos";
 $contc2 = "Hazlo Diferente-Hazlo con Nosotros.";
 $ver="VER MAS";
+$n="Noticias";
+$e="Encuentranos";
 if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     $servi = "Services";
     $paq = 'Packages';
@@ -84,6 +86,8 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     $contc = "Contact Us";
     $contc2 = "Different do - Do it with us.<br><br>";
     $ver="VIEW MORE";
+    $n="News";
+    $e="Find us";
 } ?>
 <div class="main_btm"><!-- start main_btm -->
     <div class="container">
@@ -93,10 +97,6 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
 
             <div class="cau_hide">
 
-
-                <div class="cursual"><!--  start cursual  -->
-                    <h4>Otros enlaces<span class="line"></span></h4>
-                </div>
                 <div id="owl-demo" class="owl-carousel"><!----start-img-cursual---->
                     <div class="item">
                         <div class="cau_left">
@@ -204,7 +204,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     <div class="container">
         <div class="title">
             <hr class="team_hr team_hr_left hr_gray"/>
-            <center><h1>Noticias</h1></center>
+            <center><h1><?php echo $n; ?></h1></center>
             <hr class="team_hr team_hr_left hr_gray"/>
         </div>
         <div class="main_grid">
@@ -316,7 +316,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
 <div class="container">
     <div class="title">
         <hr class="team_hr team_hr_left hr_gray"/>
-        <center><h1>Encuentranos</h1></center>
+        <center><h1><?php echo $e; ?></h1></center>
         <hr class="team_hr team_hr_left hr_gray"/>
     </div>
     <center>
