@@ -71,7 +71,7 @@ if(isset($_SESSION['idioma']) && $_SESSION['idioma']=='_i'){
     <div class="col-xs-6 col-sm-4"></div>
     <div class="col-xs-6 col-sm-2">
         <br>
-        <?php echo $bandera;?>
+
     </div>
 </div>
     <div class="header_bg x">
@@ -95,7 +95,9 @@ if(isset($_SESSION['idioma']) && $_SESSION['idioma']=='_i'){
                             <li><a href="<?php echo base_url("index.php/Principal/noticias")?>"><?php echo $not;?></a></li>
                             <li><a href="<?php echo base_url("index.php/Principal/portafolio")?>"><?php echo $ser;?></a></li>
                             <li><a href="<?php echo base_url("index.php/Principal/contacto")?>"><?php echo $con;?></a></li>
+                            <?php echo $bandera;?>
                         </ul>
+
                     </nav>
                     <script src="<?php echo __MAQ__?>js/menu.js" type="text/javascript"></script>
                 </div>
