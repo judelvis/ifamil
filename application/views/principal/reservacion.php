@@ -9,11 +9,11 @@
 $val = array("SELECCIONA TU PLAN","Correo Electronico","Código","Otros","Numero de telefono Celular",
     "Especifique ruta de transporte que desea tomar","Aeropuerto de Salida","Aeropuerto de Llegada",
     "Fecha de Salida","Con Retorno?","Fecha de Retorno","Cantidad de Adultos","Cantidad de Niños",
-    "Escriba cualquier inquietu aqui","Debito","Efectivo","Cheque","Tarjeta de Credito","Transferencia");
+    "Escriba cualquier inquietu aqui","Debito","Efectivo","Cheque","Tarjeta de Credito","Transferencia","Enviar");
 if(isset($_SESSION['idioma'])){
     $val = array("CHOOSE YOUR PLAN","Email","Code","Others","Cellphone number","Specify transport route you want to take",
         "Departure airport","Arrival Airport","Departure date","With return ?","Return Date",
-        "Number of Adults","Number of Children","Type any inquietu here","Debit","Cash","Check","Credit card","Wire transfer");
+        "Number of Adults","Number of Children","Type any inquietu here","Debit","Cash","Check","Credit card","Wire transfer","Send");
 }
 ?>
 <script type="text/javascript" src="<?php echo __JSVIEW__ ?>general/Global.js"></script>
@@ -116,7 +116,7 @@ if(isset($_SESSION['idioma'])){
                 <div class="col-md-6">
                     <select name="cantidadNino" class="input-sm" style="width: 100%" id="cantidadNino"
                             required="required">
-                        <option value="0"><?php echo $val[11];?></option>
+                        <option value="0"><?php echo $val[12];?></option>
                         <?php for ($i = 1; $i <= 15; $i++) {
                             echo "<option value='$i'>$i</option>";
                         }
@@ -127,19 +127,19 @@ if(isset($_SESSION['idioma'])){
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <input type="text" name="detalle" id="detalle" placeholder="<?php echo $val[12];?>">
+                    <input type="text" name="detalle" id="detalle" placeholder="<?php echo $val[13];?>">
                 </div>
                 <div class="col-md-6">
                     <select name="formadePago" class="input-sm" style="width: 100%" id="formadePago">
-                        <option value="0"><?php echo $val[13];?></option>
-                        <option value="1"><?php echo $val[14];?></option>
-                        <option value="2"><?php echo $val[15];?></option>
-                        <option value="3"><?php echo $val[16];?></option>
-                        <option value="4"><?php echo $val[17];?></option>
+                        <option value="0"><?php echo $val[14];?></option>
+                        <option value="1"><?php echo $val[15];?></option>
+                        <option value="2"><?php echo $val[16];?></option>
+                        <option value="3"><?php echo $val[17];?></option>
+                        <option value="4"><?php echo $val[18];?></option>
                     </select>
                 </div>
             </div>
-            <span><input type="submit" value="ENVIAR"></span>
+            <span><input type="submit" value="<?php echo $val[19];?>"></span>
         </form>
     </div>
 </div>
