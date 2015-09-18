@@ -23,7 +23,7 @@
                     <address>
                         <p><b>IFAMIL - Caracas - Sede Principal:</b></p>
                         <p>Av. Los Proceres C.C Los Proceres Nivel 3 </p>
-                        <p>area socialista Urb. Aanta Monica Caracas </p>
+                        <p>area socialista Urb. Santa Monica Caracas </p>
                         <p>Distrito Capital Zona postal 1040.</p>
                         <p>Telefono:(0212) 661 56 16</p>
                         <p>Fax: (0212) 662 41 06</p>

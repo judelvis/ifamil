@@ -4,89 +4,79 @@
  * User: breyner
  * Date: 17/09/15
  * Time: 02:01 PM
- */?>
+ */ ?>
+<?php
+$v = "Viaja por Venezuela";
+$s = 'SOL Y PLAYA';
+$m = 'MONTAÑAS';
+$sel = 'SELVA';
+$ll = 'LLANOS';
+$c = 'CIUDAD';
+if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
+    $v = "TRAVEL BY VENEZUELA";
+    $s = 'SUN AND BEACH';
+    $m = 'MOUNTAINS';
+    $sel = 'JUNGLE';
+    $ll = 'PLAINS';
+    $c = 'CITY';
+
+} ?>
 <div class="main_bg"><!-- start main -->
     <div class="container">
         <div class="main_grid">
             <div class="title">
                 <hr class="team_hr team_hr_left hr_gray"/>
-                <center><h1>Viaje por Venezuela</h1></center>
+                <center><h1><?php echo $v; ?></h1></center>
                 <hr class="team_hr team_hr_left hr_gray"/>
             </div>
-            <div class="span_of_4"><!-- start span_of_4 -->
-                <div class="col-md-3 span1_of_4">
+            <div class="span_of_4" style="margin-left: 40px;padding: 20px 0px 30px 8px "><!-- start span_of_4 -->
+                <div class="col-md-2">
                     <div class="span4_of_list">
-                        <span class="active"><i class="fa fa-thumbs-o-up"></i></span>
+                        <img src="<?php echo __IMG__?>images/island.png">
 
-                        <h3>SOL Y PLAYA</h3>
+                        <h4><?php echo $s; ?></h4>
 
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s</p>
-
-                        <div class="read_more">
-                            <a class="btn btn-2 active" href="single-page.html">view more</a>
-                        </div>
                     </div>
                 </div>
-                <div class="col-md-3 span1_of_4">
+                <div class="col-md-2">
                     <div class="span4_of_list">
-                        <span class="active"><i class="fa fa-lock"></i></span>
+                        <img src="<?php echo __IMG__?>images/peaks.png">
 
-                        <h3>SELVA</h3>
+                        <h4><?php echo $m; ?></h4>
 
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s</p>
-
-                        <div class="read_more">
-                            <a class="btn  btn-2b" href="single-page.html">view more</a>
-                        </div>
+                        <br><br>
                     </div>
                 </div>
-                <div class="col-md-3 span1_of_4">
-                    <div class="span4_of_list">
-                        <span class="active"><i class="fa fa-flag"></i></span>
+                <div class="col-md-2">
+                    <div class="span4_of_list"
+                    ">
+                    <img src="<?php echo __IMG__?>images/woods2.png">
 
-                        <h3>MONSTAÑA</h3>
-
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s</p>
-
-                        <div class="read_more">
-                            <a class="btn btn-2b" href="single-page.html">view more</a>
-                        </div>
-                    </div>
+                    <h4><?php echo $sel; ?></h4>
+                    <br><br>
                 </div>
-                <div class="col-md-3 span1_of_4">
-                    <div class="span4_of_list">
-                        <span class="active"><i class="fa fa-flask"></i></span>
-
-                        <h3>LLANOS</h3>
-
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s</p>
-
-                        <div class="read_more">
-                            <a class="btn btn-2b" href="single-page.html">view more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 span1_of_8" style="margin-left: 20px">
-                    <div class="span4_of_list">
-                        <span class="active"><i class="fa fa-flask"></i></span>
-
-                        <h3>CIUDAD</h3>
-
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s</p>
-
-                        <div class="read_more">
-                            <a class="btn btn-2b" href="single-page.html">view more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="clearfix"></div>
             </div>
-            <!-- end span_of_4 -->
+            <div class="col-md-2">
+                <div class="span4_of_list">
+                    <img src="<?php echo __IMG__?>images/horseman2.png">
+
+                    <h4><?php echo $ll; ?></h4>
+                    <br><br>
+
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="span4_of_list">
+                    <img src="<?php echo __IMG__?>images/urban.png">
+
+                    <h4 ><?php echo $c; ?></h4>
+                    <br><br>
+
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
         </div>
     </div>
 </div>
+
