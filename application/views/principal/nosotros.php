@@ -23,7 +23,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     $np = 'Provide the best service when it comes to tourist and business travel is concerned, in order to meet the needs of our customer .';
     $m = 'Mission';
     $mp = 'Providing quality products and services in travel and tourism , to enjoy national and international level to our members and customers in general , providing counseling , care and timely response in order to achieve sustained growth in sales and satisfaction.';
-    $v = 'View';
+    $v = 'Vision';
     $vp = 'Being a marketer of tourism services and products in continuous growth, recognized nationally and internationally for its excellent quality , reliability and satisfaction , generating sustained profitability , inspired by the social engagement.';
 
 } ?>

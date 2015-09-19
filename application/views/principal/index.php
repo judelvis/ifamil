@@ -75,6 +75,7 @@ $contc2 = "Hazlo Diferente-Hazlo con Nosotros.";
 $ver="VER MAS";
 $n="Noticias";
 $e="Encuentranos";
+$l='Leer';
 if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     $servi = "Services";
     $paq = 'Packages';
@@ -88,6 +89,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     $ver="VIEW MORE";
     $n="News";
     $e="Find us";
+    $l='Read';
 } ?>
 <div class="main_btm"><!-- start main_btm -->
     <div class="container">
@@ -223,7 +225,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
 					    <ul class="social">
                         <li>
                             <a href="' . site_url("Principal/verNoticia/$ls->oid") . '">
-                                <span >LEER</span>
+                              '   .$l.'
                             </a>
                         </li>
                     </ul>
@@ -316,7 +318,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
 <div class="container">
     <div class="title">
         <hr class="team_hr team_hr_left hr_gray"/>
-        <center><h1><?php echo $e; ?></h1></center>
+        <center><h1>?php echo $; ?></h1></center>
         <hr class="team_hr team_hr_left hr_gray"/>
     </div>
     <center>
