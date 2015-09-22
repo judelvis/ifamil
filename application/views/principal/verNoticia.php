@@ -13,6 +13,13 @@
         js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.4";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
+<?php
+$r = "Resumen";
+
+if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
+    $r = "Summary";
+
+} ?>
 <div class="main_bg"><!-- start main -->
     <div class="container">
         <div class="main_grid1">
@@ -36,7 +43,7 @@
                                          class="img-responsive"/></a>
                     </div>
                     <div class="col-md-4 blog_left">
-                        <h4>Resumen</h4>
+                        <h4><?php echo $r;?></h4>
 
                         <p class="para"><?php echo $lst[0]->res; ?></p>
                         <div class="fb-like" data-layout="button_count"></div>

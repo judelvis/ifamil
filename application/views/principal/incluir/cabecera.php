@@ -71,7 +71,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     $con = 'Contact Us';
     $not = "News";
     $ser = "Services";
-    $v="Venezuela travels";
+    $v="Travel by Venezuela";
     $i="International travel";
     $bandera = '<div style="float: right;"><a href="' . $cerrar . '">
     <img  style="float: left" src="' . __IMG__ . 'images/vene2.png" class="img-responsive"></a></div>';

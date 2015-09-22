@@ -81,7 +81,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     $paq = 'Packages';
     $solic = 'Make your application package now.';
     $reser = 'Reservation';
-    $solic2 = 'Make your application package now.';
+    $solic2 = "Make your application package now.<br>";
     $opi = 'Leave Feedback';
     $opi2 = "Your opinion is important.<br><br>";
     $contc = "Contact Us";
@@ -102,7 +102,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
                 <div id="owl-demo" class="owl-carousel"><!----start-img-cursual---->
                     <div class="item">
                         <div class="cau_left">
-                            <a href="http://www.mintur.gob.ve/mintur/" target="_blank>"><img class="lazyOwl" src="<?php echo __IMG__?>images/mintur.png"></a>
+                            <a href="http://www.mintur.gob.ve/mintur/" target="_blank>"><img class="lazyOwl" src="<?php echo __IMG__?>images/mintur1.png"></a>
                         </div>
                     </div>
                     <div class="item">
@@ -318,7 +318,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
 <div class="container">
     <div class="title">
         <hr class="team_hr team_hr_left hr_gray"/>
-        <center><h1>?php echo $; ?></h1></center>
+        <center><h1><?php echo $e; ?></h1></center>
         <hr class="team_hr team_hr_left hr_gray"/>
     </div>
     <center>

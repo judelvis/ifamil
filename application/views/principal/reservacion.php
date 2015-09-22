@@ -11,7 +11,7 @@ $val = array("SELECCIONA TU PLAN","Correo Electronico","Código","Otros","Numero
     "Fecha de Salida","Con Retorno?","Fecha de Retorno","Cantidad de Adultos","Cantidad de Niños",
     "Escriba cualquier inquietu aqui","Debito","Efectivo","Cheque","Tarjeta de Credito","Transferencia","Enviar");
 if(isset($_SESSION['idioma'])){
-    $val = array("CHOOSE YOUR PLAN","Email","Code","Others","Cellphone number","Specify transport route you want to take",
+    $val = array("CHOOSE YOUR PLAN","Email","City code","Others","Cellphone number","Specify transport route you want to take",
         "Departure airport","Arrival Airport","Departure date","With return ?","Return Date",
         "Number of Adults","Number of Children","Type any inquietu here","Debit","Cash","Check","Credit card","Wire transfer","Send");
 }

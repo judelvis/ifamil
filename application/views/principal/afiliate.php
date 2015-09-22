@@ -22,6 +22,7 @@ $s2='Militar retirado';
 $s3='Particular';
 $s4='Empresa';
 $e='ENVIAR';
+$o="Otros";
 if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     $t = "Register now";
     $c = 'DNI';
@@ -36,6 +37,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     $s3='Particular';
     $s4='Company';
     $e='SUBMIT';
+    $o="Others";
 
 } ?>
 <div class="contact-form">
@@ -62,7 +64,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
                         <option value="0416">0416</option><option value="0426">0426</option>
                         <option value="0414">0414</option><option value="0424">0424</option>
                         <option value="0412">0412</option>
-                        <option value="otros">Otros</option>
+                        <option value="otros"><?php echo $o; ?></option>
                     </select>
                 </div>
                 <div class="col-md-4">

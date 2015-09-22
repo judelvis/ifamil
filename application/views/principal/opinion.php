@@ -14,6 +14,7 @@ $co = 'Codigo';
 $p = 'Número de telefono celular o habitación';
 $m = 'Tú opinión es importante...';
 $s = 'ENVIAR';
+$o="Otros";
 if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     $t = "YOUR OPINION IS IMPORTANT";
     $c = 'DNI';
@@ -23,6 +24,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     $p = 'Cell phone number or room';
     $m = 'Your opinion is important...';
     $s = 'SUBMIT';
+    $o="Others";
 
 } ?>
 <script type="text/javascript" src="<?php echo __JSVIEW__ ?>general/Global.js"></script>
@@ -50,7 +52,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
                         <option value="0416">0416</option><option value="0426">0426</option>
                         <option value="0414">0414</option><option value="0424">0424</option>
                         <option value="0412">0412</option>
-                        <option value="otros">Otros</option>
+                        <option value="otros"><?php echo $o; ?></option>
                     </select>
                 </div>
                 <div class="col-md-4">

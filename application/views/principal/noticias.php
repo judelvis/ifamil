@@ -12,8 +12,14 @@
 </script>
 <?php
 $t = "Noticias";
+$p="Publicado";
+$l = 'LEER MAS';
+
 if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     $t = "News";
+    $p = "Published";
+    $l = 'READ MORE';
+
 
 } ?>
 
@@ -49,7 +55,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
                         $band++;
                         echo '
                     <div class="col-md-2 blog_date">
-                        <span><h3>Publicado</h3><p>' . $ls->fecha . '</p></span>
+                        <span><h3> '   .$p.'</h3><p>' . $ls->fecha . '</p></span>
                         <span class="icon_date"><i class="fa fa-list-alt"></i> </span>
                     </div>
                     <div class="col-md-10 blog_left">
@@ -59,7 +65,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
                         <p class="para">'.$ls->res.'</p>
                         <div class="read_btn">
                             <a href="'.site_url("Principal/verNoticia/".$ls->oid).'">
-                                <button class="btn">leer mas</button>
+                                <button class="btn"> '   .$l.'</button>
                             </a>
                         </div>
                     </div>

@@ -25,6 +25,7 @@ $co ='Código';
 $t = 'Número de telefono celular o habitación';
 $m = 'Mensaje...';
 $en='ENVIAR';
+$o="Otros";
 if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     $t1 = "Contact us";
     $d = 'Address:';
@@ -46,10 +47,11 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     $c = 'Contact';
     $n = 'Name and surname';
     $e = 'Email';
-    $co ='Code';
+    $co ='City code';
     $t = 'Cell phone number or room';
     $m = 'Message...';
     $en='SUBMIT';
+    $o="Others";
 } ?>
 <div class="main_bg"><!-- start main -->
     <div class="container">
@@ -103,7 +105,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
                                     <option value="0416">0416</option><option value="0426">0426</option>
                                     <option value="0414">0414</option><option value="0424">0424</option>
                                     <option value="0412">0412</option>
-                                    <option value="otros">Otros</option>
+                                    <option value="otros"><?php echo $o;?></option>
                                 </select>
                             </div>
                             <div class="col-md-9">

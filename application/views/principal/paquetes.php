@@ -79,6 +79,17 @@
         $(".pag"+p).show();
     }
 </script>
+<?php
+$publi = "Publicado";
+$l = 'LEER MAS';
+$r = 'Realizar solicitud';
+$p = 'No esxisten publicaciones.';
+if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
+    $p = "Published";
+    $l = 'READ MORE';
+    $r = 'Make request';
+    $p='There are no publications.';
+} ?>
 <div class="main_bg"><!-- start main -->
     <img src="<?php echo __IMG__ ?>images/<?php echo $imagen ?>" style="width: 100%">
 
@@ -97,7 +108,7 @@
             <div id="portfoliolist">
                 <?php
                 if ($lst == 0) {
-                    echo "No existen publicaciones.";
+                    echo $p;
                 } else {
                     $i = 0;
                     $j=1;$band=0;
@@ -113,7 +124,7 @@
                         $band++;
                         echo '
                     <div class="col-md-2 blog_date">
-                        <span><h3>Publicado</h3><p>' . $ls->fecha . '</p></span>
+                        <span><h3> '   .$p.'</h3><p>' . $ls->fecha . '</p></span>
                         <span class="icon_date"><i class="fa fa-suitcase"></i> </span>
                     </div>
                     <div class="col-md-10 blog_left">
@@ -125,10 +136,10 @@
 
                         <div class="read_btn">
                             <a href="'.site_url("Principal/paratodos/".$ls->id).'">
-                                <button class="btn">leer mas</button>
+                                <button class="btn">'   .$l.'</button>
                             </a>
                             <a href="'.site_url("Principal/solicitud/4/".$ls->id).'">
-                                <button class="btn">Realiza tu solicitud</button>
+                                <button class="btn">'   .$r.'</button>
                             </a>
                         </div>
                     </div>
