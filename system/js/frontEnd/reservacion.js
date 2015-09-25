@@ -81,7 +81,6 @@ function listaPaquetes(){
             $.each(data, function(item, valor) {
                 $("#paquete").append(new Option(valor,item));
             });
-            $("#paquete").append(new Option("Seleccione Paquete", "0"));
             var paq = $("#vaPaquete").val();
             //alert(paq);
             if(paq != ''){
@@ -101,12 +100,16 @@ function verificarCat(){
     switch (cat){
         case '1': $("#divTransporte").toggleClass('hide');//$("#tituloPagina").html(" TU TRASNPORTE");
             break;
-        case '2': $("#divViajes").toggleClass('hide');//$("#tituloPagina").html(" TU VUELO");
+        case '2':
+
+            $("#divViajes").toggleClass('hide');//$("#tituloPagina").html(" TU VUELO");
             break;
         case '3': $("#divHotel").toggleClass('hide');//$("#tituloPagina").html(" TU HOSPEDAJE");
             $("#fechaSalida").attr("placeholder","Fecha De Entrada");$("#fechaLlegada").attr("placeholder","Fecha De salida");
             break;
-        case '4': $("#divPaquete").toggleClass('hide');//$("#tituloPagina").html(" TU PAQUETE");
+        case '4':
+
+            $("#divPaquete").toggleClass('hide');//$("#tituloPagina").html(" TU PAQUETE");
             break;
         default: alert(cat);
     }

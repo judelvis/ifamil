@@ -9,11 +9,11 @@
 $val = array("SELECCIONA TU PLAN","Correo Electronico","Código","Otros","Numero de telefono Celular",
     "Especifique ruta de transporte que desea tomar","Aeropuerto de Salida","Aeropuerto de Llegada",
     "Fecha de Salida","Con Retorno?","Fecha de Retorno","Cantidad de Adultos","Cantidad de Niños",
-    "Escriba cualquier inquietu aqui","Debito","Efectivo","Cheque","Tarjeta de Credito","Transferencia","Enviar");
+    "Escriba cualquier inquietu aqui","Debito","Efectivo","Cheque","Tarjeta de Credito","Transferencia","Enviar","Forma de pago","Nombre y apellido");
 if(isset($_SESSION['idioma'])){
     $val = array("CHOOSE YOUR PLAN","Email","City code","Others","Cellphone number","Specify transport route you want to take",
         "Departure airport","Arrival Airport","Departure date","With return ?","Return Date",
-        "Number of Adults","Number of Children","Type any inquietu here","Debit","Cash","Check","Credit card","Wire transfer","Send");
+        "Number of Adults","Number of Children","Type any inquietu here","Debit","Cash","Check","Credit card","Wire transfer","Send","Way to pay","Name and surname");
 }
 ?>
 <script type="text/javascript" src="<?php echo __JSVIEW__ ?>general/Global.js"></script>
@@ -31,12 +31,15 @@ if(isset($_SESSION['idioma'])){
             <input type="hidden" name="categoria" id="categoria" value="<?php echo $tipo; ?>">
 
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-3">
+                    <input type="text" name="nombre" id="nombre" placeholder="<?php echo $val[21];?>" required="required">
+                </div>
+                <div class="col-md-3">
                     <input type="email" name="correo" id="correo" placeholder="<?php echo $val[1];?>" required="required">
                 </div>
                 <div class="col-md-2">
-                    <select id="codTel" name="codTel" style="width: 100%;" class="input-sm" onchange="verificarCodigo()">
-                        <option value="0"><?php echo $val[2];?></option>
+                    <select required id="codTel" name="codTel" style="width: 100%;" class="input-sm" onchange="verificarCodigo()">
+                        <option value=""><?php echo $val[2];?></option>
                         <option value="0416">0416</option>
                         <option value="0426">0426</option>
                         <option value="0414">0414</option>
@@ -86,7 +89,7 @@ if(isset($_SESSION['idioma'])){
             </div>
             <div class="row">
                 <div class="col-md-5">
-                    <input type="text" name="fechaSalida" id="fechaSalida" placeholder="<?php echo $val[8];?>">
+                    <input type="text" required="required" name="fechaSalida" id="fechaSalida" placeholder="<?php echo $val[8];?>">
                 </div>
                 <div class="col-md-1">
                     <div class="checkbox">
@@ -96,16 +99,16 @@ if(isset($_SESSION['idioma'])){
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <input type="text" name="fechaLlegada" id="fechaLlegada" placeholder="<?php echo $val[10];?>"
+                    <input type="text" required name="fechaLlegada" id="fechaLlegada" placeholder="<?php echo $val[10];?>"
                            disabled="disabled">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <select name="cantidadAdulto" class="input-sm" style="width: 100%" id="cantidadAdulto"
+                    <select required name="cantidadAdulto" class="input-sm" style="width: 100%" id="cantidadAdulto"
                             required="required">
-                        <option value="0"><?php echo $val[11];?></option>
-                        <?php for ($i = 1; $i <= 15; $i++) {
+                        <option value=""><?php echo $val[11];?></option>
+                        <?php for ($i = 0; $i <= 15; $i++) {
                             echo "<option value='$i'>$i</option>";
                         }
 
@@ -114,10 +117,10 @@ if(isset($_SESSION['idioma'])){
                 </div>
 
                 <div class="col-md-6">
-                    <select name="cantidadNino" class="input-sm" style="width: 100%" id="cantidadNino"
-                            required="required">
-                        <option value="0"><?php echo $val[12];?></option>
-                        <?php for ($i = 1; $i <= 15; $i++) {
+                    <select required name="cantidadNino" class="input-sm" style="width: 100%" id="cantidadNino"
+                            >
+                        <option value=""><?php echo $val[12];?></option>
+                        <?php for ($i = 0; $i <= 15; $i++) {
                             echo "<option value='$i'>$i</option>";
                         }
 
@@ -130,7 +133,8 @@ if(isset($_SESSION['idioma'])){
                     <input type="text" name="detalle" id="detalle" placeholder="<?php echo $val[13];?>">
                 </div>
                 <div class="col-md-6">
-                    <select name="formadePago" class="input-sm" style="width: 100%" id="formadePago">
+                    <select required name="formadePago" class="input-sm" style="width: 100%" id="formadePago">
+                        <option value=""><?php echo $val[20];?></option>
                         <option value="0"><?php echo $val[14];?></option>
                         <option value="1"><?php echo $val[15];?></option>
                         <option value="2"><?php echo $val[16];?></option>

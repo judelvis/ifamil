@@ -2079,6 +2079,7 @@ h3.style {
 .thumbnail .mask a{
     color:#f0f0f0;
     font-size: 30px;
+    margin-left: -50px;
 }
 .thumbnail .mask {
     opacity:0.85;

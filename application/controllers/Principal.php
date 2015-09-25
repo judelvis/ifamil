@@ -202,15 +202,23 @@ class Principal extends CI_Controller
     }
 
     function enviarContacto(){
+        $r='Se registro con exito';
+        if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i'){
+            $r='I was registered successfully';
+        }
         $this ->load->database();
         $this ->db->insert("t_contactos",$_POST);
-        echo "Se registro con exito";
+        echo $r;
     }
 
     function enviarOpinion(){
+        $r='Se registro con exito';
+        if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i'){
+            $r='I was registered successfully';
+        }
         $this ->load->database();
         $this ->db->insert("t_opinion",$_POST);
-        echo "Se registro con exito";
+        echo $r;
     }
 
 

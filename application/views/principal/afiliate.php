@@ -59,8 +59,8 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
                     <input type="email" name="correo" id="correo" placeholder="<?php echo $co; ?>" required="required">
                 </div>
                 <div class="col-md-2">
-                    <select id="codTel" name="codTel"style="width: 100%;" class="input-sm" onchange="verificarCodigo()">
-                        <option value="0"><?php echo $cod; ?></option>
+                    <select required id="codTel" name="codTel"style="width: 100%;" class="input-sm" onchange="verificarCodigo()" >
+                        <option value=""><?php echo $cod; ?></option>
                         <option value="0416">0416</option><option value="0426">0426</option>
                         <option value="0414">0414</option><option value="0424">0424</option>
                         <option value="0412">0412</option>
@@ -71,14 +71,14 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
                     <input style="width: 100%;" type="text" name="telefono" id="telefono" placeholder="<?php echo $tlf; ?>" maxlength="7" required="required" onkeypress="return soloNumeros(event);">
                 </div>
                 <div class="col-md-6">
-                    <input type="text" id="fechaNacimiento" name="fechaNacimiento" placeholder="<?php echo $f; ?>">
+                    <input type="text" id="fechaNacimiento" name="fechaNacimiento" required="required" placeholder="<?php echo $f; ?>">
                 </div>
                 <div class="col-md-6">
                     <input type="text" name="faceBook" placeholder="FaceBook">
                 </div>
                 <div class="col-md-12">
-                    <select id="profesion" name="profesion" style="width: 100%;" class="input-sm">
-                        <option value="0"><?php echo $s; ?></option>
+                    <select required id="profesion" name="profesion" style="width: 100%;" class="input-sm">
+                        <option value=""><?php echo $s; ?></option>
                         <option value="A"><?php echo $s1; ?></option>
                         <option value="J"><?php echo $s2; ?></option>
                         <option value="P"><?php echo $s3; ?></option>

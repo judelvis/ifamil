@@ -8,6 +8,7 @@ class Solicitud extends CI_Model {
 	 */
 	private $tbl = 't_solicitud';
 	public $identificador = "NULL";
+	public $nombre = '';
 	public $correo = '';
 	public $origen = '';
 	public $destino = '';
@@ -72,6 +73,7 @@ class Solicitud extends CI_Model {
 		$data = array ( //
 				'oid' => $this->identificador, //
 				'cor' => $this->correo, //
+				'nom'=> $this->nombre,
 				'ori' => $this->origen,
 				'des' => $this->destino,
 				'fes' => $this->fechaSalida,
@@ -122,6 +124,7 @@ class Solicitud extends CI_Model {
 			foreach ( $rs->result () as $clv => $val ) {
 				$this->identificador = $val->oid;
 				$this->correo = $val->cor; //
+				$this->nombre = $val->nom;
 				$this->origen = $val->ori;
 				$this->destino = $val->des;
 				$this->fechaSalida = $val->fes;

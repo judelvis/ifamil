@@ -100,8 +100,8 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
                             <input type="email" name="correo" id="correo" placeholder="<?php echo $e; ?>" required="required">
                             <div class="row">
                             <div class="col-md-3">
-                                <select id="codTel" name="codTel"style="width: 100%;" class="input-sm" onchange="verificarCodigo()">
-                                    <option value="0"><?php echo $co; ?></option>
+                                <select required id="codTel" name="codTel"style="width: 100%;" class="input-sm" onchange="verificarCodigo()" >
+                                    <option value=""><?php echo $co; ?></option>
                                     <option value="0416">0416</option><option value="0426">0426</option>
                                     <option value="0414">0414</option><option value="0424">0424</option>
                                     <option value="0412">0412</option>

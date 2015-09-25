@@ -32,6 +32,10 @@ class Principal extends CI_Controller {
 
 	function registrarAfiliado(){
 		if(isset($_POST["cedula"])) {
+			$e='Su proceso ha sido exitoso';
+			if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i'){
+				$e='His trial has been successful';
+			}
 			$this->load->model("reserva/Afiliado", "Afiliado");
 			$this->Afiliado->cedula = $_POST["cedula"];
 			$this->Afiliado->nombre = $_POST["nombre"];
@@ -41,7 +45,7 @@ class Principal extends CI_Controller {
 			$this->Afiliado->faceBook = $_POST["faceBook"];
 			$this->Afiliado->profesion = $_POST["profesion"];
 			$this->Afiliado->salvar();
-			echo "Su proceso ha sido exitoso.";
+			echo $e;
 		}
 		else{
 			echo "Esta intentando acceder a una area restringida.";
@@ -49,9 +53,14 @@ class Principal extends CI_Controller {
 	}
 	
 	function registrarSolicitud(){
+		$e='Su proceso ha sido exitoso';
+		if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i'){
+			$e='His trial has been successful';
+		}
 		$this->load->model("reserva/Solicitud", "Solicitud");
 		if(isset($_POST["correo"])) {
 			$this->Solicitud->correo = $_POST["correo"];
+			$this->Solicitud->nombre = $_POST["nombre"];
 			$this->Solicitud->origen = $_POST["origen"];
 			$this->Solicitud->destino = $_POST["destino"];
 			$this->Solicitud->fechaSalida = $_POST["fechaSalida"];
@@ -65,7 +74,7 @@ class Principal extends CI_Controller {
 			$this->Solicitud->transporte = $_POST["transporte"];
 			$this->Solicitud->paquete = $_POST["paquete"];
 			$this->Solicitud->salvar();
-			echo "Su proceso ha sido exitoso.";
+			echo $e;
 		}
 		else{
 			echo "Esta intentando acceder a una area privada.";
