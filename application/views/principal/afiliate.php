@@ -25,11 +25,11 @@ $e='ENVIAR';
 $o="Otros";
 if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     $t = "Register now";
-    $c = 'DNI';
+    $c = 'ID';
     $n = 'Full name';
     $co = 'Email';
     $cod = 'City Code';
-    $tlf = 'Cell Phone or number Phone home';
+    $tlf = 'Cell Phone';
     $f ='Birthdate';
     $s='Select your status';
     $s1='Active military';

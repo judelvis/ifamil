@@ -65,9 +65,9 @@ $bandera = '<div style="float: right;"><a href="' . $idioma . '">
 if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     $subir = "Back to Top";
     $home = 'Home';
-    $quien = 'Who we are';
+    $quien = 'Company';
     $paq = 'Packages';
-    $afi = 'Register';
+    $afi = 'Sign Us';
     $con = 'Contact Us';
     $not = "News";
     $ser = "Services";

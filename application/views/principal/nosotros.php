@@ -17,14 +17,14 @@ $v = 'Visión';
 $vp = 'Ser una empresa comercializadora de servicios y productos turísticos en continuo crecimiento, reconocida a nivel nacional e internacional por su excelente calidad, confiabilidad y alta satisfacción, generando una rentabilidad sostenida, inspirada en el compromiso social.';
 if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     $t = "Welcome to IFAMIL";
-    $q = 'Who we are?';
-    $qp = 'Travel and Tourism Ifamil C.A. It is a subsidiary of the Social Welfare Institute of the National Armed Forces ( IPSFA ), established in February 1980 with the aim of providing a quality service , not only to the armed forces , but also the government , private organizations and general public.';
-    $n = 'Our commitment';
-    $np = 'Provide the best service when it comes to tourist and business travel is concerned, in order to meet the needs of our customer .';
+    $q = 'Us';
+    $qp = 'Travel and Tourism Ifamil C.A. It is a subsidiary of the Social Welfare Institute of the National Armed Forces ( IPSFA ), established in February 1980 with the objective of promote a quality service, not only to the armed forces , but also the government , and public in general.';
+    $n = 'Commitment';
+    $np = 'Provide the best service in tourist travel, accommodation and entertainment in order to meet the needs of our customers.';
     $m = 'Mission';
-    $mp = 'Providing quality products and services in travel and tourism , to enjoy national and international level to our members and customers in general , providing counseling , care and timely response in order to achieve sustained growth in sales and satisfaction.';
+    $mp = 'Offers quality services and products in travel and tourism , for the enjoyment of our customers national and international travel and customers in general , providing counseling , attention and immediate response with the purpose to achieve sustained growth in sales and satisfaction.';
     $v = 'Vision';
-    $vp = 'Being a marketer of tourism services and products in continuous growth, recognized nationally and internationally for its excellent quality , reliability and satisfaction , generating sustained profitability , inspired by the social engagement.';
+    $vp = 'Be a company of tourism services and products in continuous growth, be known for national and international peoples for its excellent quality , reliability and satisfaction , inspired by the social engagement.';
 
 } ?>
 <div class="main_bg"><!-- start main -->

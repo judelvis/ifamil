@@ -45,7 +45,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     $d14 ='Town: Iribarren Parish: Santa Rosa';
     $d15 ='Follow:';
     $c = 'Contact';
-    $n = 'Name and surname';
+    $n = 'Full name';
     $e = 'Email';
     $co ='City code';
     $t = 'Cell phone number or room';
