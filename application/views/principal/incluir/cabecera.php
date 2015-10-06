@@ -24,6 +24,20 @@
     <script type="text/javascript" src="<?php echo __JSVIEW__; ?>jquery/jquery-ui-1.10.4.custom.js"></script>
     <script type="text/javascript" src="<?php echo __MAQ__ ?>js/bootstrap.min.js"></script>
 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        jQuery.noConflict();
+        jQuery(function (){
+            jQuery(".slide_likebox").click(function(){
+                jQuery(".slide_likebox").animate({right:"0"},"medium");
+            },function(){
+                jQuery(".slide_likebox").animate({right:"-250"},"medium");
+            },500);
+            return false;
+        });
+    </script>
+
     <script>
         jQuery(function () {
             var offset = 220;
@@ -58,8 +72,8 @@ $afi = 'Afiliate';
 $con = 'Contactenos';
 $not = "Noticias";
 $ser = "Servicios";
-$v="Viaja por Venezuela";
-$i="Viajes Internacionales";
+$v = "Viaja por Venezuela";
+$i = "Viajes Internacionales";
 $bandera = '<div style="float: right;"><a href="' . $idioma . '">
 <img  style="float: left" src="' . __IMG__ . 'images/ingles.png" class="img-responsive"></a></div>';
 if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
@@ -71,8 +85,8 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     $con = 'Contact Us';
     $not = "News";
     $ser = "Services";
-    $v="Travel by Venezuela";
-    $i="International travel";
+    $v = "Travel by Venezuela";
+    $i = "International travel";
     $bandera = '<div style="float: right;"><a href="' . $cerrar . '">
     <img  style="float: left" src="' . __IMG__ . 'images/vene2.png" class="img-responsive"></a></div>';
 } ?>
@@ -81,6 +95,15 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     <div class="row">
         <a href="#" class="back-to-top"><?php echo $subir; ?></a>
 
+        <div class="slide_likebox">
+            <div style="color: rgb(255, 255, 255); padding: 8px 5px 0pt 50px;"><span><div class='likeboxwrap'>
+                        <iframe
+                            src="https://www.facebook.com/profile.php?id=100008649614216;width=240&amp;colorscheme=light&amp;connections=15&amp;stream=false&amp;header=false&amp;height=350"
+                            scrolling="no" frameborder="0"
+                            style="border:none; overflow:hidden; width:240px; height:320px;"
+                            allowtransparency="true"></iframe>
+                    </div></span></div>
+        </div>
         <div class="row3">
             <div class="col-xs-6 col-sm-3">
                 <img src="<?php echo __IMG__ ?>images/logo12.png" class="img-responsive">
@@ -111,8 +134,12 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
                                 <li>
                                     <a href="#"><?php echo $paq; ?></a>
                                     <ul class="sub-menu list-unstyled">
-                                        <li><a href="<?php echo base_url("index.php/Principal/viajeV") ?>"><?php echo $v; ?></a></li>
-                                        <li><a href="<?php echo base_url("index.php/Principal/paquetes/6") ?>"><?php echo $i; ?></a></li>
+                                        <li>
+                                            <a href="<?php echo base_url("index.php/Principal/viajeV") ?>"><?php echo $v; ?></a>
+                                        </li>
+                                        <li>
+                                            <a href="<?php echo base_url("index.php/Principal/paquetes/6") ?>"><?php echo $i; ?></a>
+                                        </li>
 
                                     </ul>
                                 </li>
