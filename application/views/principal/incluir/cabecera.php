@@ -24,20 +24,6 @@
     <script type="text/javascript" src="<?php echo __JSVIEW__; ?>jquery/jquery-ui-1.10.4.custom.js"></script>
     <script type="text/javascript" src="<?php echo __MAQ__ ?>js/bootstrap.min.js"></script>
 
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-
-    <script type="text/javascript">
-        jQuery.noConflict();
-        jQuery(function (){
-            jQuery(".slide_likebox").click(function(){
-                jQuery(".slide_likebox").animate({right:"0"},"medium");
-            },function(){
-                jQuery(".slide_likebox").animate({right:"-250"},"medium");
-            },500);
-            return false;
-        });
-    </script>
-
     <script>
         jQuery(function () {
             var offset = 220;
@@ -56,9 +42,18 @@
                 return false;
             })
 
+            jQuery(function (){
+                jQuery(".slide_likebox").hover(function(){
+                    jQuery(".slide_likebox").stop(true, false).animate({right:"0"},"medium");
+                },function(){
+                    jQuery(".slide_likebox").stop(true, false).animate({right:"-250"},"medium");
+                },500);
+                return false;
+            })
+
         });
     </script>
-    <!-- Owl Carousel Assets -->
+
 </head>
 <?php
 $actual = str_replace("/", "-", uri_string());
@@ -98,9 +93,9 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
         <div class="slide_likebox">
             <div style="color: rgb(255, 255, 255); padding: 8px 5px 0pt 50px;"><span><div class='likeboxwrap'>
                         <iframe
-                            src="https://www.facebook.com/profile.php?id=100008649614216;width=240&amp;colorscheme=light&amp;connections=15&amp;stream=false&amp;header=false&amp;height=350"
-                            scrolling="no" frameborder="0"
-                            style="border:none; overflow:hidden; width:240px; height:320px;"
+                            src='http://www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/ifamil%2F&width=240&colorscheme=light&connections=15&show_facepile=false&stream=true&height=320' style='border:none; overflow:hidden; width:240px; height:325px;'
+                            frameborder="0"
+                            style="border:none; overflow:hidden; width:380px; height:320px;"
                             allowtransparency="true"></iframe>
                     </div></span></div>
         </div>

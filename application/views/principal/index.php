@@ -5,7 +5,7 @@
 <!--[if IE]>
 <script src="<?php echo __MAQ__?>js/excanvas.compiled.js" type="text/javascript"></script><![endif]-->
 <!-- must have -->
-
+<script type="text/javascript" src="<?php echo __JSVIEW__ ?>general/Global.js"></script>
 
 <script>
     jQuery(function () {
