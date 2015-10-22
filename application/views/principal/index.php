@@ -5,7 +5,7 @@
 <!--[if IE]>
 <script src="<?php echo __MAQ__?>js/excanvas.compiled.js" type="text/javascript"></script><![endif]-->
 <!-- must have -->
-<script type="text/javascript" src="<?php echo __JSVIEW__ ?>general/Global.js"></script>
+
 
 <script>
     jQuery(function () {
@@ -65,13 +65,13 @@
 <?php
 $servi = "Servicios";
 $paq = 'Paquetes';
-$solic = 'Realiza tu solicitud de paquetes ahora.';
+$solic = '<br><br>Realiza tu solicitud de paquetes ahora.<br><br><br><br>';
 $reser = 'Reservación';
-$solic2 = 'Realiza tu solicitud de paquetes ahora.';
+$solic2 = '<br><br>Realiza tu solicitud de paquetes ahora.<br><br><br><br>';
 $opi = 'Dejanos tu opinión';
-$opi2 = "Tu opinión es importante.";
-$contc = "Contactenos";
-$contc2 = "Hazlo Diferente-Hazlo con Nosotros.";
+$opi2 = "<br><br>Tu opinión es importante.<br><br><br><br>";
+$contc = "Trabeje con nosotros";
+$contc2 = "Trabajar en Viajes y Turismo Ifamil significa desarrollar tu carrera en una de las empresas mas imnovadoras del sector.";
 $ver="VER MAS";
 $n="Noticias";
 $e="Encuentranos";
@@ -183,7 +183,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
                 </div>
                 <div class="col-md-3 span1_of_4">
                     <div class="span4_of_list">
-                        <span class="active"><i class="fa fa-list"></i></span>
+                        <span class="active"><a href="<?php echo base_url("index.php/Principal/trabaje") ?>"><i class="fa fa-list"></i></span>
 
                         <h3><?php echo $contc; ?></h3>
 
@@ -191,7 +191,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
                         <br>
 
                         <div class="read_more">
-                            <a class="btn btn-2b" href="<?php echo base_url("index.php/Principal/contacto") ?>"><?php echo $ver;?></a>
+                            <a class="btn btn-2b" href="<?php echo base_url("index.php/Principal/trabaje") ?>"><?php echo $ver;?></a>
                         </div>
                     </div>
                 </div>
@@ -256,13 +256,13 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     <link rel='stylesheet' type="text/css" href="<?php echo __PARALAX__ ?>css/dzsparallaxer.css"/>
     <div id="prx2" class="dzsparallaxer auto-init out-of-bootstrap use-loading" data-options='{ direction: "normal"}'>
         <div class="divimage dzsparallaxer--target "
-             style="width: 130%; height: 530px; background-image: url(<?php echo __IMG__ ?>images/tw.jpg)">
+             style="height: 530px; background-image: url(<?php echo __IMG__ ?>images/tw5.jpg)">
         </div>
 
         <div class=" center-it" style="font-style:normal;">
             <center><br>
                 <a class="twitter-timeline" href="https://twitter.com/ifamil_ca"
-                   data-widget-id="640861362185502720" data-tweet-limit="1" data-chrome="noheader noborder transparent">Tweets
+                   data-widget-id="640861362185502720" data-tweet-limit="1" data-theme="dark" data-chrome="noheader noborder transparent">Tweets
                     por el @ifamil_ca.</a>
                 <script>!function (d, s, id) {
                         var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';

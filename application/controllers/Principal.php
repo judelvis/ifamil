@@ -145,6 +145,13 @@ class Principal extends CI_Controller
         $this->load->view('principal/opinion');
         $this->load->view('principal/incluir/pie');
     }
+    
+    public function trabaje()
+    {
+    	$this->load->view('principal/incluir/cabecera');
+    	$this->load->view('principal/trabajo');
+    	$this->load->view('principal/incluir/pie');
+    }
     /**
      * funciones para noticias
      */
