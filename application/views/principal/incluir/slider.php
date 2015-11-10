@@ -26,11 +26,11 @@
 </script>
 
 <div class="camera_wrap  camera_red_skin" id="camera_wrap_1" style="background-color: #FFFFFF;margin-right: 0px auto">
-    <div style="width: 100%" data-src="<?php echo __IMG__ ?>images/turismo2.jpg">
-        <!--<div class="camera_caption fadeFromBottom">
-            Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
-        </div>-->
-    </div>
+    <div data-thumb="<?php echo __SLIDER__ ?>images/slides/leaf.jpg" data-src="<?php echo __IMG__ ?>images/fortinlagalera.jpg"></div>
+    <div data-thumb="<?php echo __SLIDER__ ?>images/slides/leaf.jpg" data-src="<?php echo __IMG__ ?>images/merida.jpg"></div>
+    
+    
+    
     <div data-thumb="<?php echo __SLIDER__ ?>images/slides/leaf.jpg"
          data-src="<?php echo __IMG__ ?>images/juangriego.jpg">
 
@@ -39,12 +39,12 @@
          data-src="<?php echo __IMG__ ?>images/servicios1.jpg">
 
     </div>
-    <div data-thumb="<?php echo __SLIDER__ ?>images/slides/leaf.jpg" data-src="<?php echo __IMG__ ?>images/merida.jpg">
-
+    <div  data-src="<?php echo __IMG__ ?>images/turismo2.jpg">
+        <!--<div class="camera_caption fadeFromBottom">
+            Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
+        </div>-->
     </div>
-    <div data-thumb="<?php echo __SLIDER__ ?>images/slides/leaf.jpg" data-src="<?php echo __IMG__ ?>images/fortinlagalera.jpg">
-
-    </div>
+    
 </div>
 
 
