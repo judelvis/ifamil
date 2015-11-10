@@ -346,6 +346,7 @@ join(Select * from portafolio
         $query = 'Update t_portafolio set titulo="'.$tit.'",resumen="'.$resumen.'",descrip="'.$descrip.'",
         titulo_i="'.$tit2.'",resumen_i="'.$resumen2.'",descrip_i="'.$descrip2.'"';
         if($arr[8] != 'Activo' && $arr[8] != 'Inactivo') $query.=',estatus='.$arr[8];
+        $query .= ',oidcat='.$arr[9];
         $query .=' where id='.$arr[0];
         //return $query;
 		$ban = $this->db->query ( $query);
@@ -369,7 +370,7 @@ join(Select * from portafolio
 		return "<h4>No se elimino</h4>";
 	}
 	function listaSerie() {
-        $cabe = array ('Id','Nombre','Resumen','Descrip.','Nombre Ing.','Resumen Ing.','Descrip. Ing.','Fecha','Estatus');
+        $cabe = array ('Id','Nombre','Resumen','Descrip.','Nombre Ing.','Resumen Ing.','Descrip. Ing.','Fecha','Estatus','Categoria');
 		$query = 'SELECT *,if(estatus=0,"Activo","Inactivo")as est FROM t_portafolio order by fecha desc ;';
 		$tipo = $this->db->query ( $query );
 		$obj = array ();
@@ -378,7 +379,7 @@ join(Select * from portafolio
 			$rsTip = $tipo->result ();
 			foreach ( $rsTip as $fila ) {
 				$cuep[] = array ($fila->id,$fila->titulo,$fila->resumen,$fila->descrip,
-                    $fila->titulo_i,$fila->resumen_i,$fila->descrip_i,$fila->fecha,$fila->est);
+                    $fila->titulo_i,$fila->resumen_i,$fila->descrip_i,$fila->fecha,$fila->est,$fila->oidcat);
 			}
 			$obj[] = array ("cabecera" => $cabe,"cuerpo" => $cuep);
 		} else {
