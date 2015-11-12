@@ -73,7 +73,7 @@ class Solicitud extends CI_Model {
 		$data = array ( //
 				'oid' => $this->identificador, //
 				'cor' => $this->correo, //
-				'nom'=> $this->nombre,
+				//'nom'=> $this->nombre,
 				'ori' => $this->origen,
 				'des' => $this->destino,
 				'fes' => $this->fechaSalida,
@@ -98,9 +98,12 @@ class Solicitud extends CI_Model {
 	 * @return boolean
 	 */
 	function salvar() {
+        $this->load->database ();
 		$bVal = false;		
 		if ($this->correo != '') {
-			$this->db->insert ( $this->tbl, $this->mapearObjeto () );
+            $dat = $this->mapearObjeto ();
+            //print_R($dat);
+			$this->db->insert ( 't_solicitud',$dat  );
 			//if(isset($this->Correo))
 			$bVal = true;
 		}
