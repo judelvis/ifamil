@@ -47,7 +47,7 @@ class Correo extends CI_Model {
 
         $mail->Port          = 587;
         $mail->Username      = "ifamilviajesyturismo@gmail.com"; // SMTP account username
-        $mail->Password      = "ifamilviajes";        // SMTP account password
+        $mail->Password      = "ifamil1515";        // SMTP account password
         $mail->SetFrom('ifamilviajesyturismo@gmail.com', 'Departamento de Ventas');
         $mail->AddReplyTo('ifamilviajesyturismo@gmail.com', 'Despartamento de Ventas');
         $mail->Subject = $this->asunto;
