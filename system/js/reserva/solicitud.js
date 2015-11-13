@@ -69,6 +69,7 @@ function enviarCorreo(){
         data : cadena,
         success : function(msj) {
             alert(msj);
+            $("#enviar").closeModal();
             $('form').each(function () {
                 this.reset();
             });
