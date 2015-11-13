@@ -153,9 +153,10 @@ class Panel extends CI_Controller {
 	function enviaCorreo($para=null,$msj=null) {
 		$this->load->model ( 'utilidades/Correo', 'Correo' );
 		$this->Correo->para = $para;
-		$this->Correo->asunto = "Prueba de IFAMIL";
+		$this->Correo->asunto = "Ventas IFAMIL";
 		$this->Correo->contenido = $msj;
-		$this->Correo->enviar ();
+		if($this->Correo->enviar ())return "Se envio Correo con exito..";
+        else return $this->Correo->Error;
 	}
 	
 	/**

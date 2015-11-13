@@ -33,39 +33,37 @@ class Correo extends CI_Model {
 	/**
 	 * Enviar correo electronico
 	 */
-	function enviar(){
-		$error ='';
-		require_once('application/libraries/PHPMail/class.phpmailer.php');
-		$mail = new PHPMailer();
-		$mail->IsSMTP(); 
-		 
-		$mail->SMTPDebug  = 1;
-		$mail->Host          = "smtp.gmail.com";
-		$mail->SMTPSecure = "tls";
-		$mail->SMTPAuth      = true;                  // enable SMTP authentication
-		$mail->SMTPKeepAlive = true;                  // SMTP connection will not close after each email sent
-		 
-		$mail->Port          = 587;
-		$mail->Username      = "ifamilviajesyturismo@gmail.com"; // SMTP account username
-		$mail->Password      = "ifamilviajes";        // SMTP account password
-		$mail->SetFrom('ifamilviajesyturismo@gmail.com', 'Departamento de Ventas');
-		$mail->AddReplyTo('ifamilviajesyturismo@gmail.com', 'Despartamento de Ventas');
-		$mail->Subject = $this->asunto;
-			 
+    function enviar(){
+        require_once('application/libraries/PHPMail/class.phpmailer.php');
+        $mail = new PHPMailer();
+        $mail->IsSMTP();
 
-		$mail->AltBody    = "Texto Alternativo"; // optional, comment out and test
-		$mail->MsgHTML($this->contenido);
-		$mail->AddAddress($this->para, "Ifamil Viajes y Turismo");
-		if(!$mail->Send()) {
-			$err =  "Error al enviar: " . $mail->ErrorInfo;
-			$this->obtenerError($err);
-			
-		} else {
-			$err =  "Mensaje enviado a:  " .  $this->para . "!";
-			$this->obtenerError($err);
-		}
-		return $error;
-	}
+        $mail->SMTPDebug  = 1;
+        //$mail->Debugoutput = 'html';
+        $mail->Host          = "smtp.gmail.com";
+        $mail->SMTPSecure = "tls";
+        $mail->SMTPAuth      = true;                  // enable SMTP authentication
+        $mail->SMTPKeepAlive = true;                  // SMTP connection will not close after each email sent
+
+        $mail->Port          = 587;
+        $mail->Username      = "ifamilviajesyturismo@gmail.com"; // SMTP account username
+        $mail->Password      = "ifamilviajes";        // SMTP account password
+        $mail->SetFrom('ifamilviajesyturismo@gmail.com', 'Departamento de Ventas');
+        $mail->AddReplyTo('ifamilviajesyturismo@gmail.com', 'Despartamento de Ventas');
+        $mail->Subject = $this->asunto;
+
+
+        $mail->AltBody    = "Texto Alternativo"; // optional, comment out and test
+        $mail->MsgHTML($this->contenido);
+        $mail->AddAddress($this->para, "Ifamil Viajes y Turismo");
+        if(!$mail->Send()) {
+            $this -> Error =  "Error al enviar: " . $mail->ErrorInfo;
+            return false;
+
+        } else {
+            return true;
+        }
+    }
 	
 	/**
 	 * Manejo del control de error
