@@ -34,7 +34,7 @@ class Correo extends CI_Model {
 	 * Enviar correo electronico
 	 */
 	function enviar(){
-		
+		$error ='';
 		require_once('application/libraries/PHPMail/class.phpmailer.php');
 		$mail = new PHPMailer();
 		$mail->IsSMTP(); 
@@ -52,10 +52,7 @@ class Correo extends CI_Model {
 		$mail->AddReplyTo('ifamilviajesyturismo@gmail.com', 'Despartamento de Ventas');
 		$mail->Subject = $this->asunto;
 			 
-		
-		 
-		 
-		 
+
 		$mail->AltBody    = "Texto Alternativo"; // optional, comment out and test
 		$mail->MsgHTML($this->contenido);
 		$mail->AddAddress($this->para, "Ifamil Viajes y Turismo");
@@ -64,10 +61,10 @@ class Correo extends CI_Model {
 			$this->obtenerError($err);
 			
 		} else {
-			$err =  "Mensaje enviado a:  " .  $address . "!";
+			$err =  "Mensaje enviado a:  " .  $this->para . "!";
 			$this->obtenerError($err);
 		}
-		return true;
+		return $error;
 	}
 	
 	/**

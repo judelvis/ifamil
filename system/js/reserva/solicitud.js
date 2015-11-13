@@ -69,9 +69,9 @@ function enviarCorreo(){
         data : cadena,
         success : function(msj) {
             alert(msj);
-            $('form').each(function () {
+            /*$('form').each(function () {
                 this.reset();
-            });
+            });*/
         }
     });
 }

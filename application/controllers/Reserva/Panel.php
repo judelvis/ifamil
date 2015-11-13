@@ -97,8 +97,9 @@ class Panel extends CI_Controller {
 			echo "Error al registrar";
 	}
 	function enviarRespuesta() {
-		print ("<pre>") ;
-		print_R ( $_POST );
+		/*print ("<pre>") ;
+		print_R ( $_POST );*/
+        echo $this->enviaCorreo($_POST['correo'],$_POST['mensaje']);
 	}
 	function listarAfiliados() {
 		$this->load->model ( 'reserva/Afiliado', 'Afiliado' );
@@ -149,12 +150,12 @@ class Panel extends CI_Controller {
 	/**
 	 * funcion para enviar correo
 	 */
-	function enviaCorreo() {
+	function enviaCorreo($para=null,$msj=null) {
 		$this->load->model ( 'utilidades/Correo', 'Correo' );
-		$this->Correo->para = "gesaodin@gmail.com";
+		$this->Correo->para = $para;
 		$this->Correo->asunto = "Prueba de IFAMIL";
-		$this->Correo->contenido = "Que locura";
-		// $this->Correo->enviar ();
+		$this->Correo->contenido = $msj;
+		$this->Correo->enviar ();
 	}
 	
 	/**
