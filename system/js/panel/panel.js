@@ -69,6 +69,7 @@ function registrar() {
 		cache : false,
 		success : function(msj) {
 			alert(msj);
+            $('#notificationModal').modal('hide');
 			//alert(msj);
 			consultar();
 			limpiar();
