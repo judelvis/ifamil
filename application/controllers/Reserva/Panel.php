@@ -101,6 +101,12 @@ class Panel extends CI_Controller {
 		print_R ( $_POST );*/
         echo $this->enviaCorreo($_POST['correo'],$_POST['mensaje']);
 	}
+
+    function enviarPaquetes() {
+        print ("<pre>") ;
+        print_R ( $_POST );
+        //echo $this->enviaCorreo($_POST['correo'],$_POST['mensaje']);
+    }
 	function listarAfiliados() {
 		$this->load->model ( 'reserva/Afiliado', 'Afiliado' );
 		$cabecera = array (
@@ -158,6 +164,15 @@ class Panel extends CI_Controller {
 		if($this->Correo->enviar ())return "Se envio Correo con exito..";
         else return $this->Correo->Error;
 	}
+
+    function enviaCorreoPaquete($para=null,$msj=null) {
+        $this->load->model ( 'utilidades/Correo', 'Correo' );
+        $this->Correo->para = $para;
+        $this->Correo->asunto = "Ventas IFAMIL";
+        $this->Correo->contenido = $msj;
+        if($this->Correo->enviar ())return "Se envio Correo con exito..";
+        else return $this->Correo->Error;
+    }
 	
 	/**
 	 * Cerrar Sesion del sistema
