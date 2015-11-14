@@ -122,8 +122,7 @@ class Panel extends CI_Controller {
                 </tr>
                 </tbody>
             </table>
-            Para mas informacion haga click aqui:<br>http://www.ifamiltravel.com.ve/index.php/Principal/paratodos/6
-            ';
+            Para mas informacion haga click aqui:<br>http://www.ifamiltravel.com.ve/index.php/Principal/paratodos/'.$_POST['paquete'];
             $this->enviaCorreo($lst->cor,$msj);
 
         }
