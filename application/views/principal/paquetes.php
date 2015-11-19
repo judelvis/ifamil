@@ -124,7 +124,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
                         $band++;
                         echo '
                     <div class="col-md-2 blog_date">
-                        <span><h3> '   .$p.'</h3><p>' . $ls->fecha . '</p></span>
+                        <span><p><h3>' . $ls->fecha . '</h3></p></span>
                         <span class="icon_date"><i class="fa fa-suitcase"></i> </span>
                     </div>
                     <div class="col-md-10 blog_left">

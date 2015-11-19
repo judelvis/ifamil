@@ -102,7 +102,7 @@ class Afiliado extends CI_Model {
 	 */
 	function obtenerAfiliadoCorreo($correo = 0) {
 		$sCon = 'SELECT * FROM ' . $this->tbl . ' WHERE cor=' . $correo . ' LIMIT 1';
-		$rs = $this->db->query ( $consulta );
+		$rs = $this->db->query ( $sCon );
 		if ($this->db->_error_number () == 0) {
 			foreach ( $rs->result () as $clv => $val ) {
 				$this->identificador = $val->oid;
@@ -125,7 +125,7 @@ class Afiliado extends CI_Model {
 	 */
 	function obtenerAfiliadoNombre($nombre = '') {
 		$sCon = 'SELECT * FROM  ' . $this->tbl . ' WHERE nom=\'' . $nombre . '\' LIMIT 1;';
-		$rs = $this->db->query ( $consulta );
+		$rs = $this->db->query ( $sCon );
 		if ($this->db->_error_number () == 0) {
 			foreach ( $rs->result () as $clv => $val ) {
 				$this->identificador = $val->oid;
@@ -139,6 +139,12 @@ class Afiliado extends CI_Model {
 		);
 		return $arr;
 	}
+
+    function obtenerAfiliadoTipo( $tipo ){
+        $sCon = 'SELECT * FROM  ' . $this->tbl . ' WHERE pro=\'' . $tipo . '\' ;';
+        $rs = $this->db->query ( $sCon );
+        return $rs -> result();
+    }
 
 	/**
 	 * Listar todos los items de la tabla
@@ -184,6 +190,8 @@ class Afiliado extends CI_Model {
 		$this -> db -> query($sCon);
 		return true;
 	}
+
+
 
 	/**
 	 * Cierra la clase...

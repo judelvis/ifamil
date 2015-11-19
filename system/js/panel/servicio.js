@@ -86,14 +86,22 @@ function Registrar() {
 
 function listarSerie(){//alert(sUrlP);
     var datosCombo = {'0': 'Activo', '1': 'Inactivo'};
+    var datosCombo2 = {'1': 'Sol Y Playa', '2': 'Selva','3':'Montaña','4':'Llanos','5':'Ciudad','6':'Internacional'};
     var origen={'tipoOrigen': 'php', 'rutaObjeto': sUrlPanel+'listarSerie','parametro':''};
     $("#reporte").dtgrid(origen,[{
             'titulo': 'Categorias',
             'clase' : "",
             'oculto':[1],
             'editable': {'c2': 'texto', 'c3': 'texto', 'c4': 'texto',
-                'c5': 'texto', 'c6': 'texto', 'c7': 'texto','c9': datosCombo},
+                'c5': 'texto', 'c6': 'texto', 'c7': 'texto','c9': datosCombo,'c10': datosCombo2},
             "accion": [{
+                "ejecuta": sUrlPanel+"eliminarSerie",
+                "tipo": "php",
+                "clase": "mdi-action-highlight-remove",
+                "parametro": [1,2],
+                //"texto":"Eliminar"
+                //"ocultar":true
+                },{
                 "ejecuta": sUrlPanel+"modificarSerie",
                 "tipo": "php",
                 "clase": "mdi-content-save",

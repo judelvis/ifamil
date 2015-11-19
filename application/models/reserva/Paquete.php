@@ -63,6 +63,21 @@ class Paquete extends CI_Model {
 		);
 		return $arr;
 	}
+
+    function obtenerPaqueteId($id){
+        $query="select t_portafolio.id as idporta,t_portafolio.titulo,t_portafolio.resumen,imagen from t_portafolio
+join t_galeria on t_galeria.oidpor = t_portafolio.id
+where t_portafolio.id = ".$id."
+limit 1";
+        $rs = $this -> db ->query($query);
+        $lista = $rs->result();
+        $datos = array("titulo"=>"","resumen"=>"","imagen"=>"");
+        foreach($lista as $ls){
+            $datos = array("titulo"=>$ls->titulo,"resumen"=>$ls->resumen,"imagen"=>$ls->imagen);
+        }
+        return $datos;
+
+    }
 	
 	/**
 	 *

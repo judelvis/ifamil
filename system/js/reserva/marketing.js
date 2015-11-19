@@ -54,7 +54,7 @@ function enviar(){
     var profesion = $("#profesion").val();
     var cadena = "paquete="+paquete+"&profesion="+profesion;
     $.ajax({
-        url : sUrlP + "enviaCorreo",
+        url : sUrlP + "enviarPaquetes",
         type : 'POST',
         data : cadena,
         success : function(msj) {

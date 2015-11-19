@@ -167,8 +167,9 @@ class Panel extends CI_Controller {
     }
 
     function eliminarSerie(){
-        $ele = json_decode($_POST['objeto'],true);
+        $ele = json_decode($_POST['datos'],true);
         $this -> load -> model('panel/Mpanel', 'MPanel');
+        //echo $ele[0];
         echo $this -> MPanel -> eliminarSerie($ele[0]);
     }
 

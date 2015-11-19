@@ -97,9 +97,38 @@ class Panel extends CI_Controller {
 			echo "Error al registrar";
 	}
 	function enviarRespuesta() {
-		print ("<pre>") ;
-		print_R ( $_POST );
+		/*print ("<pre>") ;
+		print_R ( $_POST );*/
+        echo $this->enviaCorreo($_POST['correo'],$_POST['mensaje']);
 	}
+
+    function enviarPaquetes() {
+        $this -> load -> model("reserva/Afiliado","Afiliado");
+        $this -> load -> model("reserva/Paquete","Paquete");
+        //print ("<pre>") ;
+//        print_R ( $_POST );
+        $lista = $this -> Afiliado->obtenerAfiliadoTipo($_POST['profesion']);
+        $paquete = $this->Paquete ->obtenerPaqueteId($_POST['paquete']);
+        //print_R ( $lista );
+        //echo $this->enviaCorreo($_POST['correo'],$_POST['mensaje']);
+        foreach($lista as $lst){
+            $msj = 'Estimado Sr(a). '.$lst->nom .', reciba un cordial saludo de parte de la famila IFAMIL.<br>
+            Nos dirigimos a usted en la oportunidad de informarle de la disponibilidad del siguiente paquete turistico:<br>
+            <table cellpadding="0" cellspacing="0" align="center" width="640" border="0">
+                <tbody>
+                <tr valign="middle">
+                    <td width="300"><img src="http://www.ifamiltravel.com.ve/system/img/galeria/'.$paquete['imagen'].'" style="width:100%;display:block" border="0"></td>
+                    <td>'.$paquete['titulo'].'<br>'.$paquete['resumen'].'</td>
+                </tr>
+                </tbody>
+            </table>
+            Para mas informacion haga click aqui:<br>http://www.ifamiltravel.com.ve/index.php/Principal/paratodos/'.$_POST['paquete'];
+            $this->enviaCorreo($lst->cor,$msj);
+
+        }
+
+        echo "Se envio con exito";
+    }
 	function listarAfiliados() {
 		$this->load->model ( 'reserva/Afiliado', 'Afiliado' );
 		$cabecera = array (
@@ -149,13 +178,23 @@ class Panel extends CI_Controller {
 	/**
 	 * funcion para enviar correo
 	 */
-	function enviaCorreo() {
+	function enviaCorreo($para=null,$msj=null) {
 		$this->load->model ( 'utilidades/Correo', 'Correo' );
-		$this->Correo->para = "gesaodin@gmail.com";
-		$this->Correo->asunto = "Prueba de IFAMIL";
-		$this->Correo->contenido = "Que locura";
-		// $this->Correo->enviar ();
+		$this->Correo->para = $para;
+		$this->Correo->asunto = "Ventas IFAMIL";
+		$this->Correo->contenido = $msj;
+		if($this->Correo->enviar ())return "Se envio Correo con exito..";
+        else return $this->Correo->Error;
 	}
+
+    function enviaCorreoPaquete($para=null,$msj=null) {
+        $this->load->model ( 'utilidades/Correo', 'Correo' );
+        $this->Correo->para = $para;
+        $this->Correo->asunto = "Ventas IFAMIL";
+        $this->Correo->contenido = $msj;
+        if($this->Correo->enviar ())return "Se envio Correo con exito..";
+        else return $this->Correo->Error;
+    }
 	
 	/**
 	 * Cerrar Sesion del sistema
