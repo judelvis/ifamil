@@ -65,13 +65,15 @@
 <?php
 $servi = "Servicios";
 $paq = 'Paquetes';
-$solic = '<br><br>Realiza tu solicitud de paquetes ahora.<br><br><br><br>';
+$solic = 'Realiza tu solicitud de paquetes ahora.<br><br>';
 $reser = 'Reservación';
-$solic2 = '<br><br>Realiza tu solicitud de paquetes ahora.<br><br><br><br>';
+$solic2 = 'Realiza tu solicitud de paquetes ahora.<br><br>';
 $opi = 'Dejanos tu opinión';
-$opi2 = "<br><br>Tu opinión es importante.<br><br><br><br>";
+$opi2 = "Tu opinión es importante.<br><br>";
 $contc = "Trabeje con nosotros";
 $contc2 = "Trabajar en Viajes y Turismo Ifamil significa desarrollar tu carrera en una de las empresas mas imnovadoras del sector.";
+$con = "Oficinas";
+$con2 = "Hazlo Diferente, Hazlo con Nosotros.<br>";
 $ver="VER MAS";
 $n="Noticias";
 $e="Encuentranos";
@@ -84,8 +86,8 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     $solic2 = "Make your application package now.<br>";
     $opi = 'Leave Feedback';
     $opi2 = "Your opinion is important.<br><br>";
-    $contc = "Contact Us";
-    $contc2 = "Different do - Do it with us.<br><br>";
+    $con = "Offices";
+    $con2 = "Different do - Do it with us.<br>";
     $ver="VIEW MORE";
     $n="News";
     $e="Find us";
@@ -183,15 +185,15 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
                 </div>
                 <div class="col-md-3 span1_of_4">
                     <div class="span4_of_list">
-                        <span class="active"><a href="<?php echo base_url("index.php/Principal/trabaje") ?>"><i class="fa fa-list"></i></span>
+                        <span class="active"><a href="<?php echo base_url("index.php/Principal/contacto") ?>"><i class="fa fa-list"></i></span>
 
-                        <h3><?php echo $contc; ?></h3>
+                        <h3><?php echo $con; ?></h3>
 
-                        <p><?php echo $contc2; ?></p>
+                        <p><?php echo $con2; ?></p>
                         <br>
 
                         <div class="read_more">
-                            <a class="btn btn-2b" href="<?php echo base_url("index.php/Principal/trabaje") ?>"><?php echo $ver;?></a>
+                            <a class="btn btn-2b" href="<?php echo base_url("index.php/Principal/contacto") ?>"><?php echo $ver;?></a>
                         </div>
                     </div>
                 </div>

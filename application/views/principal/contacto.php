@@ -1,7 +1,7 @@
 <script type="text/javascript" src="<?php echo __JSVIEW__ ?>general/Global.js"></script>
 <script type="text/javascript" src="<?php echo __JSVIEW__ ?>frontEnd/contacto.js"></script>
 <?php
-$t1 = "Contactenos";
+$t1 = "Oficinas comerciales";
 $d = 'Dirección:';
 $d1 = 'IFAMIL - Caracas - Sede Principal:';
 $d2 = 'Av. Los Proceres C.C Los Proceres Nivel 3';
@@ -27,7 +27,7 @@ $m = 'Mensaje...';
 $en='ENVIAR';
 $o="Otros";
 if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
-    $t1 = "Contact us";
+    $t1 = "Commercial Offices";
     $d = 'Address:';
     $d1 = 'IFAMIL - Caracas - Headquarters:';
     $d2 = 'Av. The Proceres C.C The Proceres level 3';

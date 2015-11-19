@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="es">
 <head>
-    <title>IFAMIL</title>
+    <title>Viajes y Turismo</title>
     <link rel="shortcut icon" type="image/x-icon" style="width: 100%; height: 100%"
           href="<?php echo __IMG__ ?>images/favi.ico">
     <meta charset="UTF-8"/>
@@ -64,7 +64,7 @@ $home = 'Inicio';
 $quien = 'Quienes Somos';
 $paq = 'Paquetes';
 $afi = 'Afiliate';
-$con = 'Contactenos';
+$con = 'Oficinas';
 $not = "Noticias";
 $ser = "Servicios";
 $v = "Viaja por Venezuela";
@@ -77,7 +77,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     $quien = 'Company';
     $paq = 'Packages';
     $afi = 'Sign Us';
-    $con = 'Contact Us';
+    $con = 'Offices';
     $not = "News";
     $ser = "Services";
     $v = "Travel by Venezuela";
@@ -86,6 +86,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     <img  style="float: left" src="' . __IMG__ . 'images/vene2.png" class="img-responsive"></a></div>';
 } ?>
 <body>
+<center><img src="<?php echo __IMG__ ?>images/bannerdf2.png" class="img-responsive"></center>
 <div class="container1">
     <div class="row">
         <a href="#" class="back-to-top"><?php echo $subir; ?></a>
@@ -101,16 +102,18 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
         </div>
         <div class="row3">
             <div class="col-xs-6 col-sm-3">
-                <img src="<?php echo __IMG__ ?>images/logo12.png" class="img-responsive">
+                <a href="<?php echo base_url("index.php/Principal/index") ?>"><img src="<?php echo __IMG__ ?>images/logo12.png" class="img-responsive"></a>
             </div>
-            <div class="col-xs-6 col-sm-3">
-                <img src="<?php echo __IMG__ ?>images/banner5.png">
+            <div class="col-xs-6 col-sm-2">
             </div>
-            <div class="col-xs-6 col-sm-4"></div>
             <div class="col-xs-6 col-sm-2">
                 <br>
+             <a href="http://www.ipsfa.mil.ve/"> <img src="<?php echo __IMG__ ?>images/IPSFA.png" class="img-responsive"></a>
+                </div>
+                 <div class="col-xs-6 col-sm-2">
+                    <a href="http://www.mindefensa.gob.ve/"><img src="<?php echo __IMG__ ?>images/logomdf.png" class="img-responsive"></a>
+                 </div>
 
-            </div>
         </div>
         <div class="header_bg x">
             <div class="container">
