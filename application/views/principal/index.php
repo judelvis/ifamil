@@ -258,7 +258,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     <link rel='stylesheet' type="text/css" href="<?php echo __PARALAX__ ?>css/dzsparallaxer.css"/>
     <div id="prx2" class="dzsparallaxer auto-init out-of-bootstrap use-loading" data-options='{ direction: "normal"}'>
         <div class="divimage dzsparallaxer--target "
-             style="height: 530px; background-image: url(<?php echo __IMG__ ?>images/tw5.jpg)">
+             style="height: 530px; background-image: url(<?php echo __IMG__ ?>images/F-06-min.jpg)">
         </div>
 
         <div class=" center-it" style="font-style:normal;">
