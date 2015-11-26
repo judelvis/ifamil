@@ -70,7 +70,7 @@ class Principal extends CI_Controller
                 if(isset($_SESSION['idioma']))$datos['titulo'] = 'City';
                 break;
             case 6:
-                $datos['imagen'] = 'ciudad.jpg';
+                $datos['imagen'] = 'J-10-min.jpg';
                 $datos['titulo'] = 'Paquetes Internacionales';
                 if(isset($_SESSION['idioma']))$datos['titulo'] = 'International Travel';
                 break;

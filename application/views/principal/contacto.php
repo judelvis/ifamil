@@ -54,6 +54,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     $o="Others";
 } ?>
 <div class="main_bg"><!-- start main -->
+    <img src="<?php echo __IMG__ ?>images/I-09-min.jpg" style="width: 100%">
     <div class="container">
         <div class="main_grid1">
             <hr class="team_hr team_hr_left hr_gray"/>

@@ -28,7 +28,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
 
 } ?>
 <div class="main_bg"><!-- start main -->
-    <img src="<?php echo __IMG__ ?>images/aviso.jpg" style="width: 100%">
+    <img src="<?php echo __IMG__ ?>images/G-07-01.jpg" style="width: 100%">
 
     <div class="container">
         <div class="main_grid1">
