@@ -222,6 +222,13 @@ class Panel extends CI_Controller {
 		);
 		$rs = $this->Solicitud->listarPendientes ();
 		foreach ( $rs [0] ['rs'] as $fila ) {
+            $tip = "";
+            switch($fila->tip){
+                case 2: $tip = "Reservacion";break;
+                case 4: $tip = "Paquete";break;
+                case 1: $tip = "Transporte";break;
+                case 3: $tip = "Hospedaje";break;
+            }
 			$cuep [] = array (
 					$fila->identificador,
 					$fila->nom,
@@ -229,7 +236,7 @@ class Panel extends CI_Controller {
 					$fila->correo,
 					$fila->ori,
 					$fila->des,
-					$fila->categoria,
+					$tip,
 					$this->estatus ( $fila->est ),
 					"" 
 			);
