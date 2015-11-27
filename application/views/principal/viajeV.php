@@ -36,11 +36,12 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
                         <a href="<?php echo site_url("Principal/paquetes/1");?>"><img src="<?php echo __IMG__?>images/island.png">
 
                         <h4><?php echo $s; ?></h4></a>
+                        <br><br>
                     </div>
                 </div>
                 <div class="col-md-2">
                     <div class="span4_of_list">
-                        <a href="<?php echo site_url("Principal/paquetes/2");?>"><img src="<?php echo __IMG__?>images/peaks.png">
+                        <a href="<?php echo site_url("Principal/paquetes/3");?>"><img src="<?php echo __IMG__?>images/peaks.png">
                         <h4><?php echo $m; ?></h4>
                         </a>
                         <br><br>
@@ -49,7 +50,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
                 <div class="col-md-2">
                     <div class="span4_of_list"
                     ">
-                    <a href="<?php echo site_url("Principal/paquetes/3");?>"><img src="<?php echo __IMG__?>images/woods2.png">
+                    <a href="<?php echo site_url("Principal/paquetes/2");?>"><img src="<?php echo __IMG__?>images/woods2.png">
 
                     <h4><?php echo $sel; ?></h4>
                     </a>

@@ -74,10 +74,10 @@ $contc = "Trabeje con nosotros";
 $contc2 = "Trabajar en Viajes y Turismo Ifamil significa desarrollar tu carrera en una de las empresas mas imnovadoras del sector.";
 $con = "Oficinas";
 $con2 = "Hazlo Diferente, Hazlo con Nosotros.<br>";
-$ver="VER MAS";
-$n="Noticias";
-$e="Encuentranos";
-$l='Leer';
+$ver = "VER MAS";
+$n = "Noticias";
+$e = "Encuentranos";
+$l = 'Leer';
 if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     $servi = "Services";
     $paq = 'Packages';
@@ -88,12 +88,12 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     $opi2 = "Your opinion is important.<br><br>";
     $con = "Offices";
     $con2 = "Different do - Do it with us.<br>";
-    $ver="VIEW MORE";
-    $n="News";
-    $e="Find us";
-    $l='Read';
+    $ver = "VIEW MORE";
+    $n = "News";
+    $e = "Find us";
+    $l = 'Read';
 } ?>
-<div class="main_btm"><!-- start main_btm -->
+<div class=""><!-- start main_btm -->
     <div class="container">
         <div class="main span_of_3">
 
@@ -104,22 +104,26 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
                 <div id="owl-demo" class="owl-carousel"><!----start-img-cursual---->
                     <div class="item">
                         <div class="cau_left">
-                            <a href="http://www.mintur.gob.ve/mintur/" target="_blank>"><img class="lazyOwl" src="<?php echo __IMG__?>images/mintur1.png"></a>
+                            <a href="http://www.mintur.gob.ve/mintur/" target="_blank>"><img class="lazyOwl"
+                                                                                             src="<?php echo __IMG__ ?>images/mintur1.png"></a>
                         </div>
                     </div>
                     <div class="item">
                         <div class="cau_left">
-                            <a href="http://www.inatur.gob.ve/" target="_blank"> <img class="lazyOwl" src="<?php echo __IMG__?>images/inatur.png"></a>
+                            <a href="http://www.inatur.gob.ve/" target="_blank"> <img class="lazyOwl"
+                                                                                      src="<?php echo __IMG__ ?>images/inatur.png"></a>
                         </div>
                     </div>
                     <div class="item">
                         <div class="cau_left">
-                            <a href="http://www.venetur.gob.ve/" target="_blank"> <img class="lazyOwl" src="<?php echo __IMG__?>images/venetur.png"></a>
+                            <a href="http://www.venetur.gob.ve/" target="_blank"> <img class="lazyOwl"
+                                                                                       src="<?php echo __IMG__ ?>images/venetur.png"></a>
                         </div>
                     </div>
                     <div class="item">
                         <div class="cau_left">
-                            <a href="http://cormetur.merida.gob.ve/" target="_blank"> <img class="lazyOwl" src="<?php echo __IMG__?>images/cormetur.png"></a>
+                            <a href="http://cormetur.merida.gob.ve/" target="_blank"> <img class="lazyOwl"
+                                                                                           src="<?php echo __IMG__ ?>images/cormetur.png"></a>
                         </div>
                     </div>
                 </div>
@@ -151,7 +155,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
 
                         <div class="read_more">
                             <a class="btn btn-2 active"
-                               href="<?php echo base_url("index.php/Principal/solicitud/4") ?>"><?php echo $ver;?></a>
+                               href="<?php echo base_url("index.php/Principal/solicitud/4") ?>"><?php echo $ver; ?></a>
                         </div>
                     </div>
                 </div>
@@ -165,7 +169,8 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
                         <p><?php echo $solic2; ?></p>
 
                         <div class="read_more">
-                            <a class="btn btn-2b" href="<?php echo base_url("index.php/Principal/solicitud/2") ?>"><?php echo $ver;?></a>
+                            <a class="btn btn-2b"
+                               href="<?php echo base_url("index.php/Principal/solicitud/2") ?>"><?php echo $ver; ?></a>
                         </div>
                     </div>
                 </div>
@@ -179,13 +184,15 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
                         <p><?php echo $opi2 ?></p>
 
                         <div class="read_more">
-                            <a class="btn  btn-2b" href="<?php echo base_url("index.php/Principal/opinion") ?>"><?php echo $ver;?></a>
+                            <a class="btn  btn-2b"
+                               href="<?php echo base_url("index.php/Principal/opinion") ?>"><?php echo $ver; ?></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 span1_of_4">
                     <div class="span4_of_list">
-                        <span class="active"><a href="<?php echo base_url("index.php/Principal/contacto") ?>"><i class="fa fa-list"></i></span>
+                        <span class="active"><a href="<?php echo base_url("index.php/Principal/contacto") ?>"><i
+                                    class="fa fa-list"></i></span>
 
                         <h3><?php echo $con; ?></h3>
 
@@ -193,7 +200,8 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
                         <br>
 
                         <div class="read_more">
-                            <a class="btn btn-2b" href="<?php echo base_url("index.php/Principal/contacto") ?>"><?php echo $ver;?></a>
+                            <a class="btn btn-2b"
+                               href="<?php echo base_url("index.php/Principal/contacto") ?>"><?php echo $ver; ?></a>
                         </div>
                     </div>
                 </div>
@@ -223,11 +231,11 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
 				<div class="thumbnail" style="height:300px;">
 					<img src="' . __IMG__ . 'noticia/medio/' . $ls->imagen . '" alt="team 1">
 					<div class="mask">
-					    <h4>'.substr($ls->res,0,350) .'</h4>
+					    <h4>' . substr($ls->res, 0, 350) . '</h4>
 					    <ul class="social">
                         <li>
                             <a href="' . site_url("Principal/verNoticia/$ls->oid") . '">
-                              '   .$l.'
+                              ' . $l . '
                             </a>
                         </li>
                     </ul>
@@ -256,28 +264,31 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     <link rel='stylesheet' type="text/css" href="<?php echo __PARALAX__ ?>style/style.css"/>
     <link rel='stylesheet' type="text/css" href="<?php echo __PARALAX__ ?>css/scroller.css"/>
     <link rel='stylesheet' type="text/css" href="<?php echo __PARALAX__ ?>css/dzsparallaxer.css"/>
-    <div id="prx2" class="dzsparallaxer auto-init out-of-bootstrap use-loading" data-options='{ direction: "normal"}'>
-        <div class="divimage dzsparallaxer--target "
-             style="height: 530px; background-image: url(<?php echo __IMG__ ?>images/F-06-min.jpg)">
-        </div>
+    <div class="container">
+        <div id="prx2" class="dzsparallaxer auto-init" data-options='{ direction: "reverse"}'>
+            <div class="divimage dzsparallaxer--target "
+                 style="height: 460px;width: 101%; background-image: url(<?php echo __IMG__ ?>images/F-06-min.jpg)">
+            </div>
 
-        <div class=" center-it" style="font-style:normal;">
-            <center><br>
-                <a class="twitter-timeline" href="https://twitter.com/ifamil_ca"
-                   data-widget-id="640861362185502720" data-tweet-limit="1" data-theme="dark" data-chrome="noheader noborder transparent">Tweets
-                    por el @ifamil_ca.</a>
-                <script>!function (d, s, id) {
-                        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-                        if (!d.getElementById(id)) {
-                            js = d.createElement(s);
-                            js.id = id;
-                            js.src = p + "://platform.twitter.com/widgets.js";
-                            fjs.parentNode.insertBefore(js, fjs);
-                        }
-                    }(document, "script", "twitter-wjs");</script>
-            </center>
-        </div>
+            <div class=" center-it" style="font-style:normal;">
+                <center><br>
+                    <a class="twitter-timeline" href="https://twitter.com/ifamil_ca"
+                       data-widget-id="640861362185502720" data-tweet-limit="1" data-theme="dark"
+                       data-chrome="noheader noborder transparent">Tweets
+                        por el @ifamil_ca.</a>
+                    <script>!function (d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                            if (!d.getElementById(id)) {
+                                js = d.createElement(s);
+                                js.id = id;
+                                js.src = p + "://platform.twitter.com/widgets.js";
+                                fjs.parentNode.insertBefore(js, fjs);
+                            }
+                        }(document, "script", "twitter-wjs");</script>
+                </center>
+            </div>
 
+        </div>
     </div>
 </div>
 
@@ -316,8 +327,8 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     </center>
 
 </div>
-
-<div class="container">
+<br><br><br>
+<!--<div class="container">
     <div class="title">
         <hr class="team_hr team_hr_left hr_gray"/>
         <center><h1><?php echo $e; ?></h1></center>
@@ -328,12 +339,8 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
             src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1961.6755529000425!2d-66.89525299865238!3d10.472963174847518!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sve!4v1441404862591"
             width="80%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
     </center>
-</div>
+</div>!-->
 
-
-
-</div>
-</div>
 <script>
     jQuery(document).ready(function ($) {
         window.dzsscr_init($('.mwrap-wrapper'), {

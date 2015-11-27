@@ -86,11 +86,10 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
     <img  style="float: left" src="' . __IMG__ . 'images/vene2.png" class="img-responsive"></a></div>';
 } ?>
 <body>
-<center><img src="<?php echo __IMG__ ?>images/bannerdf2.png" class="img-responsive"></center>
 <div class="container1">
     <div class="row">
+        <img src="<?php echo __IMG__ ?>images/slayder-extras-01.jpg" class="img-responsive">
         <a href="#" class="back-to-top"><?php echo $subir; ?></a>
-
         <div class="slide_likebox">
             <div style="color: rgb(255, 255, 255); padding: 8px 5px 0pt 50px;"><span><div class='likeboxwrap'>
                         <iframe
@@ -117,7 +116,6 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
         </div>
         <div class="header_bg x">
             <div class="container">
-
                 <div class="header">
                     <div class="h_menu">
                         <a id="touch-menu" class="mobile-menu" href="#">Menu</a>
@@ -162,6 +160,4 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
                 </div>
             </div>
         </div>
-
-
-
+    </div>

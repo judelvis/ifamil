@@ -127,7 +127,7 @@ class Solicitud extends CI_Model {
 			foreach ( $rs->result () as $clv => $val ) {
 				$this->identificador = $val->oid;
 				$this->correo = $val->cor; //
-				$this->nombre = $val->nom;
+				//$this->nombre = $val->nom;
 				$this->origen = $val->ori;
 				$this->destino = $val->des;
 				$this->fechaSalida = $val->fes;

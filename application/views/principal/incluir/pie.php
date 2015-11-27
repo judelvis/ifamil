@@ -6,6 +6,7 @@
  * Time: 09:17 AM
  */?>
 <div class="footer1_bg"><!-- start footer1 -->
+    <img src="<?php echo __IMG__ ?>images/slayder-extras-02-min.jpg" style="width:100%;">
     <div class="container">
         <div class="footer1">
             <div class="copy pull-left">

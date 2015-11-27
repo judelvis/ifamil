@@ -49,12 +49,12 @@ class Principal extends CI_Controller
                 $datos['titulo'] = 'Sol Y Playa';
                 if(isset($_SESSION['idioma']))$datos['titulo'] = 'Sun And Beach';
                 break;
-            case 2:
+            case 3:
                 $datos['imagen'] = 'montaña.jpg';
                 $datos['titulo'] = 'Montaña';
                 if(isset($_SESSION['idioma']))$datos['titulo'] = 'Mountains';
                 break;
-            case 3:
+            case 2:
                 $datos['imagen'] = 'selva.jpg';
                 $datos['titulo'] = 'Selva';
                 if(isset($_SESSION['idioma']))$datos['titulo'] = 'Jungle';
