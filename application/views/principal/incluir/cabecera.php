@@ -89,6 +89,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
 <div class="container1">
     <div class="row">
         <img src="<?php echo __IMG__ ?>images/slayder-extras-01.jpg" class="img-responsive">
+        <img src="<?php echo __IMG__ ?>images/slayder-extras-02-min.jpg" style="width:100%;">
         <a href="#" class="back-to-top"><?php echo $subir; ?></a>
         <div class="slide_likebox">
             <div style="color: rgb(255, 255, 255); padding: 8px 5px 0pt 50px;"><span><div class='likeboxwrap'>
@@ -98,21 +99,6 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
                             style="border:none; overflow:hidden; width:380px; height:320px;"
                             allowtransparency="true"></iframe>
                     </div></span></div>
-        </div>
-        <div class="row3">
-            <div class="col-xs-6 col-sm-3">
-                <a href="<?php echo base_url("index.php/Principal/index") ?>"><img src="<?php echo __IMG__ ?>images/logo12.png" class="img-responsive"></a>
-            </div>
-            <div class="col-xs-6 col-sm-2">
-            </div>
-            <div class="col-xs-6 col-sm-2">
-                <br>
-             <a href="http://www.ipsfa.mil.ve/"> <img src="<?php echo __IMG__ ?>images/IPSFA.png" class="img-responsive"></a>
-                </div>
-                 <div class="col-xs-6 col-sm-2">
-                    <a href="http://www.mindefensa.gob.ve/"><img src="<?php echo __IMG__ ?>images/logomdf.png" class="img-responsive"></a>
-                 </div>
-
         </div>
         <div class="header_bg x">
             <div class="container">
