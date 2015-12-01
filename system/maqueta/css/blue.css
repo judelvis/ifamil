@@ -180,6 +180,10 @@ nav {
         font-size: 15px;
         padding: 8px;
     }
+
+    .menu{
+        float: none;
+    }
 }
 
 @media (max-width: 767px) {
@@ -190,6 +194,7 @@ nav {
 
     .menu {
         display: none;
+        float: none;
     }
 
     .mobile-menu {
