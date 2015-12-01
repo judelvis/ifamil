@@ -19,7 +19,9 @@ body {
 }
 
 .header_bg {
-    background: #fff;
+    /*background: #fff;
+    background-image: url("../../img/images/extra-02-02-min1.jpg");
+    background-repeat: no-repeat;*/
 }
 
 .header {
@@ -34,10 +36,13 @@ body {
 /* start h_menu */
 .h_menu {
     float: left;
-
+    width:98%;
+    /*background-image: url("../../img/images/extra-02-02-min1.jpg");
+    background-repeat: no-repeat;*/
 }
 .x {
-    background: linear-gradient(#3a97d2, #ffffff);
+    /*background: linear-gradient(#3a97d2, #ffffff);**/
+
 
 }
 
@@ -47,6 +52,7 @@ nav {
 
 .menu {
     display: block;
+    float: right;
 }
 
 .menu li {

@@ -88,8 +88,9 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
 <body>
 <div class="container1">
     <div class="row">
-        <img src="<?php echo __IMG__ ?>images/slayder-extras-01.jpg" class="img-responsive">
-        <img src="<?php echo __IMG__ ?>images/slayder-extras-02-min.jpg" style="width:100%;">
+        <img src="<?php echo __IMG__ ?>images/slayder-extras-01-min.jpg" style="width: 98%;">
+        <img src="<?php echo __IMG__ ?>images/extra-02-02-min1.jpg" style="width: 98%;">
+
         <a href="#" class="back-to-top"><?php echo $subir; ?></a>
         <div class="slide_likebox">
             <div style="color: rgb(255, 255, 255); padding: 8px 5px 0pt 50px;"><span><div class='likeboxwrap'>
@@ -100,50 +101,53 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
                             allowtransparency="true"></iframe>
                     </div></span></div>
         </div>
-        <div class="header_bg x">
-            <div class="container">
-                <div class="header">
-                    <div class="h_menu">
-                        <a id="touch-menu" class="mobile-menu" href="#">Menu</a>
-                        <nav>
-                            <ul class="menu list-unstyled">
-                                <li>
-                                    <a href="<?php echo base_url("index.php/Principal/index") ?>"><?php echo $home; ?></a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo base_url("index.php/Principal/nosotros") ?>"><?php echo $quien; ?></a>
-                                </li>
-                                <li>
-                                    <a href="#"><?php echo $paq; ?></a>
-                                    <ul class="sub-menu list-unstyled">
-                                        <li>
-                                            <a href="<?php echo base_url("index.php/Principal/viajeV") ?>"><?php echo $v; ?></a>
-                                        </li>
-                                        <li>
-                                            <a href="<?php echo base_url("index.php/Principal/paquetes/6") ?>"><?php echo $i; ?></a>
-                                        </li>
 
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="<?php echo base_url("index.php/Principal/afiliate") ?>"><?php echo $afi; ?></a>
-                                <li>
-                                    <a href="<?php echo base_url("index.php/Principal/noticias") ?>"><?php echo $not; ?></a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo base_url("index.php/Principal/portafolio") ?>"><?php echo $ser; ?></a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo base_url("index.php/Principal/contacto") ?>"><?php echo $con; ?></a>
-                                </li>
-                                <?php echo $bandera; ?>
-                            </ul>
 
-                        </nav>
-                        <script src="<?php echo __MAQ__ ?>js/menu.js" type="text/javascript"></script>
-                    </div>
-                    <div class="clearfix"></div>
+        <div class="header_bg" style="background=#ffffff;" >
+            <!--  <div class="container"> -->
+            <div class="header">
+                <div class="h_menu">
+
+                    <a id="touch-menu" class="mobile-menu" href="#">Menu</a>
+                    <nav>
+                        <ul class="menu list-unstyled" style="margin-bottom: 0px;">
+                            <li>
+                                <a href="<?php echo base_url("index.php/Principal/index") ?>"><?php echo $home; ?></a>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url("index.php/Principal/nosotros") ?>"><?php echo $quien; ?></a>
+                            </li>
+                            <li>
+                                <a href="#"><?php echo $paq; ?></a>
+                                <ul class="sub-menu list-unstyled">
+                                    <li>
+                                        <a href="<?php echo base_url("index.php/Principal/viajeV") ?>"><?php echo $v; ?></a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo base_url("index.php/Principal/paquetes/6") ?>"><?php echo $i; ?></a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url("index.php/Principal/afiliate") ?>"><?php echo $afi; ?></a>
+                            <li>
+                                <a href="<?php echo base_url("index.php/Principal/noticias") ?>"><?php echo $not; ?></a>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url("index.php/Principal/portafolio") ?>"><?php echo $ser; ?></a>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url("index.php/Principal/contacto") ?>"><?php echo $con; ?></a>
+                            </li>
+                            <!-- <?php echo $bandera; ?> -->
+                        </ul>
+
+                    </nav>
+                    <script src="<?php echo __MAQ__ ?>js/menu.js" type="text/javascript"></script>
                 </div>
+                <div class="clearfix"></div>
             </div>
         </div>
+        <!-- </div>-->
     </div>
