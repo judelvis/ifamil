@@ -273,7 +273,7 @@ if (isset($_SESSION['idioma']) && $_SESSION['idioma'] == '_i') {
             <div class=" center-it" style="font-style:normal;">
                 <center><br>
                     <a class="twitter-timeline" href="https://twitter.com/ifamil_ca"
-                       data-widget-id="640861362185502720" data-tweet-limit="1" data-theme="dark"
+                       data-widget-id="640861362185502720" data-tweet-limit="1"
                        data-chrome="noheader noborder transparent">Tweets
                         por el @ifamil_ca.</a>
                     <script>!function (d, s, id) {
