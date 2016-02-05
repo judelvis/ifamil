@@ -74,11 +74,24 @@ class Principal extends CI_Controller {
 			$this->Solicitud->transporte = $_POST["transporte"];
 			$this->Solicitud->paquete = $_POST["paquete"];
 			$this->Solicitud->salvar();
-			echo $e;
+			echo $this->enviaCorreo($_POST["correo"],"Su solicitud fue recibida con exito.");
+			echo '<br>'.$e;
 		}
 		else{
 			echo "Esta intentando acceder a una area privada.";
 		}
+	}
+
+	/**
+	 * funcion para enviar correo
+	 */
+	function enviaCorreo($para=null,$msj=null) {
+		$this->load->model ( 'utilidades/Correo', 'Correo' );
+		$this->Correo->para = $para;
+		$this->Correo->asunto = "Solicitud IFAMIL";
+		$this->Correo->contenido = $msj;
+		if($this->Correo->enviar ())return $msj;
+		else return $this->Correo->Error;
 	}
 	
 	function logout() {
